@@ -1,0 +1,714 @@
+[2024-05-25 13:33:12.519] RUN   (webs.run) :: Starting workflow (name=docking)
+[2024-05-25 13:33:12.519] RUN   (webs.run) :: name='docking' timestamp=datetime.datetime(2024, 5, 25, 13, 33, 12, 519166) executor=ParslConfig(parsl_use_threads=False, parsl_workers=64, parsl_run_dir='parsl-runinfo') transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/parsl/{timestamp}') workflow=DockingWorkflowConfig(smi_file_name_ligand='/home/cc/parsl-docking-tutorial/dataset_orz_original_1k.csv', receptor='/home/cc/parsl-docking-tutorial/1iep_receptor.pdbqt', tcl_path='/home/cc/parsl-docking-tutorial/set_element.tcl')
+[2024-05-25 13:33:12.519] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/docking/parsl/2024-05-25-13-33-12
+[2024-05-25 13:33:12.674] INFO  (parsl.dataflow.dflow) :: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(HighThroughputExecutor(
+        address='10.52.3.104', 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x7fa24cc0a7a0>, 
+        cores_per_worker=1, 
+        cpu_affinity='none', 
+        drain_period=None, 
+        enable_mpi_mode=False, 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='htex-local', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers_per_node} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --drain_period={drain_period} --cpu-affinity {cpu_affinity} {enable_mpi_mode} --mpi-launcher={mpi_launcher} --available-accelerators {accelerators}', 
+        max_workers=64, 
+        max_workers_per_node=64, 
+        mem_per_worker=None, 
+        mpi_launcher='mpiexec', 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/cc/escience24-taps-analysis/runs/makespan/docking/parsl/2024-05-25-13-33-12'
+            ), 
+            cmd_timeout=30, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='parsl-runinfo', 
+    strategy='simple', 
+    strategy_period=5, 
+    usage_tracking=False
+)
+[2024-05-25 13:33:12.674] INFO  (parsl.dataflow.dflow) :: Parsl version: 2024.03.18
+[2024-05-25 13:33:12.674] INFO  (parsl.dataflow.dflow) :: Run id is: 0358b583-2be1-4ea5-a464-467345257220
+[2024-05-25 13:33:12.754] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-05-25 13:33:12.774] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-05-25 13:33:12.774] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-05-25 13:33:12.801] INFO  (parsl.dataflow.dflow) :: Task 0 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:33:12.803] INFO  (parsl.dataflow.dflow) :: Parsl task 0 try 0 launched on executor htex-local with executor id 1
+[2024-05-25 13:33:12.803] INFO  (parsl.dataflow.dflow) :: Task 1 submitted for App set_element, waiting on task 0
+[2024-05-25 13:33:12.804] INFO  (parsl.dataflow.dflow) :: Task 2 submitted for App pdb_to_pdbqt, waiting on task 1
+[2024-05-25 13:33:12.804] INFO  (parsl.dataflow.dflow) :: Task 3 submitted for App make_autodock_config, waiting on task 2
+[2024-05-25 13:33:12.804] INFO  (parsl.dataflow.dflow) :: Task 4 submitted for App autodock_vina, waiting on task 3
+[2024-05-25 13:33:12.805] INFO  (parsl.dataflow.dflow) :: Task 5 submitted for App cleanup, waiting on task 4, task 0, task 1, task 2, task 3
+[2024-05-25 13:33:12.805] INFO  (parsl.dataflow.dflow) :: Task 6 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:33:12.805] INFO  (parsl.dataflow.dflow) :: Parsl task 6 try 0 launched on executor htex-local with executor id 2
+[2024-05-25 13:33:12.805] INFO  (parsl.dataflow.dflow) :: Task 7 submitted for App set_element, waiting on task 6
+[2024-05-25 13:33:12.806] INFO  (parsl.dataflow.dflow) :: Task 8 submitted for App pdb_to_pdbqt, waiting on task 7
+[2024-05-25 13:33:12.806] INFO  (parsl.dataflow.dflow) :: Task 9 submitted for App make_autodock_config, waiting on task 8
+[2024-05-25 13:33:12.806] INFO  (parsl.dataflow.dflow) :: Task 10 submitted for App autodock_vina, waiting on task 9
+[2024-05-25 13:33:12.806] INFO  (parsl.dataflow.dflow) :: Task 11 submitted for App cleanup, waiting on task 10, task 6, task 7, task 8, task 9
+[2024-05-25 13:33:12.807] INFO  (parsl.dataflow.dflow) :: Task 12 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:33:12.807] INFO  (parsl.dataflow.dflow) :: Parsl task 12 try 0 launched on executor htex-local with executor id 3
+[2024-05-25 13:33:12.807] INFO  (parsl.dataflow.dflow) :: Task 13 submitted for App set_element, waiting on task 12
+[2024-05-25 13:33:12.807] INFO  (parsl.dataflow.dflow) :: Task 14 submitted for App pdb_to_pdbqt, waiting on task 13
+[2024-05-25 13:33:12.807] INFO  (parsl.dataflow.dflow) :: Task 15 submitted for App make_autodock_config, waiting on task 14
+[2024-05-25 13:33:12.807] INFO  (parsl.dataflow.dflow) :: Task 16 submitted for App autodock_vina, waiting on task 15
+[2024-05-25 13:33:12.808] INFO  (parsl.dataflow.dflow) :: Task 17 submitted for App cleanup, waiting on task 16, task 12, task 13, task 14, task 15
+[2024-05-25 13:33:12.808] INFO  (parsl.dataflow.dflow) :: Task 18 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:33:12.808] INFO  (parsl.dataflow.dflow) :: Parsl task 18 try 0 launched on executor htex-local with executor id 4
+[2024-05-25 13:33:12.808] INFO  (parsl.dataflow.dflow) :: Task 19 submitted for App set_element, waiting on task 18
+[2024-05-25 13:33:12.809] INFO  (parsl.dataflow.dflow) :: Task 20 submitted for App pdb_to_pdbqt, waiting on task 19
+[2024-05-25 13:33:12.809] INFO  (parsl.dataflow.dflow) :: Task 21 submitted for App make_autodock_config, waiting on task 20
+[2024-05-25 13:33:12.809] INFO  (parsl.dataflow.dflow) :: Task 22 submitted for App autodock_vina, waiting on task 21
+[2024-05-25 13:33:12.809] INFO  (parsl.dataflow.dflow) :: Task 23 submitted for App cleanup, waiting on task 22, task 18, task 19, task 20, task 21
+[2024-05-25 13:33:12.809] INFO  (parsl.dataflow.dflow) :: Task 24 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:33:12.810] INFO  (parsl.dataflow.dflow) :: Parsl task 24 try 0 launched on executor htex-local with executor id 5
+[2024-05-25 13:33:12.810] INFO  (parsl.dataflow.dflow) :: Task 25 submitted for App set_element, waiting on task 24
+[2024-05-25 13:33:12.810] INFO  (parsl.dataflow.dflow) :: Task 26 submitted for App pdb_to_pdbqt, waiting on task 25
+[2024-05-25 13:33:12.810] INFO  (parsl.dataflow.dflow) :: Task 27 submitted for App make_autodock_config, waiting on task 26
+[2024-05-25 13:33:12.810] INFO  (parsl.dataflow.dflow) :: Task 28 submitted for App autodock_vina, waiting on task 27
+[2024-05-25 13:33:12.811] INFO  (parsl.dataflow.dflow) :: Task 29 submitted for App cleanup, waiting on task 28, task 24, task 25, task 26, task 27
+[2024-05-25 13:33:15.077] INFO  (parsl.dataflow.dflow) :: Task 12 completed (launched -> exec_done)
+[2024-05-25 13:33:15.079] INFO  (parsl.dataflow.dflow) :: Parsl task 13 try 0 launched on executor htex-local with executor id 6
+[2024-05-25 13:33:15.104] INFO  (parsl.dataflow.dflow) :: Task 0 completed (launched -> exec_done)
+[2024-05-25 13:33:15.105] INFO  (parsl.dataflow.dflow) :: Parsl task 1 try 0 launched on executor htex-local with executor id 7
+[2024-05-25 13:33:15.114] INFO  (parsl.dataflow.dflow) :: Task 6 completed (launched -> exec_done)
+[2024-05-25 13:33:15.115] INFO  (parsl.dataflow.dflow) :: Parsl task 7 try 0 launched on executor htex-local with executor id 8
+[2024-05-25 13:33:15.131] INFO  (parsl.dataflow.dflow) :: Task 24 completed (launched -> exec_done)
+[2024-05-25 13:33:15.131] INFO  (parsl.dataflow.dflow) :: Parsl task 25 try 0 launched on executor htex-local with executor id 9
+[2024-05-25 13:33:15.188] INFO  (parsl.dataflow.dflow) :: Task 18 completed (launched -> exec_done)
+[2024-05-25 13:33:15.188] INFO  (parsl.dataflow.dflow) :: Parsl task 19 try 0 launched on executor htex-local with executor id 10
+[2024-05-25 13:33:16.215] INFO  (parsl.dataflow.dflow) :: Task 13 completed (launched -> exec_done)
+[2024-05-25 13:33:16.216] INFO  (parsl.dataflow.dflow) :: Parsl task 14 try 0 launched on executor htex-local with executor id 11
+[2024-05-25 13:33:16.225] INFO  (parsl.dataflow.dflow) :: Task 1 completed (launched -> exec_done)
+[2024-05-25 13:33:16.225] INFO  (parsl.dataflow.dflow) :: Parsl task 2 try 0 launched on executor htex-local with executor id 12
+[2024-05-25 13:33:16.237] INFO  (parsl.dataflow.dflow) :: Task 7 completed (launched -> exec_done)
+[2024-05-25 13:33:16.237] INFO  (parsl.dataflow.dflow) :: Parsl task 8 try 0 launched on executor htex-local with executor id 13
+[2024-05-25 13:33:16.266] INFO  (parsl.dataflow.dflow) :: Task 25 completed (launched -> exec_done)
+[2024-05-25 13:33:16.266] INFO  (parsl.dataflow.dflow) :: Parsl task 26 try 0 launched on executor htex-local with executor id 14
+[2024-05-25 13:33:16.341] INFO  (parsl.dataflow.dflow) :: Task 19 completed (launched -> exec_done)
+[2024-05-25 13:33:16.341] INFO  (parsl.dataflow.dflow) :: Parsl task 20 try 0 launched on executor htex-local with executor id 15
+[2024-05-25 13:33:17.310] INFO  (parsl.dataflow.dflow) :: Task 14 completed (launched -> exec_done)
+[2024-05-25 13:33:17.312] INFO  (parsl.dataflow.dflow) :: Parsl task 15 try 0 launched on executor htex-local with executor id 16
+[2024-05-25 13:33:17.343] INFO  (parsl.dataflow.dflow) :: Task 2 completed (launched -> exec_done)
+[2024-05-25 13:33:17.344] INFO  (parsl.dataflow.dflow) :: Parsl task 3 try 0 launched on executor htex-local with executor id 17
+[2024-05-25 13:33:17.363] INFO  (parsl.dataflow.dflow) :: Task 26 completed (launched -> exec_done)
+[2024-05-25 13:33:17.363] INFO  (parsl.dataflow.dflow) :: Parsl task 27 try 0 launched on executor htex-local with executor id 18
+[2024-05-25 13:33:17.363] INFO  (parsl.dataflow.dflow) :: Task 8 completed (launched -> exec_done)
+[2024-05-25 13:33:17.364] INFO  (parsl.dataflow.dflow) :: Parsl task 9 try 0 launched on executor htex-local with executor id 19
+[2024-05-25 13:33:17.432] INFO  (parsl.dataflow.dflow) :: Task 20 completed (launched -> exec_done)
+[2024-05-25 13:33:17.432] INFO  (parsl.dataflow.dflow) :: Parsl task 21 try 0 launched on executor htex-local with executor id 20
+[2024-05-25 13:33:18.349] INFO  (parsl.dataflow.dflow) :: Task 15 completed (launched -> exec_done)
+[2024-05-25 13:33:18.351] INFO  (parsl.dataflow.dflow) :: Parsl task 16 try 0 launched on executor htex-local with executor id 21
+[2024-05-25 13:33:18.370] INFO  (parsl.dataflow.dflow) :: Task 3 completed (launched -> exec_done)
+[2024-05-25 13:33:18.371] INFO  (parsl.dataflow.dflow) :: Parsl task 4 try 0 launched on executor htex-local with executor id 22
+[2024-05-25 13:33:18.396] INFO  (parsl.dataflow.dflow) :: Task 9 completed (launched -> exec_done)
+[2024-05-25 13:33:18.397] INFO  (parsl.dataflow.dflow) :: Parsl task 10 try 0 launched on executor htex-local with executor id 23
+[2024-05-25 13:33:18.397] INFO  (parsl.dataflow.dflow) :: Task 27 completed (launched -> exec_done)
+[2024-05-25 13:33:18.397] INFO  (parsl.dataflow.dflow) :: Parsl task 28 try 0 launched on executor htex-local with executor id 24
+[2024-05-25 13:33:18.477] INFO  (parsl.dataflow.dflow) :: Task 21 completed (launched -> exec_done)
+[2024-05-25 13:33:18.478] INFO  (parsl.dataflow.dflow) :: Parsl task 22 try 0 launched on executor htex-local with executor id 25
+[2024-05-25 13:33:32.022] INFO  (parsl.dataflow.dflow) :: Task 28 completed (launched -> exec_done)
+[2024-05-25 13:33:32.023] INFO  (webs.wf.docking.workflow) :: Computation for CC1(C(=O)N(C(=O)O1)C)C succeeded: -4.3
+[2024-05-25 13:33:32.025] INFO  (parsl.dataflow.dflow) :: Parsl task 29 try 0 launched on executor htex-local with executor id 26
+[2024-05-25 13:33:33.031] INFO  (parsl.dataflow.dflow) :: Task 29 completed (launched -> exec_done)
+[2024-05-25 13:34:12.051] INFO  (parsl.dataflow.dflow) :: Task 16 completed (launched -> exec_done)
+[2024-05-25 13:34:12.052] INFO  (webs.wf.docking.workflow) :: Computation for COC(=O)CCC(=O)C[NH3+] succeeded: -4.1
+[2024-05-25 13:34:12.052] INFO  (parsl.dataflow.dflow) :: Parsl task 17 try 0 launched on executor htex-local with executor id 27
+[2024-05-25 13:34:12.975] INFO  (parsl.dataflow.dflow) :: Task 17 completed (launched -> exec_done)
+[2024-05-25 13:34:15.642] INFO  (parsl.dataflow.dflow) :: Task 22 completed (launched -> exec_done)
+[2024-05-25 13:34:15.643] INFO  (webs.wf.docking.workflow) :: Computation for Cc1cc(cc(c1)OC[C@H]2CNC(=O)O2)C succeeded: -6.2
+[2024-05-25 13:34:15.643] INFO  (parsl.dataflow.dflow) :: Parsl task 23 try 0 launched on executor htex-local with executor id 28
+[2024-05-25 13:34:16.665] INFO  (parsl.dataflow.dflow) :: Task 23 completed (launched -> exec_done)
+[2024-05-25 13:35:06.613] INFO  (parsl.dataflow.dflow) :: Task 4 completed (launched -> exec_done)
+[2024-05-25 13:35:06.614] INFO  (webs.wf.docking.workflow) :: Computation for C[NH+](C)CCN(Cc1ccccc1)c2ccccn2 succeeded: -5.5
+[2024-05-25 13:35:06.615] INFO  (parsl.dataflow.dflow) :: Parsl task 5 try 0 launched on executor htex-local with executor id 29
+[2024-05-25 13:35:06.637] INFO  (parsl.dataflow.dflow) :: Task 5 completed (launched -> exec_done)
+[2024-05-25 13:35:34.925] INFO  (parsl.dataflow.dflow) :: Task 10 completed (launched -> exec_done)
+[2024-05-25 13:35:34.926] INFO  (webs.wf.docking.workflow) :: Computation for CC[N@@H+]1CCC[C@H]1CNC(=O)c2c(ccc(c2OC)Br)OC succeeded: -5.8
+[2024-05-25 13:35:34.929] INFO  (webs.wf.docking.workflow) :: 
+Starting batch 0
+[2024-05-25 13:35:34.929] INFO  (parsl.dataflow.dflow) :: Parsl task 11 try 0 launched on executor htex-local with executor id 30
+[2024-05-25 13:35:34.952] INFO  (parsl.dataflow.dflow) :: Task 11 completed (launched -> exec_done)
+[2024-05-25 13:35:35.393] INFO  (parsl.dataflow.dflow) :: Task 30 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.393] INFO  (parsl.dataflow.dflow) :: Parsl task 30 try 0 launched on executor htex-local with executor id 31
+[2024-05-25 13:35:35.394] INFO  (parsl.dataflow.dflow) :: Task 31 submitted for App set_element, waiting on task 30
+[2024-05-25 13:35:35.394] INFO  (parsl.dataflow.dflow) :: Task 32 submitted for App pdb_to_pdbqt, waiting on task 31
+[2024-05-25 13:35:35.394] INFO  (parsl.dataflow.dflow) :: Task 33 submitted for App make_autodock_config, waiting on task 32
+[2024-05-25 13:35:35.395] INFO  (parsl.dataflow.dflow) :: Task 34 submitted for App autodock_vina, waiting on task 33
+[2024-05-25 13:35:35.395] INFO  (parsl.dataflow.dflow) :: Task 35 submitted for App cleanup, waiting on task 34, task 30, task 31, task 32, task 33
+[2024-05-25 13:35:35.395] INFO  (parsl.dataflow.dflow) :: Task 36 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.396] INFO  (parsl.dataflow.dflow) :: Parsl task 36 try 0 launched on executor htex-local with executor id 32
+[2024-05-25 13:35:35.396] INFO  (parsl.dataflow.dflow) :: Task 37 submitted for App set_element, waiting on task 36
+[2024-05-25 13:35:35.396] INFO  (parsl.dataflow.dflow) :: Task 38 submitted for App pdb_to_pdbqt, waiting on task 37
+[2024-05-25 13:35:35.396] INFO  (parsl.dataflow.dflow) :: Task 39 submitted for App make_autodock_config, waiting on task 38
+[2024-05-25 13:35:35.397] INFO  (parsl.dataflow.dflow) :: Task 40 submitted for App autodock_vina, waiting on task 39
+[2024-05-25 13:35:35.397] INFO  (parsl.dataflow.dflow) :: Task 41 submitted for App cleanup, waiting on task 40, task 36, task 37, task 38, task 39
+[2024-05-25 13:35:35.397] INFO  (parsl.dataflow.dflow) :: Task 42 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.398] INFO  (parsl.dataflow.dflow) :: Parsl task 42 try 0 launched on executor htex-local with executor id 33
+[2024-05-25 13:35:35.398] INFO  (parsl.dataflow.dflow) :: Task 43 submitted for App set_element, waiting on task 42
+[2024-05-25 13:35:35.398] INFO  (parsl.dataflow.dflow) :: Task 44 submitted for App pdb_to_pdbqt, waiting on task 43
+[2024-05-25 13:35:35.398] INFO  (parsl.dataflow.dflow) :: Task 45 submitted for App make_autodock_config, waiting on task 44
+[2024-05-25 13:35:35.399] INFO  (parsl.dataflow.dflow) :: Task 46 submitted for App autodock_vina, waiting on task 45
+[2024-05-25 13:35:35.399] INFO  (parsl.dataflow.dflow) :: Task 47 submitted for App cleanup, waiting on task 46, task 42, task 43, task 44, task 45
+[2024-05-25 13:35:35.399] INFO  (parsl.dataflow.dflow) :: Task 48 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.400] INFO  (parsl.dataflow.dflow) :: Parsl task 48 try 0 launched on executor htex-local with executor id 34
+[2024-05-25 13:35:35.400] INFO  (parsl.dataflow.dflow) :: Task 49 submitted for App set_element, waiting on task 48
+[2024-05-25 13:35:35.400] INFO  (parsl.dataflow.dflow) :: Task 50 submitted for App pdb_to_pdbqt, waiting on task 49
+[2024-05-25 13:35:35.401] INFO  (parsl.dataflow.dflow) :: Task 51 submitted for App make_autodock_config, waiting on task 50
+[2024-05-25 13:35:35.401] INFO  (parsl.dataflow.dflow) :: Task 52 submitted for App autodock_vina, waiting on task 51
+[2024-05-25 13:35:35.401] INFO  (parsl.dataflow.dflow) :: Task 53 submitted for App cleanup, waiting on task 52, task 48, task 49, task 50, task 51
+[2024-05-25 13:35:35.401] INFO  (parsl.dataflow.dflow) :: Task 54 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.402] INFO  (parsl.dataflow.dflow) :: Parsl task 54 try 0 launched on executor htex-local with executor id 35
+[2024-05-25 13:35:35.402] INFO  (parsl.dataflow.dflow) :: Task 55 submitted for App set_element, waiting on task 54
+[2024-05-25 13:35:35.402] INFO  (parsl.dataflow.dflow) :: Task 56 submitted for App pdb_to_pdbqt, waiting on task 55
+[2024-05-25 13:35:35.402] INFO  (parsl.dataflow.dflow) :: Task 57 submitted for App make_autodock_config, waiting on task 56
+[2024-05-25 13:35:35.403] INFO  (parsl.dataflow.dflow) :: Task 58 submitted for App autodock_vina, waiting on task 57
+[2024-05-25 13:35:35.403] INFO  (parsl.dataflow.dflow) :: Task 59 submitted for App cleanup, waiting on task 58, task 54, task 55, task 56, task 57
+[2024-05-25 13:35:35.403] INFO  (parsl.dataflow.dflow) :: Task 60 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.404] INFO  (parsl.dataflow.dflow) :: Parsl task 60 try 0 launched on executor htex-local with executor id 36
+[2024-05-25 13:35:35.404] INFO  (parsl.dataflow.dflow) :: Task 61 submitted for App set_element, waiting on task 60
+[2024-05-25 13:35:35.404] INFO  (parsl.dataflow.dflow) :: Task 62 submitted for App pdb_to_pdbqt, waiting on task 61
+[2024-05-25 13:35:35.404] INFO  (parsl.dataflow.dflow) :: Task 63 submitted for App make_autodock_config, waiting on task 62
+[2024-05-25 13:35:35.405] INFO  (parsl.dataflow.dflow) :: Task 64 submitted for App autodock_vina, waiting on task 63
+[2024-05-25 13:35:35.405] INFO  (parsl.dataflow.dflow) :: Task 65 submitted for App cleanup, waiting on task 64, task 60, task 61, task 62, task 63
+[2024-05-25 13:35:35.405] INFO  (parsl.dataflow.dflow) :: Task 66 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.406] INFO  (parsl.dataflow.dflow) :: Parsl task 66 try 0 launched on executor htex-local with executor id 37
+[2024-05-25 13:35:35.406] INFO  (parsl.dataflow.dflow) :: Task 67 submitted for App set_element, waiting on task 66
+[2024-05-25 13:35:35.406] INFO  (parsl.dataflow.dflow) :: Task 68 submitted for App pdb_to_pdbqt, waiting on task 67
+[2024-05-25 13:35:35.406] INFO  (parsl.dataflow.dflow) :: Task 69 submitted for App make_autodock_config, waiting on task 68
+[2024-05-25 13:35:35.407] INFO  (parsl.dataflow.dflow) :: Task 70 submitted for App autodock_vina, waiting on task 69
+[2024-05-25 13:35:35.407] INFO  (parsl.dataflow.dflow) :: Task 71 submitted for App cleanup, waiting on task 70, task 66, task 67, task 68, task 69
+[2024-05-25 13:35:35.407] INFO  (parsl.dataflow.dflow) :: Task 72 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.407] INFO  (parsl.dataflow.dflow) :: Parsl task 72 try 0 launched on executor htex-local with executor id 38
+[2024-05-25 13:35:35.408] INFO  (parsl.dataflow.dflow) :: Task 73 submitted for App set_element, waiting on task 72
+[2024-05-25 13:35:35.408] INFO  (parsl.dataflow.dflow) :: Task 74 submitted for App pdb_to_pdbqt, waiting on task 73
+[2024-05-25 13:35:35.408] INFO  (parsl.dataflow.dflow) :: Task 75 submitted for App make_autodock_config, waiting on task 74
+[2024-05-25 13:35:35.408] INFO  (parsl.dataflow.dflow) :: Task 76 submitted for App autodock_vina, waiting on task 75
+[2024-05-25 13:35:35.409] INFO  (parsl.dataflow.dflow) :: Task 77 submitted for App cleanup, waiting on task 76, task 72, task 73, task 74, task 75
+[2024-05-25 13:35:35.409] INFO  (parsl.dataflow.dflow) :: Task 78 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:35:35.410] INFO  (parsl.dataflow.dflow) :: Parsl task 78 try 0 launched on executor htex-local with executor id 39
+[2024-05-25 13:35:35.410] INFO  (parsl.dataflow.dflow) :: Task 79 submitted for App set_element, waiting on task 78
+[2024-05-25 13:35:35.410] INFO  (parsl.dataflow.dflow) :: Task 80 submitted for App pdb_to_pdbqt, waiting on task 79
+[2024-05-25 13:35:35.410] INFO  (parsl.dataflow.dflow) :: Task 81 submitted for App make_autodock_config, waiting on task 80
+[2024-05-25 13:35:35.411] INFO  (parsl.dataflow.dflow) :: Task 82 submitted for App autodock_vina, waiting on task 81
+[2024-05-25 13:35:35.411] INFO  (parsl.dataflow.dflow) :: Task 83 submitted for App cleanup, waiting on task 82, task 78, task 79, task 80, task 81
+[2024-05-25 13:35:35.598] INFO  (parsl.dataflow.dflow) :: Task 30 completed (launched -> exec_done)
+[2024-05-25 13:35:35.599] INFO  (parsl.dataflow.dflow) :: Parsl task 31 try 0 launched on executor htex-local with executor id 40
+[2024-05-25 13:35:35.626] INFO  (parsl.dataflow.dflow) :: Task 42 completed (launched -> exec_done)
+[2024-05-25 13:35:35.627] INFO  (parsl.dataflow.dflow) :: Parsl task 43 try 0 launched on executor htex-local with executor id 41
+[2024-05-25 13:35:35.636] INFO  (parsl.dataflow.dflow) :: Task 36 completed (launched -> exec_done)
+[2024-05-25 13:35:35.637] INFO  (parsl.dataflow.dflow) :: Parsl task 37 try 0 launched on executor htex-local with executor id 42
+[2024-05-25 13:35:36.583] INFO  (parsl.dataflow.dflow) :: Task 48 completed (launched -> exec_done)
+[2024-05-25 13:35:36.583] INFO  (parsl.dataflow.dflow) :: Parsl task 49 try 0 launched on executor htex-local with executor id 43
+[2024-05-25 13:35:36.629] INFO  (parsl.dataflow.dflow) :: Task 66 completed (launched -> exec_done)
+[2024-05-25 13:35:36.630] INFO  (parsl.dataflow.dflow) :: Parsl task 67 try 0 launched on executor htex-local with executor id 44
+[2024-05-25 13:35:36.651] INFO  (parsl.dataflow.dflow) :: Task 72 completed (launched -> exec_done)
+[2024-05-25 13:35:36.651] INFO  (parsl.dataflow.dflow) :: Parsl task 73 try 0 launched on executor htex-local with executor id 45
+[2024-05-25 13:35:36.737] INFO  (parsl.dataflow.dflow) :: Task 54 completed (launched -> exec_done)
+[2024-05-25 13:35:36.737] INFO  (parsl.dataflow.dflow) :: Parsl task 55 try 0 launched on executor htex-local with executor id 46
+[2024-05-25 13:35:36.737] INFO  (parsl.dataflow.dflow) :: Task 78 completed (launched -> exec_done)
+[2024-05-25 13:35:36.737] INFO  (parsl.dataflow.dflow) :: Parsl task 79 try 0 launched on executor htex-local with executor id 47
+[2024-05-25 13:35:36.738] INFO  (parsl.dataflow.dflow) :: Task 31 completed (launched -> exec_done)
+[2024-05-25 13:35:36.738] INFO  (parsl.dataflow.dflow) :: Parsl task 32 try 0 launched on executor htex-local with executor id 48
+[2024-05-25 13:35:36.782] INFO  (parsl.dataflow.dflow) :: Task 43 completed (launched -> exec_done)
+[2024-05-25 13:35:36.782] INFO  (parsl.dataflow.dflow) :: Parsl task 44 try 0 launched on executor htex-local with executor id 49
+[2024-05-25 13:35:36.783] INFO  (parsl.dataflow.dflow) :: Task 37 completed (launched -> exec_done)
+[2024-05-25 13:35:36.783] INFO  (parsl.dataflow.dflow) :: Parsl task 38 try 0 launched on executor htex-local with executor id 50
+[2024-05-25 13:35:36.806] INFO  (parsl.dataflow.dflow) :: Task 60 completed (launched -> exec_done)
+[2024-05-25 13:35:36.806] INFO  (parsl.dataflow.dflow) :: Parsl task 61 try 0 launched on executor htex-local with executor id 51
+[2024-05-25 13:35:37.740] INFO  (parsl.dataflow.dflow) :: Task 49 completed (launched -> exec_done)
+[2024-05-25 13:35:37.740] INFO  (parsl.dataflow.dflow) :: Parsl task 50 try 0 launched on executor htex-local with executor id 52
+[2024-05-25 13:35:37.782] INFO  (parsl.dataflow.dflow) :: Task 67 completed (launched -> exec_done)
+[2024-05-25 13:35:37.782] INFO  (parsl.dataflow.dflow) :: Parsl task 68 try 0 launched on executor htex-local with executor id 53
+[2024-05-25 13:35:37.803] INFO  (parsl.dataflow.dflow) :: Task 73 completed (launched -> exec_done)
+[2024-05-25 13:35:37.804] INFO  (parsl.dataflow.dflow) :: Parsl task 74 try 0 launched on executor htex-local with executor id 54
+[2024-05-25 13:35:37.838] INFO  (parsl.dataflow.dflow) :: Task 32 completed (launched -> exec_done)
+[2024-05-25 13:35:37.839] INFO  (parsl.dataflow.dflow) :: Parsl task 33 try 0 launched on executor htex-local with executor id 55
+[2024-05-25 13:35:37.888] INFO  (parsl.dataflow.dflow) :: Task 38 completed (launched -> exec_done)
+[2024-05-25 13:35:37.888] INFO  (parsl.dataflow.dflow) :: Parsl task 39 try 0 launched on executor htex-local with executor id 56
+[2024-05-25 13:35:37.898] INFO  (parsl.dataflow.dflow) :: Task 55 completed (launched -> exec_done)
+[2024-05-25 13:35:37.898] INFO  (parsl.dataflow.dflow) :: Parsl task 56 try 0 launched on executor htex-local with executor id 57
+[2024-05-25 13:35:37.911] INFO  (parsl.dataflow.dflow) :: Task 79 completed (launched -> exec_done)
+[2024-05-25 13:35:37.912] INFO  (parsl.dataflow.dflow) :: Parsl task 80 try 0 launched on executor htex-local with executor id 58
+[2024-05-25 13:35:37.963] INFO  (parsl.dataflow.dflow) :: Task 61 completed (launched -> exec_done)
+[2024-05-25 13:35:37.963] INFO  (parsl.dataflow.dflow) :: Parsl task 62 try 0 launched on executor htex-local with executor id 59
+[2024-05-25 13:35:37.977] INFO  (parsl.dataflow.dflow) :: Task 44 completed (launched -> exec_done)
+[2024-05-25 13:35:37.977] INFO  (parsl.dataflow.dflow) :: Parsl task 45 try 0 launched on executor htex-local with executor id 60
+[2024-05-25 13:35:38.913] INFO  (parsl.dataflow.dflow) :: Task 33 completed (launched -> exec_done)
+[2024-05-25 13:35:38.914] INFO  (parsl.dataflow.dflow) :: Parsl task 34 try 0 launched on executor htex-local with executor id 61
+[2024-05-25 13:35:38.914] INFO  (parsl.dataflow.dflow) :: Task 50 completed (launched -> exec_done)
+[2024-05-25 13:35:38.914] INFO  (parsl.dataflow.dflow) :: Parsl task 51 try 0 launched on executor htex-local with executor id 62
+[2024-05-25 13:35:38.935] INFO  (parsl.dataflow.dflow) :: Task 68 completed (launched -> exec_done)
+[2024-05-25 13:35:38.936] INFO  (parsl.dataflow.dflow) :: Parsl task 69 try 0 launched on executor htex-local with executor id 63
+[2024-05-25 13:35:38.936] INFO  (parsl.dataflow.dflow) :: Task 74 completed (launched -> exec_done)
+[2024-05-25 13:35:38.936] INFO  (parsl.dataflow.dflow) :: Parsl task 75 try 0 launched on executor htex-local with executor id 64
+[2024-05-25 13:35:38.949] INFO  (parsl.dataflow.dflow) :: Task 39 completed (launched -> exec_done)
+[2024-05-25 13:35:38.949] INFO  (parsl.dataflow.dflow) :: Parsl task 40 try 0 launched on executor htex-local with executor id 65
+[2024-05-25 13:35:39.067] INFO  (parsl.dataflow.dflow) :: Task 56 completed (launched -> exec_done)
+[2024-05-25 13:35:39.067] INFO  (parsl.dataflow.dflow) :: Parsl task 57 try 0 launched on executor htex-local with executor id 66
+[2024-05-25 13:35:39.089] INFO  (parsl.dataflow.dflow) :: Task 45 completed (launched -> exec_done)
+[2024-05-25 13:35:39.089] INFO  (parsl.dataflow.dflow) :: Parsl task 46 try 0 launched on executor htex-local with executor id 67
+[2024-05-25 13:35:39.109] INFO  (parsl.dataflow.dflow) :: Task 80 completed (launched -> exec_done)
+[2024-05-25 13:35:39.110] INFO  (parsl.dataflow.dflow) :: Parsl task 81 try 0 launched on executor htex-local with executor id 68
+[2024-05-25 13:35:39.173] INFO  (parsl.dataflow.dflow) :: Task 62 completed (launched -> exec_done)
+[2024-05-25 13:35:39.174] INFO  (parsl.dataflow.dflow) :: Parsl task 63 try 0 launched on executor htex-local with executor id 69
+[2024-05-25 13:35:39.934] INFO  (parsl.dataflow.dflow) :: Task 75 completed (launched -> exec_done)
+[2024-05-25 13:35:39.935] INFO  (parsl.dataflow.dflow) :: Parsl task 76 try 0 launched on executor htex-local with executor id 70
+[2024-05-25 13:35:39.955] INFO  (parsl.dataflow.dflow) :: Task 69 completed (launched -> exec_done)
+[2024-05-25 13:35:39.956] INFO  (parsl.dataflow.dflow) :: Parsl task 70 try 0 launched on executor htex-local with executor id 71
+[2024-05-25 13:35:40.018] INFO  (parsl.dataflow.dflow) :: Task 51 completed (launched -> exec_done)
+[2024-05-25 13:35:40.018] INFO  (parsl.dataflow.dflow) :: Parsl task 52 try 0 launched on executor htex-local with executor id 72
+[2024-05-25 13:35:40.092] INFO  (parsl.dataflow.dflow) :: Task 57 completed (launched -> exec_done)
+[2024-05-25 13:35:40.092] INFO  (parsl.dataflow.dflow) :: Parsl task 58 try 0 launched on executor htex-local with executor id 73
+[2024-05-25 13:35:40.150] INFO  (parsl.dataflow.dflow) :: Task 81 completed (launched -> exec_done)
+[2024-05-25 13:35:40.150] INFO  (parsl.dataflow.dflow) :: Parsl task 82 try 0 launched on executor htex-local with executor id 74
+[2024-05-25 13:35:40.282] INFO  (parsl.dataflow.dflow) :: Task 63 completed (launched -> exec_done)
+[2024-05-25 13:35:40.283] INFO  (parsl.dataflow.dflow) :: Parsl task 64 try 0 launched on executor htex-local with executor id 75
+[2024-05-25 13:36:33.409] INFO  (parsl.dataflow.dflow) :: Task 46 completed (launched -> exec_done)
+[2024-05-25 13:36:33.410] INFO  (webs.wf.docking.workflow) :: Computation for C[NH2+][C@@H]1CCc2c(c3cc(ccc3[nH]2)C(=O)N)C1 succeeded: -5.7
+[2024-05-25 13:36:33.411] INFO  (parsl.dataflow.dflow) :: Parsl task 47 try 0 launched on executor htex-local with executor id 76
+[2024-05-25 13:36:33.433] INFO  (parsl.dataflow.dflow) :: Task 47 completed (launched -> exec_done)
+[2024-05-25 13:36:36.137] INFO  (parsl.dataflow.dflow) :: Task 34 completed (launched -> exec_done)
+[2024-05-25 13:36:36.138] INFO  (webs.wf.docking.workflow) :: Computation for Cc1cc(cc(c1)OC[C@@H]2CNC(=O)O2)C succeeded: -6.1
+[2024-05-25 13:36:36.139] INFO  (parsl.dataflow.dflow) :: Parsl task 35 try 0 launched on executor htex-local with executor id 77
+[2024-05-25 13:36:36.160] INFO  (parsl.dataflow.dflow) :: Task 35 completed (launched -> exec_done)
+[2024-05-25 13:36:39.673] INFO  (parsl.dataflow.dflow) :: Task 70 completed (launched -> exec_done)
+[2024-05-25 13:36:39.674] INFO  (webs.wf.docking.workflow) :: Computation for CC[C@@]1(CCC(=O)NC1=O)c2ccc(cc2)N succeeded: -5.3
+[2024-05-25 13:36:39.675] INFO  (parsl.dataflow.dflow) :: Parsl task 71 try 0 launched on executor htex-local with executor id 78
+[2024-05-25 13:36:39.697] INFO  (parsl.dataflow.dflow) :: Task 71 completed (launched -> exec_done)
+[2024-05-25 13:36:41.813] INFO  (parsl.dataflow.dflow) :: Task 76 completed (launched -> exec_done)
+[2024-05-25 13:36:41.814] INFO  (webs.wf.docking.workflow) :: Computation for CC[C@]1(CCC(=O)NC1=O)c2ccc(cc2)N succeeded: -5.4
+[2024-05-25 13:36:41.814] INFO  (parsl.dataflow.dflow) :: Parsl task 77 try 0 launched on executor htex-local with executor id 79
+[2024-05-25 13:36:41.835] INFO  (parsl.dataflow.dflow) :: Task 77 completed (launched -> exec_done)
+[2024-05-25 13:36:50.311] INFO  (parsl.dataflow.dflow) :: Task 52 completed (launched -> exec_done)
+[2024-05-25 13:36:50.312] INFO  (webs.wf.docking.workflow) :: Computation for c1ccnc(c1)NS(=O)(=O)c2ccc(cc2)N succeeded: -5.9
+[2024-05-25 13:36:50.313] INFO  (parsl.dataflow.dflow) :: Parsl task 53 try 0 launched on executor htex-local with executor id 80
+[2024-05-25 13:36:50.334] INFO  (parsl.dataflow.dflow) :: Task 53 completed (launched -> exec_done)
+[2024-05-25 13:37:54.156] INFO  (parsl.dataflow.dflow) :: Task 40 completed (launched -> exec_done)
+[2024-05-25 13:37:54.157] INFO  (webs.wf.docking.workflow) :: Computation for CC[N@H+]1CCC[C@H]1CNC(=O)c2c(ccc(c2OC)Br)OC succeeded: -5.6
+[2024-05-25 13:37:54.158] INFO  (parsl.dataflow.dflow) :: Parsl task 41 try 0 launched on executor htex-local with executor id 81
+[2024-05-25 13:37:54.179] INFO  (parsl.dataflow.dflow) :: Task 41 completed (launched -> exec_done)
+[2024-05-25 13:38:51.645] INFO  (parsl.dataflow.dflow) :: Task 82 completed (launched -> exec_done)
+[2024-05-25 13:38:51.646] INFO  (webs.wf.docking.workflow) :: Computation for COc1cc2c(cc1OC)nc(nc2N)N3CCN(CC3)C(=O)c4ccco4 succeeded: 0.5
+[2024-05-25 13:38:51.647] INFO  (parsl.dataflow.dflow) :: Parsl task 83 try 0 launched on executor htex-local with executor id 82
+[2024-05-25 13:38:51.668] INFO  (parsl.dataflow.dflow) :: Task 83 completed (launched -> exec_done)
+[2024-05-25 13:39:53.600] INFO  (parsl.dataflow.dflow) :: Task 58 completed (launched -> exec_done)
+[2024-05-25 13:39:53.601] INFO  (webs.wf.docking.workflow) :: Computation for COc1cc2c(cc1OC)nc(nc2N)N3CCN(CC3)C(=O)[C@@H]4COc5ccccc5O4 succeeded: -5.3
+[2024-05-25 13:39:53.601] INFO  (parsl.dataflow.dflow) :: Parsl task 59 try 0 launched on executor htex-local with executor id 83
+[2024-05-25 13:39:53.623] INFO  (parsl.dataflow.dflow) :: Task 59 completed (launched -> exec_done)
+[2024-05-25 13:40:12.290] INFO  (parsl.dataflow.dflow) :: Task 64 completed (launched -> exec_done)
+[2024-05-25 13:40:12.292] INFO  (webs.wf.docking.workflow) :: Computation for COc1cc2c(cc1OC)nc(nc2N)N3CCN(CC3)C(=O)[C@H]4COc5ccccc5O4 succeeded: -6.4
+[2024-05-25 13:40:12.296] INFO  (webs.wf.docking.workflow) :: 
+Starting batch 1
+[2024-05-25 13:40:12.296] INFO  (parsl.dataflow.dflow) :: Parsl task 65 try 0 launched on executor htex-local with executor id 84
+[2024-05-25 13:40:12.321] INFO  (parsl.dataflow.dflow) :: Task 65 completed (launched -> exec_done)
+[2024-05-25 13:40:12.581] INFO  (parsl.dataflow.dflow) :: Task 84 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.581] INFO  (parsl.dataflow.dflow) :: Parsl task 84 try 0 launched on executor htex-local with executor id 85
+[2024-05-25 13:40:12.582] INFO  (parsl.dataflow.dflow) :: Task 85 submitted for App set_element, waiting on task 84
+[2024-05-25 13:40:12.582] INFO  (parsl.dataflow.dflow) :: Task 86 submitted for App pdb_to_pdbqt, waiting on task 85
+[2024-05-25 13:40:12.582] INFO  (parsl.dataflow.dflow) :: Task 87 submitted for App make_autodock_config, waiting on task 86
+[2024-05-25 13:40:12.583] INFO  (parsl.dataflow.dflow) :: Task 88 submitted for App autodock_vina, waiting on task 87
+[2024-05-25 13:40:12.583] INFO  (parsl.dataflow.dflow) :: Task 89 submitted for App cleanup, waiting on task 88, task 84, task 85, task 86, task 87
+[2024-05-25 13:40:12.583] INFO  (parsl.dataflow.dflow) :: Task 90 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.584] INFO  (parsl.dataflow.dflow) :: Parsl task 90 try 0 launched on executor htex-local with executor id 86
+[2024-05-25 13:40:12.584] INFO  (parsl.dataflow.dflow) :: Task 91 submitted for App set_element, waiting on task 90
+[2024-05-25 13:40:12.584] INFO  (parsl.dataflow.dflow) :: Task 92 submitted for App pdb_to_pdbqt, waiting on task 91
+[2024-05-25 13:40:12.584] INFO  (parsl.dataflow.dflow) :: Task 93 submitted for App make_autodock_config, waiting on task 92
+[2024-05-25 13:40:12.585] INFO  (parsl.dataflow.dflow) :: Task 94 submitted for App autodock_vina, waiting on task 93
+[2024-05-25 13:40:12.585] INFO  (parsl.dataflow.dflow) :: Task 95 submitted for App cleanup, waiting on task 94, task 90, task 91, task 92, task 93
+[2024-05-25 13:40:12.585] INFO  (parsl.dataflow.dflow) :: Task 96 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.586] INFO  (parsl.dataflow.dflow) :: Parsl task 96 try 0 launched on executor htex-local with executor id 87
+[2024-05-25 13:40:12.586] INFO  (parsl.dataflow.dflow) :: Task 97 submitted for App set_element, waiting on task 96
+[2024-05-25 13:40:12.586] INFO  (parsl.dataflow.dflow) :: Task 98 submitted for App pdb_to_pdbqt, waiting on task 97
+[2024-05-25 13:40:12.586] INFO  (parsl.dataflow.dflow) :: Task 99 submitted for App make_autodock_config, waiting on task 98
+[2024-05-25 13:40:12.587] INFO  (parsl.dataflow.dflow) :: Task 100 submitted for App autodock_vina, waiting on task 99
+[2024-05-25 13:40:12.587] INFO  (parsl.dataflow.dflow) :: Task 101 submitted for App cleanup, waiting on task 100, task 96, task 97, task 98, task 99
+[2024-05-25 13:40:12.587] INFO  (parsl.dataflow.dflow) :: Task 102 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.588] INFO  (parsl.dataflow.dflow) :: Parsl task 102 try 0 launched on executor htex-local with executor id 88
+[2024-05-25 13:40:12.588] INFO  (parsl.dataflow.dflow) :: Task 103 submitted for App set_element, waiting on task 102
+[2024-05-25 13:40:12.588] INFO  (parsl.dataflow.dflow) :: Task 104 submitted for App pdb_to_pdbqt, waiting on task 103
+[2024-05-25 13:40:12.588] INFO  (parsl.dataflow.dflow) :: Task 105 submitted for App make_autodock_config, waiting on task 104
+[2024-05-25 13:40:12.589] INFO  (parsl.dataflow.dflow) :: Task 106 submitted for App autodock_vina, waiting on task 105
+[2024-05-25 13:40:12.589] INFO  (parsl.dataflow.dflow) :: Task 107 submitted for App cleanup, waiting on task 106, task 102, task 103, task 104, task 105
+[2024-05-25 13:40:12.589] INFO  (parsl.dataflow.dflow) :: Task 108 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.590] INFO  (parsl.dataflow.dflow) :: Parsl task 108 try 0 launched on executor htex-local with executor id 89
+[2024-05-25 13:40:12.590] INFO  (parsl.dataflow.dflow) :: Task 109 submitted for App set_element, waiting on task 108
+[2024-05-25 13:40:12.590] INFO  (parsl.dataflow.dflow) :: Task 110 submitted for App pdb_to_pdbqt, waiting on task 109
+[2024-05-25 13:40:12.590] INFO  (parsl.dataflow.dflow) :: Task 111 submitted for App make_autodock_config, waiting on task 110
+[2024-05-25 13:40:12.591] INFO  (parsl.dataflow.dflow) :: Task 112 submitted for App autodock_vina, waiting on task 111
+[2024-05-25 13:40:12.591] INFO  (parsl.dataflow.dflow) :: Task 113 submitted for App cleanup, waiting on task 112, task 108, task 109, task 110, task 111
+[2024-05-25 13:40:12.591] INFO  (parsl.dataflow.dflow) :: Task 114 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.591] INFO  (parsl.dataflow.dflow) :: Parsl task 114 try 0 launched on executor htex-local with executor id 90
+[2024-05-25 13:40:12.592] INFO  (parsl.dataflow.dflow) :: Task 115 submitted for App set_element, waiting on task 114
+[2024-05-25 13:40:12.592] INFO  (parsl.dataflow.dflow) :: Task 116 submitted for App pdb_to_pdbqt, waiting on task 115
+[2024-05-25 13:40:12.592] INFO  (parsl.dataflow.dflow) :: Task 117 submitted for App make_autodock_config, waiting on task 116
+[2024-05-25 13:40:12.593] INFO  (parsl.dataflow.dflow) :: Task 118 submitted for App autodock_vina, waiting on task 117
+[2024-05-25 13:40:12.593] INFO  (parsl.dataflow.dflow) :: Task 119 submitted for App cleanup, waiting on task 118, task 114, task 115, task 116, task 117
+[2024-05-25 13:40:12.593] INFO  (parsl.dataflow.dflow) :: Task 120 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.594] INFO  (parsl.dataflow.dflow) :: Parsl task 120 try 0 launched on executor htex-local with executor id 91
+[2024-05-25 13:40:12.594] INFO  (parsl.dataflow.dflow) :: Task 121 submitted for App set_element, waiting on task 120
+[2024-05-25 13:40:12.595] INFO  (parsl.dataflow.dflow) :: Task 122 submitted for App pdb_to_pdbqt, waiting on task 121
+[2024-05-25 13:40:12.595] INFO  (parsl.dataflow.dflow) :: Task 123 submitted for App make_autodock_config, waiting on task 122
+[2024-05-25 13:40:12.595] INFO  (parsl.dataflow.dflow) :: Task 124 submitted for App autodock_vina, waiting on task 123
+[2024-05-25 13:40:12.595] INFO  (parsl.dataflow.dflow) :: Task 125 submitted for App cleanup, waiting on task 124, task 120, task 121, task 122, task 123
+[2024-05-25 13:40:12.596] INFO  (parsl.dataflow.dflow) :: Task 126 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.596] INFO  (parsl.dataflow.dflow) :: Parsl task 126 try 0 launched on executor htex-local with executor id 92
+[2024-05-25 13:40:12.596] INFO  (parsl.dataflow.dflow) :: Task 127 submitted for App set_element, waiting on task 126
+[2024-05-25 13:40:12.597] INFO  (parsl.dataflow.dflow) :: Task 128 submitted for App pdb_to_pdbqt, waiting on task 127
+[2024-05-25 13:40:12.597] INFO  (parsl.dataflow.dflow) :: Task 129 submitted for App make_autodock_config, waiting on task 128
+[2024-05-25 13:40:12.597] INFO  (parsl.dataflow.dflow) :: Task 130 submitted for App autodock_vina, waiting on task 129
+[2024-05-25 13:40:12.597] INFO  (parsl.dataflow.dflow) :: Task 131 submitted for App cleanup, waiting on task 130, task 126, task 127, task 128, task 129
+[2024-05-25 13:40:12.598] INFO  (parsl.dataflow.dflow) :: Task 132 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:40:12.598] INFO  (parsl.dataflow.dflow) :: Parsl task 132 try 0 launched on executor htex-local with executor id 93
+[2024-05-25 13:40:12.598] INFO  (parsl.dataflow.dflow) :: Task 133 submitted for App set_element, waiting on task 132
+[2024-05-25 13:40:12.598] INFO  (parsl.dataflow.dflow) :: Task 134 submitted for App pdb_to_pdbqt, waiting on task 133
+[2024-05-25 13:40:12.599] INFO  (parsl.dataflow.dflow) :: Task 135 submitted for App make_autodock_config, waiting on task 134
+[2024-05-25 13:40:12.599] INFO  (parsl.dataflow.dflow) :: Task 136 submitted for App autodock_vina, waiting on task 135
+[2024-05-25 13:40:12.599] INFO  (parsl.dataflow.dflow) :: Task 137 submitted for App cleanup, waiting on task 136, task 132, task 133, task 134, task 135
+[2024-05-25 13:40:12.787] INFO  (parsl.dataflow.dflow) :: Task 132 completed (launched -> exec_done)
+[2024-05-25 13:40:12.787] INFO  (parsl.dataflow.dflow) :: Parsl task 133 try 0 launched on executor htex-local with executor id 94
+[2024-05-25 13:40:12.804] INFO  (parsl.dataflow.dflow) :: Task 90 completed (launched -> exec_done)
+[2024-05-25 13:40:12.805] INFO  (parsl.dataflow.dflow) :: Parsl task 91 try 0 launched on executor htex-local with executor id 95
+[2024-05-25 13:40:12.833] INFO  (parsl.dataflow.dflow) :: Task 114 completed (launched -> exec_done)
+[2024-05-25 13:40:12.833] INFO  (parsl.dataflow.dflow) :: Parsl task 115 try 0 launched on executor htex-local with executor id 96
+[2024-05-25 13:40:12.834] INFO  (parsl.dataflow.dflow) :: Task 102 completed (launched -> exec_done)
+[2024-05-25 13:40:12.834] INFO  (parsl.dataflow.dflow) :: Parsl task 103 try 0 launched on executor htex-local with executor id 97
+[2024-05-25 13:40:12.834] INFO  (parsl.dataflow.dflow) :: Task 126 completed (launched -> exec_done)
+[2024-05-25 13:40:12.834] INFO  (parsl.dataflow.dflow) :: Parsl task 127 try 0 launched on executor htex-local with executor id 98
+[2024-05-25 13:40:12.843] INFO  (parsl.dataflow.dflow) :: Task 108 completed (launched -> exec_done)
+[2024-05-25 13:40:12.844] INFO  (parsl.dataflow.dflow) :: Parsl task 109 try 0 launched on executor htex-local with executor id 99
+[2024-05-25 13:40:12.844] INFO  (parsl.dataflow.dflow) :: Task 120 completed (launched -> exec_done)
+[2024-05-25 13:40:12.845] INFO  (parsl.dataflow.dflow) :: Parsl task 121 try 0 launched on executor htex-local with executor id 100
+[2024-05-25 13:40:12.886] INFO  (parsl.dataflow.dflow) :: Task 84 completed (launched -> exec_done)
+[2024-05-25 13:40:12.887] INFO  (parsl.dataflow.dflow) :: Parsl task 85 try 0 launched on executor htex-local with executor id 101
+[2024-05-25 13:40:12.931] INFO  (parsl.dataflow.dflow) :: Task 96 completed (launched -> exec_done)
+[2024-05-25 13:40:12.932] INFO  (parsl.dataflow.dflow) :: Parsl task 97 try 0 launched on executor htex-local with executor id 102
+[2024-05-25 13:40:12.932] INFO  (parsl.dataflow.dflow) :: Task 133 completed (launched -> exec_done)
+[2024-05-25 13:40:12.933] INFO  (parsl.dataflow.dflow) :: Parsl task 134 try 0 launched on executor htex-local with executor id 103
+[2024-05-25 13:40:12.954] INFO  (parsl.dataflow.dflow) :: Task 91 completed (launched -> exec_done)
+[2024-05-25 13:40:12.955] INFO  (parsl.dataflow.dflow) :: Parsl task 92 try 0 launched on executor htex-local with executor id 104
+[2024-05-25 13:40:12.985] INFO  (parsl.dataflow.dflow) :: Task 127 completed (launched -> exec_done)
+[2024-05-25 13:40:12.985] INFO  (parsl.dataflow.dflow) :: Parsl task 128 try 0 launched on executor htex-local with executor id 105
+[2024-05-25 13:40:12.986] INFO  (parsl.dataflow.dflow) :: Task 115 completed (launched -> exec_done)
+[2024-05-25 13:40:12.986] INFO  (parsl.dataflow.dflow) :: Parsl task 116 try 0 launched on executor htex-local with executor id 106
+[2024-05-25 13:40:13.001] INFO  (parsl.dataflow.dflow) :: Task 103 completed (launched -> exec_done)
+[2024-05-25 13:40:13.001] INFO  (parsl.dataflow.dflow) :: Parsl task 104 try 0 launched on executor htex-local with executor id 107
+[2024-05-25 13:40:13.001] INFO  (parsl.dataflow.dflow) :: Task 121 completed (launched -> exec_done)
+[2024-05-25 13:40:13.002] INFO  (parsl.dataflow.dflow) :: Parsl task 122 try 0 launched on executor htex-local with executor id 108
+[2024-05-25 13:40:13.002] INFO  (parsl.dataflow.dflow) :: Task 109 completed (launched -> exec_done)
+[2024-05-25 13:40:13.002] INFO  (parsl.dataflow.dflow) :: Parsl task 110 try 0 launched on executor htex-local with executor id 109
+[2024-05-25 13:40:13.034] INFO  (parsl.dataflow.dflow) :: Task 85 completed (launched -> exec_done)
+[2024-05-25 13:40:13.034] INFO  (parsl.dataflow.dflow) :: Parsl task 86 try 0 launched on executor htex-local with executor id 110
+[2024-05-25 13:40:13.035] INFO  (parsl.dataflow.dflow) :: Task 134 completed (launched -> exec_done)
+[2024-05-25 13:40:13.035] INFO  (parsl.dataflow.dflow) :: Parsl task 135 try 0 launched on executor htex-local with executor id 111
+[2024-05-25 13:40:13.057] INFO  (parsl.dataflow.dflow) :: Task 135 completed (launched -> exec_done)
+[2024-05-25 13:40:13.058] INFO  (parsl.dataflow.dflow) :: Parsl task 136 try 0 launched on executor htex-local with executor id 112
+[2024-05-25 13:40:13.077] INFO  (parsl.dataflow.dflow) :: Task 92 completed (launched -> exec_done)
+[2024-05-25 13:40:13.077] INFO  (parsl.dataflow.dflow) :: Parsl task 93 try 0 launched on executor htex-local with executor id 113
+[2024-05-25 13:40:13.090] INFO  (parsl.dataflow.dflow) :: Task 97 completed (launched -> exec_done)
+[2024-05-25 13:40:13.091] INFO  (parsl.dataflow.dflow) :: Parsl task 98 try 0 launched on executor htex-local with executor id 114
+[2024-05-25 13:40:13.091] INFO  (parsl.dataflow.dflow) :: Task 93 completed (launched -> exec_done)
+[2024-05-25 13:40:13.091] INFO  (parsl.dataflow.dflow) :: Parsl task 94 try 0 launched on executor htex-local with executor id 115
+[2024-05-25 13:40:13.107] INFO  (parsl.dataflow.dflow) :: Task 116 completed (launched -> exec_done)
+[2024-05-25 13:40:13.107] INFO  (parsl.dataflow.dflow) :: Parsl task 117 try 0 launched on executor htex-local with executor id 116
+[2024-05-25 13:40:13.107] INFO  (parsl.dataflow.dflow) :: Task 128 completed (launched -> exec_done)
+[2024-05-25 13:40:13.108] INFO  (parsl.dataflow.dflow) :: Parsl task 129 try 0 launched on executor htex-local with executor id 117
+[2024-05-25 13:40:13.119] INFO  (parsl.dataflow.dflow) :: Task 122 completed (launched -> exec_done)
+[2024-05-25 13:40:13.120] INFO  (parsl.dataflow.dflow) :: Parsl task 123 try 0 launched on executor htex-local with executor id 118
+[2024-05-25 13:40:13.120] INFO  (parsl.dataflow.dflow) :: Task 110 completed (launched -> exec_done)
+[2024-05-25 13:40:13.121] INFO  (parsl.dataflow.dflow) :: Parsl task 111 try 0 launched on executor htex-local with executor id 119
+[2024-05-25 13:40:13.121] INFO  (parsl.dataflow.dflow) :: Task 117 completed (launched -> exec_done)
+[2024-05-25 13:40:13.121] INFO  (parsl.dataflow.dflow) :: Parsl task 118 try 0 launched on executor htex-local with executor id 120
+[2024-05-25 13:40:13.132] INFO  (parsl.dataflow.dflow) :: Task 129 completed (launched -> exec_done)
+[2024-05-25 13:40:13.132] INFO  (parsl.dataflow.dflow) :: Parsl task 130 try 0 launched on executor htex-local with executor id 121
+[2024-05-25 13:40:13.133] INFO  (parsl.dataflow.dflow) :: Task 104 completed (launched -> exec_done)
+[2024-05-25 13:40:13.133] INFO  (parsl.dataflow.dflow) :: Parsl task 105 try 0 launched on executor htex-local with executor id 122
+[2024-05-25 13:40:13.133] INFO  (parsl.dataflow.dflow) :: Task 123 completed (launched -> exec_done)
+[2024-05-25 13:40:13.134] INFO  (parsl.dataflow.dflow) :: Parsl task 124 try 0 launched on executor htex-local with executor id 123
+[2024-05-25 13:40:13.144] INFO  (parsl.dataflow.dflow) :: Task 111 completed (launched -> exec_done)
+[2024-05-25 13:40:13.144] INFO  (parsl.dataflow.dflow) :: Parsl task 112 try 0 launched on executor htex-local with executor id 124
+[2024-05-25 13:40:13.165] INFO  (parsl.dataflow.dflow) :: Task 105 completed (launched -> exec_done)
+[2024-05-25 13:40:13.167] INFO  (parsl.dataflow.dflow) :: Parsl task 106 try 0 launched on executor htex-local with executor id 125
+[2024-05-25 13:40:13.167] INFO  (parsl.dataflow.dflow) :: Task 86 completed (launched -> exec_done)
+[2024-05-25 13:40:13.168] INFO  (parsl.dataflow.dflow) :: Parsl task 87 try 0 launched on executor htex-local with executor id 126
+[2024-05-25 13:40:13.183] INFO  (parsl.dataflow.dflow) :: Task 87 completed (launched -> exec_done)
+[2024-05-25 13:40:13.183] INFO  (parsl.dataflow.dflow) :: Parsl task 88 try 0 launched on executor htex-local with executor id 127
+[2024-05-25 13:40:13.224] INFO  (parsl.dataflow.dflow) :: Task 98 completed (launched -> exec_done)
+[2024-05-25 13:40:13.225] INFO  (parsl.dataflow.dflow) :: Parsl task 99 try 0 launched on executor htex-local with executor id 128
+[2024-05-25 13:40:13.248] INFO  (parsl.dataflow.dflow) :: Task 99 completed (launched -> exec_done)
+[2024-05-25 13:40:13.248] INFO  (parsl.dataflow.dflow) :: Parsl task 100 try 0 launched on executor htex-local with executor id 129
+[2024-05-25 13:40:26.879] INFO  (parsl.dataflow.dflow) :: Task 136 completed (launched -> exec_done)
+[2024-05-25 13:40:26.880] INFO  (webs.wf.docking.workflow) :: Computation for c1[nH]c2c(n1)[nH]cnc2=S succeeded: -4.5
+[2024-05-25 13:40:26.881] INFO  (parsl.dataflow.dflow) :: Parsl task 137 try 0 launched on executor htex-local with executor id 130
+[2024-05-25 13:40:26.902] INFO  (parsl.dataflow.dflow) :: Task 137 completed (launched -> exec_done)
+[2024-05-25 13:41:57.734] INFO  (parsl.dataflow.dflow) :: Task 118 completed (launched -> exec_done)
+[2024-05-25 13:41:57.735] INFO  (webs.wf.docking.workflow) :: Computation for Cc1ccccc1O[C@H](CC[NH2+]C)c2ccccc2 succeeded: -6.3
+[2024-05-25 13:41:57.736] INFO  (parsl.dataflow.dflow) :: Parsl task 119 try 0 launched on executor htex-local with executor id 131
+[2024-05-25 13:41:57.758] INFO  (parsl.dataflow.dflow) :: Task 119 completed (launched -> exec_done)
+[2024-05-25 13:42:33.653] INFO  (parsl.dataflow.dflow) :: Task 94 completed (launched -> exec_done)
+[2024-05-25 13:42:33.655] INFO  (webs.wf.docking.workflow) :: Computation for Cc1cnc(c(c1OC)C)C[S@](=O)c2[nH]c3ccc(cc3n2)OC succeeded: -6.7
+[2024-05-25 13:42:33.655] INFO  (parsl.dataflow.dflow) :: Parsl task 95 try 0 launched on executor htex-local with executor id 132
+[2024-05-25 13:42:33.677] INFO  (parsl.dataflow.dflow) :: Task 95 completed (launched -> exec_done)
+[2024-05-25 13:42:49.557] INFO  (parsl.dataflow.dflow) :: Task 112 completed (launched -> exec_done)
+[2024-05-25 13:42:49.558] INFO  (webs.wf.docking.workflow) :: Computation for CCCCOc1ccc(cc1)C(=O)CC[NH+]2CCCCC2 succeeded: -6.5
+[2024-05-25 13:42:49.558] INFO  (parsl.dataflow.dflow) :: Parsl task 113 try 0 launched on executor htex-local with executor id 133
+[2024-05-25 13:42:49.580] INFO  (parsl.dataflow.dflow) :: Task 113 completed (launched -> exec_done)
+[2024-05-25 13:43:04.988] INFO  (parsl.dataflow.dflow) :: Task 130 completed (launched -> exec_done)
+[2024-05-25 13:43:04.989] INFO  (webs.wf.docking.workflow) :: Computation for CC(C)[NH2+]C[C@H](COc1ccc(cc1)CCOC)O succeeded: -5.6
+[2024-05-25 13:43:04.989] INFO  (parsl.dataflow.dflow) :: Parsl task 131 try 0 launched on executor htex-local with executor id 134
+[2024-05-25 13:43:05.011] INFO  (parsl.dataflow.dflow) :: Task 131 completed (launched -> exec_done)
+[2024-05-25 13:43:08.971] INFO  (parsl.dataflow.dflow) :: Task 124 completed (launched -> exec_done)
+[2024-05-25 13:43:08.972] INFO  (webs.wf.docking.workflow) :: Computation for CC(C)[NH2+]C[C@@H](COc1ccc(cc1)CCOC)O succeeded: -5.5
+[2024-05-25 13:43:08.973] INFO  (parsl.dataflow.dflow) :: Parsl task 125 try 0 launched on executor htex-local with executor id 135
+[2024-05-25 13:43:08.996] INFO  (parsl.dataflow.dflow) :: Task 125 completed (launched -> exec_done)
+[2024-05-25 13:43:42.272] INFO  (parsl.dataflow.dflow) :: Task 88 completed (launched -> exec_done)
+[2024-05-25 13:43:42.273] INFO  (webs.wf.docking.workflow) :: Computation for Cc1ccc(c(c1)[C@H](CC[NH+](C(C)C)C(C)C)c2ccccc2)O succeeded: -5.8
+[2024-05-25 13:43:42.274] INFO  (parsl.dataflow.dflow) :: Parsl task 89 try 0 launched on executor htex-local with executor id 136
+[2024-05-25 13:43:42.296] INFO  (parsl.dataflow.dflow) :: Task 89 completed (launched -> exec_done)
+[2024-05-25 13:43:51.526] INFO  (parsl.dataflow.dflow) :: Task 106 completed (launched -> exec_done)
+[2024-05-25 13:43:51.528] INFO  (webs.wf.docking.workflow) :: Computation for C[C@H](Cc1ccc(c(c1)O)O)[C@@H](C)Cc2ccc(c(c2)O)O succeeded: -7.7
+[2024-05-25 13:43:51.529] INFO  (parsl.dataflow.dflow) :: Parsl task 107 try 0 launched on executor htex-local with executor id 137
+[2024-05-25 13:43:51.550] INFO  (parsl.dataflow.dflow) :: Task 107 completed (launched -> exec_done)
+[2024-05-25 13:49:25.412] INFO  (parsl.dataflow.dflow) :: Task 100 completed (launched -> exec_done)
+[2024-05-25 13:49:25.412] INFO  (webs.wf.docking.workflow) :: Computation for CCCCS(=O)(=O)N[C@@H](Cc1ccc(cc1)OCCCCC2CC[NH2+]CC2)C(=O)[O-] succeeded: -6.9
+[2024-05-25 13:49:25.416] INFO  (webs.wf.docking.workflow) :: 
+Starting batch 2
+[2024-05-25 13:49:25.417] INFO  (parsl.dataflow.dflow) :: Parsl task 101 try 0 launched on executor htex-local with executor id 138
+[2024-05-25 13:49:25.446] INFO  (parsl.dataflow.dflow) :: Task 101 completed (launched -> exec_done)
+[2024-05-25 13:49:25.701] INFO  (parsl.dataflow.dflow) :: Task 138 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.702] INFO  (parsl.dataflow.dflow) :: Parsl task 138 try 0 launched on executor htex-local with executor id 139
+[2024-05-25 13:49:25.702] INFO  (parsl.dataflow.dflow) :: Task 139 submitted for App set_element, waiting on task 138
+[2024-05-25 13:49:25.702] INFO  (parsl.dataflow.dflow) :: Task 140 submitted for App pdb_to_pdbqt, waiting on task 139
+[2024-05-25 13:49:25.702] INFO  (parsl.dataflow.dflow) :: Task 141 submitted for App make_autodock_config, waiting on task 140
+[2024-05-25 13:49:25.702] INFO  (parsl.dataflow.dflow) :: Task 142 submitted for App autodock_vina, waiting on task 141
+[2024-05-25 13:49:25.703] INFO  (parsl.dataflow.dflow) :: Task 143 submitted for App cleanup, waiting on task 142, task 138, task 139, task 140, task 141
+[2024-05-25 13:49:25.703] INFO  (parsl.dataflow.dflow) :: Task 144 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.703] INFO  (parsl.dataflow.dflow) :: Parsl task 144 try 0 launched on executor htex-local with executor id 140
+[2024-05-25 13:49:25.703] INFO  (parsl.dataflow.dflow) :: Task 145 submitted for App set_element, waiting on task 144
+[2024-05-25 13:49:25.704] INFO  (parsl.dataflow.dflow) :: Task 146 submitted for App pdb_to_pdbqt, waiting on task 145
+[2024-05-25 13:49:25.704] INFO  (parsl.dataflow.dflow) :: Task 147 submitted for App make_autodock_config, waiting on task 146
+[2024-05-25 13:49:25.704] INFO  (parsl.dataflow.dflow) :: Task 148 submitted for App autodock_vina, waiting on task 147
+[2024-05-25 13:49:25.704] INFO  (parsl.dataflow.dflow) :: Task 149 submitted for App cleanup, waiting on task 148, task 144, task 145, task 146, task 147
+[2024-05-25 13:49:25.704] INFO  (parsl.dataflow.dflow) :: Task 150 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.705] INFO  (parsl.dataflow.dflow) :: Parsl task 150 try 0 launched on executor htex-local with executor id 141
+[2024-05-25 13:49:25.705] INFO  (parsl.dataflow.dflow) :: Task 151 submitted for App set_element, waiting on task 150
+[2024-05-25 13:49:25.705] INFO  (parsl.dataflow.dflow) :: Task 152 submitted for App pdb_to_pdbqt, waiting on task 151
+[2024-05-25 13:49:25.705] INFO  (parsl.dataflow.dflow) :: Task 153 submitted for App make_autodock_config, waiting on task 152
+[2024-05-25 13:49:25.706] INFO  (parsl.dataflow.dflow) :: Task 154 submitted for App autodock_vina, waiting on task 153
+[2024-05-25 13:49:25.706] INFO  (parsl.dataflow.dflow) :: Task 155 submitted for App cleanup, waiting on task 154, task 150, task 151, task 152, task 153
+[2024-05-25 13:49:25.706] INFO  (parsl.dataflow.dflow) :: Task 156 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.706] INFO  (parsl.dataflow.dflow) :: Parsl task 156 try 0 launched on executor htex-local with executor id 142
+[2024-05-25 13:49:25.707] INFO  (parsl.dataflow.dflow) :: Task 157 submitted for App set_element, waiting on task 156
+[2024-05-25 13:49:25.707] INFO  (parsl.dataflow.dflow) :: Task 158 submitted for App pdb_to_pdbqt, waiting on task 157
+[2024-05-25 13:49:25.707] INFO  (parsl.dataflow.dflow) :: Task 159 submitted for App make_autodock_config, waiting on task 158
+[2024-05-25 13:49:25.707] INFO  (parsl.dataflow.dflow) :: Task 160 submitted for App autodock_vina, waiting on task 159
+[2024-05-25 13:49:25.708] INFO  (parsl.dataflow.dflow) :: Task 161 submitted for App cleanup, waiting on task 160, task 156, task 157, task 158, task 159
+[2024-05-25 13:49:25.708] INFO  (parsl.dataflow.dflow) :: Task 162 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.708] INFO  (parsl.dataflow.dflow) :: Parsl task 162 try 0 launched on executor htex-local with executor id 143
+[2024-05-25 13:49:25.708] INFO  (parsl.dataflow.dflow) :: Task 163 submitted for App set_element, waiting on task 162
+[2024-05-25 13:49:25.709] INFO  (parsl.dataflow.dflow) :: Task 164 submitted for App pdb_to_pdbqt, waiting on task 163
+[2024-05-25 13:49:25.709] INFO  (parsl.dataflow.dflow) :: Task 165 submitted for App make_autodock_config, waiting on task 164
+[2024-05-25 13:49:25.709] INFO  (parsl.dataflow.dflow) :: Task 166 submitted for App autodock_vina, waiting on task 165
+[2024-05-25 13:49:25.709] INFO  (parsl.dataflow.dflow) :: Task 167 submitted for App cleanup, waiting on task 166, task 162, task 163, task 164, task 165
+[2024-05-25 13:49:25.709] INFO  (parsl.dataflow.dflow) :: Task 168 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.710] INFO  (parsl.dataflow.dflow) :: Parsl task 168 try 0 launched on executor htex-local with executor id 144
+[2024-05-25 13:49:25.710] INFO  (parsl.dataflow.dflow) :: Task 169 submitted for App set_element, waiting on task 168
+[2024-05-25 13:49:25.710] INFO  (parsl.dataflow.dflow) :: Task 170 submitted for App pdb_to_pdbqt, waiting on task 169
+[2024-05-25 13:49:25.711] INFO  (parsl.dataflow.dflow) :: Task 171 submitted for App make_autodock_config, waiting on task 170
+[2024-05-25 13:49:25.711] INFO  (parsl.dataflow.dflow) :: Task 172 submitted for App autodock_vina, waiting on task 171
+[2024-05-25 13:49:25.711] INFO  (parsl.dataflow.dflow) :: Task 173 submitted for App cleanup, waiting on task 172, task 168, task 169, task 170, task 171
+[2024-05-25 13:49:25.712] INFO  (parsl.dataflow.dflow) :: Task 174 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.712] INFO  (parsl.dataflow.dflow) :: Parsl task 174 try 0 launched on executor htex-local with executor id 145
+[2024-05-25 13:49:25.712] INFO  (parsl.dataflow.dflow) :: Task 175 submitted for App set_element, waiting on task 174
+[2024-05-25 13:49:25.712] INFO  (parsl.dataflow.dflow) :: Task 176 submitted for App pdb_to_pdbqt, waiting on task 175
+[2024-05-25 13:49:25.713] INFO  (parsl.dataflow.dflow) :: Task 177 submitted for App make_autodock_config, waiting on task 176
+[2024-05-25 13:49:25.713] INFO  (parsl.dataflow.dflow) :: Task 178 submitted for App autodock_vina, waiting on task 177
+[2024-05-25 13:49:25.713] INFO  (parsl.dataflow.dflow) :: Task 179 submitted for App cleanup, waiting on task 178, task 174, task 175, task 176, task 177
+[2024-05-25 13:49:25.713] INFO  (parsl.dataflow.dflow) :: Task 180 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.714] INFO  (parsl.dataflow.dflow) :: Parsl task 180 try 0 launched on executor htex-local with executor id 146
+[2024-05-25 13:49:25.714] INFO  (parsl.dataflow.dflow) :: Task 181 submitted for App set_element, waiting on task 180
+[2024-05-25 13:49:25.714] INFO  (parsl.dataflow.dflow) :: Task 182 submitted for App pdb_to_pdbqt, waiting on task 181
+[2024-05-25 13:49:25.715] INFO  (parsl.dataflow.dflow) :: Task 183 submitted for App make_autodock_config, waiting on task 182
+[2024-05-25 13:49:25.715] INFO  (parsl.dataflow.dflow) :: Task 184 submitted for App autodock_vina, waiting on task 183
+[2024-05-25 13:49:25.715] INFO  (parsl.dataflow.dflow) :: Task 185 submitted for App cleanup, waiting on task 184, task 180, task 181, task 182, task 183
+[2024-05-25 13:49:25.715] INFO  (parsl.dataflow.dflow) :: Task 186 submitted for App smi_to_pdb, not waiting on any dependency
+[2024-05-25 13:49:25.716] INFO  (parsl.dataflow.dflow) :: Parsl task 186 try 0 launched on executor htex-local with executor id 147
+[2024-05-25 13:49:25.716] INFO  (parsl.dataflow.dflow) :: Task 187 submitted for App set_element, waiting on task 186
+[2024-05-25 13:49:25.716] INFO  (parsl.dataflow.dflow) :: Task 188 submitted for App pdb_to_pdbqt, waiting on task 187
+[2024-05-25 13:49:25.717] INFO  (parsl.dataflow.dflow) :: Task 189 submitted for App make_autodock_config, waiting on task 188
+[2024-05-25 13:49:25.717] INFO  (parsl.dataflow.dflow) :: Task 190 submitted for App autodock_vina, waiting on task 189
+[2024-05-25 13:49:25.717] INFO  (parsl.dataflow.dflow) :: Task 191 submitted for App cleanup, waiting on task 190, task 186, task 187, task 188, task 189
+[2024-05-25 13:49:25.739] INFO  (parsl.dataflow.dflow) :: Task 150 completed (launched -> exec_done)
+[2024-05-25 13:49:25.740] INFO  (parsl.dataflow.dflow) :: Parsl task 151 try 0 launched on executor htex-local with executor id 148
+[2024-05-25 13:49:25.764] INFO  (parsl.dataflow.dflow) :: Task 168 completed (launched -> exec_done)
+[2024-05-25 13:49:25.765] INFO  (parsl.dataflow.dflow) :: Parsl task 169 try 0 launched on executor htex-local with executor id 149
+[2024-05-25 13:49:25.900] INFO  (parsl.dataflow.dflow) :: Task 151 completed (launched -> exec_done)
+[2024-05-25 13:49:25.902] INFO  (parsl.dataflow.dflow) :: Parsl task 152 try 0 launched on executor htex-local with executor id 150
+[2024-05-25 13:49:25.902] INFO  (parsl.dataflow.dflow) :: Task 180 completed (launched -> exec_done)
+[2024-05-25 13:49:25.903] INFO  (parsl.dataflow.dflow) :: Parsl task 181 try 0 launched on executor htex-local with executor id 151
+[2024-05-25 13:49:25.903] INFO  (parsl.dataflow.dflow) :: Task 138 completed (launched -> exec_done)
+[2024-05-25 13:49:25.904] INFO  (parsl.dataflow.dflow) :: Parsl task 139 try 0 launched on executor htex-local with executor id 152
+[2024-05-25 13:49:25.922] INFO  (parsl.dataflow.dflow) :: Task 186 completed (launched -> exec_done)
+[2024-05-25 13:49:25.922] INFO  (parsl.dataflow.dflow) :: Parsl task 187 try 0 launched on executor htex-local with executor id 153
+[2024-05-25 13:49:25.923] INFO  (parsl.dataflow.dflow) :: Task 144 completed (launched -> exec_done)
+[2024-05-25 13:49:25.923] INFO  (parsl.dataflow.dflow) :: Parsl task 145 try 0 launched on executor htex-local with executor id 154
+[2024-05-25 13:49:25.924] INFO  (parsl.dataflow.dflow) :: Task 169 completed (launched -> exec_done)
+[2024-05-25 13:49:25.924] INFO  (parsl.dataflow.dflow) :: Parsl task 170 try 0 launched on executor htex-local with executor id 155
+[2024-05-25 13:49:25.938] INFO  (parsl.dataflow.dflow) :: Task 162 completed (launched -> exec_done)
+[2024-05-25 13:49:25.938] INFO  (parsl.dataflow.dflow) :: Parsl task 163 try 0 launched on executor htex-local with executor id 156
+[2024-05-25 13:49:25.938] INFO  (parsl.dataflow.dflow) :: Task 156 completed (launched -> exec_done)
+[2024-05-25 13:49:25.939] INFO  (parsl.dataflow.dflow) :: Parsl task 157 try 0 launched on executor htex-local with executor id 157
+[2024-05-25 13:49:25.997] INFO  (parsl.dataflow.dflow) :: Task 174 completed (launched -> exec_done)
+[2024-05-25 13:49:25.997] INFO  (parsl.dataflow.dflow) :: Parsl task 175 try 0 launched on executor htex-local with executor id 158
+[2024-05-25 13:49:25.997] INFO  (parsl.dataflow.dflow) :: Task 152 completed (launched -> exec_done)
+[2024-05-25 13:49:25.998] INFO  (parsl.dataflow.dflow) :: Parsl task 153 try 0 launched on executor htex-local with executor id 159
+[2024-05-25 13:49:26.019] INFO  (parsl.dataflow.dflow) :: Task 153 completed (launched -> exec_done)
+[2024-05-25 13:49:26.019] INFO  (parsl.dataflow.dflow) :: Parsl task 154 try 0 launched on executor htex-local with executor id 160
+[2024-05-25 13:49:26.019] INFO  (parsl.dataflow.dflow) :: Task 170 completed (launched -> exec_done)
+[2024-05-25 13:49:26.019] INFO  (parsl.dataflow.dflow) :: Parsl task 171 try 0 launched on executor htex-local with executor id 161
+[2024-05-25 13:49:26.042] INFO  (parsl.dataflow.dflow) :: Task 171 completed (launched -> exec_done)
+[2024-05-25 13:49:26.043] INFO  (parsl.dataflow.dflow) :: Parsl task 172 try 0 launched on executor htex-local with executor id 162
+[2024-05-25 13:49:26.059] INFO  (parsl.dataflow.dflow) :: Task 181 completed (launched -> exec_done)
+[2024-05-25 13:49:26.059] INFO  (parsl.dataflow.dflow) :: Parsl task 182 try 0 launched on executor htex-local with executor id 163
+[2024-05-25 13:49:26.059] INFO  (parsl.dataflow.dflow) :: Task 139 completed (launched -> exec_done)
+[2024-05-25 13:49:26.060] INFO  (parsl.dataflow.dflow) :: Parsl task 140 try 0 launched on executor htex-local with executor id 164
+[2024-05-25 13:49:26.082] INFO  (parsl.dataflow.dflow) :: Task 145 completed (launched -> exec_done)
+[2024-05-25 13:49:26.083] INFO  (parsl.dataflow.dflow) :: Parsl task 146 try 0 launched on executor htex-local with executor id 165
+[2024-05-25 13:49:26.083] INFO  (parsl.dataflow.dflow) :: Task 187 completed (launched -> exec_done)
+[2024-05-25 13:49:26.083] INFO  (parsl.dataflow.dflow) :: Parsl task 188 try 0 launched on executor htex-local with executor id 166
+[2024-05-25 13:49:26.099] INFO  (parsl.dataflow.dflow) :: Task 163 completed (launched -> exec_done)
+[2024-05-25 13:49:26.100] INFO  (parsl.dataflow.dflow) :: Parsl task 164 try 0 launched on executor htex-local with executor id 167
+[2024-05-25 13:49:26.100] INFO  (parsl.dataflow.dflow) :: Task 157 completed (launched -> exec_done)
+[2024-05-25 13:49:26.100] INFO  (parsl.dataflow.dflow) :: Parsl task 158 try 0 launched on executor htex-local with executor id 168
+[2024-05-25 13:49:26.145] INFO  (parsl.dataflow.dflow) :: Task 175 completed (launched -> exec_done)
+[2024-05-25 13:49:26.146] INFO  (parsl.dataflow.dflow) :: Parsl task 176 try 0 launched on executor htex-local with executor id 169
+[2024-05-25 13:49:26.175] INFO  (parsl.dataflow.dflow) :: Task 182 completed (launched -> exec_done)
+[2024-05-25 13:49:26.175] INFO  (parsl.dataflow.dflow) :: Parsl task 183 try 0 launched on executor htex-local with executor id 170
+[2024-05-25 13:49:26.176] INFO  (parsl.dataflow.dflow) :: Task 140 completed (launched -> exec_done)
+[2024-05-25 13:49:26.176] INFO  (parsl.dataflow.dflow) :: Parsl task 141 try 0 launched on executor htex-local with executor id 171
+[2024-05-25 13:49:26.197] INFO  (parsl.dataflow.dflow) :: Task 183 completed (launched -> exec_done)
+[2024-05-25 13:49:26.198] INFO  (parsl.dataflow.dflow) :: Parsl task 184 try 0 launched on executor htex-local with executor id 172
+[2024-05-25 13:49:26.198] INFO  (parsl.dataflow.dflow) :: Task 141 completed (launched -> exec_done)
+[2024-05-25 13:49:26.198] INFO  (parsl.dataflow.dflow) :: Parsl task 142 try 0 launched on executor htex-local with executor id 173
+[2024-05-25 13:49:26.199] INFO  (parsl.dataflow.dflow) :: Task 188 completed (launched -> exec_done)
+[2024-05-25 13:49:26.199] INFO  (parsl.dataflow.dflow) :: Parsl task 189 try 0 launched on executor htex-local with executor id 174
+[2024-05-25 13:49:26.199] INFO  (parsl.dataflow.dflow) :: Task 164 completed (launched -> exec_done)
+[2024-05-25 13:49:26.200] INFO  (parsl.dataflow.dflow) :: Parsl task 165 try 0 launched on executor htex-local with executor id 175
+[2024-05-25 13:49:26.200] INFO  (parsl.dataflow.dflow) :: Task 146 completed (launched -> exec_done)
+[2024-05-25 13:49:26.201] INFO  (parsl.dataflow.dflow) :: Parsl task 147 try 0 launched on executor htex-local with executor id 176
+[2024-05-25 13:49:26.210] INFO  (parsl.dataflow.dflow) :: Task 158 completed (launched -> exec_done)
+[2024-05-25 13:49:26.211] INFO  (parsl.dataflow.dflow) :: Parsl task 159 try 0 launched on executor htex-local with executor id 177
+[2024-05-25 13:49:26.211] INFO  (parsl.dataflow.dflow) :: Task 189 completed (launched -> exec_done)
+[2024-05-25 13:49:26.212] INFO  (parsl.dataflow.dflow) :: Parsl task 190 try 0 launched on executor htex-local with executor id 178
+[2024-05-25 13:49:26.221] INFO  (parsl.dataflow.dflow) :: Task 165 completed (launched -> exec_done)
+[2024-05-25 13:49:26.222] INFO  (parsl.dataflow.dflow) :: Parsl task 166 try 0 launched on executor htex-local with executor id 179
+[2024-05-25 13:49:26.222] INFO  (parsl.dataflow.dflow) :: Task 147 completed (launched -> exec_done)
+[2024-05-25 13:49:26.222] INFO  (parsl.dataflow.dflow) :: Parsl task 148 try 0 launched on executor htex-local with executor id 180
+[2024-05-25 13:49:26.233] INFO  (parsl.dataflow.dflow) :: Task 159 completed (launched -> exec_done)
+[2024-05-25 13:49:26.233] INFO  (parsl.dataflow.dflow) :: Parsl task 160 try 0 launched on executor htex-local with executor id 181
+[2024-05-25 13:49:26.283] INFO  (parsl.dataflow.dflow) :: Task 176 completed (launched -> exec_done)
+[2024-05-25 13:49:26.283] INFO  (parsl.dataflow.dflow) :: Parsl task 177 try 0 launched on executor htex-local with executor id 182
+[2024-05-25 13:49:26.305] INFO  (parsl.dataflow.dflow) :: Task 177 completed (launched -> exec_done)
+[2024-05-25 13:49:26.305] INFO  (parsl.dataflow.dflow) :: Parsl task 178 try 0 launched on executor htex-local with executor id 183
+[2024-05-25 13:50:16.476] INFO  (parsl.dataflow.dflow) :: Task 166 completed (launched -> exec_done)
+[2024-05-25 13:50:16.478] INFO  (webs.wf.docking.workflow) :: Computation for C[C@H](c1ccc(cc1)CC(C)C)C(=O)[O-] succeeded: -5.6
+[2024-05-25 13:50:16.479] INFO  (parsl.dataflow.dflow) :: Parsl task 167 try 0 launched on executor htex-local with executor id 184
+[2024-05-25 13:50:16.500] INFO  (parsl.dataflow.dflow) :: Task 167 completed (launched -> exec_done)
+[2024-05-25 13:50:17.490] INFO  (parsl.dataflow.dflow) :: Task 172 completed (launched -> exec_done)
+[2024-05-25 13:50:17.491] INFO  (webs.wf.docking.workflow) :: Computation for C[C@@H](c1ccc(cc1)CC(C)C)C(=O)[O-] succeeded: -5.7
+[2024-05-25 13:50:17.492] INFO  (parsl.dataflow.dflow) :: Parsl task 173 try 0 launched on executor htex-local with executor id 185
+[2024-05-25 13:50:17.513] INFO  (parsl.dataflow.dflow) :: Task 173 completed (launched -> exec_done)
+[2024-05-25 13:50:31.371] INFO  (parsl.dataflow.dflow) :: Task 154 completed (launched -> exec_done)
+[2024-05-25 13:50:31.372] INFO  (webs.wf.docking.workflow) :: Computation for C(CC[NH3+])C[C@@H](C(=O)[O-])[NH3+] succeeded: -4.0
+[2024-05-25 13:50:31.373] INFO  (parsl.dataflow.dflow) :: Parsl task 155 try 0 launched on executor htex-local with executor id 186
+[2024-05-25 13:50:31.395] INFO  (parsl.dataflow.dflow) :: Task 155 completed (launched -> exec_done)
+[2024-05-25 13:50:44.776] INFO  (parsl.dataflow.dflow) :: Task 160 completed (launched -> exec_done)
+[2024-05-25 13:50:44.777] INFO  (webs.wf.docking.workflow) :: Computation for CCN(C)C(=O)Oc1cccc(c1)[C@H](C)[NH+](C)C succeeded: -5.6
+[2024-05-25 13:50:44.778] INFO  (parsl.dataflow.dflow) :: Parsl task 161 try 0 launched on executor htex-local with executor id 187
+[2024-05-25 13:50:44.799] INFO  (parsl.dataflow.dflow) :: Task 161 completed (launched -> exec_done)
+[2024-05-25 13:50:49.900] INFO  (parsl.dataflow.dflow) :: Task 184 completed (launched -> exec_done)
+[2024-05-25 13:50:49.901] INFO  (webs.wf.docking.workflow) :: Computation for C[C@](Cc1ccc(c(c1)O)O)(C(=O)[O-])[NH3+] succeeded: -5.5
+[2024-05-25 13:50:49.902] INFO  (parsl.dataflow.dflow) :: Parsl task 185 try 0 launched on executor htex-local with executor id 188
+[2024-05-25 13:50:49.923] INFO  (parsl.dataflow.dflow) :: Task 185 completed (launched -> exec_done)
+[2024-05-25 13:50:53.435] INFO  (parsl.dataflow.dflow) :: Task 142 completed (launched -> exec_done)
+[2024-05-25 13:50:53.435] INFO  (webs.wf.docking.workflow) :: Computation for Cc1ccc(cc1)C(=O)c2cc(c(c(c2)O)[O-])[N+](=O)[O-] succeeded: -6.5
+[2024-05-25 13:50:53.437] INFO  (parsl.dataflow.dflow) :: Parsl task 143 try 0 launched on executor htex-local with executor id 189
+[2024-05-25 13:50:53.458] INFO  (parsl.dataflow.dflow) :: Task 143 completed (launched -> exec_done)
+[2024-05-25 13:51:24.613] INFO  (parsl.dataflow.dflow) :: Task 190 completed (launched -> exec_done)
+[2024-05-25 13:51:24.613] INFO  (webs.wf.docking.workflow) :: Computation for CC(C)(C)[NH2+]C[C@H](c1ccc(c(c1)CO)O)O succeeded: -5.7
+[2024-05-25 13:51:24.615] INFO  (parsl.dataflow.dflow) :: Parsl task 191 try 0 launched on executor htex-local with executor id 190
+[2024-05-25 13:51:24.637] INFO  (parsl.dataflow.dflow) :: Task 191 completed (launched -> exec_done)
+[2024-05-25 13:52:36.118] INFO  (parsl.dataflow.dflow) :: Task 178 completed (launched -> exec_done)
+[2024-05-25 13:52:36.119] INFO  (webs.wf.docking.workflow) :: Computation for CC[NH+](CC)Cc1cc(ccc1O)Nc2ccnc3c2ccc(c3)Cl succeeded: -7.0
+[2024-05-25 13:52:36.120] INFO  (parsl.dataflow.dflow) :: Parsl task 179 try 0 launched on executor htex-local with executor id 191
+[2024-05-25 13:52:36.141] INFO  (parsl.dataflow.dflow) :: Task 179 completed (launched -> exec_done)
+[2024-05-25 13:53:01.875] INFO  (parsl.dataflow.dflow) :: Task 148 completed (launched -> exec_done)
+[2024-05-25 13:53:01.876] INFO  (webs.wf.docking.workflow) :: Computation for c1cc(c(cc1Oc2c(cc(cc2I)C[C@@H](C(=O)[O-])[NH3+])I)I)O succeeded: -1.0
+[2024-05-25 13:53:01.877] INFO  (parsl.dataflow.dflow) :: Parsl task 149 try 0 launched on executor htex-local with executor id 192
+[2024-05-25 13:53:01.882] INFO  (parsl.dataflow.dflow) :: Waiting for all remaining tasks to complete
+[2024-05-25 13:53:01.899] INFO  (parsl.dataflow.dflow) :: Task 149 completed (launched -> exec_done)
+[2024-05-25 13:53:01.899] INFO  (parsl.dataflow.dflow) :: All remaining tasks completed
+[2024-05-25 13:53:01.899] INFO  (parsl.dataflow.dflow) :: DFK cleanup initiated
+[2024-05-25 13:53:01.899] INFO  (parsl.dataflow.dflow) :: Summary of tasks in DFK:
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.unsched: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.pending: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.exec_done: 192
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.failed: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.dep_fail: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.launched: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.fail_retryable: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.memo_done: 0
+[2024-05-25 13:53:01.900] INFO  (parsl.dataflow.dflow) :: Tasks in state States.joining: 0
+[2024-05-25 13:53:01.901] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running_ended: 0
+[2024-05-25 13:53:01.901] INFO  (parsl.dataflow.dflow) :: End of summary
+[2024-05-25 13:53:01.901] INFO  (parsl.dataflow.dflow) :: Closing job status poller
+[2024-05-25 13:53:01.901] INFO  (parsl.dataflow.dflow) :: Terminated job status poller
+[2024-05-25 13:53:01.901] INFO  (parsl.dataflow.dflow) :: Scaling in and shutting down executors
+[2024-05-25 13:53:01.901] INFO  (parsl.dataflow.dflow) :: Scaling in executor htex-local
+[2024-05-25 13:53:02.015] INFO  (parsl.dataflow.dflow) :: Shutting down executor htex-local
+[2024-05-25 13:53:02.016] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-05-25 13:53:02.057] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+[2024-05-25 13:53:02.057] INFO  (parsl.dataflow.dflow) :: Shut down executor htex-local
+[2024-05-25 13:53:02.057] INFO  (parsl.dataflow.dflow) :: Shutting down executor _parsl_internal
+[2024-05-25 13:53:02.057] INFO  (parsl.dataflow.dflow) :: Shut down executor _parsl_internal
+[2024-05-25 13:53:02.057] INFO  (parsl.dataflow.dflow) :: Terminated executors
+[2024-05-25 13:53:02.057] INFO  (parsl.dataflow.dflow) :: DFK cleanup complete
+[2024-05-25 13:53:02.057] RUN   (webs.run) :: Finished workflow (name=docking, runtime=1189.54s, tasks=192)
+[2024-05-25 13:53:02.058] INFO  (parsl.dataflow.dflow) :: python process is exiting, but DFK has already been cleaned up

@@ -1,0 +1,42 @@
+[2024-05-25 04:27:08.984] RUN   (webs.run) :: Starting workflow (name=docking)
+[2024-05-25 04:27:08.985] RUN   (webs.run) :: name='docking' timestamp=datetime.datetime(2024, 5, 25, 4, 27, 8, 983638) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=64) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/dask/{timestamp}') workflow=DockingWorkflowConfig(smi_file_name_ligand='/home/cc/parsl-docking-tutorial/dataset_orz_original_1k.csv', receptor='/home/cc/parsl-docking-tutorial/1iep_receptor.pdbqt', tcl_path='/home/cc/parsl-docking-tutorial/set_element.tcl')
+[2024-05-25 04:27:08.985] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/docking/dask/2024-05-25-04-27-08
+[2024-05-25 04:27:58.508] INFO  (webs.wf.docking.workflow) :: Computation for Cc1cccc(c1NC(=O)[C@@H](C)[NH3+])C succeeded: -5.5
+[2024-05-25 04:28:07.601] INFO  (webs.wf.docking.workflow) :: Computation for c1cc(ccc1C(=O)NCC(=O)[O-])N succeeded: -5.5
+[2024-05-25 04:28:36.152] INFO  (webs.wf.docking.workflow) :: Computation for C[NH+](C)CCC=C1c2ccccc2C=Cc3c1cccc3 succeeded: -5.3
+[2024-05-25 04:30:04.293] INFO  (webs.wf.docking.workflow) :: Computation for C[C@H]1CN(CC[NH2+]1)c2c(cc3c(c2OC)n(cc(c3=O)C(=O)[O-])C4CC4)F succeeded: -4.9
+[2024-05-25 04:30:50.765] INFO  (webs.wf.docking.workflow) :: Computation for CCN(CC)C(=O)[C@H]1C[N@@H+]2CCc3cc(c(cc3[C@H]2C[C@H]1OC(=O)C)OC)OC succeeded: -3.5
+[2024-05-25 04:30:50.769] INFO  (webs.wf.docking.workflow) :: 
+Starting batch 0
+[2024-05-25 04:31:20.397] INFO  (webs.wf.docking.workflow) :: Computation for c1cnccc1C(=O)NN succeeded: -4.7
+[2024-05-25 04:31:24.456] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc2c(c1)C=Cc3ccccc3N2C(=O)N succeeded: -5.9
+[2024-05-25 04:31:30.896] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc(cc1)CC(=O)NC(=O)N succeeded: -5.9
+[2024-05-25 04:31:33.173] INFO  (webs.wf.docking.workflow) :: Computation for CC(C)(Cc1ccccc1)[NH3+] succeeded: -4.9
+[2024-05-25 04:31:41.445] INFO  (webs.wf.docking.workflow) :: Computation for Cc1cccc(c1OC[C@@H](C)[NH3+])C succeeded: -5.1
+[2024-05-25 04:31:41.629] INFO  (webs.wf.docking.workflow) :: Computation for Cc1cccc(c1NC(=O)[C@H](C)[NH3+])C succeeded: -5.5
+[2024-05-25 04:32:08.158] INFO  (webs.wf.docking.workflow) :: Computation for CC[NH+](CC)CC(=O)Nc1c(cccc1C)C succeeded: -5.9
+[2024-05-25 04:32:23.535] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc(c(c1)CC(=O)[O-])Nc2c(cccc2Cl)Cl succeeded: -6.3
+[2024-05-25 04:32:55.124] INFO  (webs.wf.docking.workflow) :: Computation for CC[NH+](CC)CCOC(=O)c1ccc(cc1)N succeeded: -5.5
+[2024-05-25 04:32:55.129] INFO  (webs.wf.docking.workflow) :: 
+Starting batch 1
+[2024-05-25 04:33:23.154] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc(c(c1)C(=O)[O-])O succeeded: -5.1
+[2024-05-25 04:33:32.588] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc2c(c1)CC(=O)c3ccccc3N2C(=O)N succeeded: -5.7
+[2024-05-25 04:33:48.038] INFO  (webs.wf.docking.workflow) :: Computation for c1cc(c(c(c1)Cl)CC(=O)NC(=[NH2+])N)Cl succeeded: -6.1
+[2024-05-25 04:34:11.316] INFO  (webs.wf.docking.workflow) :: Computation for Cc1ccc(c(c1Cl)Nc2ccccc2C(=O)[O-])Cl succeeded: -6.2
+[2024-05-25 04:34:22.315] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc2c(c1)c(c(c(=O)o2)Cc3c(c4ccccc4oc3=O)[O-])[O-] succeeded: -7.4
+[2024-05-25 04:34:30.613] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc(cc1)C2=N[C@H](C(=O)Nc3c2cc(cc3)Cl)C(=O)[O-] succeeded: -5.7
+[2024-05-25 04:36:18.498] INFO  (webs.wf.docking.workflow) :: Computation for CCOC(=O)C1=C(NC(=C([C@@H]1c2cccc(c2Cl)Cl)C(=O)OC)C)C succeeded: -4.9
+[2024-05-25 04:36:23.059] INFO  (webs.wf.docking.workflow) :: Computation for CCOC(=O)C1=C(NC(=C([C@H]1c2cccc(c2Cl)Cl)C(=O)OC)C)C succeeded: -5.0
+[2024-05-25 04:40:11.351] INFO  (webs.wf.docking.workflow) :: Computation for CCCCc1[nH+]cc(n1Cc2ccc(cc2)C(=O)[O-])/C=C(\Cc3cccs3)/C(=O)[O-] succeeded: -6.2
+[2024-05-25 04:40:11.355] INFO  (webs.wf.docking.workflow) :: 
+Starting batch 2
+[2024-05-25 04:40:43.457] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc2c(c1)c(c3c([nH+]2)CCCC3)N succeeded: -6.1
+[2024-05-25 04:40:59.670] INFO  (webs.wf.docking.workflow) :: Computation for c1ccc2c(c1)c(no2)CS(=O)(=O)N succeeded: -5.2
+[2024-05-25 04:41:20.583] INFO  (webs.wf.docking.workflow) :: Computation for c1cn(c(=O)nc1N)[C@@H]2CS[C@@H](O2)CO succeeded: -2.6
+[2024-05-25 04:41:28.425] INFO  (webs.wf.docking.workflow) :: Computation for CC[C@H](c1ccccc1)c2c(c3ccccc3oc2=O)[O-] succeeded: -6.3
+[2024-05-25 04:41:30.746] INFO  (webs.wf.docking.workflow) :: Computation for CC[C@@H](c1ccccc1)c2c(c3ccccc3oc2=O)[O-] succeeded: -6.7
+[2024-05-25 04:41:50.407] INFO  (webs.wf.docking.workflow) :: Computation for c1cn(c(=O)nc1N)[C@H]2C([C@@H]([C@H](O2)CO)O)(F)F succeeded: -5.8
+[2024-05-25 04:42:01.464] INFO  (webs.wf.docking.workflow) :: Computation for CC(=O)C[C@H](c1ccccc1)c2c(c3ccccc3oc2=O)[O-] succeeded: -6.9
+[2024-05-25 04:42:01.555] INFO  (webs.wf.docking.workflow) :: Computation for CC(=O)C[C@@H](c1ccccc1)c2c(c3ccccc3oc2=O)[O-] succeeded: -7.0
+[2024-05-25 04:42:30.584] INFO  (webs.wf.docking.workflow) :: Computation for c1nc2c(n1CCC(CO)CO)[nH]c(nc2=O)N succeeded: -5.5
+[2024-05-25 04:42:31.070] RUN   (webs.run) :: Finished workflow (name=docking, runtime=922.09s, tasks=192)

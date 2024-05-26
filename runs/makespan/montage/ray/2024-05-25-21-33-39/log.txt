@@ -1,0 +1,409 @@
+[2024-05-25 21:33:39.756] RUN   (webs.run) :: Starting workflow (name=montage)
+[2024-05-25 21:33:39.756] RUN   (webs.run) :: name='montage' timestamp=datetime.datetime(2024, 5, 25, 21, 33, 39, 756408) executor=RayConfig(ray_address='local', ray_num_cpus=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/ray/{timestamp}') workflow=MontageWorkflowConfig(img_folder='/home/cc/taps/data/Kimages/', img_tbl='Kimages.tbl', img_hdr='Kimages.hdr', output_dir='Kprojdir')
+[2024-05-25 21:33:39.757] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/montage/ray/2024-05-25-21-33-39
+[2024-05-25 21:34:18.216] INFO  (webs.wf.montage.workflow) :: mproject done (91)
+[2024-05-25 21:34:18.471] INFO  (webs.wf.montage.workflow) :: diffs done (233)
+[2024-05-25 21:34:18.674] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf2eb50 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826548, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.680] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf2ed90 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826544, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.681] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf2f450 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826538, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.684] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf1e550 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826526, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.684] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf3e890 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826524, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.685] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf3ff50 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826545, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.723] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cf7dc10 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826548, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.729] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cfb13d0 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826528, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.746] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cdecfd0 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826525, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.747] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cded750 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826545, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.780] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37cdfbd10 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826537, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.782] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37ce0cf50 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826522, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:18.799] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fb37ce14e50 state=finished raised RayTaskError(MontageError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(MontageError): [36mray::_wrapper()[39m (pid=1826533, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:34:25.093] RUN   (webs.run) :: Finished workflow (name=montage, runtime=45.34s, tasks=419)

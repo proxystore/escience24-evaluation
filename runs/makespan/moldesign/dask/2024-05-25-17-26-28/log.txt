@@ -1,0 +1,21 @@
+[2024-05-25 17:26:28.058] RUN   (webs.run) :: Starting workflow (name=moldesign)
+[2024-05-25 17:26:28.058] RUN   (webs.run) :: name='moldesign' timestamp=datetime.datetime(2024, 5, 25, 17, 26, 28, 57577) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/dask/{timestamp}') workflow=MoldesignWorkflowConfig(dataset='/home/cc/taps/data/QM9-search.tsv', initial_count=16, search_count=64, batch_size=16, seed=0)
+[2024-05-25 17:26:28.058] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/moldesign/dask/2024-05-25-17-26-28
+[2024-05-25 17:26:28.977] WORK  (webs.wf.moldesign.workflow) :: Loaded search space (size=130,258)
+[2024-05-25 17:26:28.983] WORK  (webs.wf.moldesign.workflow) :: Submitted initial computations
+[2024-05-25 17:26:28.983] INFO  (webs.wf.moldesign.workflow) :: Initial set: ['NC(=O)C12CN1C(=O)C2', 'CC12CCC(C1)C(=O)C2', 'CNC1=NC=NOC1=O', 'C1OC11CCCC1', 'COC12CCC1(O)C2O', 'OC1C=CC=CC=C1', 'CCC(C)C1COCO1', 'COC1=CC(C)=C(N)N1', 'CNC1=C(NC=N1)C=O', 'OCC1CC1OCC#C', 'OC1C=C2CN3C1C23', 'OC1CCC23CC12CO3', 'CCC1=COC=C1OC', 'CC1CCCCC(=O)C1', 'CC12OC3C4C(C14)C23', 'CC1OC2C3C1CC23O']
+[2024-05-25 17:26:31.703] WORK  (webs.wf.moldesign.workflow) :: Done computing initial set
+[2024-05-25 17:26:31.704] WORK  (webs.wf.moldesign.workflow) :: Created initial training set (size=16)
+[2024-05-25 17:26:31.706] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:26:36.996] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:26:37.044] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:26:39.557] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:26:42.389] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:26:42.418] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:26:44.523] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:26:47.535] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:26:47.606] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:26:48.860] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:26:52.117] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:26:52.151] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:26:54.071] RUN   (webs.run) :: Finished workflow (name=moldesign, runtime=26.01s, tasks=346)

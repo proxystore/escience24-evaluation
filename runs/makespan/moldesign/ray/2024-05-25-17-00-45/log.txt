@@ -1,0 +1,196 @@
+[2024-05-25 17:00:45.861] RUN   (webs.run) :: Starting workflow (name=moldesign)
+[2024-05-25 17:00:45.861] RUN   (webs.run) :: name='moldesign' timestamp=datetime.datetime(2024, 5, 25, 17, 0, 45, 861060) executor=RayConfig(ray_address='local', ray_num_cpus=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/ray/{timestamp}') workflow=MoldesignWorkflowConfig(dataset='/home/cc/taps/data/QM9-search.tsv', initial_count=16, search_count=64, batch_size=16, seed=0)
+[2024-05-25 17:00:45.861] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/moldesign/ray/2024-05-25-17-00-45
+[2024-05-25 17:00:48.316] WORK  (webs.wf.moldesign.workflow) :: Loaded search space (size=130,258)
+[2024-05-25 17:00:48.325] WORK  (webs.wf.moldesign.workflow) :: Submitted initial computations
+[2024-05-25 17:00:48.325] INFO  (webs.wf.moldesign.workflow) :: Initial set: ['NC(=O)C12CN1C(=O)C2', 'CC12CCC(C1)C(=O)C2', 'CNC1=NC=NOC1=O', 'C1OC11CCCC1', 'COC12CCC1(O)C2O', 'OC1C=CC=CC=C1', 'CCC(C)C1COCO1', 'COC1=CC(C)=C(N)N1', 'CNC1=C(NC=N1)C=O', 'OCC1CC1OCC#C', 'OC1C=C2CN3C1C23', 'OC1CCC23CC12CO3', 'CCC1=COC=C1OC', 'CC1CCCCC(=O)C1', 'CC12OC3C4C(C14)C23', 'CC1OC2C3C1CC23O']
+[2024-05-25 17:00:49.814] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffae8003910 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885198, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:00:50.057] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffae8003010 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885219, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:00:51.423] WORK  (webs.wf.moldesign.workflow) :: Done computing initial set
+[2024-05-25 17:00:51.426] WORK  (webs.wf.moldesign.workflow) :: Created initial training set (size=16)
+[2024-05-25 17:00:51.429] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:01:04.518] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:01:04.557] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:01:04.671] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffae9ba1190 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885201, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:01:06.348] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:01:21.923] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:01:21.971] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:01:22.045] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffacad4ea90 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885206, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:01:22.092] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffacad7ce50 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885223, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:01:23.243] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:01:39.348] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:01:39.379] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:01:39.556] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffae8525290 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885216, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:01:40.093] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-25 17:01:56.985] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-25 17:01:57.028] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-25 17:01:57.148] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7ffb8039bf50 state=finished raised RayTaskError(ValueError)>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ray.exceptions.RayTaskError(ValueError): [36mray::_wrapper()[39m (pid=885223, ip=10.52.3.104)
+  File "/home/cc/taps/webs/executor/ray.py", line 94, in _wrapper
+    return function(*args, **kwargs)  # pragma: no cover
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 117, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 71, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+[2024-05-25 17:02:00.083] RUN   (webs.run) :: Finished workflow (name=moldesign, runtime=74.22s, tasks=346)

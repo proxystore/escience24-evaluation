@@ -1,0 +1,213 @@
+[2024-05-26 02:49:47.401] RUN   (webs.run) :: Starting workflow (name=moldesign)
+[2024-05-26 02:49:47.401] RUN   (webs.run) :: name='moldesign' timestamp=datetime.datetime(2024, 5, 26, 2, 49, 47, 400726) executor=ProcessPoolConfig(max_processes=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/process-pool/{timestamp}') workflow=MoldesignWorkflowConfig(dataset='/home/cc/taps/data/QM9-search.tsv', initial_count=16, search_count=64, batch_size=16, seed=0)
+[2024-05-26 02:49:47.401] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/moldesign/process-pool/2024-05-26-02-49-47
+[2024-05-26 02:49:47.536] WORK  (webs.wf.moldesign.workflow) :: Loaded search space (size=130,258)
+[2024-05-26 02:49:47.620] WORK  (webs.wf.moldesign.workflow) :: Submitted initial computations
+[2024-05-26 02:49:47.621] INFO  (webs.wf.moldesign.workflow) :: Initial set: ['NC(=O)C12CN1C(=O)C2', 'CC12CCC(C1)C(=O)C2', 'CNC1=NC=NOC1=O', 'C1OC11CCCC1', 'COC12CCC1(O)C2O', 'OC1C=CC=CC=C1', 'CCC(C)C1COCO1', 'COC1=CC(C)=C(N)N1', 'CNC1=C(NC=N1)C=O', 'OCC1CC1OCC#C', 'OC1C=C2CN3C1C23', 'OC1CCC23CC12CO3', 'CCC1=COC=C1OC', 'CC1CCCCC(=O)C1', 'CC12OC3C4C(C14)C23', 'CC1OC2C3C1CC23O']
+[2024-05-26 02:49:47.726] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6a3c19de90 state=finished raised ValueError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Bad Conformer Id
+[2024-05-26 02:49:47.824] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6a3c19d050 state=finished raised ValueError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Bad Conformer Id
+[2024-05-26 02:49:49.169] WORK  (webs.wf.moldesign.workflow) :: Done computing initial set
+[2024-05-26 02:49:49.171] WORK  (webs.wf.moldesign.workflow) :: Created initial training set (size=16)
+[2024-05-26 02:49:49.171] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:50:05.609] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:50:05.652] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:50:05.730] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6a37f23910 state=finished raised ValueError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Bad Conformer Id
+[2024-05-26 02:50:07.333] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:50:25.755] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:50:25.782] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:50:25.860] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6a3d3b3290 state=finished raised ValueError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Bad Conformer Id
+[2024-05-26 02:50:25.891] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6a3d3b0c50 state=finished raised ValueError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Bad Conformer Id
+[2024-05-26 02:50:26.941] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:50:45.507] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:50:45.531] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:50:46.890] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:51:07.066] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:51:07.086] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:51:07.189] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6a3d637d10 state=finished raised ValueError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+    xyz = generate_initial_xyz(smiles)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+    AllChem.MMFFOptimizeMolecule(mol)
+ValueError: Bad Conformer Id
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+ValueError: Bad Conformer Id
+[2024-05-26 02:51:08.778] RUN   (webs.run) :: Finished workflow (name=moldesign, runtime=81.38s, tasks=346)

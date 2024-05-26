@@ -1,0 +1,502 @@
+[2024-05-25 21:02:11.582] RUN   (webs.run) :: Starting workflow (name=montage)
+[2024-05-25 21:02:11.582] RUN   (webs.run) :: name='montage' timestamp=datetime.datetime(2024, 5, 25, 21, 2, 11, 581650) executor=ProcessPoolConfig(max_processes=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/process-pool/{timestamp}') workflow=MontageWorkflowConfig(img_folder='/home/cc/taps/data/Kimages/', img_tbl='Kimages.tbl', img_hdr='Kimages.hdr', output_dir='Kprojdir')
+[2024-05-25 21:02:11.582] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/montage/process-pool/2024-05-25-21-02-11
+[2024-05-25 21:02:45.827] INFO  (webs.wf.montage.workflow) :: mproject done (91)
+[2024-05-25 21:02:46.074] INFO  (webs.wf.montage.workflow) :: diffs done (233)
+[2024-05-25 21:02:46.231] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadd60f10 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.236] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadd61490 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.243] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadd62510 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.244] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadd73d50 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.245] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadd78310 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.245] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadd7a410 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.258] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eaddbd950 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.261] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eaddc6110 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.281] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadde7b90 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.282] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadde8c50 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.314] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadc0a910 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.316] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadc15550 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:46.332] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f6eadc39f50 state=finished raised MontageError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/process.py", line 261, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+    result = self.function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+    log_str = montage.mDiff(
+              ^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+    return status.parse_struct("mDiff", p.stdout.read().strip())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+    result = Struct(command, string)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+    raise MontageError("%s: %s" % (command, self.msg))
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+[2024-05-25 21:02:50.855] INFO  (webs.wf.montage.workflow) :: stat : OK
+module : mBgModel
+[2024-05-25 21:02:51.101] RUN   (webs.run) :: Finished workflow (name=montage, runtime=39.52s, tasks=419)

@@ -1,0 +1,498 @@
+[2024-05-26 02:38:16.318] RUN   (webs.run) :: Starting workflow (name=fedlearn)
+[2024-05-26 02:38:16.318] RUN   (webs.run) :: name='fedlearn' timestamp=datetime.datetime(2024, 5, 26, 2, 38, 16, 317508) executor=ParslConfig(parsl_use_threads=False, parsl_workers=32, parsl_run_dir='parsl-runinfo') transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/parsl/{timestamp}') workflow=FedLearnWorkflowConfig(data_alpha=100000.0, data_name=<DataChoices.MNIST: 'mnist'>, data_root='/home/cc/taps/data', data_download=True, device='cpu', num_clients=16, num_rounds=3, participation=1.0, epochs=1, lr=0.001, batch_size=32, train=True, test=False, seed=0)
+[2024-05-26 02:38:16.318] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/fedlearn/parsl/2024-05-26-02-38-16
+[2024-05-26 02:38:16.410] WORK  (webs.wf.fedlearn.workflow) :: Creating clients
+[2024-05-26 02:38:23.891] INFO  (parsl.dataflow.dflow) :: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(HighThroughputExecutor(
+        address='10.52.3.104', 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x7feed2dd98a0>, 
+        cores_per_worker=1, 
+        cpu_affinity='none', 
+        drain_period=None, 
+        enable_mpi_mode=False, 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='htex-local', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers_per_node} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --drain_period={drain_period} --cpu-affinity {cpu_affinity} {enable_mpi_mode} --mpi-launcher={mpi_launcher} --available-accelerators {accelerators}', 
+        max_workers=32, 
+        max_workers_per_node=32, 
+        mem_per_worker=None, 
+        mpi_launcher='mpiexec', 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/cc/escience24-taps-analysis/runs/makespan/fedlearn/parsl/2024-05-26-02-38-16'
+            ), 
+            cmd_timeout=30, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='parsl-runinfo', 
+    std_autopath=None, 
+    strategy='simple', 
+    strategy_period=5, 
+    usage_tracking=False
+)
+[2024-05-26 02:38:23.891] INFO  (parsl.dataflow.dflow) :: Parsl version: 2024.05.20
+[2024-05-26 02:38:23.892] INFO  (parsl.dataflow.dflow) :: Run id is: 63b6253e-925b-44be-9367-5a72103ec5d4
+[2024-05-26 02:38:23.907] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-05-26 02:38:23.935] WORK  (webs.wf.fedlearn.workflow) :: (1/3) Starting local training for this round.
+[2024-05-26 02:38:23.952] INFO  (parsl.dataflow.dflow) :: Task 0 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:24.087] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:24.278] INFO  (parsl.dataflow.dflow) :: Parsl task 0 try 0 launched on executor htex-local with executor id 1
+[2024-05-26 02:38:24.278] INFO  (parsl.dataflow.dflow) :: Standard out for task 0 will not be redirected.
+[2024-05-26 02:38:24.278] INFO  (parsl.dataflow.dflow) :: Standard error for task 0 will not be redirected.
+[2024-05-26 02:38:24.295] INFO  (parsl.dataflow.dflow) :: Task 1 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:24.415] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:24.607] INFO  (parsl.dataflow.dflow) :: Parsl task 1 try 0 launched on executor htex-local with executor id 2
+[2024-05-26 02:38:24.607] INFO  (parsl.dataflow.dflow) :: Standard out for task 1 will not be redirected.
+[2024-05-26 02:38:24.607] INFO  (parsl.dataflow.dflow) :: Standard error for task 1 will not be redirected.
+[2024-05-26 02:38:24.628] INFO  (parsl.dataflow.dflow) :: Task 2 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:24.756] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:24.942] INFO  (parsl.dataflow.dflow) :: Parsl task 2 try 0 launched on executor htex-local with executor id 3
+[2024-05-26 02:38:24.942] INFO  (parsl.dataflow.dflow) :: Standard out for task 2 will not be redirected.
+[2024-05-26 02:38:24.942] INFO  (parsl.dataflow.dflow) :: Standard error for task 2 will not be redirected.
+[2024-05-26 02:38:24.963] INFO  (parsl.dataflow.dflow) :: Task 3 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:25.093] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:25.288] INFO  (parsl.dataflow.dflow) :: Parsl task 3 try 0 launched on executor htex-local with executor id 4
+[2024-05-26 02:38:25.288] INFO  (parsl.dataflow.dflow) :: Standard out for task 3 will not be redirected.
+[2024-05-26 02:38:25.288] INFO  (parsl.dataflow.dflow) :: Standard error for task 3 will not be redirected.
+[2024-05-26 02:38:25.309] INFO  (parsl.dataflow.dflow) :: Task 4 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:25.437] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:25.636] INFO  (parsl.dataflow.dflow) :: Parsl task 4 try 0 launched on executor htex-local with executor id 5
+[2024-05-26 02:38:25.636] INFO  (parsl.dataflow.dflow) :: Standard out for task 4 will not be redirected.
+[2024-05-26 02:38:25.636] INFO  (parsl.dataflow.dflow) :: Standard error for task 4 will not be redirected.
+[2024-05-26 02:38:25.657] INFO  (parsl.dataflow.dflow) :: Task 5 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:25.782] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:25.976] INFO  (parsl.dataflow.dflow) :: Parsl task 5 try 0 launched on executor htex-local with executor id 6
+[2024-05-26 02:38:25.976] INFO  (parsl.dataflow.dflow) :: Standard out for task 5 will not be redirected.
+[2024-05-26 02:38:25.976] INFO  (parsl.dataflow.dflow) :: Standard error for task 5 will not be redirected.
+[2024-05-26 02:38:25.996] INFO  (parsl.dataflow.dflow) :: Task 6 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:26.125] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:26.320] INFO  (parsl.dataflow.dflow) :: Parsl task 6 try 0 launched on executor htex-local with executor id 7
+[2024-05-26 02:38:26.320] INFO  (parsl.dataflow.dflow) :: Standard out for task 6 will not be redirected.
+[2024-05-26 02:38:26.320] INFO  (parsl.dataflow.dflow) :: Standard error for task 6 will not be redirected.
+[2024-05-26 02:38:26.340] INFO  (parsl.dataflow.dflow) :: Task 7 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:26.466] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:26.659] INFO  (parsl.dataflow.dflow) :: Parsl task 7 try 0 launched on executor htex-local with executor id 8
+[2024-05-26 02:38:26.659] INFO  (parsl.dataflow.dflow) :: Standard out for task 7 will not be redirected.
+[2024-05-26 02:38:26.659] INFO  (parsl.dataflow.dflow) :: Standard error for task 7 will not be redirected.
+[2024-05-26 02:38:26.675] INFO  (parsl.dataflow.dflow) :: Task 8 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:26.796] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:26.975] INFO  (parsl.dataflow.dflow) :: Parsl task 8 try 0 launched on executor htex-local with executor id 9
+[2024-05-26 02:38:26.975] INFO  (parsl.dataflow.dflow) :: Standard out for task 8 will not be redirected.
+[2024-05-26 02:38:26.975] INFO  (parsl.dataflow.dflow) :: Standard error for task 8 will not be redirected.
+[2024-05-26 02:38:26.994] INFO  (parsl.dataflow.dflow) :: Task 9 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:27.116] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:27.297] INFO  (parsl.dataflow.dflow) :: Parsl task 9 try 0 launched on executor htex-local with executor id 10
+[2024-05-26 02:38:27.298] INFO  (parsl.dataflow.dflow) :: Standard out for task 9 will not be redirected.
+[2024-05-26 02:38:27.298] INFO  (parsl.dataflow.dflow) :: Standard error for task 9 will not be redirected.
+[2024-05-26 02:38:27.317] INFO  (parsl.dataflow.dflow) :: Task 10 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:27.436] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:27.613] INFO  (parsl.dataflow.dflow) :: Parsl task 10 try 0 launched on executor htex-local with executor id 11
+[2024-05-26 02:38:27.613] INFO  (parsl.dataflow.dflow) :: Standard out for task 10 will not be redirected.
+[2024-05-26 02:38:27.613] INFO  (parsl.dataflow.dflow) :: Standard error for task 10 will not be redirected.
+[2024-05-26 02:38:27.631] INFO  (parsl.dataflow.dflow) :: Task 11 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:27.749] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:27.919] INFO  (parsl.dataflow.dflow) :: Parsl task 11 try 0 launched on executor htex-local with executor id 12
+[2024-05-26 02:38:27.919] INFO  (parsl.dataflow.dflow) :: Standard out for task 11 will not be redirected.
+[2024-05-26 02:38:27.919] INFO  (parsl.dataflow.dflow) :: Standard error for task 11 will not be redirected.
+[2024-05-26 02:38:27.939] INFO  (parsl.dataflow.dflow) :: Task 12 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:28.060] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:28.235] INFO  (parsl.dataflow.dflow) :: Parsl task 12 try 0 launched on executor htex-local with executor id 13
+[2024-05-26 02:38:28.235] INFO  (parsl.dataflow.dflow) :: Standard out for task 12 will not be redirected.
+[2024-05-26 02:38:28.235] INFO  (parsl.dataflow.dflow) :: Standard error for task 12 will not be redirected.
+[2024-05-26 02:38:28.255] INFO  (parsl.dataflow.dflow) :: Task 13 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:28.375] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:28.550] INFO  (parsl.dataflow.dflow) :: Parsl task 13 try 0 launched on executor htex-local with executor id 14
+[2024-05-26 02:38:28.550] INFO  (parsl.dataflow.dflow) :: Standard out for task 13 will not be redirected.
+[2024-05-26 02:38:28.550] INFO  (parsl.dataflow.dflow) :: Standard error for task 13 will not be redirected.
+[2024-05-26 02:38:28.568] INFO  (parsl.dataflow.dflow) :: Task 14 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:28.688] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:28.870] INFO  (parsl.dataflow.dflow) :: Parsl task 14 try 0 launched on executor htex-local with executor id 15
+[2024-05-26 02:38:28.870] INFO  (parsl.dataflow.dflow) :: Standard out for task 14 will not be redirected.
+[2024-05-26 02:38:28.870] INFO  (parsl.dataflow.dflow) :: Standard error for task 14 will not be redirected.
+[2024-05-26 02:38:28.889] INFO  (parsl.dataflow.dflow) :: Task 15 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:38:29.008] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:38:29.114] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-05-26 02:38:29.114] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-05-26 02:38:29.214] INFO  (parsl.dataflow.dflow) :: Parsl task 15 try 0 launched on executor htex-local with executor id 16
+[2024-05-26 02:38:29.214] INFO  (parsl.dataflow.dflow) :: Standard out for task 15 will not be redirected.
+[2024-05-26 02:38:29.214] INFO  (parsl.dataflow.dflow) :: Standard error for task 15 will not be redirected.
+[2024-05-26 02:39:41.078] INFO  (parsl.dataflow.dflow) :: Task 10 completed (launched -> exec_done)
+[2024-05-26 02:39:41.078] INFO  (parsl.dataflow.dflow) :: Standard out for task 10 will not be redirected.
+[2024-05-26 02:39:41.079] INFO  (parsl.dataflow.dflow) :: Standard error for task 10 will not be redirected.
+[2024-05-26 02:39:42.039] INFO  (parsl.dataflow.dflow) :: Task 15 completed (launched -> exec_done)
+[2024-05-26 02:39:42.040] INFO  (parsl.dataflow.dflow) :: Standard out for task 15 will not be redirected.
+[2024-05-26 02:39:42.040] INFO  (parsl.dataflow.dflow) :: Standard error for task 15 will not be redirected.
+[2024-05-26 02:39:42.083] INFO  (parsl.dataflow.dflow) :: Task 7 completed (launched -> exec_done)
+[2024-05-26 02:39:42.083] INFO  (parsl.dataflow.dflow) :: Standard out for task 7 will not be redirected.
+[2024-05-26 02:39:42.083] INFO  (parsl.dataflow.dflow) :: Standard error for task 7 will not be redirected.
+[2024-05-26 02:39:42.686] INFO  (parsl.dataflow.dflow) :: Task 14 completed (launched -> exec_done)
+[2024-05-26 02:39:42.686] INFO  (parsl.dataflow.dflow) :: Standard out for task 14 will not be redirected.
+[2024-05-26 02:39:42.686] INFO  (parsl.dataflow.dflow) :: Standard error for task 14 will not be redirected.
+[2024-05-26 02:39:45.005] INFO  (parsl.dataflow.dflow) :: Task 4 completed (launched -> exec_done)
+[2024-05-26 02:39:45.005] INFO  (parsl.dataflow.dflow) :: Standard out for task 4 will not be redirected.
+[2024-05-26 02:39:45.005] INFO  (parsl.dataflow.dflow) :: Standard error for task 4 will not be redirected.
+[2024-05-26 02:39:45.151] INFO  (parsl.dataflow.dflow) :: Task 12 completed (launched -> exec_done)
+[2024-05-26 02:39:45.151] INFO  (parsl.dataflow.dflow) :: Standard out for task 12 will not be redirected.
+[2024-05-26 02:39:45.151] INFO  (parsl.dataflow.dflow) :: Standard error for task 12 will not be redirected.
+[2024-05-26 02:39:46.394] INFO  (parsl.dataflow.dflow) :: Task 8 completed (launched -> exec_done)
+[2024-05-26 02:39:46.394] INFO  (parsl.dataflow.dflow) :: Standard out for task 8 will not be redirected.
+[2024-05-26 02:39:46.395] INFO  (parsl.dataflow.dflow) :: Standard error for task 8 will not be redirected.
+[2024-05-26 02:39:46.956] INFO  (parsl.dataflow.dflow) :: Task 3 completed (launched -> exec_done)
+[2024-05-26 02:39:46.956] INFO  (parsl.dataflow.dflow) :: Standard out for task 3 will not be redirected.
+[2024-05-26 02:39:46.956] INFO  (parsl.dataflow.dflow) :: Standard error for task 3 will not be redirected.
+[2024-05-26 02:39:48.298] INFO  (parsl.dataflow.dflow) :: Task 9 completed (launched -> exec_done)
+[2024-05-26 02:39:48.298] INFO  (parsl.dataflow.dflow) :: Standard out for task 9 will not be redirected.
+[2024-05-26 02:39:48.298] INFO  (parsl.dataflow.dflow) :: Standard error for task 9 will not be redirected.
+[2024-05-26 02:39:48.697] INFO  (parsl.dataflow.dflow) :: Task 1 completed (launched -> exec_done)
+[2024-05-26 02:39:48.697] INFO  (parsl.dataflow.dflow) :: Standard out for task 1 will not be redirected.
+[2024-05-26 02:39:48.697] INFO  (parsl.dataflow.dflow) :: Standard error for task 1 will not be redirected.
+[2024-05-26 02:39:48.748] INFO  (parsl.dataflow.dflow) :: Task 0 completed (launched -> exec_done)
+[2024-05-26 02:39:48.748] INFO  (parsl.dataflow.dflow) :: Standard out for task 0 will not be redirected.
+[2024-05-26 02:39:48.748] INFO  (parsl.dataflow.dflow) :: Standard error for task 0 will not be redirected.
+[2024-05-26 02:39:49.239] INFO  (parsl.dataflow.dflow) :: Task 6 completed (launched -> exec_done)
+[2024-05-26 02:39:49.240] INFO  (parsl.dataflow.dflow) :: Standard out for task 6 will not be redirected.
+[2024-05-26 02:39:49.240] INFO  (parsl.dataflow.dflow) :: Standard error for task 6 will not be redirected.
+[2024-05-26 02:39:49.429] INFO  (parsl.dataflow.dflow) :: Task 2 completed (launched -> exec_done)
+[2024-05-26 02:39:49.429] INFO  (parsl.dataflow.dflow) :: Standard out for task 2 will not be redirected.
+[2024-05-26 02:39:49.429] INFO  (parsl.dataflow.dflow) :: Standard error for task 2 will not be redirected.
+[2024-05-26 02:39:49.624] INFO  (parsl.dataflow.dflow) :: Task 5 completed (launched -> exec_done)
+[2024-05-26 02:39:49.624] INFO  (parsl.dataflow.dflow) :: Standard out for task 5 will not be redirected.
+[2024-05-26 02:39:49.624] INFO  (parsl.dataflow.dflow) :: Standard error for task 5 will not be redirected.
+[2024-05-26 02:39:49.939] INFO  (parsl.dataflow.dflow) :: Task 13 completed (launched -> exec_done)
+[2024-05-26 02:39:49.939] INFO  (parsl.dataflow.dflow) :: Standard out for task 13 will not be redirected.
+[2024-05-26 02:39:49.939] INFO  (parsl.dataflow.dflow) :: Standard error for task 13 will not be redirected.
+[2024-05-26 02:39:52.161] INFO  (parsl.dataflow.dflow) :: Task 11 completed (launched -> exec_done)
+[2024-05-26 02:39:52.162] INFO  (parsl.dataflow.dflow) :: Standard out for task 11 will not be redirected.
+[2024-05-26 02:39:52.162] INFO  (parsl.dataflow.dflow) :: Standard error for task 11 will not be redirected.
+[2024-05-26 02:39:52.162] WORK  (webs.wf.fedlearn.workflow) :: (1/3) Finished local training.
+[2024-05-26 02:39:52.419] WORK  (webs.wf.fedlearn.workflow) :: (1/3) Averaged the returned locally trained models.
+[2024-05-26 02:39:52.423] WORK  (webs.wf.fedlearn.workflow) :: (2/3) Starting local training for this round.
+[2024-05-26 02:39:52.429] INFO  (parsl.dataflow.dflow) :: Task 16 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:52.557] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:52.755] INFO  (parsl.dataflow.dflow) :: Parsl task 16 try 0 launched on executor htex-local with executor id 17
+[2024-05-26 02:39:52.755] INFO  (parsl.dataflow.dflow) :: Standard out for task 16 will not be redirected.
+[2024-05-26 02:39:52.755] INFO  (parsl.dataflow.dflow) :: Standard error for task 16 will not be redirected.
+[2024-05-26 02:39:52.762] INFO  (parsl.dataflow.dflow) :: Task 17 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:52.889] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:53.097] INFO  (parsl.dataflow.dflow) :: Parsl task 17 try 0 launched on executor htex-local with executor id 18
+[2024-05-26 02:39:53.097] INFO  (parsl.dataflow.dflow) :: Standard out for task 17 will not be redirected.
+[2024-05-26 02:39:53.097] INFO  (parsl.dataflow.dflow) :: Standard error for task 17 will not be redirected.
+[2024-05-26 02:39:53.104] INFO  (parsl.dataflow.dflow) :: Task 18 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:53.230] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:53.435] INFO  (parsl.dataflow.dflow) :: Parsl task 18 try 0 launched on executor htex-local with executor id 19
+[2024-05-26 02:39:53.435] INFO  (parsl.dataflow.dflow) :: Standard out for task 18 will not be redirected.
+[2024-05-26 02:39:53.435] INFO  (parsl.dataflow.dflow) :: Standard error for task 18 will not be redirected.
+[2024-05-26 02:39:53.444] INFO  (parsl.dataflow.dflow) :: Task 19 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:53.570] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:53.778] INFO  (parsl.dataflow.dflow) :: Parsl task 19 try 0 launched on executor htex-local with executor id 20
+[2024-05-26 02:39:53.778] INFO  (parsl.dataflow.dflow) :: Standard out for task 19 will not be redirected.
+[2024-05-26 02:39:53.778] INFO  (parsl.dataflow.dflow) :: Standard error for task 19 will not be redirected.
+[2024-05-26 02:39:53.787] INFO  (parsl.dataflow.dflow) :: Task 20 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:53.912] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:54.118] INFO  (parsl.dataflow.dflow) :: Parsl task 20 try 0 launched on executor htex-local with executor id 21
+[2024-05-26 02:39:54.118] INFO  (parsl.dataflow.dflow) :: Standard out for task 20 will not be redirected.
+[2024-05-26 02:39:54.118] INFO  (parsl.dataflow.dflow) :: Standard error for task 20 will not be redirected.
+[2024-05-26 02:39:54.127] INFO  (parsl.dataflow.dflow) :: Task 21 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:54.252] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:54.455] INFO  (parsl.dataflow.dflow) :: Parsl task 21 try 0 launched on executor htex-local with executor id 22
+[2024-05-26 02:39:54.455] INFO  (parsl.dataflow.dflow) :: Standard out for task 21 will not be redirected.
+[2024-05-26 02:39:54.455] INFO  (parsl.dataflow.dflow) :: Standard error for task 21 will not be redirected.
+[2024-05-26 02:39:54.461] INFO  (parsl.dataflow.dflow) :: Task 22 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:54.585] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:54.786] INFO  (parsl.dataflow.dflow) :: Parsl task 22 try 0 launched on executor htex-local with executor id 23
+[2024-05-26 02:39:54.786] INFO  (parsl.dataflow.dflow) :: Standard out for task 22 will not be redirected.
+[2024-05-26 02:39:54.786] INFO  (parsl.dataflow.dflow) :: Standard error for task 22 will not be redirected.
+[2024-05-26 02:39:54.795] INFO  (parsl.dataflow.dflow) :: Task 23 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:54.917] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:55.115] INFO  (parsl.dataflow.dflow) :: Parsl task 23 try 0 launched on executor htex-local with executor id 24
+[2024-05-26 02:39:55.115] INFO  (parsl.dataflow.dflow) :: Standard out for task 23 will not be redirected.
+[2024-05-26 02:39:55.115] INFO  (parsl.dataflow.dflow) :: Standard error for task 23 will not be redirected.
+[2024-05-26 02:39:55.124] INFO  (parsl.dataflow.dflow) :: Task 24 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:55.247] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:55.441] INFO  (parsl.dataflow.dflow) :: Parsl task 24 try 0 launched on executor htex-local with executor id 25
+[2024-05-26 02:39:55.442] INFO  (parsl.dataflow.dflow) :: Standard out for task 24 will not be redirected.
+[2024-05-26 02:39:55.442] INFO  (parsl.dataflow.dflow) :: Standard error for task 24 will not be redirected.
+[2024-05-26 02:39:55.453] INFO  (parsl.dataflow.dflow) :: Task 25 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:55.574] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:55.789] INFO  (parsl.dataflow.dflow) :: Parsl task 25 try 0 launched on executor htex-local with executor id 26
+[2024-05-26 02:39:55.789] INFO  (parsl.dataflow.dflow) :: Standard out for task 25 will not be redirected.
+[2024-05-26 02:39:55.789] INFO  (parsl.dataflow.dflow) :: Standard error for task 25 will not be redirected.
+[2024-05-26 02:39:55.798] INFO  (parsl.dataflow.dflow) :: Task 26 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:55.924] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:56.124] INFO  (parsl.dataflow.dflow) :: Parsl task 26 try 0 launched on executor htex-local with executor id 27
+[2024-05-26 02:39:56.124] INFO  (parsl.dataflow.dflow) :: Standard out for task 26 will not be redirected.
+[2024-05-26 02:39:56.125] INFO  (parsl.dataflow.dflow) :: Standard error for task 26 will not be redirected.
+[2024-05-26 02:39:56.133] INFO  (parsl.dataflow.dflow) :: Task 27 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:56.251] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:56.451] INFO  (parsl.dataflow.dflow) :: Parsl task 27 try 0 launched on executor htex-local with executor id 28
+[2024-05-26 02:39:56.451] INFO  (parsl.dataflow.dflow) :: Standard out for task 27 will not be redirected.
+[2024-05-26 02:39:56.451] INFO  (parsl.dataflow.dflow) :: Standard error for task 27 will not be redirected.
+[2024-05-26 02:39:56.460] INFO  (parsl.dataflow.dflow) :: Task 28 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:56.586] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:56.787] INFO  (parsl.dataflow.dflow) :: Parsl task 28 try 0 launched on executor htex-local with executor id 29
+[2024-05-26 02:39:56.787] INFO  (parsl.dataflow.dflow) :: Standard out for task 28 will not be redirected.
+[2024-05-26 02:39:56.787] INFO  (parsl.dataflow.dflow) :: Standard error for task 28 will not be redirected.
+[2024-05-26 02:39:56.796] INFO  (parsl.dataflow.dflow) :: Task 29 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:56.914] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:57.113] INFO  (parsl.dataflow.dflow) :: Parsl task 29 try 0 launched on executor htex-local with executor id 30
+[2024-05-26 02:39:57.113] INFO  (parsl.dataflow.dflow) :: Standard out for task 29 will not be redirected.
+[2024-05-26 02:39:57.113] INFO  (parsl.dataflow.dflow) :: Standard error for task 29 will not be redirected.
+[2024-05-26 02:39:57.122] INFO  (parsl.dataflow.dflow) :: Task 30 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:57.241] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:57.442] INFO  (parsl.dataflow.dflow) :: Parsl task 30 try 0 launched on executor htex-local with executor id 31
+[2024-05-26 02:39:57.442] INFO  (parsl.dataflow.dflow) :: Standard out for task 30 will not be redirected.
+[2024-05-26 02:39:57.442] INFO  (parsl.dataflow.dflow) :: Standard error for task 30 will not be redirected.
+[2024-05-26 02:39:57.450] INFO  (parsl.dataflow.dflow) :: Task 31 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:39:57.570] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:39:57.769] INFO  (parsl.dataflow.dflow) :: Parsl task 31 try 0 launched on executor htex-local with executor id 32
+[2024-05-26 02:39:57.769] INFO  (parsl.dataflow.dflow) :: Standard out for task 31 will not be redirected.
+[2024-05-26 02:39:57.769] INFO  (parsl.dataflow.dflow) :: Standard error for task 31 will not be redirected.
+[2024-05-26 02:41:00.629] INFO  (parsl.dataflow.dflow) :: Task 25 completed (launched -> exec_done)
+[2024-05-26 02:41:00.629] INFO  (parsl.dataflow.dflow) :: Standard out for task 25 will not be redirected.
+[2024-05-26 02:41:00.629] INFO  (parsl.dataflow.dflow) :: Standard error for task 25 will not be redirected.
+[2024-05-26 02:41:01.794] INFO  (parsl.dataflow.dflow) :: Task 19 completed (launched -> exec_done)
+[2024-05-26 02:41:01.794] INFO  (parsl.dataflow.dflow) :: Standard out for task 19 will not be redirected.
+[2024-05-26 02:41:01.794] INFO  (parsl.dataflow.dflow) :: Standard error for task 19 will not be redirected.
+[2024-05-26 02:41:03.502] INFO  (parsl.dataflow.dflow) :: Task 22 completed (launched -> exec_done)
+[2024-05-26 02:41:03.502] INFO  (parsl.dataflow.dflow) :: Standard out for task 22 will not be redirected.
+[2024-05-26 02:41:03.502] INFO  (parsl.dataflow.dflow) :: Standard error for task 22 will not be redirected.
+[2024-05-26 02:41:03.861] INFO  (parsl.dataflow.dflow) :: Task 20 completed (launched -> exec_done)
+[2024-05-26 02:41:03.861] INFO  (parsl.dataflow.dflow) :: Standard out for task 20 will not be redirected.
+[2024-05-26 02:41:03.862] INFO  (parsl.dataflow.dflow) :: Standard error for task 20 will not be redirected.
+[2024-05-26 02:41:06.060] INFO  (parsl.dataflow.dflow) :: Task 18 completed (launched -> exec_done)
+[2024-05-26 02:41:06.061] INFO  (parsl.dataflow.dflow) :: Standard out for task 18 will not be redirected.
+[2024-05-26 02:41:06.061] INFO  (parsl.dataflow.dflow) :: Standard error for task 18 will not be redirected.
+[2024-05-26 02:41:07.164] INFO  (parsl.dataflow.dflow) :: Task 24 completed (launched -> exec_done)
+[2024-05-26 02:41:07.164] INFO  (parsl.dataflow.dflow) :: Standard out for task 24 will not be redirected.
+[2024-05-26 02:41:07.164] INFO  (parsl.dataflow.dflow) :: Standard error for task 24 will not be redirected.
+[2024-05-26 02:41:07.814] INFO  (parsl.dataflow.dflow) :: Task 30 completed (launched -> exec_done)
+[2024-05-26 02:41:07.814] INFO  (parsl.dataflow.dflow) :: Standard out for task 30 will not be redirected.
+[2024-05-26 02:41:07.814] INFO  (parsl.dataflow.dflow) :: Standard error for task 30 will not be redirected.
+[2024-05-26 02:41:07.857] INFO  (parsl.dataflow.dflow) :: Task 16 completed (launched -> exec_done)
+[2024-05-26 02:41:07.857] INFO  (parsl.dataflow.dflow) :: Standard out for task 16 will not be redirected.
+[2024-05-26 02:41:07.857] INFO  (parsl.dataflow.dflow) :: Standard error for task 16 will not be redirected.
+[2024-05-26 02:41:08.008] INFO  (parsl.dataflow.dflow) :: Task 23 completed (launched -> exec_done)
+[2024-05-26 02:41:08.009] INFO  (parsl.dataflow.dflow) :: Standard out for task 23 will not be redirected.
+[2024-05-26 02:41:08.009] INFO  (parsl.dataflow.dflow) :: Standard error for task 23 will not be redirected.
+[2024-05-26 02:41:08.515] INFO  (parsl.dataflow.dflow) :: Task 31 completed (launched -> exec_done)
+[2024-05-26 02:41:08.515] INFO  (parsl.dataflow.dflow) :: Standard out for task 31 will not be redirected.
+[2024-05-26 02:41:08.515] INFO  (parsl.dataflow.dflow) :: Standard error for task 31 will not be redirected.
+[2024-05-26 02:41:08.884] INFO  (parsl.dataflow.dflow) :: Task 27 completed (launched -> exec_done)
+[2024-05-26 02:41:08.885] INFO  (parsl.dataflow.dflow) :: Standard out for task 27 will not be redirected.
+[2024-05-26 02:41:08.885] INFO  (parsl.dataflow.dflow) :: Standard error for task 27 will not be redirected.
+[2024-05-26 02:41:12.581] INFO  (parsl.dataflow.dflow) :: Task 17 completed (launched -> exec_done)
+[2024-05-26 02:41:12.582] INFO  (parsl.dataflow.dflow) :: Standard out for task 17 will not be redirected.
+[2024-05-26 02:41:12.582] INFO  (parsl.dataflow.dflow) :: Standard error for task 17 will not be redirected.
+[2024-05-26 02:41:13.230] INFO  (parsl.dataflow.dflow) :: Task 21 completed (launched -> exec_done)
+[2024-05-26 02:41:13.230] INFO  (parsl.dataflow.dflow) :: Standard out for task 21 will not be redirected.
+[2024-05-26 02:41:13.230] INFO  (parsl.dataflow.dflow) :: Standard error for task 21 will not be redirected.
+[2024-05-26 02:41:13.770] INFO  (parsl.dataflow.dflow) :: Task 26 completed (launched -> exec_done)
+[2024-05-26 02:41:13.770] INFO  (parsl.dataflow.dflow) :: Standard out for task 26 will not be redirected.
+[2024-05-26 02:41:13.771] INFO  (parsl.dataflow.dflow) :: Standard error for task 26 will not be redirected.
+[2024-05-26 02:41:15.028] INFO  (parsl.dataflow.dflow) :: Task 28 completed (launched -> exec_done)
+[2024-05-26 02:41:15.029] INFO  (parsl.dataflow.dflow) :: Standard out for task 28 will not be redirected.
+[2024-05-26 02:41:15.029] INFO  (parsl.dataflow.dflow) :: Standard error for task 28 will not be redirected.
+[2024-05-26 02:41:15.861] INFO  (parsl.dataflow.dflow) :: Task 29 completed (launched -> exec_done)
+[2024-05-26 02:41:15.861] INFO  (parsl.dataflow.dflow) :: Standard out for task 29 will not be redirected.
+[2024-05-26 02:41:15.861] INFO  (parsl.dataflow.dflow) :: Standard error for task 29 will not be redirected.
+[2024-05-26 02:41:15.861] WORK  (webs.wf.fedlearn.workflow) :: (2/3) Finished local training.
+[2024-05-26 02:41:15.958] WORK  (webs.wf.fedlearn.workflow) :: (2/3) Averaged the returned locally trained models.
+[2024-05-26 02:41:15.960] WORK  (webs.wf.fedlearn.workflow) :: (3/3) Starting local training for this round.
+[2024-05-26 02:41:15.966] INFO  (parsl.dataflow.dflow) :: Task 32 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:16.076] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:16.247] INFO  (parsl.dataflow.dflow) :: Parsl task 32 try 0 launched on executor htex-local with executor id 33
+[2024-05-26 02:41:16.247] INFO  (parsl.dataflow.dflow) :: Standard out for task 32 will not be redirected.
+[2024-05-26 02:41:16.247] INFO  (parsl.dataflow.dflow) :: Standard error for task 32 will not be redirected.
+[2024-05-26 02:41:16.252] INFO  (parsl.dataflow.dflow) :: Task 33 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:16.365] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:16.546] INFO  (parsl.dataflow.dflow) :: Parsl task 33 try 0 launched on executor htex-local with executor id 34
+[2024-05-26 02:41:16.546] INFO  (parsl.dataflow.dflow) :: Standard out for task 33 will not be redirected.
+[2024-05-26 02:41:16.546] INFO  (parsl.dataflow.dflow) :: Standard error for task 33 will not be redirected.
+[2024-05-26 02:41:16.551] INFO  (parsl.dataflow.dflow) :: Task 34 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:16.663] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:16.851] INFO  (parsl.dataflow.dflow) :: Parsl task 34 try 0 launched on executor htex-local with executor id 35
+[2024-05-26 02:41:16.851] INFO  (parsl.dataflow.dflow) :: Standard out for task 34 will not be redirected.
+[2024-05-26 02:41:16.851] INFO  (parsl.dataflow.dflow) :: Standard error for task 34 will not be redirected.
+[2024-05-26 02:41:16.856] INFO  (parsl.dataflow.dflow) :: Task 35 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:16.973] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:17.181] INFO  (parsl.dataflow.dflow) :: Parsl task 35 try 0 launched on executor htex-local with executor id 36
+[2024-05-26 02:41:17.181] INFO  (parsl.dataflow.dflow) :: Standard out for task 35 will not be redirected.
+[2024-05-26 02:41:17.181] INFO  (parsl.dataflow.dflow) :: Standard error for task 35 will not be redirected.
+[2024-05-26 02:41:17.187] INFO  (parsl.dataflow.dflow) :: Task 36 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:17.308] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:17.507] INFO  (parsl.dataflow.dflow) :: Parsl task 36 try 0 launched on executor htex-local with executor id 37
+[2024-05-26 02:41:17.508] INFO  (parsl.dataflow.dflow) :: Standard out for task 36 will not be redirected.
+[2024-05-26 02:41:17.508] INFO  (parsl.dataflow.dflow) :: Standard error for task 36 will not be redirected.
+[2024-05-26 02:41:17.513] INFO  (parsl.dataflow.dflow) :: Task 37 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:17.634] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:17.830] INFO  (parsl.dataflow.dflow) :: Parsl task 37 try 0 launched on executor htex-local with executor id 38
+[2024-05-26 02:41:17.831] INFO  (parsl.dataflow.dflow) :: Standard out for task 37 will not be redirected.
+[2024-05-26 02:41:17.831] INFO  (parsl.dataflow.dflow) :: Standard error for task 37 will not be redirected.
+[2024-05-26 02:41:17.836] INFO  (parsl.dataflow.dflow) :: Task 38 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:17.953] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:18.151] INFO  (parsl.dataflow.dflow) :: Parsl task 38 try 0 launched on executor htex-local with executor id 39
+[2024-05-26 02:41:18.151] INFO  (parsl.dataflow.dflow) :: Standard out for task 38 will not be redirected.
+[2024-05-26 02:41:18.151] INFO  (parsl.dataflow.dflow) :: Standard error for task 38 will not be redirected.
+[2024-05-26 02:41:18.156] INFO  (parsl.dataflow.dflow) :: Task 39 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:18.275] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:18.476] INFO  (parsl.dataflow.dflow) :: Parsl task 39 try 0 launched on executor htex-local with executor id 40
+[2024-05-26 02:41:18.476] INFO  (parsl.dataflow.dflow) :: Standard out for task 39 will not be redirected.
+[2024-05-26 02:41:18.476] INFO  (parsl.dataflow.dflow) :: Standard error for task 39 will not be redirected.
+[2024-05-26 02:41:18.481] INFO  (parsl.dataflow.dflow) :: Task 40 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:18.600] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:18.802] INFO  (parsl.dataflow.dflow) :: Parsl task 40 try 0 launched on executor htex-local with executor id 41
+[2024-05-26 02:41:18.802] INFO  (parsl.dataflow.dflow) :: Standard out for task 40 will not be redirected.
+[2024-05-26 02:41:18.802] INFO  (parsl.dataflow.dflow) :: Standard error for task 40 will not be redirected.
+[2024-05-26 02:41:18.808] INFO  (parsl.dataflow.dflow) :: Task 41 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:18.932] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:19.142] INFO  (parsl.dataflow.dflow) :: Parsl task 41 try 0 launched on executor htex-local with executor id 42
+[2024-05-26 02:41:19.142] INFO  (parsl.dataflow.dflow) :: Standard out for task 41 will not be redirected.
+[2024-05-26 02:41:19.142] INFO  (parsl.dataflow.dflow) :: Standard error for task 41 will not be redirected.
+[2024-05-26 02:41:19.148] INFO  (parsl.dataflow.dflow) :: Task 42 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:19.269] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:19.470] INFO  (parsl.dataflow.dflow) :: Parsl task 42 try 0 launched on executor htex-local with executor id 43
+[2024-05-26 02:41:19.470] INFO  (parsl.dataflow.dflow) :: Standard out for task 42 will not be redirected.
+[2024-05-26 02:41:19.470] INFO  (parsl.dataflow.dflow) :: Standard error for task 42 will not be redirected.
+[2024-05-26 02:41:19.476] INFO  (parsl.dataflow.dflow) :: Task 43 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:19.597] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:19.809] INFO  (parsl.dataflow.dflow) :: Parsl task 43 try 0 launched on executor htex-local with executor id 44
+[2024-05-26 02:41:19.809] INFO  (parsl.dataflow.dflow) :: Standard out for task 43 will not be redirected.
+[2024-05-26 02:41:19.809] INFO  (parsl.dataflow.dflow) :: Standard error for task 43 will not be redirected.
+[2024-05-26 02:41:19.815] INFO  (parsl.dataflow.dflow) :: Task 44 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:19.941] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:20.153] INFO  (parsl.dataflow.dflow) :: Parsl task 44 try 0 launched on executor htex-local with executor id 45
+[2024-05-26 02:41:20.153] INFO  (parsl.dataflow.dflow) :: Standard out for task 44 will not be redirected.
+[2024-05-26 02:41:20.153] INFO  (parsl.dataflow.dflow) :: Standard error for task 44 will not be redirected.
+[2024-05-26 02:41:20.159] INFO  (parsl.dataflow.dflow) :: Task 45 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:20.287] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:20.504] INFO  (parsl.dataflow.dflow) :: Parsl task 45 try 0 launched on executor htex-local with executor id 46
+[2024-05-26 02:41:20.504] INFO  (parsl.dataflow.dflow) :: Standard out for task 45 will not be redirected.
+[2024-05-26 02:41:20.504] INFO  (parsl.dataflow.dflow) :: Standard error for task 45 will not be redirected.
+[2024-05-26 02:41:20.511] INFO  (parsl.dataflow.dflow) :: Task 46 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:20.646] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:20.872] INFO  (parsl.dataflow.dflow) :: Parsl task 46 try 0 launched on executor htex-local with executor id 47
+[2024-05-26 02:41:20.872] INFO  (parsl.dataflow.dflow) :: Standard out for task 46 will not be redirected.
+[2024-05-26 02:41:20.872] INFO  (parsl.dataflow.dflow) :: Standard error for task 46 will not be redirected.
+[2024-05-26 02:41:20.878] INFO  (parsl.dataflow.dflow) :: Task 47 submitted for App local_train, not waiting on any dependency
+[2024-05-26 02:41:21.013] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-26 02:41:21.236] INFO  (parsl.dataflow.dflow) :: Parsl task 47 try 0 launched on executor htex-local with executor id 48
+[2024-05-26 02:41:21.236] INFO  (parsl.dataflow.dflow) :: Standard out for task 47 will not be redirected.
+[2024-05-26 02:41:21.236] INFO  (parsl.dataflow.dflow) :: Standard error for task 47 will not be redirected.
+[2024-05-26 02:42:17.846] INFO  (parsl.dataflow.dflow) :: Task 36 completed (launched -> exec_done)
+[2024-05-26 02:42:17.846] INFO  (parsl.dataflow.dflow) :: Standard out for task 36 will not be redirected.
+[2024-05-26 02:42:17.846] INFO  (parsl.dataflow.dflow) :: Standard error for task 36 will not be redirected.
+[2024-05-26 02:42:19.463] INFO  (parsl.dataflow.dflow) :: Task 42 completed (launched -> exec_done)
+[2024-05-26 02:42:19.463] INFO  (parsl.dataflow.dflow) :: Standard out for task 42 will not be redirected.
+[2024-05-26 02:42:19.463] INFO  (parsl.dataflow.dflow) :: Standard error for task 42 will not be redirected.
+[2024-05-26 02:42:20.081] INFO  (parsl.dataflow.dflow) :: Task 45 completed (launched -> exec_done)
+[2024-05-26 02:42:20.081] INFO  (parsl.dataflow.dflow) :: Standard out for task 45 will not be redirected.
+[2024-05-26 02:42:20.081] INFO  (parsl.dataflow.dflow) :: Standard error for task 45 will not be redirected.
+[2024-05-26 02:42:20.121] INFO  (parsl.dataflow.dflow) :: Task 37 completed (launched -> exec_done)
+[2024-05-26 02:42:20.121] INFO  (parsl.dataflow.dflow) :: Standard out for task 37 will not be redirected.
+[2024-05-26 02:42:20.121] INFO  (parsl.dataflow.dflow) :: Standard error for task 37 will not be redirected.
+[2024-05-26 02:42:20.846] INFO  (parsl.dataflow.dflow) :: Task 43 completed (launched -> exec_done)
+[2024-05-26 02:42:20.846] INFO  (parsl.dataflow.dflow) :: Standard out for task 43 will not be redirected.
+[2024-05-26 02:42:20.846] INFO  (parsl.dataflow.dflow) :: Standard error for task 43 will not be redirected.
+[2024-05-26 02:42:21.065] INFO  (parsl.dataflow.dflow) :: Task 44 completed (launched -> exec_done)
+[2024-05-26 02:42:21.066] INFO  (parsl.dataflow.dflow) :: Standard out for task 44 will not be redirected.
+[2024-05-26 02:42:21.066] INFO  (parsl.dataflow.dflow) :: Standard error for task 44 will not be redirected.
+[2024-05-26 02:42:22.399] INFO  (parsl.dataflow.dflow) :: Task 33 completed (launched -> exec_done)
+[2024-05-26 02:42:22.399] INFO  (parsl.dataflow.dflow) :: Standard out for task 33 will not be redirected.
+[2024-05-26 02:42:22.399] INFO  (parsl.dataflow.dflow) :: Standard error for task 33 will not be redirected.
+[2024-05-26 02:42:22.668] INFO  (parsl.dataflow.dflow) :: Task 35 completed (launched -> exec_done)
+[2024-05-26 02:42:22.668] INFO  (parsl.dataflow.dflow) :: Standard out for task 35 will not be redirected.
+[2024-05-26 02:42:22.668] INFO  (parsl.dataflow.dflow) :: Standard error for task 35 will not be redirected.
+[2024-05-26 02:42:23.718] INFO  (parsl.dataflow.dflow) :: Task 41 completed (launched -> exec_done)
+[2024-05-26 02:42:23.718] INFO  (parsl.dataflow.dflow) :: Standard out for task 41 will not be redirected.
+[2024-05-26 02:42:23.718] INFO  (parsl.dataflow.dflow) :: Standard error for task 41 will not be redirected.
+[2024-05-26 02:42:23.796] INFO  (parsl.dataflow.dflow) :: Task 39 completed (launched -> exec_done)
+[2024-05-26 02:42:23.796] INFO  (parsl.dataflow.dflow) :: Standard out for task 39 will not be redirected.
+[2024-05-26 02:42:23.796] INFO  (parsl.dataflow.dflow) :: Standard error for task 39 will not be redirected.
+[2024-05-26 02:42:24.463] INFO  (parsl.dataflow.dflow) :: Task 34 completed (launched -> exec_done)
+[2024-05-26 02:42:24.463] INFO  (parsl.dataflow.dflow) :: Standard out for task 34 will not be redirected.
+[2024-05-26 02:42:24.463] INFO  (parsl.dataflow.dflow) :: Standard error for task 34 will not be redirected.
+[2024-05-26 02:42:25.692] INFO  (parsl.dataflow.dflow) :: Task 38 completed (launched -> exec_done)
+[2024-05-26 02:42:25.692] INFO  (parsl.dataflow.dflow) :: Standard out for task 38 will not be redirected.
+[2024-05-26 02:42:25.692] INFO  (parsl.dataflow.dflow) :: Standard error for task 38 will not be redirected.
+[2024-05-26 02:42:26.847] INFO  (parsl.dataflow.dflow) :: Task 46 completed (launched -> exec_done)
+[2024-05-26 02:42:26.848] INFO  (parsl.dataflow.dflow) :: Standard out for task 46 will not be redirected.
+[2024-05-26 02:42:26.848] INFO  (parsl.dataflow.dflow) :: Standard error for task 46 will not be redirected.
+[2024-05-26 02:42:27.392] INFO  (parsl.dataflow.dflow) :: Task 32 completed (launched -> exec_done)
+[2024-05-26 02:42:27.392] INFO  (parsl.dataflow.dflow) :: Standard out for task 32 will not be redirected.
+[2024-05-26 02:42:27.392] INFO  (parsl.dataflow.dflow) :: Standard error for task 32 will not be redirected.
+[2024-05-26 02:42:27.652] INFO  (parsl.dataflow.dflow) :: Task 40 completed (launched -> exec_done)
+[2024-05-26 02:42:27.652] INFO  (parsl.dataflow.dflow) :: Standard out for task 40 will not be redirected.
+[2024-05-26 02:42:27.652] INFO  (parsl.dataflow.dflow) :: Standard error for task 40 will not be redirected.
+[2024-05-26 02:42:28.064] INFO  (parsl.dataflow.dflow) :: Task 47 completed (launched -> exec_done)
+[2024-05-26 02:42:28.065] INFO  (parsl.dataflow.dflow) :: Standard out for task 47 will not be redirected.
+[2024-05-26 02:42:28.065] INFO  (parsl.dataflow.dflow) :: Standard error for task 47 will not be redirected.
+[2024-05-26 02:42:28.065] WORK  (webs.wf.fedlearn.workflow) :: (3/3) Finished local training.
+[2024-05-26 02:42:28.146] WORK  (webs.wf.fedlearn.workflow) :: (3/3) Averaged the returned locally trained models.
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: Waiting for all remaining tasks to complete
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: All remaining tasks completed
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: DFK cleanup initiated
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: Summary of tasks in DFK:
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: Tasks in state States.unsched: 0
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: Tasks in state States.pending: 0
+[2024-05-26 02:42:28.148] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.exec_done: 48
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.failed: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.dep_fail: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.launched: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.fail_retryable: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.memo_done: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.joining: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running_ended: 0
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: End of summary
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Sending end message for usage tracking
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Closed usage tracking
+[2024-05-26 02:42:28.149] INFO  (parsl.dataflow.dflow) :: Closing job status poller
+[2024-05-26 02:42:28.150] INFO  (parsl.jobs.job_status_poller) :: Scaling in executor htex-local
+[2024-05-26 02:42:28.242] INFO  (parsl.dataflow.dflow) :: Terminated job status poller
+[2024-05-26 02:42:28.242] INFO  (parsl.dataflow.dflow) :: Shutting down executors
+[2024-05-26 02:42:28.242] INFO  (parsl.dataflow.dflow) :: Shutting down executor htex-local
+[2024-05-26 02:42:28.242] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-05-26 02:42:28.598] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: Shut down executor htex-local
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: Shutting down executor _parsl_internal
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: Shut down executor _parsl_internal
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: Terminated executors
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: Unregistering atexit hook
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: Unregistered atexit hook
+[2024-05-26 02:42:28.599] INFO  (parsl.dataflow.dflow) :: DFK cleanup complete
+[2024-05-26 02:42:28.599] RUN   (webs.run) :: Finished workflow (name=fedlearn, runtime=252.28s, tasks=48)

@@ -1,0 +1,450 @@
+[2024-05-25 21:23:16.068] RUN   (webs.run) :: Starting workflow (name=montage)
+[2024-05-25 21:23:16.068] RUN   (webs.run) :: name='montage' timestamp=datetime.datetime(2024, 5, 25, 21, 23, 16, 67728) executor=GlobusComputeConfig(endpoint='ac34ba40-5d6c-48b1-a18e-947f2f136df8') transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/globus-compute/{timestamp}') workflow=MontageWorkflowConfig(img_folder='/home/cc/taps/data/Kimages/', img_tbl='Kimages.tbl', img_hdr='Kimages.hdr', output_dir='Kprojdir')
+[2024-05-25 21:23:16.068] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/montage/globus-compute/2024-05-25-21-23-16
+[2024-05-25 21:23:16.069] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_sdk.services.auth.client.native_client.NativeAppAuthClient'> for service "auth"
+[2024-05-25 21:23:16.069] INFO  (globus_sdk.services.auth.client.base_login_client) :: Finished initializing AuthLoginClient. client_id='4cf29807-cf21-49ec-9443-ff9a3fb9f81c', type(authorizer)=<class 'globus_sdk.authorizers.base.NullAuthorizer'>
+[2024-05-25 21:23:16.069] INFO  (globus_sdk.authorizers.refresh_token) :: Setting up RefreshTokenAuthorizer with auth_client=[instance:140514680714704]
+[2024-05-25 21:23:16.069] INFO  (globus_sdk.authorizers.renewing) :: Setting up a RenewingAuthorizer. It will use an auth type of Bearer and can handle 401s.
+[2024-05-25 21:23:16.069] INFO  (globus_sdk.authorizers.renewing) :: RenewingAuthorizer will start by using access_token with hash "e0ab7885f2183ede4200a08e5a5fdc6513d0c9dda2d1f01fa24ac30ad40f8f67"
+[2024-05-25 21:23:16.069] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_compute_sdk.sdk.web_client.WebClient'> for service "funcx"
+[2024-05-25 21:23:16.362] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:16.365] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "configure_montage", "function_code": "1304\n01\ngASVtwMAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwRY29uZmlndXJlX21vbnRh\nZ2WUk5SMB3Rhc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihFo3u3/1jLnprdKwlz1\nqmDIAHNijBBkYXRhX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rhc2tEYXRh\nVHJhbnNmb3JtZXKUk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyUjA9OdWxs\nVHJhbnNmb3JtZXKUk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVsbEZpbHRl\ncpSTlCmBlHVijApfX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9flGgHjAdf\nX2RvY19flFivAQAATW9udGFnZSBNb3NhaWMgd29ya2Zsb3cgc2V0dXAuCgogICAgVGhpcyBmdW5j\ndGlvbiBnZW5lcmF0ZXMgYSBoZWFkZXIgZmlsZSBib3VuZGluZyBhCiAgICBjb2xsZWN0aW9uIG9m\nIGRhdGEgc3BlY2lmaWVkIGJ5IHRoZSBpbnB1dCBpbWFnZSBkaXIuCgogICAgQXJnczoKICAgICAg\nICBpbWdfZm9sZGVyIChzdHIpOiBwYXRoIHRvIGlucHV0IGltYWdlIGRpcmVjdG9yeQogICAgICAg\nIGltZ190YmwgKHN0cik6IG5hbWUgb2YgdGhlIGltYWdlIHRhYmxlIGZpbGUKICAgICAgICBpbWdf\naGRyIChzdHIpOiBuYW1lIG9mIHRoZSBpbWFnZSBoZWFkZXIgZmlsZQogICAgICAgIG91dHB1dF9k\naXIgKHN0cik6IG91dHB1dCBkaXJlY3RvcnkgcGF0aAoKICAgIFJldHVybnM6CiAgICAgICAgcGF0\naGxpYi5QYXRoOiB0aGUgY3JlYXRlZCBvdXRwdXQgZGlyZWN0b3J5CiAgICCUjA9fX2Fubm90YXRp\nb25zX1+UfZQojAppbWdfZm9sZGVylIwMcGF0aGxpYi5QYXRolIwHaW1nX3RibJRoKIwHaW1nX2hk\ncpRoKIwKb3V0cHV0X2RpcpRoKIwGcmV0dXJulGgodYwLX193cmFwcGVkX1+UaAh1Yi4=\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:16.436] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:16.436] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group None to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-25 21:23:17.046] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:17.046] INFO  (globus_compute_sdk.sdk.executor) :: Updating task_group_id from None to ab368de3-f815-41ee-81d5-7148c7d51547
+[2024-05-25 21:23:17.703] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:17.758] INFO  (pika.adapters.utils.connection_workflow) :: Pika version 1.3.2 connecting to ('18.205.84.179', 5671)
+[2024-05-25 21:23:17.806] INFO  (pika.adapters.utils.io_services_utils) :: Socket connected: <socket.socket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 44798), raddr=('18.205.84.179', 5671)>
+[2024-05-25 21:23:17.903] INFO  (pika.adapters.utils.io_services_utils) :: SSL handshake completed successfully: <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 44798), raddr=('18.205.84.179', 5671)>
+[2024-05-25 21:23:17.904] INFO  (pika.adapters.utils.connection_workflow) :: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fcc1f0a8950>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fcc1f0a8950> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>).
+[2024-05-25 21:23:18.051] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fcc1f0a8950> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>
+[2024-05-25 21:23:18.051] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fcc1f0a8950> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>
+[2024-05-25 21:23:20.217] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "mproject", "function_code": "1353\n01\ngASV2gMAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwIbXByb2plY3SUk5SMB3Rh\nc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihAur5d00tBpoaZMH7GYrLlYc2KMEGRh\ndGFfdHJhbnNmb3JtZXKUjBN3ZWJzLmRhdGEudHJhbnNmb3JtlIwTVGFza0RhdGFUcmFuc2Zvcm1l\ncpSTlCmBlH2UKIwLdHJhbnNmb3JtZXKUjA53ZWJzLmRhdGEubnVsbJSMD051bGxUcmFuc2Zvcm1l\ncpSTlCmBlIwHZmlsdGVyX5SMEHdlYnMuZGF0YS5maWx0ZXKUjApOdWxsRmlsdGVylJOUKYGUdWKM\nCl9fbW9kdWxlX1+UaAaMCF9fbmFtZV9flGgHjAxfX3F1YWxuYW1lX1+UaAeMB19fZG9jX1+UWNkB\nAABXcmFwcGVyIHRvIE1vbnRhZ2UgbVByb2plY3QgZnVuY3Rpb24uCgogICAgVGhlIGZ1bmN0aW9u\nIHJlcHJvamVjdHMgYSBzaW5nbGUgaW1hZ2UgdG8gdGhlIHNjYWxlIGRlZmluZWQKICAgIGluIGEg\nRklUUyBoZWFkZXIgdGVtcGxhdGUgZmlsZS4KCiAgICBBcmdzOgogICAgICAgIGlucHV0X2ZuIChw\nYXRobGliLlBhdGgpOiBGSVRTIGZpbGUgdG8gcmVwcm9qZWN0CiAgICAgICAgdGVtcGxhdGUgKHBh\ndGhsaWIuUGF0aCk6IEZJVFMgaGVhZGVyIGZpbGUgdXNlZCB0byBkZWZpbmUKICAgICAgICAgICAg\ndGhlIGRlc2lyZWQgb3V0cHV0CiAgICAgICAgb3V0cHV0X2RpciAocGF0aGxpYi5QYXRoKTogb3V0\ncHV0IGRpcmVjdG9yeSBwYXRoCiAgICAgICAgb3V0cHV0X25hbWUgKHBhdGhsaWIuUGF0aCk6IG91\ndHB1dCBmaWxlIGJhc2VuYW1lCgogICAgUmV0dXJuczoKICAgICAgICBwYXRobGliLlBhdGg6IG91\ndHB1dCBkaXJlY3RvcnkKICAgIJSMD19fYW5ub3RhdGlvbnNfX5R9lCiMCGlucHV0X2ZulIwMcGF0\naGxpYi5QYXRolIwIdGVtcGxhdGWUaCiMCm91dHB1dF9kaXKUaCiMC291dHB1dF9uYW1llGgojAZy\nZXR1cm6UaCh1jAtfX3dyYXBwZWRfX5RoCHViLg==\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:20.287] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:20.291] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 91
+[2024-05-25 21:23:22.138] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:46.333] INFO  (webs.wf.montage.workflow) :: mproject done (91)
+[2024-05-25 21:23:46.334] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "mimgtbl", "function_code": "1231\n01\ngASVgQMAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwHbWltZ3RibJSTlIwHdGFz\na19pZJSMBHV1aWSUjARVVUlElJOUKYGUfZSMA2ludJSKEBWks8h1e3KI7EEITQsg7gxzYowQZGF0\nYV90cmFuc2Zvcm1lcpSME3dlYnMuZGF0YS50cmFuc2Zvcm2UjBNUYXNrRGF0YVRyYW5zZm9ybWVy\nlJOUKYGUfZQojAt0cmFuc2Zvcm1lcpSMDndlYnMuZGF0YS5udWxslIwPTnVsbFRyYW5zZm9ybWVy\nlJOUKYGUjAdmaWx0ZXJflIwQd2Vicy5kYXRhLmZpbHRlcpSMCk51bGxGaWx0ZXKUk5QpgZR1YowK\nX19tb2R1bGVfX5RoBowIX19uYW1lX1+UaAeMDF9fcXVhbG5hbWVfX5RoB4wHX19kb2NfX5RYjgEA\nAFdyYXBwZXIgdG8gTW9udGFnZSBJbWd0YmwgZnVuY3Rpb24uCgogICAgVGhlIGZ1bmN0aW9uIGV4\ndHJhY3RzIHRoZSBGSVRTIGhlYWRlciBnZW9tZXRyeSBpbmZvcm1hdGlvbgogICAgZnJvbSBhIHNl\ndCBvZiBmaWxlcyBhbmQgY3JlYXRlcyBhbiBBU0NJSSBpbWFnZSBtZXRhZGF0YSB0YWJsZS4KCiAg\nICBBcmdzOgogICAgICAgIGltZ19kaXIgKHBhdGhsaWIuUGF0aCk6IElucHV0IGltYWdlIGRpcmVj\ndG9yeQogICAgICAgIHRibF9uYW1lIChzdHIpOiBGSVRTIHRhYmxlIG5hbWUKICAgICAgICBvdXRw\ndXRfZGlyIChwYXRobGliLlBhdGgpOiBPdXRwdXQgZGlyZWN0b3J5IHRvIHNhdmUgaGRyIHRvCgog\nICAgUmV0dXJuczoKICAgICAgICBwYXRobGliLlBhdGg6IGNyZWF0ZWQgdGFibGUgZmlsZQogICAg\nlIwPX19hbm5vdGF0aW9uc19flH2UKIwHaW1nX2RpcpSMDHBhdGhsaWIuUGF0aJSMCHRibF9uYW1l\nlIwDc3RylIwKb3V0cHV0X2RpcpRoKIwGcmV0dXJulGgodYwLX193cmFwcGVkX1+UaAh1Yi4=\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:46.402] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:46.402] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-25 21:23:46.519] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:46.836] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "moverlaps", "function_code": "1329\n01\ngASVyQMAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwJbW92ZXJsYXBzlJOUjAd0\nYXNrX2lklIwEdXVpZJSMBFVVSUSUk5QpgZR9lIwDaW50lIoRmebD8kG1SqTnS9nnhWQ6lABzYowQ\nZGF0YV90cmFuc2Zvcm1lcpSME3dlYnMuZGF0YS50cmFuc2Zvcm2UjBNUYXNrRGF0YVRyYW5zZm9y\nbWVylJOUKYGUfZQojAt0cmFuc2Zvcm1lcpSMDndlYnMuZGF0YS5udWxslIwPTnVsbFRyYW5zZm9y\nbWVylJOUKYGUjAdmaWx0ZXJflIwQd2Vicy5kYXRhLmZpbHRlcpSMCk51bGxGaWx0ZXKUk5QpgZR1\nYowKX19tb2R1bGVfX5RoBowIX19uYW1lX1+UaAeMDF9fcXVhbG5hbWVfX5RoB4wHX19kb2NfX5RY\nrwEAAFdyYXBwZXIgdG8gTW9udGFnZSBPdmVybGFwcyBmdW5jdGlvbi4KCiAgICBUaGUgZnVuY3Rp\nb24gdGFrZXMgYSBsaXN0IG9mIG9mIGltYWdlcyBhbmQgZ2VuZXJhdGVzIGEgbGlzdCBvZiBvdmVy\nbGFwcy4KCiAgICBBcmdzOgogICAgICAgIGltZ190YmwgKHBhdGhsaWIuUGF0aCk6IGltYWdlIG1l\ndGFkYXRhIGZpbGUKICAgICAgICBkaWZmc19uYW1lIChzdHIpOiBvdXRwdXQgdGFibGUgbmFtZSBv\nZiBvdmVybGFwcGluZyBhcmVhcwogICAgICAgIG91dHB1dF9kaXIgKHBhdGhsaWIuUGF0aCk6IG91\ndHB1dCBkaXJlY3RvcnkgcGF0aAoKICAgIFJldHVybnM6CiAgICAgICAgdHVwbGVbcGF0aGxpYi5Q\nYXRoLCBwYXRobGliLlBhdGhdOiBkaXJlY3RvcnkgY29udGFpbmluZwogICAgICAgICAgICBvdmVy\nbGFwIGltYWdlcyBhbmQgZGlmZmVyZW5jZSB0YWJsZQogICAglIwPX19hbm5vdGF0aW9uc19flH2U\nKIwHaW1nX3RibJSMDHBhdGhsaWIuUGF0aJSMCmRpZmZzX25hbWWUjANzdHKUjApvdXRwdXRfZGly\nlGgojAZyZXR1cm6UjCF0dXBsZVtwYXRobGliLlBhdGgsIHBhdGhsaWIuUGF0aF2UdYwLX193cmFw\ncGVkX1+UaAh1Yi4=\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:46.900] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:46.900] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-25 21:23:47.003] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:47.406] INFO  (webs.wf.montage.workflow) :: diffs done (233)
+[2024-05-25 21:23:47.407] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "mdiff", "function_code": "1377\n01\ngASV7QMAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwFbWRpZmaUk5SMB3Rhc2tf\naWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihHANaL6faP4lctOT1uTJYGHAHNijBBkYXRh\nX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rhc2tEYXRhVHJhbnNmb3JtZXKU\nk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyUjA9OdWxsVHJhbnNmb3JtZXKU\nk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVsbEZpbHRlcpSTlCmBlHVijApf\nX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9flGgHjAdfX2RvY19flFjyAQAA\nV3JhcHBlciB0byBNb250YWdlIGRpZmYgZnVuY3Rpb24uCgogICAgVGhlIGZ1bmN0aW9uIHN1YnRy\nYWN0cyBvbmUgaW1hZ2UgZnJvbSBhbm90aGVyCiAgICAoYm90aCBpbiB0aGUgc2FtZSBwcm9qZWN0\naW9uKQoKICAgIEFyZ3M6CiAgICAgICAgaW1hZ2VfMSAocGF0aGxpYi5QYXRoKTogZmlyc3QgaW5w\ndXQgZmlsZQogICAgICAgICAgICBmb3IgZGlmZmVyZW5jaW5nCiAgICAgICAgaW1hZ2VfMiAocGF0\naGxpYi5QYXRoKTogc2Vjb25kIGlucHV0IGZpbGUKICAgICAgICAgICAgZm9yIGRpZmZlcmVuY2lu\nZwogICAgICAgIHRlbXBsYXRlIChwYXRobGliLlBhdGgpOiBGSVRTIGhlYWRlciBmaWxlIHVzZWQg\ndG8KICAgICAgICAgICAgZGVmaW5lIHRoZSBkZXNpcmVkIG91dHB1dAogICAgICAgIG91dHB1dF9m\naWxlIChzdHIpOiBvdXRwdXQgZGlmZmVyZW5jZSBmaWxlIGJhc2VuYW1lCgogICAgUmV0dXJuczoK\nICAgICAgICBwYXRobGliLlBhdGg6IG91dHB1dCBmaWxlcGF0aAogICAglIwPX19hbm5vdGF0aW9u\nc19flH2UKIwHaW1hZ2VfMZSMDHBhdGhsaWIuUGF0aJSMB2ltYWdlXzKUaCiMCHRlbXBsYXRllGgo\njAtvdXRwdXRfZmlsZZRoKIwGcmV0dXJulGgodYwLX193cmFwcGVkX1+UaAh1Yi4=\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:47.473] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:47.496] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 128
+[2024-05-25 21:23:48.903] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:48.905] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 105
+[2024-05-25 21:23:48.906] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1f1377d0 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:48.936] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1f128a50 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:49.442] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1f128490 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:49.445] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1f129b90 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:49.948] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1f137d90 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:49.949] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1f146050 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:50.454] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:50.960] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1dfb6290 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:50.961] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1df8b9d0 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:51.464] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1df7eb90 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:52.470] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1dfb7490 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:53.477] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1dfe2590 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:53.478] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1dff15d0 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:53.980] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7fcc1e00ac50 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/montage/workflow.py", line 174, in mdiff
+     log_str = montage.mDiff(
+               ^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/commands.py", line 731, in mDiff
+     return status.parse_struct("mDiff", p.stdout.read().strip())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 33, in parse_struct
+     result = Struct(command, string)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/miniconda3/envs/taps/lib/python3.11/site-packages/montage_wrapper/status.py", line 70, in __init__
+     raise MontageError("%s: %s" % (command, self.msg))
+ montage_wrapper.status.MontageError: mDiff: All pixels are blank.
+
+[2024-05-25 21:23:53.984] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "bgexec_prep", "function_code": "1552\n01\ngASVbQQAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwLYmdleGVjX3ByZXCUk5SM\nB3Rhc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihF2edMqwwDKpAJMRo5Ru4PPAHNi\njBBkYXRhX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rhc2tEYXRhVHJhbnNm\nb3JtZXKUk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyUjA9OdWxsVHJhbnNm\nb3JtZXKUk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVsbEZpbHRlcpSTlCmB\nlHVijApfX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9flGgHjAdfX2RvY19f\nlFhFAgAAUHJlcCB0byBjYWxsIE1vbnRhZ2UgYmcgZnVuY3Rpb24uCgogICAgVGhlIGZ1bmN0aW9u\nIGNyZWF0ZXMgYW4gaW1hZ2UtdG8taW1hZ2UgZGlmZmVyZW5jZSBwYXJhbWV0ZXIgdGFibGUgYW5k\nCiAgICB0aGVuIGFwcGxpZXMgYSBzZXQgb2YgY29ycmVjdGlvbnMgdG8gYWNoaWV2ZSBhIGJlc3Qg\nZ2xvYmFsIGZpdC4KCiAgICBBcmdzOgogICAgICAgIGltZ190YWJsZSAocGF0aGxpYi5QYXRoKTog\ncmVwcm9qZWN0ZWQgaW1hZ2UgbWV0YWRhdGEgbGlzdAogICAgICAgIGRpZmZzX3RhYmxlIChwYXRo\nbGliLlBhdGgpOiB0YWJsZSBmaWxlIGxpc3Qgb2YgaW5wdXQgZGlmZmVyZW5jZSBpbWFnZXMKICAg\nICAgICBkaWZmX2RpciAocGF0aGxpYi5QYXRoKTogZGlyZWN0b3J5IGZvciB0ZW1wb3JhcnkgZGlm\nZmVyZW5jZSBmaWxlcwogICAgICAgIG91dHB1dF9kaXIgKHBhdGhsaWIuUGF0aCk6IG91dHB1dCBk\naXJlY3RvcnkgcGF0aAoKICAgIFJldHVybnM6CiAgICAgICAgdHVwbGVbcGF0aGxpYi5QYXRoLCBw\nYXRobGliLlBhdGhdOiBjb3JyZWN0aW9uIGRpciBwYXRoLAogICAgICAgICAgICBjb3JyZWN0aW9u\ncyB0YWJsZSBwYXRoCiAgICCUjA9fX2Fubm90YXRpb25zX1+UfZQojAlpbWdfdGFibGWUjAxwYXRo\nbGliLlBhdGiUjAtkaWZmc190YWJsZZRoKIwIZGlmZl9kaXKUaCiMCm91dHB1dF9kaXKUaCiMBnJl\ndHVybpSMIXR1cGxlW3BhdGhsaWIuUGF0aCwgcGF0aGxpYi5QYXRoXZR1jAtfX3dyYXBwZWRfX5Ro\nCHViLg==\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:54.049] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:54.050] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-25 21:23:54.163] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:59.005] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "mbackground", "function_code": "1410\n01\ngASVBgQAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwYd2Vicy53Zi5tb250YWdlLndvcmtmbG93lIwLbWJhY2tncm91bmSUk5SM\nB3Rhc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihGiJGD/RsyAopxN6pbdDJ73AHNi\njBBkYXRhX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rhc2tEYXRhVHJhbnNm\nb3JtZXKUk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyUjA9OdWxsVHJhbnNm\nb3JtZXKUk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVsbEZpbHRlcpSTlCmB\nlHVijApfX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9flGgHjAdfX2RvY19f\nlFgHAgAAV3JhcHBlciB0byBNb250YWdlIEJhY2tncm91bmQgZnVuY3Rpb24uCgogICAgRnVuY3Rp\nb24gc3VidHJhY3RzIGEgcGxhbmFyIGJhY2tncm91bmQgZnJvbSBhIEZJVFMgaW1hZ2UuCgogICAg\nQXJnczoKICAgICAgICBpbl9pbWFnZSAocGF0aGxpYi5QYXRoKTogSW5wdXQgRklUUyBmaWxlCiAg\nICAgICAgb3V0X2ltYWdlIChwYXRobGliLlBhdGgpOiBPdXRwdXQgYmFja2dyb3VuZC1yZW1vdmVk\nIEZJVFMgZmlsZQogICAgICAgIGEgKGZsb2F0KTogQSBjb2VmZmljaWVudCBpbiAoQSp4ICsgQip5\nICsgQykgYmFja2dyb3VuZCBsZXZlbCBlcXVhdGlvbgogICAgICAgIGIgKGZsb2F0KTogQiBjb2Vm\nZmljaWVudCBpbiAoQSp4ICsgQip5ICsgQykgYmFja2dyb3VuZCBsZXZlbCBlcXVhdGlvbgogICAg\nICAgIGMgKGZsb2F0KTogQyBsZXZlbCBpbiAoQSp4ICsgQip5ICsgQykgYmFja2dyb3VuZCBsZXZl\nbCBlcXVhdGlvbgoKICAgIFJldHVybnM6CiAgICAgICAgcGF0aGxpYi5QYXRoOiBvdXRwdXQgaW1h\nZ2UgcGF0aAogICAglIwPX19hbm5vdGF0aW9uc19flH2UKIwIaW5faW1hZ2WUjAxwYXRobGliLlBh\ndGiUjAlvdXRfaW1hZ2WUaCiMAWGUjAVmbG9hdJSMAWKUaCuMAWOUaCuMBnJldHVybpRoKHWMC19f\nd3JhcHBlZF9flGgIdWIu\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-25 21:23:59.065] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:23:59.116] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group ab368de3-f815-41ee-81d5-7148c7d51547 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 91
+[2024-05-25 21:24:00.145] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-25 21:24:03.011] INFO  (pika.channel) :: Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fcc1f0a8950> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>>
+[2024-05-25 21:24:03.063] INFO  (pika.channel) :: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fcc1f0a8950> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>>
+[2024-05-25 21:24:03.212] INFO  (pika.connection) :: Closing connection (200): 'Normal shutdown'
+[2024-05-25 21:24:03.260] INFO  (pika.adapters.utils.io_services_utils) :: Aborting transport connection: state=1; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 44798), raddr=('18.205.84.179', 5671)>
+[2024-05-25 21:24:03.260] INFO  (pika.adapters.utils.io_services_utils) :: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 44798), raddr=('18.205.84.179', 5671)>
+[2024-05-25 21:24:03.261] INFO  (pika.adapters.utils.io_services_utils) :: Deactivating transport: state=1; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 44798), raddr=('18.205.84.179', 5671)>
+[2024-05-25 21:24:03.261] INFO  (pika.connection) :: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-05-25 21:24:03.262] INFO  (pika.connection) :: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-05-25 21:24:03.262] INFO  (pika.adapters.utils.io_services_utils) :: Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 44798), raddr=('18.205.84.179', 5671)>
+[2024-05-25 21:24:03.263] RUN   (webs.run) :: Finished workflow (name=montage, runtime=47.20s, tasks=419)

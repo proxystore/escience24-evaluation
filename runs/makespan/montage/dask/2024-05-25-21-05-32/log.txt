@@ -1,0 +1,6 @@
+[2024-05-25 21:05:32.785] RUN   (webs.run) :: Starting workflow (name=montage)
+[2024-05-25 21:05:32.785] RUN   (webs.run) :: name='montage' timestamp=datetime.datetime(2024, 5, 25, 21, 5, 32, 784775) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/dask/{timestamp}') workflow=MontageWorkflowConfig(img_folder='/home/cc/taps/data/Kimages/', img_tbl='Kimages.tbl', img_hdr='Kimages.hdr', output_dir='Kprojdir')
+[2024-05-25 21:05:32.785] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/montage/dask/2024-05-25-21-05-32
+[2024-05-25 21:05:47.035] INFO  (webs.wf.montage.workflow) :: mproject done (91)
+[2024-05-25 21:05:47.297] INFO  (webs.wf.montage.workflow) :: diffs done (233)
+[2024-05-25 21:05:53.918] RUN   (webs.run) :: Finished workflow (name=montage, runtime=21.13s, tasks=419)

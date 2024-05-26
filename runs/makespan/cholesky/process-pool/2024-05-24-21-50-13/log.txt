@@ -1,0 +1,7 @@
+[2024-05-24 21:50:13.169] RUN   (webs.run) :: Starting workflow (name=cholesky)
+[2024-05-24 21:50:13.169] RUN   (webs.run) :: name='cholesky' timestamp=datetime.datetime(2024, 5, 24, 21, 50, 13, 168820) executor=ProcessPoolConfig(max_processes=64) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/process-pool/{timestamp}') workflow=CholeskyWorkflowConfig(n=10000, block_size=1000)
+[2024-05-24 21:50:13.169] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/cholesky/process-pool/2024-05-24-21-50-13
+[2024-05-24 21:50:19.003] WORK  (webs.wf.cholesky.workflow) :: Input matrix: (10000, 10000)
+[2024-05-24 21:50:19.004] WORK  (webs.wf.cholesky.workflow) :: Block size: 1000
+[2024-05-24 21:50:46.199] WORK  (webs.wf.cholesky.workflow) :: Output matrix: (10000, 10000)
+[2024-05-24 21:50:46.460] RUN   (webs.run) :: Finished workflow (name=cholesky, runtime=33.29s, tasks=385)

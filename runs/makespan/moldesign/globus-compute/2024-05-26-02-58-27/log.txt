@@ -1,0 +1,211 @@
+[2024-05-26 02:58:27.957] RUN   (webs.run) :: Starting workflow (name=moldesign)
+[2024-05-26 02:58:27.957] RUN   (webs.run) :: name='moldesign' timestamp=datetime.datetime(2024, 5, 26, 2, 58, 27, 956677) executor=GlobusComputeConfig(endpoint='ac34ba40-5d6c-48b1-a18e-947f2f136df8') transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/globus-compute/{timestamp}') workflow=MoldesignWorkflowConfig(dataset='/home/cc/taps/data/QM9-search.tsv', initial_count=16, search_count=64, batch_size=16, seed=0)
+[2024-05-26 02:58:27.957] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/moldesign/globus-compute/2024-05-26-02-58-27
+[2024-05-26 02:58:27.958] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_sdk.services.auth.client.native_client.NativeAppAuthClient'> for service "auth"
+[2024-05-26 02:58:27.958] INFO  (globus_sdk.services.auth.client.base_login_client) :: Finished initializing AuthLoginClient. client_id='4cf29807-cf21-49ec-9443-ff9a3fb9f81c', type(authorizer)=<class 'globus_sdk.authorizers.base.NullAuthorizer'>
+[2024-05-26 02:58:27.958] INFO  (globus_sdk.authorizers.refresh_token) :: Setting up RefreshTokenAuthorizer with auth_client=[instance:139639284889232]
+[2024-05-26 02:58:27.958] INFO  (globus_sdk.authorizers.renewing) :: Setting up a RenewingAuthorizer. It will use an auth type of Bearer and can handle 401s.
+[2024-05-26 02:58:27.958] INFO  (globus_sdk.authorizers.renewing) :: RenewingAuthorizer will start by using access_token with hash "e0ab7885f2183ede4200a08e5a5fdc6513d0c9dda2d1f01fa24ac30ad40f8f67"
+[2024-05-26 02:58:27.958] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_compute_sdk.sdk.web_client.WebClient'> for service "funcx"
+[2024-05-26 02:58:28.117] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:28.275] WORK  (webs.wf.moldesign.workflow) :: Loaded search space (size=130,258)
+[2024-05-26 02:58:28.279] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "_compute_vertical", "function_code": "859\n01\ngASVbQIAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwfd2Vicy53Zi5tb2xkZXNpZ24uY2hlbWZ1bmN0aW9uc5SMEV9jb21wdXRl\nX3ZlcnRpY2FslJOUjAd0YXNrX2lklIwEdXVpZJSMBFVVSUSUk5QpgZR9lIwDaW50lIoQiPXBzNTI\nfakxTNVvT+LJCHNijBBkYXRhX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rh\nc2tEYXRhVHJhbnNmb3JtZXKUk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyU\njA9OdWxsVHJhbnNmb3JtZXKUk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVs\nbEZpbHRlcpSTlCmBlHVijApfX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9f\nlGgHjAdfX2RvY19flIyQUnVuIHRoZSBpb25pemF0aW9uIHBvdGVudGlhbCBjb21wdXRhdGlvbi4K\nCiAgICBBcmdzOgogICAgICAgIHNtaWxlczogU01JTEVTIHN0cmluZyB0byBldmFsdWF0ZQogICAg\nUmV0dXJuczoKICAgICAgICBJb25pemF0aW9uIGVuZXJneSBpbiBIYQogICAglIwPX19hbm5vdGF0\naW9uc19flH2UKIwGc21pbGVzlIwDc3RylIwGcmV0dXJulIwFZmxvYXSUdYwLX193cmFwcGVkX1+U\naAh1Yi4=\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-26 02:58:28.339] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:28.340] WORK  (webs.wf.moldesign.workflow) :: Submitted initial computations
+[2024-05-26 02:58:28.340] INFO  (webs.wf.moldesign.workflow) :: Initial set: ['NC(=O)C12CN1C(=O)C2', 'CC12CCC(C1)C(=O)C2', 'CNC1=NC=NOC1=O', 'C1OC11CCCC1', 'COC12CCC1(O)C2O', 'OC1C=CC=CC=C1', 'CCC(C)C1COCO1', 'COC1=CC(C)=C(N)N1', 'CNC1=C(NC=N1)C=O', 'OCC1CC1OCC#C', 'OC1C=C2CN3C1C23', 'OC1CCC23CC12CO3', 'CCC1=COC=C1OC', 'CC1CCCCC(=O)C1', 'CC12OC3C4C(C14)C23', 'CC1OC2C3C1CC23O']
+[2024-05-26 02:58:28.341] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group None to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 16
+[2024-05-26 02:58:29.157] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:29.158] INFO  (globus_compute_sdk.sdk.executor) :: Updating task_group_id from None to 624dbe9c-6c64-4125-9e8b-b175c4e09151
+[2024-05-26 02:58:29.836] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:29.848] INFO  (pika.adapters.utils.connection_workflow) :: Pika version 1.3.2 connecting to ('50.19.2.220', 5671)
+[2024-05-26 02:58:29.895] INFO  (pika.adapters.utils.io_services_utils) :: Socket connected: <socket.socket fd=11, family=2, type=1, proto=6, laddr=('10.52.3.104', 45918), raddr=('50.19.2.220', 5671)>
+[2024-05-26 02:58:29.990] INFO  (pika.adapters.utils.io_services_utils) :: SSL handshake completed successfully: <ssl.SSLSocket fd=11, family=2, type=1, proto=6, laddr=('10.52.3.104', 45918), raddr=('50.19.2.220', 5671)>
+[2024-05-26 02:58:29.991] INFO  (pika.adapters.utils.connection_workflow) :: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f004c79f510>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f004c79f510> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>).
+[2024-05-26 02:58:30.138] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f004c79f510> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>
+[2024-05-26 02:58:30.138] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f004c79f510> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>
+[2024-05-26 02:58:30.848] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f0048535650 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+     xyz = generate_initial_xyz(smiles)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+     AllChem.MMFFOptimizeMolecule(mol)
+ ValueError: Bad Conformer Id
+
+[2024-05-26 02:58:30.851] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:58:30.852] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f0048534750 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+     xyz = generate_initial_xyz(smiles)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+     AllChem.MMFFOptimizeMolecule(mol)
+ ValueError: Bad Conformer Id
+
+[2024-05-26 02:58:30.972] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:30.972] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:58:31.398] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:34.366] WORK  (webs.wf.moldesign.workflow) :: Done computing initial set
+[2024-05-26 02:58:34.368] WORK  (webs.wf.moldesign.workflow) :: Created initial training set (size=16)
+[2024-05-26 02:58:34.369] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "train_model", "function_code": "1000\n01\ngASV1wIAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwXd2Vicy53Zi5tb2xkZXNpZ24udGFza3OUjAt0cmFpbl9tb2RlbJSTlIwH\ndGFza19pZJSMBHV1aWSUjARVVUlElJOUKYGUfZSMA2ludJSKEfSMY6wT8WOy60WYKrFNqYwAc2KM\nEGRhdGFfdHJhbnNmb3JtZXKUjBN3ZWJzLmRhdGEudHJhbnNmb3JtlIwTVGFza0RhdGFUcmFuc2Zv\ncm1lcpSTlCmBlH2UKIwLdHJhbnNmb3JtZXKUjA53ZWJzLmRhdGEubnVsbJSMD051bGxUcmFuc2Zv\ncm1lcpSTlCmBlIwHZmlsdGVyX5SMEHdlYnMuZGF0YS5maWx0ZXKUjApOdWxsRmlsdGVylJOUKYGU\ndWKMCl9fbW9kdWxlX1+UaAaMCF9fbmFtZV9flGgHjAxfX3F1YWxuYW1lX1+UaAeMB19fZG9jX1+U\njPdUcmFpbiBhIG1hY2hpbmUgbGVhcm5pbmcgbW9kZWwgdXNpbmcgTW9yZ2FuIEZpbmdlcnByaW50\ncy4KCiAgICBBcmdzOgogICAgICAgIHRyYWluX2RhdGE6IERhdGFmcmFtZSB3aXRoIGEgJ3NtaWxl\ncycgYW5kICdpZScgY29sdW1uCiAgICAgICAgICAgIHRoYXQgY29udGFpbnMgbW9sZWN1bGUgc3Ry\ndWN0dXJlIGFuZCBwcm9wZXJ0eSwgcmVzcGVjdGZ1bGx5LgoKICAgIFJldHVybnM6CiAgICAgICAg\nQSB0cmFpbmVkIG1vZGVsLgogICAglIwPX19hbm5vdGF0aW9uc19flH2UKIwKdHJhaW5fZGF0YZSM\nDHBkLkRhdGFGcmFtZZSMBnJldHVybpSMCFBpcGVsaW5llHWMC19fd3JhcHBlZF9flGgIdWIu\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-26 02:58:34.438] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:34.438] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:58:34.438] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:58:34.555] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:37.372] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "run_model", "function_code": "1025\n01\ngASV6QIAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwXd2Vicy53Zi5tb2xkZXNpZ24udGFza3OUjAlydW5fbW9kZWyUk5SMB3Rh\nc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihF07R7kekYIsg9G0XdeVnK3AHNijBBk\nYXRhX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rhc2tEYXRhVHJhbnNmb3Jt\nZXKUk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyUjA9OdWxsVHJhbnNmb3Jt\nZXKUk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVsbEZpbHRlcpSTlCmBlHVi\njApfX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9flGgHjAdfX2RvY19flIz7\nUnVuIGEgbW9kZWwgb24gYSBsaXN0IG9mIHNtaWxlcyBzdHJpbmdzLgoKICAgIEFyZ3M6CiAgICAg\nICAgbW9kZWw6IFRyYWluZWQgbW9kZWwgdGhhdCB0YWtlcyBTTUlMRVMgc3RyaW5ncyBhcyBpbnB1\ndHMuCiAgICAgICAgc21pbGVzOiBMaXN0IG9mIG1vbGVjdWxlcyB0byBldmFsdWF0ZS4KCiAgICBS\nZXR1cm5zOgogICAgICAgIEEgZGF0YWZyYW1lIHdpdGggdGhlIG1vbGVjdWxlcyBhbmQgdGhlaXIg\ncHJlZGljdGVkIG91dHB1dHMuCiAgICCUjA9fX2Fubm90YXRpb25zX1+UfZQojAVtb2RlbJSMCFBp\ncGVsaW5llIwGc21pbGVzlIwJbGlzdFtzdHJdlIwGcmV0dXJulIwMcGQuRGF0YUZyYW1llHWMC19f\nd3JhcHBlZF9flGgIdWIu\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-26 02:58:37.437] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:37.442] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 64
+[2024-05-26 02:58:39.087] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:43.981] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "combine_inferences", "function_code": "932\n01\ngASVogIAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwXd2Vicy53Zi5tb2xkZXNpZ24udGFza3OUjBJjb21iaW5lX2luZmVyZW5j\nZXOUk5SMB3Rhc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihGEph7CuBHxsW5MU1Ta\nAFTZAHNijBBkYXRhX3RyYW5zZm9ybWVylIwTd2Vicy5kYXRhLnRyYW5zZm9ybZSME1Rhc2tEYXRh\nVHJhbnNmb3JtZXKUk5QpgZR9lCiMC3RyYW5zZm9ybWVylIwOd2Vicy5kYXRhLm51bGyUjA9OdWxs\nVHJhbnNmb3JtZXKUk5QpgZSMB2ZpbHRlcl+UjBB3ZWJzLmRhdGEuZmlsdGVylIwKTnVsbEZpbHRl\ncpSTlCmBlHVijApfX21vZHVsZV9flGgGjAhfX25hbWVfX5RoB4wMX19xdWFsbmFtZV9flGgHjAdf\nX2RvY19flIzIQ29uY2F0ZW5hdGUgYSBzZXJpZXMgb2YgaW5mZXJlbmNlcyBpbnRvIGEgc2luZ2xl\nIERhdGFGcmFtZS4KCiAgICBBcmdzOgogICAgICAgIGlucHV0czogQSBsaXN0IG9mIHRoZSBjb21w\nb25lbnQgRGF0YUZyYW1lcy4KCiAgICBSZXR1cm5zOgogICAgICAgIEEgc2luZ2xlIERhdGFGcmFt\nZSBjb250YWluaW5nIHRoZSBzYW1lIGluZmVyZW5jZXMuCiAgICCUjA9fX2Fubm90YXRpb25zX1+U\nfZQojAZpbnB1dHOUjAxwZC5EYXRhRnJhbWWUjAZyZXR1cm6UaCh1jAtfX3dyYXBwZWRfX5RoCHVi\nLg==\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-26 02:58:44.045] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:44.046] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:58:45.187] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:48.072] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:58:48.118] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:58:48.119] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 16
+[2024-05-26 02:58:48.359] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:49.074] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f00430fa610 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+     xyz = generate_initial_xyz(smiles)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+     AllChem.MMFFOptimizeMolecule(mol)
+ ValueError: Bad Conformer Id
+
+[2024-05-26 02:58:51.082] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:58:51.083] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:58:51.513] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:53.087] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 64
+[2024-05-26 02:58:54.751] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:58:58.621] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:58:59.822] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:02.652] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:59:02.683] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:59:02.683] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 16
+[2024-05-26 02:59:03.255] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:04.156] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f00430e70d0 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+     xyz = generate_initial_xyz(smiles)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+     AllChem.MMFFOptimizeMolecule(mol)
+ ValueError: Bad Conformer Id
+
+[2024-05-26 02:59:05.162] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:59:05.162] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:59:05.286] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:07.167] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 64
+[2024-05-26 02:59:08.927] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:12.697] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:59:13.704] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:16.725] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:59:16.764] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:59:16.764] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 16
+[2024-05-26 02:59:16.993] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:17.728] ERROR (concurrent.futures) :: exception calling callback for <Future at 0x7f00430e6d90 state=finished raised TaskExecutionFailed>
+Traceback (most recent call last):
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 340, in _invoke_callbacks
+    callback(self)
+  File "/home/cc/taps/webs/executor/workflow.py", line 271, in _task_done_callback
+    execution_info = future.result().info
+                     ^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+globus_compute_sdk.errors.error_types.TaskExecutionFailed: 
+ Traceback (most recent call last):
+   File "/home/cc/taps/webs/executor/workflow.py", line 118, in __call__
+     result = self.function(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 118, in _compute_vertical
+     xyz = generate_initial_xyz(smiles)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   File "/home/cc/taps/webs/wf/moldesign/chemfunctions.py", line 72, in generate_initial_xyz
+     AllChem.MMFFOptimizeMolecule(mol)
+ ValueError: Bad Conformer Id
+
+[2024-05-26 02:59:18.735] WORK  (webs.wf.moldesign.workflow) :: Submitting inference tasks
+[2024-05-26 02:59:18.736] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:59:18.852] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:20.740] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 64
+[2024-05-26 02:59:22.554] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:26.273] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-26 02:59:27.329] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:30.807] WORK  (webs.wf.moldesign.workflow) :: Inference results received (size=130258)
+[2024-05-26 02:59:30.825] WORK  (webs.wf.moldesign.workflow) :: Submitted new computations (size=16)
+[2024-05-26 02:59:30.826] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group 624dbe9c-6c64-4125-9e8b-b175c4e09151 to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 16
+[2024-05-26 02:59:31.499] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-26 02:59:33.815] INFO  (pika.channel) :: Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f004c79f510> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>>
+[2024-05-26 02:59:33.863] INFO  (pika.channel) :: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7f004c79f510> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>>
+[2024-05-26 02:59:34.015] INFO  (pika.connection) :: Closing connection (200): 'Normal shutdown'
+[2024-05-26 02:59:34.063] INFO  (pika.adapters.utils.io_services_utils) :: Aborting transport connection: state=1; <ssl.SSLSocket fd=11, family=2, type=1, proto=6, laddr=('10.52.3.104', 45918), raddr=('50.19.2.220', 5671)>
+[2024-05-26 02:59:34.063] INFO  (pika.adapters.utils.io_services_utils) :: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=11, family=2, type=1, proto=6, laddr=('10.52.3.104', 45918), raddr=('50.19.2.220', 5671)>
+[2024-05-26 02:59:34.064] INFO  (pika.adapters.utils.io_services_utils) :: Deactivating transport: state=1; <ssl.SSLSocket fd=11, family=2, type=1, proto=6, laddr=('10.52.3.104', 45918), raddr=('50.19.2.220', 5671)>
+[2024-05-26 02:59:34.064] INFO  (pika.connection) :: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-05-26 02:59:34.065] INFO  (pika.connection) :: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-05-26 02:59:34.065] INFO  (pika.adapters.utils.io_services_utils) :: Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=11, family=2, type=1, proto=6, laddr=('10.52.3.104', 45918), raddr=('50.19.2.220', 5671)>
+[2024-05-26 02:59:34.065] RUN   (webs.run) :: Finished workflow (name=moldesign, runtime=66.11s, tasks=346)
