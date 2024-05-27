@@ -1,0 +1,163 @@
+[2024-05-27 15:54:39.827] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-27 15:54:39.827] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 27, 15, 54, 39, 826714) executor=GlobusComputeConfig(endpoint='ac34ba40-5d6c-48b1-a18e-947f2f136df8') transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/scaling/{name}/globus-compute/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=1000, task_data_bytes=0, task_sleep=0.0, bag_max_running=128)
+[2024-05-27 15:54:39.827] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/scaling/synthetic/globus-compute/2024-05-27-15-54-39
+[2024-05-27 15:54:39.827] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_sdk.services.auth.client.native_client.NativeAppAuthClient'> for service "auth"
+[2024-05-27 15:54:39.828] INFO  (globus_sdk.services.auth.client.base_login_client) :: Finished initializing AuthLoginClient. client_id='4cf29807-cf21-49ec-9443-ff9a3fb9f81c', type(authorizer)=<class 'globus_sdk.authorizers.base.NullAuthorizer'>
+[2024-05-27 15:54:39.828] INFO  (globus_sdk.authorizers.refresh_token) :: Setting up RefreshTokenAuthorizer with auth_client=[instance:140339141824144]
+[2024-05-27 15:54:39.828] INFO  (globus_sdk.authorizers.renewing) :: Setting up a RenewingAuthorizer. It will use an auth type of Bearer and can handle 401s.
+[2024-05-27 15:54:39.828] INFO  (globus_sdk.authorizers.renewing) :: RenewingAuthorizer will start by using access_token with hash "497dd8a9f0904791b2a8a19ef78761d3bc64b477a1d8a7f2c6933b6ae4684cf5"
+[2024-05-27 15:54:39.828] INFO  (globus_sdk.client) :: Creating client of type <class 'globus_compute_sdk.sdk.web_client.WebClient'> for service "funcx"
+[2024-05-27 15:54:39.974] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:39.976] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-27 15:54:39.980] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "id", "function_code": "749\n01\ngASVHAIAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwIYnVpbHRpbnOUjAJpZJSTlIwHdGFza19pZJSMBHV1aWSUjARVVUlElJOU\nKYGUfZSMA2ludJSKENZ5cZ7IDhyaUkBqL49krSNzYowQZGF0YV90cmFuc2Zvcm1lcpSME3dlYnMu\nZGF0YS50cmFuc2Zvcm2UjBNUYXNrRGF0YVRyYW5zZm9ybWVylJOUKYGUfZQojAt0cmFuc2Zvcm1l\ncpSMDndlYnMuZGF0YS5udWxslIwPTnVsbFRyYW5zZm9ybWVylJOUKYGUjAdmaWx0ZXJflIwQd2Vi\ncy5kYXRhLmZpbHRlcpSMCk51bGxGaWx0ZXKUk5QpgZR1YowKX19tb2R1bGVfX5RoBowIX19uYW1l\nX1+UjAJpZJSMDF9fcXVhbG5hbWVfX5SMAmlklIwHX19kb2NfX5SMlVJldHVybiB0aGUgaWRlbnRp\ndHkgb2YgYW4gb2JqZWN0LgoKVGhpcyBpcyBndWFyYW50ZWVkIHRvIGJlIHVuaXF1ZSBhbW9uZyBz\naW11bHRhbmVvdXNseSBleGlzdGluZyBvYmplY3RzLgooQ1B5dGhvbiB1c2VzIHRoZSBvYmplY3Qn\ncyBtZW1vcnkgYWRkcmVzcy4plIwLX193cmFwcGVkX1+UaAh1Yi4=\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-27 15:54:40.041] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:40.042] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group None to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-27 15:54:40.671] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:40.671] INFO  (globus_compute_sdk.sdk.executor) :: Updating task_group_id from None to eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a
+[2024-05-27 15:54:41.332] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:41.345] INFO  (pika.adapters.utils.connection_workflow) :: Pika version 1.3.2 connecting to ('18.205.84.179', 5671)
+[2024-05-27 15:54:41.392] INFO  (pika.adapters.utils.io_services_utils) :: Socket connected: <socket.socket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 56538), raddr=('18.205.84.179', 5671)>
+[2024-05-27 15:54:41.487] INFO  (pika.adapters.utils.io_services_utils) :: SSL handshake completed successfully: <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 56538), raddr=('18.205.84.179', 5671)>
+[2024-05-27 15:54:41.488] INFO  (pika.adapters.utils.connection_workflow) :: Streaming transport linked up: (<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fa340b29390>, _StreamingProtocolShim: <SelectConnection PROTOCOL transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fa340b29390> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>).
+[2024-05-27 15:54:41.635] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnector - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fa340b29390> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>
+[2024-05-27 15:54:41.635] INFO  (pika.adapters.utils.connection_workflow) :: AMQPConnectionWorkflow - reporting success: <SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fa340b29390> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>
+[2024-05-27 15:54:41.843] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-27 15:54:41.843] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-27 15:54:41.844] INFO  (globus_compute_sdk.sdk.client) :: Registering function : FunctionRegistrationData({"function_name": "noop_task", "function_code": "1163\n01\ngASVTwMAAAAAAACMFndlYnMuZXhlY3V0b3Iud29ya2Zsb3eUjAxfVGFza1dyYXBwZXKUk5QpgZR9\nlCiMCGZ1bmN0aW9ulIwad2Vicy53Zi5zeW50aGV0aWMud29ya2Zsb3eUjAlub29wX3Rhc2uUk5SM\nB3Rhc2tfaWSUjAR1dWlklIwEVVVJRJSTlCmBlH2UjANpbnSUihBr042Ue9b1imhETagxRftCc2KM\nEGRhdGFfdHJhbnNmb3JtZXKUjBN3ZWJzLmRhdGEudHJhbnNmb3JtlIwTVGFza0RhdGFUcmFuc2Zv\ncm1lcpSTlCmBlH2UKIwLdHJhbnNmb3JtZXKUjA53ZWJzLmRhdGEubnVsbJSMD051bGxUcmFuc2Zv\ncm1lcpSTlCmBlIwHZmlsdGVyX5SMEHdlYnMuZGF0YS5maWx0ZXKUjApOdWxsRmlsdGVylJOUKYGU\ndWKMCl9fbW9kdWxlX1+UaAaMCF9fbmFtZV9flGgHjAxfX3F1YWxuYW1lX1+UaAeMB19fZG9jX1+U\nWEMBAABOby1vcCBzbGVlcCB0YXNrLgoKICAgIEFyZ3M6CiAgICAgICAgZGF0YTogSW5wdXQgYnl0\nZSBzdHJpbmdzLgogICAgICAgIG91dHB1dF9zaXplOiBTaXplIGluIGJ5dGVzIG9mIG91dHB1dCBi\neXRlLXN0cmluZy4KICAgICAgICBzbGVlcDogTWluaW11bSBydW50aW1lIG9mIHRoZSB0YXNrLiBU\naW1lIHJlcXVpcmVkIHRvIGdlbmVyYXRlIHRoZQogICAgICAgICAgICBvdXRwdXQgZGF0YSB3aWxs\nIGJlIHN1YnRyYWN0ZWQgZnJvbSB0aGlzIHNsZWVwIHRpbWUuCgogICAgUmV0dXJuczoKICAgICAg\nICBCeXRlLXN0cmluZyBvZiBsZW5ndGggYG91dHB1dF9zaXplYC4KICAgIJSMD19fYW5ub3RhdGlv\nbnNfX5R9lCiMBGRhdGGUjANBbnmUjAtvdXRwdXRfc2l6ZZRoD4wFc2xlZXCUjAVmbG9hdJSMBXV1\naWRflIwQdXVpZC5VVUlEIHwgTm9uZZSMBnJldHVybpSMBWJ5dGVzlHWMC19fd3JhcHBlZF9flGgI\ndWIu\n", "container_uuid": null, "description": null, "metadata": {"python_version": "3.11.9", "sdk_version": "2.20.0"}, "public": false, "group": null})
+[2024-05-27 15:54:41.910] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:41.911] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 8
+[2024-05-27 15:54:41.921] WORK  (webs.wf.synthetic.workflow) :: Submitted 128 initial tasks
+[2024-05-27 15:54:42.500] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:42.502] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 120
+[2024-05-27 15:54:43.922] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:43.923] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 8
+[2024-05-27 15:54:44.095] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:44.353] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 6
+[2024-05-27 15:54:44.507] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:44.508] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 67
+[2024-05-27 15:54:45.286] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:45.287] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 26
+[2024-05-27 15:54:45.621] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:45.621] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 17
+[2024-05-27 15:54:45.891] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:45.892] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 37
+[2024-05-27 15:54:46.362] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:46.384] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 5
+[2024-05-27 15:54:46.537] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:46.538] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 22
+[2024-05-27 15:54:46.848] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:46.893] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 5
+[2024-05-27 15:54:47.038] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:47.039] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 26
+[2024-05-27 15:54:47.450] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:47.451] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 24
+[2024-05-27 15:54:47.785] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:47.910] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 24
+[2024-05-27 15:54:48.262] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:48.414] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 29
+[2024-05-27 15:54:48.788] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:48.915] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 5
+[2024-05-27 15:54:49.067] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:49.068] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 19
+[2024-05-27 15:54:49.349] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:49.422] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 2
+[2024-05-27 15:54:49.546] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:49.547] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 21
+[2024-05-27 15:54:49.851] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:49.928] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 7
+[2024-05-27 15:54:50.114] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:50.114] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 12
+[2024-05-27 15:54:50.330] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:50.439] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 24
+[2024-05-27 15:54:50.759] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:50.937] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 6
+[2024-05-27 15:54:51.088] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:51.089] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 14
+[2024-05-27 15:54:51.326] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:51.449] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 4
+[2024-05-27 15:54:51.579] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:51.579] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 24
+[2024-05-27 15:54:51.899] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:51.952] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 9
+[2024-05-27 15:54:52.151] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:52.151] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 8
+[2024-05-27 15:54:52.319] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:52.458] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 8
+[2024-05-27 15:54:52.631] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:52.632] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 13
+[2024-05-27 15:54:52.854] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:52.963] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 4
+[2024-05-27 15:54:53.096] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:53.097] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 20
+[2024-05-27 15:54:53.377] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:53.470] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 3
+[2024-05-27 15:54:53.596] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:53.597] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 16
+[2024-05-27 15:54:53.844] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:53.979] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 21
+[2024-05-27 15:54:54.282] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:54.479] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 5
+[2024-05-27 15:54:54.624] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:54.625] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 18
+[2024-05-27 15:54:54.897] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:54.982] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-27 15:54:55.094] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:55.094] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 21
+[2024-05-27 15:54:55.388] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:55.488] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 7
+[2024-05-27 15:54:55.654] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:55.655] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 12
+[2024-05-27 15:54:55.867] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:55.994] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 9
+[2024-05-27 15:54:56.179] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:56.179] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 13
+[2024-05-27 15:54:56.404] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:56.498] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 10
+[2024-05-27 15:54:56.686] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:56.687] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 11
+[2024-05-27 15:54:56.895] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:57.001] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 8
+[2024-05-27 15:54:57.180] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:57.181] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 13
+[2024-05-27 15:54:57.405] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:57.506] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 22
+[2024-05-27 15:54:57.810] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:58.006] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 2
+[2024-05-27 15:54:58.127] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:58.128] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 18
+[2024-05-27 15:54:58.400] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:58.517] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 22
+[2024-05-27 15:54:58.815] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:59.019] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 19
+[2024-05-27 15:54:59.356] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:59.523] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 21
+[2024-05-27 15:54:59.799] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:54:59.799] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 5
+[2024-05-27 15:54:59.939] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:00.032] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 20
+[2024-05-27 15:55:00.342] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:00.534] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 5
+[2024-05-27 15:55:00.686] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:00.687] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 17
+[2024-05-27 15:55:00.944] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:01.043] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 17
+[2024-05-27 15:55:01.330] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:01.544] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 10
+[2024-05-27 15:55:01.737] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:01.737] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 11
+[2024-05-27 15:55:01.942] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:02.047] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 1
+[2024-05-27 15:55:02.155] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:02.156] INFO  (globus_compute_sdk.sdk.executor) :: Submitting tasks for Task Group eb4dae1b-7baf-45d5-a2ad-f0c03b1fa72a to Endpoint ac34ba40-5d6c-48b1-a18e-947f2f136df8: 21
+[2024-05-27 15:55:02.468] INFO  (globus_sdk.transport.requests) :: request done (success)
+[2024-05-27 15:55:07.576] WORK  (webs.wf.synthetic.workflow) :: Completed 1003/1000 (rate: 38.98 tasks/s)
+[2024-05-27 15:55:08.077] INFO  (pika.channel) :: Closing channel (0): 'Normal shutdown' on <Channel number=1 OPEN conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fa340b29390> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>>
+[2024-05-27 15:55:08.128] INFO  (pika.channel) :: Received <Channel.CloseOk> on <Channel number=1 CLOSING conn=<SelectConnection OPEN transport=<pika.adapters.utils.io_services_utils._AsyncSSLTransport object at 0x7fa340b29390> params=<URLParameters host=compute.amqps.globus.org port=5671 virtual_host=/ ssl=True>>>
+[2024-05-27 15:55:08.279] INFO  (pika.connection) :: Closing connection (200): 'Normal shutdown'
+[2024-05-27 15:55:08.327] INFO  (pika.adapters.utils.io_services_utils) :: Aborting transport connection: state=1; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 56538), raddr=('18.205.84.179', 5671)>
+[2024-05-27 15:55:08.327] INFO  (pika.adapters.utils.io_services_utils) :: _AsyncTransportBase._initate_abort(): Initiating abrupt asynchronous transport shutdown: state=1; error=None; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 56538), raddr=('18.205.84.179', 5671)>
+[2024-05-27 15:55:08.327] INFO  (pika.adapters.utils.io_services_utils) :: Deactivating transport: state=1; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 56538), raddr=('18.205.84.179', 5671)>
+[2024-05-27 15:55:08.328] INFO  (pika.connection) :: AMQP stack terminated, failed to connect, or aborted: opened=True, error-arg=None; pending-error=ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-05-27 15:55:08.328] INFO  (pika.connection) :: Stack terminated due to ConnectionClosedByClient: (200) 'Normal shutdown'
+[2024-05-27 15:55:08.328] INFO  (pika.adapters.utils.io_services_utils) :: Closing transport socket and unlinking: state=3; <ssl.SSLSocket fd=10, family=2, type=1, proto=6, laddr=('10.52.3.104', 56538), raddr=('18.205.84.179', 5671)>
+[2024-05-27 15:55:08.329] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=28.50s, tasks=1004)

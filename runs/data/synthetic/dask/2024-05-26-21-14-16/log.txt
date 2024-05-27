@@ -1,0 +1,18 @@
+[2024-05-26 21:14:16.674] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-26 21:14:16.674] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 26, 21, 14, 16, 673754) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=1) transformer=NullTransformerConfig() filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data/{name}/dask/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=10, task_data_bytes=100000, task_sleep=0.0, bag_max_running=1)
+[2024-05-26 21:14:16.674] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data/synthetic/dask/2024-05-26-21-14-16
+[2024-05-26 21:14:17.367] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-26 21:14:18.060] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-26 21:14:18.061] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-26 21:14:18.063] WORK  (webs.wf.synthetic.workflow) :: Submitted 1 initial tasks
+[2024-05-26 21:14:18.090] WORK  (webs.wf.synthetic.workflow) :: Completed 1/10 tasks (rate: 34.52 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.105] WORK  (webs.wf.synthetic.workflow) :: Completed 2/10 tasks (rate: 45.16 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.125] WORK  (webs.wf.synthetic.workflow) :: Completed 3/10 tasks (rate: 46.69 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.149] WORK  (webs.wf.synthetic.workflow) :: Completed 4/10 tasks (rate: 45.46 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.169] WORK  (webs.wf.synthetic.workflow) :: Completed 5/10 tasks (rate: 46.20 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.192] WORK  (webs.wf.synthetic.workflow) :: Completed 6/10 tasks (rate: 45.67 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.216] WORK  (webs.wf.synthetic.workflow) :: Completed 7/10 tasks (rate: 45.24 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.235] WORK  (webs.wf.synthetic.workflow) :: Completed 8/10 tasks (rate: 45.93 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.258] WORK  (webs.wf.synthetic.workflow) :: Completed 9/10 tasks (rate: 45.72 tasks/s, running tasks: 1)
+[2024-05-26 21:14:18.272] WORK  (webs.wf.synthetic.workflow) :: Completed 10/10 (rate: 47.44 tasks/s)
+[2024-05-26 21:14:18.448] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=1.77s, tasks=11)

@@ -1,0 +1,13 @@
+[2024-05-27 16:10:44.870] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-27 16:10:44.870] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 27, 16, 10, 44, 869704) executor=RayConfig(ray_address='local', ray_num_cpus=128) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/scaling/{name}/ray/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=1000, task_data_bytes=0, task_sleep=0.0, bag_max_running=128)
+[2024-05-27 16:10:44.870] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/scaling/synthetic/ray/2024-05-27-16-10-44
+[2024-05-27 16:10:47.503] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-27 16:10:48.233] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-27 16:10:48.233] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-27 16:10:48.281] WORK  (webs.wf.synthetic.workflow) :: Submitted 128 initial tasks
+[2024-05-27 16:10:48.550] WORK  (webs.wf.synthetic.workflow) :: Completed 128/1000 tasks (rate: 403.61 tasks/s, running tasks: 128)
+[2024-05-27 16:10:48.856] WORK  (webs.wf.synthetic.workflow) :: Completed 256/1000 tasks (rate: 411.01 tasks/s, running tasks: 128)
+[2024-05-27 16:10:49.099] WORK  (webs.wf.synthetic.workflow) :: Completed 384/1000 tasks (rate: 443.64 tasks/s, running tasks: 128)
+[2024-05-27 16:10:49.195] WORK  (webs.wf.synthetic.workflow) :: Completed 512/1000 tasks (rate: 532.27 tasks/s, running tasks: 128)
+[2024-05-27 16:10:49.631] WORK  (webs.wf.synthetic.workflow) :: Completed 1000/1000 (rate: 715.29 tasks/s)
+[2024-05-27 16:10:51.500] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=6.63s, tasks=1001)

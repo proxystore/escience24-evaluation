@@ -1,0 +1,31 @@
+[2024-05-27 16:03:58.342] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-27 16:03:58.342] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 27, 16, 3, 58, 342089) executor=ProcessPoolConfig(max_processes=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/scaling/{name}/process-pool/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=1000, task_data_bytes=0, task_sleep=0.0, bag_max_running=32)
+[2024-05-27 16:03:58.342] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/scaling/synthetic/process-pool/2024-05-27-16-03-58
+[2024-05-27 16:03:58.343] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-27 16:03:58.390] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-27 16:03:58.390] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-27 16:03:58.397] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-27 16:03:58.417] WORK  (webs.wf.synthetic.workflow) :: Completed 64/1000 tasks (rate: 2400.95 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.426] WORK  (webs.wf.synthetic.workflow) :: Completed 96/1000 tasks (rate: 2670.31 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.436] WORK  (webs.wf.synthetic.workflow) :: Completed 128/1000 tasks (rate: 2845.10 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.445] WORK  (webs.wf.synthetic.workflow) :: Completed 160/1000 tasks (rate: 2926.92 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.465] WORK  (webs.wf.synthetic.workflow) :: Completed 224/1000 tasks (rate: 3020.05 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.474] WORK  (webs.wf.synthetic.workflow) :: Completed 256/1000 tasks (rate: 3054.16 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.490] WORK  (webs.wf.synthetic.workflow) :: Completed 320/1000 tasks (rate: 3216.98 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.505] WORK  (webs.wf.synthetic.workflow) :: Completed 384/1000 tasks (rate: 3348.95 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.515] WORK  (webs.wf.synthetic.workflow) :: Completed 416/1000 tasks (rate: 3355.63 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.522] WORK  (webs.wf.synthetic.workflow) :: Completed 448/1000 tasks (rate: 3401.14 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.530] WORK  (webs.wf.synthetic.workflow) :: Completed 480/1000 tasks (rate: 3433.86 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.539] WORK  (webs.wf.synthetic.workflow) :: Completed 512/1000 tasks (rate: 3457.13 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.547] WORK  (webs.wf.synthetic.workflow) :: Completed 544/1000 tasks (rate: 3469.52 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.564] WORK  (webs.wf.synthetic.workflow) :: Completed 608/1000 tasks (rate: 3503.65 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.574] WORK  (webs.wf.synthetic.workflow) :: Completed 640/1000 tasks (rate: 3490.11 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.582] WORK  (webs.wf.synthetic.workflow) :: Completed 672/1000 tasks (rate: 3508.92 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.598] WORK  (webs.wf.synthetic.workflow) :: Completed 736/1000 tasks (rate: 3549.09 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.614] WORK  (webs.wf.synthetic.workflow) :: Completed 800/1000 tasks (rate: 3574.86 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.624] WORK  (webs.wf.synthetic.workflow) :: Completed 832/1000 tasks (rate: 3569.10 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.641] WORK  (webs.wf.synthetic.workflow) :: Completed 896/1000 tasks (rate: 3583.51 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.649] WORK  (webs.wf.synthetic.workflow) :: Completed 928/1000 tasks (rate: 3589.73 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.658] WORK  (webs.wf.synthetic.workflow) :: Completed 960/1000 tasks (rate: 3588.61 tasks/s, running tasks: 32)
+[2024-05-27 16:03:58.665] WORK  (webs.wf.synthetic.workflow) :: Completed 1008/1000 (rate: 3668.24 tasks/s)
+[2024-05-27 16:03:58.689] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=0.35s, tasks=1009)

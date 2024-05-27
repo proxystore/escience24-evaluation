@@ -1,0 +1,149 @@
+[2024-05-26 21:26:13.493] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-26 21:26:13.494] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 26, 21, 26, 13, 493496) executor=ParslConfig(parsl_use_threads=False, parsl_workers=1, parsl_run_dir='parsl-runinfo') transformer=ProxyFileTransformerConfig(ps_type='file', ps_file_dir='/tmp/file-cache', ps_redis_addr='localhost:59465', ps_extract_target=False) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data/{name}/parsl/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=10, task_data_bytes=10000000, task_sleep=0.0, bag_max_running=1)
+[2024-05-26 21:26:13.494] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data/synthetic/parsl/2024-05-26-21-26-13
+[2024-05-26 21:26:13.501] INFO  (parsl.dataflow.dflow) :: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(HighThroughputExecutor(
+        address='10.52.3.104', 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x7fc0c81ee700>, 
+        cores_per_worker=1, 
+        cpu_affinity='none', 
+        drain_period=None, 
+        enable_mpi_mode=False, 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='htex-local', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers_per_node} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --drain_period={drain_period} --cpu-affinity {cpu_affinity} {enable_mpi_mode} --mpi-launcher={mpi_launcher} --available-accelerators {accelerators}', 
+        max_workers=1, 
+        max_workers_per_node=1, 
+        mem_per_worker=None, 
+        mpi_launcher='mpiexec', 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/cc/escience24-taps-analysis/runs/data/synthetic/parsl/2024-05-26-21-26-13'
+            ), 
+            cmd_timeout=30, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='parsl-runinfo', 
+    strategy='simple', 
+    strategy_period=5, 
+    usage_tracking=False
+)
+[2024-05-26 21:26:13.502] INFO  (parsl.dataflow.dflow) :: Parsl version: 2024.03.18
+[2024-05-26 21:26:13.502] INFO  (parsl.dataflow.dflow) :: Run id is: f22be3d2-7226-4c6d-b72a-49c83695e512
+[2024-05-26 21:26:13.553] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-05-26 21:26:13.573] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-05-26 21:26:13.573] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-05-26 21:26:13.583] INFO  (proxystore.store) :: Registered a store named "transformer"
+[2024-05-26 21:26:13.584] INFO  (proxystore.store.base) :: Initialized Store(name=transformer, connector=FileConnector(directory=/tmp/file-cache), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, register=True)
+[2024-05-26 21:26:13.584] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-26 21:26:13.591] INFO  (parsl.dataflow.dflow) :: Task 0 submitted for App id, not waiting on any dependency
+[2024-05-26 21:26:13.593] INFO  (parsl.dataflow.dflow) :: Parsl task 0 try 0 launched on executor htex-local with executor id 1
+[2024-05-26 21:26:15.214] INFO  (parsl.dataflow.dflow) :: Task 0 completed (launched -> exec_done)
+[2024-05-26 21:26:15.214] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-26 21:26:15.214] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-26 21:26:15.253] INFO  (parsl.dataflow.dflow) :: Task 1 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:15.366] INFO  (parsl.dataflow.dflow) :: Parsl task 1 try 0 launched on executor htex-local with executor id 2
+[2024-05-26 21:26:15.366] WORK  (webs.wf.synthetic.workflow) :: Submitted 1 initial tasks
+[2024-05-26 21:26:15.420] INFO  (parsl.dataflow.dflow) :: Task 1 completed (launched -> exec_done)
+[2024-05-26 21:26:15.452] INFO  (parsl.dataflow.dflow) :: Task 2 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:15.544] INFO  (parsl.dataflow.dflow) :: Parsl task 2 try 0 launched on executor htex-local with executor id 3
+[2024-05-26 21:26:15.545] WORK  (webs.wf.synthetic.workflow) :: Completed 1/10 tasks (rate: 3.03 tasks/s, running tasks: 1)
+[2024-05-26 21:26:15.586] INFO  (parsl.dataflow.dflow) :: Task 2 completed (launched -> exec_done)
+[2024-05-26 21:26:15.620] INFO  (parsl.dataflow.dflow) :: Task 3 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:15.730] INFO  (parsl.dataflow.dflow) :: Parsl task 3 try 0 launched on executor htex-local with executor id 4
+[2024-05-26 21:26:15.730] WORK  (webs.wf.synthetic.workflow) :: Completed 2/10 tasks (rate: 3.88 tasks/s, running tasks: 1)
+[2024-05-26 21:26:15.790] INFO  (parsl.dataflow.dflow) :: Task 3 completed (launched -> exec_done)
+[2024-05-26 21:26:15.822] INFO  (parsl.dataflow.dflow) :: Task 4 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:15.914] INFO  (parsl.dataflow.dflow) :: Parsl task 4 try 0 launched on executor htex-local with executor id 5
+[2024-05-26 21:26:15.914] WORK  (webs.wf.synthetic.workflow) :: Completed 3/10 tasks (rate: 4.29 tasks/s, running tasks: 1)
+[2024-05-26 21:26:15.974] INFO  (parsl.dataflow.dflow) :: Task 4 completed (launched -> exec_done)
+[2024-05-26 21:26:16.003] INFO  (parsl.dataflow.dflow) :: Task 5 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:16.095] INFO  (parsl.dataflow.dflow) :: Parsl task 5 try 0 launched on executor htex-local with executor id 6
+[2024-05-26 21:26:16.095] WORK  (webs.wf.synthetic.workflow) :: Completed 4/10 tasks (rate: 4.54 tasks/s, running tasks: 1)
+[2024-05-26 21:26:16.156] INFO  (parsl.dataflow.dflow) :: Task 5 completed (launched -> exec_done)
+[2024-05-26 21:26:16.190] INFO  (parsl.dataflow.dflow) :: Task 6 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:16.282] INFO  (parsl.dataflow.dflow) :: Parsl task 6 try 0 launched on executor htex-local with executor id 7
+[2024-05-26 21:26:16.282] WORK  (webs.wf.synthetic.workflow) :: Completed 5/10 tasks (rate: 4.68 tasks/s, running tasks: 1)
+[2024-05-26 21:26:16.342] INFO  (parsl.dataflow.dflow) :: Task 6 completed (launched -> exec_done)
+[2024-05-26 21:26:16.377] INFO  (parsl.dataflow.dflow) :: Task 7 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:16.469] INFO  (parsl.dataflow.dflow) :: Parsl task 7 try 0 launched on executor htex-local with executor id 8
+[2024-05-26 21:26:16.469] WORK  (webs.wf.synthetic.workflow) :: Completed 6/10 tasks (rate: 4.78 tasks/s, running tasks: 1)
+[2024-05-26 21:26:16.537] INFO  (parsl.dataflow.dflow) :: Task 7 completed (launched -> exec_done)
+[2024-05-26 21:26:16.572] INFO  (parsl.dataflow.dflow) :: Task 8 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:16.664] INFO  (parsl.dataflow.dflow) :: Parsl task 8 try 0 launched on executor htex-local with executor id 9
+[2024-05-26 21:26:16.664] WORK  (webs.wf.synthetic.workflow) :: Completed 7/10 tasks (rate: 4.83 tasks/s, running tasks: 1)
+[2024-05-26 21:26:16.730] INFO  (parsl.dataflow.dflow) :: Task 8 completed (launched -> exec_done)
+[2024-05-26 21:26:16.765] INFO  (parsl.dataflow.dflow) :: Task 9 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:16.856] INFO  (parsl.dataflow.dflow) :: Parsl task 9 try 0 launched on executor htex-local with executor id 10
+[2024-05-26 21:26:16.856] WORK  (webs.wf.synthetic.workflow) :: Completed 8/10 tasks (rate: 4.87 tasks/s, running tasks: 1)
+[2024-05-26 21:26:16.924] INFO  (parsl.dataflow.dflow) :: Task 9 completed (launched -> exec_done)
+[2024-05-26 21:26:16.959] INFO  (parsl.dataflow.dflow) :: Task 10 submitted for App noop_task, not waiting on any dependency
+[2024-05-26 21:26:17.051] INFO  (parsl.dataflow.dflow) :: Parsl task 10 try 0 launched on executor htex-local with executor id 11
+[2024-05-26 21:26:17.051] WORK  (webs.wf.synthetic.workflow) :: Completed 9/10 tasks (rate: 4.90 tasks/s, running tasks: 1)
+[2024-05-26 21:26:17.119] INFO  (parsl.dataflow.dflow) :: Task 10 completed (launched -> exec_done)
+[2024-05-26 21:26:17.119] WORK  (webs.wf.synthetic.workflow) :: Completed 10/10 (rate: 5.25 tasks/s)
+[2024-05-26 21:26:17.119] INFO  (parsl.dataflow.dflow) :: Waiting for all remaining tasks to complete
+[2024-05-26 21:26:17.119] INFO  (parsl.dataflow.dflow) :: All remaining tasks completed
+[2024-05-26 21:26:17.119] INFO  (parsl.dataflow.dflow) :: DFK cleanup initiated
+[2024-05-26 21:26:17.119] INFO  (parsl.dataflow.dflow) :: Summary of tasks in DFK:
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.unsched: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.pending: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.exec_done: 11
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.failed: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.dep_fail: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.launched: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.fail_retryable: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.memo_done: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.joining: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running_ended: 0
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: End of summary
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Closing job status poller
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Terminated job status poller
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Scaling in and shutting down executors
+[2024-05-26 21:26:17.120] INFO  (parsl.dataflow.dflow) :: Scaling in executor htex-local
+[2024-05-26 21:26:17.183] INFO  (parsl.dataflow.dflow) :: Shutting down executor htex-local
+[2024-05-26 21:26:17.183] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-05-26 21:26:17.190] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+[2024-05-26 21:26:17.190] INFO  (parsl.dataflow.dflow) :: Shut down executor htex-local
+[2024-05-26 21:26:17.190] INFO  (parsl.dataflow.dflow) :: Shutting down executor _parsl_internal
+[2024-05-26 21:26:17.190] INFO  (parsl.dataflow.dflow) :: Shut down executor _parsl_internal
+[2024-05-26 21:26:17.190] INFO  (parsl.dataflow.dflow) :: Terminated executors
+[2024-05-26 21:26:17.190] INFO  (parsl.dataflow.dflow) :: DFK cleanup complete
+[2024-05-26 21:26:17.190] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=3.70s, tasks=11)
+[2024-05-26 21:26:17.191] INFO  (parsl.dataflow.dflow) :: python process is exiting, but DFK has already been cleaned up

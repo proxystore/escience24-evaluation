@@ -1,0 +1,26 @@
+{
+    "name": "synthetic",
+    "executor": {
+        "endpoint": "ac34ba40-5d6c-48b1-a18e-947f2f136df8"
+    },
+    "transformer": {},
+    "filter": {
+        "filter_type": null,
+        "filter_min_size": 0,
+        "filter_max_size": null
+    },
+    "run": {
+        "log_file_level": "INFO",
+        "log_file_name": "log.txt",
+        "log_level": "WORK",
+        "task_record_file_name": "tasks.json",
+        "run_dir_format": "/home/cc/escience24-taps-analysis/runs/scaling/{name}/globus-compute/{timestamp}"
+    },
+    "workflow": {
+        "structure": "bag",
+        "task_count": 50,
+        "task_data_bytes": 0,
+        "task_sleep": 0.0,
+        "bag_max_running": 1
+    }
+}

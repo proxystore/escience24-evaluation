@@ -1,0 +1,20 @@
+[2024-05-26 21:17:06.631] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-26 21:17:06.631] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 26, 21, 17, 6, 631336) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=1) transformer=ProxyFileTransformerConfig(ps_type='redis', ps_file_dir='/tmp/file-cache', ps_redis_addr='localhost:59465', ps_extract_target=False) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data/{name}/dask/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=10, task_data_bytes=10000000, task_sleep=0.0, bag_max_running=1)
+[2024-05-26 21:17:06.631] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data/synthetic/dask/2024-05-26-21-17-06
+[2024-05-26 21:17:07.324] INFO  (proxystore.store) :: Registered a store named "transformer"
+[2024-05-26 21:17:07.325] INFO  (proxystore.store.base) :: Initialized Store(name=transformer, connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, register=True)
+[2024-05-26 21:17:07.325] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-26 21:17:08.010] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-26 21:17:08.011] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-26 21:17:08.283] WORK  (webs.wf.synthetic.workflow) :: Submitted 1 initial tasks
+[2024-05-26 21:17:08.544] WORK  (webs.wf.synthetic.workflow) :: Completed 1/10 tasks (rate: 1.88 tasks/s, running tasks: 1)
+[2024-05-26 21:17:08.800] WORK  (webs.wf.synthetic.workflow) :: Completed 2/10 tasks (rate: 2.54 tasks/s, running tasks: 1)
+[2024-05-26 21:17:09.079] WORK  (webs.wf.synthetic.workflow) :: Completed 3/10 tasks (rate: 2.81 tasks/s, running tasks: 1)
+[2024-05-26 21:17:09.329] WORK  (webs.wf.synthetic.workflow) :: Completed 4/10 tasks (rate: 3.04 tasks/s, running tasks: 1)
+[2024-05-26 21:17:09.580] WORK  (webs.wf.synthetic.workflow) :: Completed 5/10 tasks (rate: 3.19 tasks/s, running tasks: 1)
+[2024-05-26 21:17:09.834] WORK  (webs.wf.synthetic.workflow) :: Completed 6/10 tasks (rate: 3.29 tasks/s, running tasks: 1)
+[2024-05-26 21:17:10.084] WORK  (webs.wf.synthetic.workflow) :: Completed 7/10 tasks (rate: 3.38 tasks/s, running tasks: 1)
+[2024-05-26 21:17:10.338] WORK  (webs.wf.synthetic.workflow) :: Completed 8/10 tasks (rate: 3.44 tasks/s, running tasks: 1)
+[2024-05-26 21:17:10.588] WORK  (webs.wf.synthetic.workflow) :: Completed 9/10 tasks (rate: 3.49 tasks/s, running tasks: 1)
+[2024-05-26 21:17:10.645] WORK  (webs.wf.synthetic.workflow) :: Completed 10/10 (rate: 3.80 tasks/s)
+[2024-05-26 21:17:10.847] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=4.22s, tasks=11)
