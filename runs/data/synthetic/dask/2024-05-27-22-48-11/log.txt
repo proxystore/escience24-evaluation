@@ -1,0 +1,9 @@
+[2024-05-27 22:48:11.982] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-27 22:48:11.982] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 27, 22, 48, 11, 982025) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=32) transformer=PickleFileTransformerConfig(file_dir='/tmp/file-cache') filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/dask/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=10000, task_sleep=0.0, bag_max_running=32)
+[2024-05-27 22:48:11.982] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/dask/2024-05-27-22-48-11
+[2024-05-27 22:48:12.757] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-27 22:48:13.414] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-27 22:48:13.414] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-27 22:48:13.445] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-27 22:48:15.469] WORK  (webs.wf.synthetic.workflow) :: Completed 337/320 (rate: 164.05 tasks/s)
+[2024-05-27 22:48:15.913] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=3.93s, tasks=338)

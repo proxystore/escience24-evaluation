@@ -1,0 +1,1088 @@
+[2024-05-28 00:02:04.008] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-28 00:02:04.009] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 28, 0, 2, 4, 8340) executor=ParslConfig(parsl_use_threads=False, parsl_workers=32, parsl_run_dir='parsl-runinfo') transformer=NullTransformerConfig() filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/parsl/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=10000, task_sleep=0.0, bag_max_running=32)
+[2024-05-28 00:02:04.009] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/parsl/2024-05-28-00-02-04
+[2024-05-28 00:02:04.017] INFO  (parsl.dataflow.dflow) :: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(HighThroughputExecutor(
+        address='10.52.3.104', 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x7f1b707e2700>, 
+        cores_per_worker=1, 
+        cpu_affinity='none', 
+        drain_period=None, 
+        enable_mpi_mode=False, 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='htex-local', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers_per_node} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --drain_period={drain_period} --cpu-affinity {cpu_affinity} {enable_mpi_mode} --mpi-launcher={mpi_launcher} --available-accelerators {accelerators}', 
+        max_workers=32, 
+        max_workers_per_node=32, 
+        mem_per_worker=None, 
+        mpi_launcher='mpiexec', 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/parsl/2024-05-28-00-02-04'
+            ), 
+            cmd_timeout=30, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='parsl-runinfo', 
+    strategy='simple', 
+    strategy_period=5, 
+    usage_tracking=False
+)
+[2024-05-28 00:02:04.017] INFO  (parsl.dataflow.dflow) :: Parsl version: 2024.03.18
+[2024-05-28 00:02:04.017] INFO  (parsl.dataflow.dflow) :: Run id is: ca4737bf-a314-461e-bf6f-c4a9d6a04c76
+[2024-05-28 00:02:04.070] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-05-28 00:02:04.091] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-05-28 00:02:04.091] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-05-28 00:02:04.102] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-28 00:02:04.110] INFO  (parsl.dataflow.dflow) :: Task 0 submitted for App id, not waiting on any dependency
+[2024-05-28 00:02:04.113] INFO  (parsl.dataflow.dflow) :: Parsl task 0 try 0 launched on executor htex-local with executor id 1
+[2024-05-28 00:02:05.807] INFO  (parsl.dataflow.dflow) :: Task 0 completed (launched -> exec_done)
+[2024-05-28 00:02:05.808] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-28 00:02:05.808] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-28 00:02:05.809] INFO  (parsl.dataflow.dflow) :: Task 1 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.810] INFO  (parsl.dataflow.dflow) :: Parsl task 1 try 0 launched on executor htex-local with executor id 2
+[2024-05-28 00:02:05.810] INFO  (parsl.dataflow.dflow) :: Task 2 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.811] INFO  (parsl.dataflow.dflow) :: Parsl task 2 try 0 launched on executor htex-local with executor id 3
+[2024-05-28 00:02:05.811] INFO  (parsl.dataflow.dflow) :: Task 3 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.811] INFO  (parsl.dataflow.dflow) :: Parsl task 3 try 0 launched on executor htex-local with executor id 4
+[2024-05-28 00:02:05.811] INFO  (parsl.dataflow.dflow) :: Task 4 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.812] INFO  (parsl.dataflow.dflow) :: Parsl task 4 try 0 launched on executor htex-local with executor id 5
+[2024-05-28 00:02:05.812] INFO  (parsl.dataflow.dflow) :: Task 5 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.812] INFO  (parsl.dataflow.dflow) :: Parsl task 5 try 0 launched on executor htex-local with executor id 6
+[2024-05-28 00:02:05.812] INFO  (parsl.dataflow.dflow) :: Task 6 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.812] INFO  (parsl.dataflow.dflow) :: Parsl task 6 try 0 launched on executor htex-local with executor id 7
+[2024-05-28 00:02:05.813] INFO  (parsl.dataflow.dflow) :: Task 7 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.813] INFO  (parsl.dataflow.dflow) :: Parsl task 7 try 0 launched on executor htex-local with executor id 8
+[2024-05-28 00:02:05.813] INFO  (parsl.dataflow.dflow) :: Task 8 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.813] INFO  (parsl.dataflow.dflow) :: Parsl task 8 try 0 launched on executor htex-local with executor id 9
+[2024-05-28 00:02:05.813] INFO  (parsl.dataflow.dflow) :: Task 9 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.814] INFO  (parsl.dataflow.dflow) :: Parsl task 9 try 0 launched on executor htex-local with executor id 10
+[2024-05-28 00:02:05.814] INFO  (parsl.dataflow.dflow) :: Task 10 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.814] INFO  (parsl.dataflow.dflow) :: Parsl task 10 try 0 launched on executor htex-local with executor id 11
+[2024-05-28 00:02:05.814] INFO  (parsl.dataflow.dflow) :: Task 11 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.815] INFO  (parsl.dataflow.dflow) :: Parsl task 11 try 0 launched on executor htex-local with executor id 12
+[2024-05-28 00:02:05.815] INFO  (parsl.dataflow.dflow) :: Task 12 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.815] INFO  (parsl.dataflow.dflow) :: Parsl task 12 try 0 launched on executor htex-local with executor id 13
+[2024-05-28 00:02:05.815] INFO  (parsl.dataflow.dflow) :: Task 13 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.815] INFO  (parsl.dataflow.dflow) :: Parsl task 13 try 0 launched on executor htex-local with executor id 14
+[2024-05-28 00:02:05.816] INFO  (parsl.dataflow.dflow) :: Task 14 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.816] INFO  (parsl.dataflow.dflow) :: Parsl task 14 try 0 launched on executor htex-local with executor id 15
+[2024-05-28 00:02:05.816] INFO  (parsl.dataflow.dflow) :: Task 15 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.816] INFO  (parsl.dataflow.dflow) :: Parsl task 15 try 0 launched on executor htex-local with executor id 16
+[2024-05-28 00:02:05.816] INFO  (parsl.dataflow.dflow) :: Task 16 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.817] INFO  (parsl.dataflow.dflow) :: Parsl task 16 try 0 launched on executor htex-local with executor id 17
+[2024-05-28 00:02:05.817] INFO  (parsl.dataflow.dflow) :: Task 17 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.817] INFO  (parsl.dataflow.dflow) :: Parsl task 17 try 0 launched on executor htex-local with executor id 18
+[2024-05-28 00:02:05.817] INFO  (parsl.dataflow.dflow) :: Task 18 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.817] INFO  (parsl.dataflow.dflow) :: Parsl task 18 try 0 launched on executor htex-local with executor id 19
+[2024-05-28 00:02:05.818] INFO  (parsl.dataflow.dflow) :: Task 19 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.818] INFO  (parsl.dataflow.dflow) :: Parsl task 19 try 0 launched on executor htex-local with executor id 20
+[2024-05-28 00:02:05.818] INFO  (parsl.dataflow.dflow) :: Task 20 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.818] INFO  (parsl.dataflow.dflow) :: Parsl task 20 try 0 launched on executor htex-local with executor id 21
+[2024-05-28 00:02:05.818] INFO  (parsl.dataflow.dflow) :: Task 21 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.819] INFO  (parsl.dataflow.dflow) :: Parsl task 21 try 0 launched on executor htex-local with executor id 22
+[2024-05-28 00:02:05.819] INFO  (parsl.dataflow.dflow) :: Task 22 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.819] INFO  (parsl.dataflow.dflow) :: Parsl task 22 try 0 launched on executor htex-local with executor id 23
+[2024-05-28 00:02:05.819] INFO  (parsl.dataflow.dflow) :: Task 23 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.819] INFO  (parsl.dataflow.dflow) :: Parsl task 23 try 0 launched on executor htex-local with executor id 24
+[2024-05-28 00:02:05.820] INFO  (parsl.dataflow.dflow) :: Task 24 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.820] INFO  (parsl.dataflow.dflow) :: Parsl task 24 try 0 launched on executor htex-local with executor id 25
+[2024-05-28 00:02:05.820] INFO  (parsl.dataflow.dflow) :: Task 25 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.820] INFO  (parsl.dataflow.dflow) :: Parsl task 25 try 0 launched on executor htex-local with executor id 26
+[2024-05-28 00:02:05.820] INFO  (parsl.dataflow.dflow) :: Task 26 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.821] INFO  (parsl.dataflow.dflow) :: Parsl task 26 try 0 launched on executor htex-local with executor id 27
+[2024-05-28 00:02:05.821] INFO  (parsl.dataflow.dflow) :: Task 27 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.821] INFO  (parsl.dataflow.dflow) :: Parsl task 27 try 0 launched on executor htex-local with executor id 28
+[2024-05-28 00:02:05.821] INFO  (parsl.dataflow.dflow) :: Task 28 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.822] INFO  (parsl.dataflow.dflow) :: Parsl task 28 try 0 launched on executor htex-local with executor id 29
+[2024-05-28 00:02:05.822] INFO  (parsl.dataflow.dflow) :: Task 29 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.822] INFO  (parsl.dataflow.dflow) :: Parsl task 29 try 0 launched on executor htex-local with executor id 30
+[2024-05-28 00:02:05.822] INFO  (parsl.dataflow.dflow) :: Task 30 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.822] INFO  (parsl.dataflow.dflow) :: Parsl task 30 try 0 launched on executor htex-local with executor id 31
+[2024-05-28 00:02:05.823] INFO  (parsl.dataflow.dflow) :: Task 31 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.823] INFO  (parsl.dataflow.dflow) :: Parsl task 31 try 0 launched on executor htex-local with executor id 32
+[2024-05-28 00:02:05.823] INFO  (parsl.dataflow.dflow) :: Task 32 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.823] INFO  (parsl.dataflow.dflow) :: Parsl task 32 try 0 launched on executor htex-local with executor id 33
+[2024-05-28 00:02:05.824] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-28 00:02:05.845] INFO  (parsl.dataflow.dflow) :: Task 32 completed (launched -> exec_done)
+[2024-05-28 00:02:05.845] INFO  (parsl.dataflow.dflow) :: Task 33 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.845] INFO  (parsl.dataflow.dflow) :: Parsl task 33 try 0 launched on executor htex-local with executor id 34
+[2024-05-28 00:02:05.868] INFO  (parsl.dataflow.dflow) :: Task 33 completed (launched -> exec_done)
+[2024-05-28 00:02:05.868] INFO  (parsl.dataflow.dflow) :: Task 34 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.868] INFO  (parsl.dataflow.dflow) :: Parsl task 34 try 0 launched on executor htex-local with executor id 35
+[2024-05-28 00:02:05.891] INFO  (parsl.dataflow.dflow) :: Task 34 completed (launched -> exec_done)
+[2024-05-28 00:02:05.892] INFO  (parsl.dataflow.dflow) :: Task 35 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.892] INFO  (parsl.dataflow.dflow) :: Parsl task 35 try 0 launched on executor htex-local with executor id 36
+[2024-05-28 00:02:05.914] INFO  (parsl.dataflow.dflow) :: Task 35 completed (launched -> exec_done)
+[2024-05-28 00:02:05.914] INFO  (parsl.dataflow.dflow) :: Task 36 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.915] INFO  (parsl.dataflow.dflow) :: Parsl task 36 try 0 launched on executor htex-local with executor id 37
+[2024-05-28 00:02:05.936] INFO  (parsl.dataflow.dflow) :: Task 36 completed (launched -> exec_done)
+[2024-05-28 00:02:05.936] INFO  (parsl.dataflow.dflow) :: Task 37 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.937] INFO  (parsl.dataflow.dflow) :: Parsl task 37 try 0 launched on executor htex-local with executor id 38
+[2024-05-28 00:02:05.957] INFO  (parsl.dataflow.dflow) :: Task 37 completed (launched -> exec_done)
+[2024-05-28 00:02:05.958] INFO  (parsl.dataflow.dflow) :: Task 38 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.958] INFO  (parsl.dataflow.dflow) :: Parsl task 38 try 0 launched on executor htex-local with executor id 39
+[2024-05-28 00:02:05.979] INFO  (parsl.dataflow.dflow) :: Task 38 completed (launched -> exec_done)
+[2024-05-28 00:02:05.979] INFO  (parsl.dataflow.dflow) :: Task 39 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:05.980] INFO  (parsl.dataflow.dflow) :: Parsl task 39 try 0 launched on executor htex-local with executor id 40
+[2024-05-28 00:02:06.001] INFO  (parsl.dataflow.dflow) :: Task 39 completed (launched -> exec_done)
+[2024-05-28 00:02:06.001] INFO  (parsl.dataflow.dflow) :: Task 40 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.002] INFO  (parsl.dataflow.dflow) :: Parsl task 40 try 0 launched on executor htex-local with executor id 41
+[2024-05-28 00:02:06.022] INFO  (parsl.dataflow.dflow) :: Task 40 completed (launched -> exec_done)
+[2024-05-28 00:02:06.023] INFO  (parsl.dataflow.dflow) :: Task 41 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.023] INFO  (parsl.dataflow.dflow) :: Parsl task 41 try 0 launched on executor htex-local with executor id 42
+[2024-05-28 00:02:06.043] INFO  (parsl.dataflow.dflow) :: Task 41 completed (launched -> exec_done)
+[2024-05-28 00:02:06.044] INFO  (parsl.dataflow.dflow) :: Task 42 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.045] INFO  (parsl.dataflow.dflow) :: Parsl task 42 try 0 launched on executor htex-local with executor id 43
+[2024-05-28 00:02:06.065] INFO  (parsl.dataflow.dflow) :: Task 42 completed (launched -> exec_done)
+[2024-05-28 00:02:06.065] INFO  (parsl.dataflow.dflow) :: Task 43 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.066] INFO  (parsl.dataflow.dflow) :: Parsl task 43 try 0 launched on executor htex-local with executor id 44
+[2024-05-28 00:02:06.086] INFO  (parsl.dataflow.dflow) :: Task 43 completed (launched -> exec_done)
+[2024-05-28 00:02:06.087] INFO  (parsl.dataflow.dflow) :: Task 44 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.087] INFO  (parsl.dataflow.dflow) :: Parsl task 44 try 0 launched on executor htex-local with executor id 45
+[2024-05-28 00:02:06.107] INFO  (parsl.dataflow.dflow) :: Task 44 completed (launched -> exec_done)
+[2024-05-28 00:02:06.108] INFO  (parsl.dataflow.dflow) :: Task 45 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.108] INFO  (parsl.dataflow.dflow) :: Parsl task 45 try 0 launched on executor htex-local with executor id 46
+[2024-05-28 00:02:06.129] INFO  (parsl.dataflow.dflow) :: Task 45 completed (launched -> exec_done)
+[2024-05-28 00:02:06.129] INFO  (parsl.dataflow.dflow) :: Task 46 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.130] INFO  (parsl.dataflow.dflow) :: Parsl task 46 try 0 launched on executor htex-local with executor id 47
+[2024-05-28 00:02:06.150] INFO  (parsl.dataflow.dflow) :: Task 46 completed (launched -> exec_done)
+[2024-05-28 00:02:06.150] INFO  (parsl.dataflow.dflow) :: Task 47 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.151] INFO  (parsl.dataflow.dflow) :: Parsl task 47 try 0 launched on executor htex-local with executor id 48
+[2024-05-28 00:02:06.171] INFO  (parsl.dataflow.dflow) :: Task 47 completed (launched -> exec_done)
+[2024-05-28 00:02:06.172] INFO  (parsl.dataflow.dflow) :: Task 48 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.172] INFO  (parsl.dataflow.dflow) :: Parsl task 48 try 0 launched on executor htex-local with executor id 49
+[2024-05-28 00:02:06.193] INFO  (parsl.dataflow.dflow) :: Task 48 completed (launched -> exec_done)
+[2024-05-28 00:02:06.193] INFO  (parsl.dataflow.dflow) :: Task 49 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.194] INFO  (parsl.dataflow.dflow) :: Parsl task 49 try 0 launched on executor htex-local with executor id 50
+[2024-05-28 00:02:06.217] INFO  (parsl.dataflow.dflow) :: Task 49 completed (launched -> exec_done)
+[2024-05-28 00:02:06.217] INFO  (parsl.dataflow.dflow) :: Task 50 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.218] INFO  (parsl.dataflow.dflow) :: Parsl task 50 try 0 launched on executor htex-local with executor id 51
+[2024-05-28 00:02:06.235] INFO  (parsl.dataflow.dflow) :: Task 50 completed (launched -> exec_done)
+[2024-05-28 00:02:06.236] INFO  (parsl.dataflow.dflow) :: Task 51 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.236] INFO  (parsl.dataflow.dflow) :: Parsl task 51 try 0 launched on executor htex-local with executor id 52
+[2024-05-28 00:02:06.257] INFO  (parsl.dataflow.dflow) :: Task 51 completed (launched -> exec_done)
+[2024-05-28 00:02:06.257] INFO  (parsl.dataflow.dflow) :: Task 52 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.257] INFO  (parsl.dataflow.dflow) :: Parsl task 52 try 0 launched on executor htex-local with executor id 53
+[2024-05-28 00:02:06.278] INFO  (parsl.dataflow.dflow) :: Task 52 completed (launched -> exec_done)
+[2024-05-28 00:02:06.278] INFO  (parsl.dataflow.dflow) :: Task 53 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.279] INFO  (parsl.dataflow.dflow) :: Parsl task 53 try 0 launched on executor htex-local with executor id 54
+[2024-05-28 00:02:06.299] INFO  (parsl.dataflow.dflow) :: Task 53 completed (launched -> exec_done)
+[2024-05-28 00:02:06.299] INFO  (parsl.dataflow.dflow) :: Task 54 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.300] INFO  (parsl.dataflow.dflow) :: Parsl task 54 try 0 launched on executor htex-local with executor id 55
+[2024-05-28 00:02:06.320] INFO  (parsl.dataflow.dflow) :: Task 54 completed (launched -> exec_done)
+[2024-05-28 00:02:06.321] INFO  (parsl.dataflow.dflow) :: Task 55 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.321] INFO  (parsl.dataflow.dflow) :: Parsl task 55 try 0 launched on executor htex-local with executor id 56
+[2024-05-28 00:02:06.341] INFO  (parsl.dataflow.dflow) :: Task 55 completed (launched -> exec_done)
+[2024-05-28 00:02:06.342] INFO  (parsl.dataflow.dflow) :: Task 56 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.342] INFO  (parsl.dataflow.dflow) :: Parsl task 56 try 0 launched on executor htex-local with executor id 57
+[2024-05-28 00:02:06.362] INFO  (parsl.dataflow.dflow) :: Task 56 completed (launched -> exec_done)
+[2024-05-28 00:02:06.363] INFO  (parsl.dataflow.dflow) :: Task 57 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.363] INFO  (parsl.dataflow.dflow) :: Parsl task 57 try 0 launched on executor htex-local with executor id 58
+[2024-05-28 00:02:06.384] INFO  (parsl.dataflow.dflow) :: Task 57 completed (launched -> exec_done)
+[2024-05-28 00:02:06.384] INFO  (parsl.dataflow.dflow) :: Task 58 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.384] INFO  (parsl.dataflow.dflow) :: Parsl task 58 try 0 launched on executor htex-local with executor id 59
+[2024-05-28 00:02:06.405] INFO  (parsl.dataflow.dflow) :: Task 58 completed (launched -> exec_done)
+[2024-05-28 00:02:06.405] INFO  (parsl.dataflow.dflow) :: Task 59 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.405] INFO  (parsl.dataflow.dflow) :: Parsl task 59 try 0 launched on executor htex-local with executor id 60
+[2024-05-28 00:02:06.426] INFO  (parsl.dataflow.dflow) :: Task 59 completed (launched -> exec_done)
+[2024-05-28 00:02:06.426] INFO  (parsl.dataflow.dflow) :: Task 60 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.426] INFO  (parsl.dataflow.dflow) :: Parsl task 60 try 0 launched on executor htex-local with executor id 61
+[2024-05-28 00:02:06.447] INFO  (parsl.dataflow.dflow) :: Task 60 completed (launched -> exec_done)
+[2024-05-28 00:02:06.448] INFO  (parsl.dataflow.dflow) :: Task 61 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.448] INFO  (parsl.dataflow.dflow) :: Parsl task 61 try 0 launched on executor htex-local with executor id 62
+[2024-05-28 00:02:06.469] INFO  (parsl.dataflow.dflow) :: Task 61 completed (launched -> exec_done)
+[2024-05-28 00:02:06.469] INFO  (parsl.dataflow.dflow) :: Task 62 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.469] INFO  (parsl.dataflow.dflow) :: Parsl task 62 try 0 launched on executor htex-local with executor id 63
+[2024-05-28 00:02:06.490] INFO  (parsl.dataflow.dflow) :: Task 62 completed (launched -> exec_done)
+[2024-05-28 00:02:06.490] INFO  (parsl.dataflow.dflow) :: Task 63 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.491] INFO  (parsl.dataflow.dflow) :: Parsl task 63 try 0 launched on executor htex-local with executor id 64
+[2024-05-28 00:02:06.511] INFO  (parsl.dataflow.dflow) :: Task 63 completed (launched -> exec_done)
+[2024-05-28 00:02:06.512] INFO  (parsl.dataflow.dflow) :: Task 64 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.512] INFO  (parsl.dataflow.dflow) :: Parsl task 64 try 0 launched on executor htex-local with executor id 65
+[2024-05-28 00:02:06.512] WORK  (webs.wf.synthetic.workflow) :: Completed 32/320 tasks (rate: 45.45 tasks/s, running tasks: 32)
+[2024-05-28 00:02:06.533] INFO  (parsl.dataflow.dflow) :: Task 15 completed (launched -> exec_done)
+[2024-05-28 00:02:06.533] INFO  (parsl.dataflow.dflow) :: Task 64 completed (launched -> exec_done)
+[2024-05-28 00:02:06.533] INFO  (parsl.dataflow.dflow) :: Task 65 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.534] INFO  (parsl.dataflow.dflow) :: Parsl task 65 try 0 launched on executor htex-local with executor id 66
+[2024-05-28 00:02:06.534] INFO  (parsl.dataflow.dflow) :: Task 66 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.534] INFO  (parsl.dataflow.dflow) :: Parsl task 66 try 0 launched on executor htex-local with executor id 67
+[2024-05-28 00:02:06.557] INFO  (parsl.dataflow.dflow) :: Task 66 completed (launched -> exec_done)
+[2024-05-28 00:02:06.557] INFO  (parsl.dataflow.dflow) :: Task 65 completed (launched -> exec_done)
+[2024-05-28 00:02:06.557] INFO  (parsl.dataflow.dflow) :: Task 8 completed (launched -> exec_done)
+[2024-05-28 00:02:06.557] INFO  (parsl.dataflow.dflow) :: Task 21 completed (launched -> exec_done)
+[2024-05-28 00:02:06.557] INFO  (parsl.dataflow.dflow) :: Task 67 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.558] INFO  (parsl.dataflow.dflow) :: Parsl task 67 try 0 launched on executor htex-local with executor id 68
+[2024-05-28 00:02:06.558] INFO  (parsl.dataflow.dflow) :: Task 68 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.558] INFO  (parsl.dataflow.dflow) :: Parsl task 68 try 0 launched on executor htex-local with executor id 69
+[2024-05-28 00:02:06.559] INFO  (parsl.dataflow.dflow) :: Task 69 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.559] INFO  (parsl.dataflow.dflow) :: Parsl task 69 try 0 launched on executor htex-local with executor id 70
+[2024-05-28 00:02:06.559] INFO  (parsl.dataflow.dflow) :: Task 70 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.560] INFO  (parsl.dataflow.dflow) :: Parsl task 70 try 0 launched on executor htex-local with executor id 71
+[2024-05-28 00:02:06.577] INFO  (parsl.dataflow.dflow) :: Task 67 completed (launched -> exec_done)
+[2024-05-28 00:02:06.577] INFO  (parsl.dataflow.dflow) :: Task 68 completed (launched -> exec_done)
+[2024-05-28 00:02:06.578] INFO  (parsl.dataflow.dflow) :: Task 69 completed (launched -> exec_done)
+[2024-05-28 00:02:06.578] INFO  (parsl.dataflow.dflow) :: Task 70 completed (launched -> exec_done)
+[2024-05-28 00:02:06.578] INFO  (parsl.dataflow.dflow) :: Task 71 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.578] INFO  (parsl.dataflow.dflow) :: Task 31 completed (launched -> exec_done)
+[2024-05-28 00:02:06.578] INFO  (parsl.dataflow.dflow) :: Task 14 completed (launched -> exec_done)
+[2024-05-28 00:02:06.579] INFO  (parsl.dataflow.dflow) :: Parsl task 71 try 0 launched on executor htex-local with executor id 72
+[2024-05-28 00:02:06.579] INFO  (parsl.dataflow.dflow) :: Task 72 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.579] INFO  (parsl.dataflow.dflow) :: Parsl task 72 try 0 launched on executor htex-local with executor id 73
+[2024-05-28 00:02:06.580] INFO  (parsl.dataflow.dflow) :: Task 73 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.580] INFO  (parsl.dataflow.dflow) :: Parsl task 73 try 0 launched on executor htex-local with executor id 74
+[2024-05-28 00:02:06.580] INFO  (parsl.dataflow.dflow) :: Task 74 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.581] INFO  (parsl.dataflow.dflow) :: Parsl task 74 try 0 launched on executor htex-local with executor id 75
+[2024-05-28 00:02:06.581] INFO  (parsl.dataflow.dflow) :: Task 75 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.581] INFO  (parsl.dataflow.dflow) :: Parsl task 75 try 0 launched on executor htex-local with executor id 76
+[2024-05-28 00:02:06.581] INFO  (parsl.dataflow.dflow) :: Task 76 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.582] INFO  (parsl.dataflow.dflow) :: Parsl task 76 try 0 launched on executor htex-local with executor id 77
+[2024-05-28 00:02:06.588] INFO  (parsl.dataflow.dflow) :: Task 30 completed (launched -> exec_done)
+[2024-05-28 00:02:06.588] INFO  (parsl.dataflow.dflow) :: Task 26 completed (launched -> exec_done)
+[2024-05-28 00:02:06.588] INFO  (parsl.dataflow.dflow) :: Task 7 completed (launched -> exec_done)
+[2024-05-28 00:02:06.589] INFO  (parsl.dataflow.dflow) :: Task 77 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.589] INFO  (parsl.dataflow.dflow) :: Parsl task 77 try 0 launched on executor htex-local with executor id 78
+[2024-05-28 00:02:06.589] INFO  (parsl.dataflow.dflow) :: Task 78 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.590] INFO  (parsl.dataflow.dflow) :: Parsl task 78 try 0 launched on executor htex-local with executor id 79
+[2024-05-28 00:02:06.590] INFO  (parsl.dataflow.dflow) :: Task 79 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.590] INFO  (parsl.dataflow.dflow) :: Parsl task 79 try 0 launched on executor htex-local with executor id 80
+[2024-05-28 00:02:06.599] INFO  (parsl.dataflow.dflow) :: Task 71 completed (launched -> exec_done)
+[2024-05-28 00:02:06.599] INFO  (parsl.dataflow.dflow) :: Task 72 completed (launched -> exec_done)
+[2024-05-28 00:02:06.599] INFO  (parsl.dataflow.dflow) :: Task 73 completed (launched -> exec_done)
+[2024-05-28 00:02:06.599] INFO  (parsl.dataflow.dflow) :: Task 75 completed (launched -> exec_done)
+[2024-05-28 00:02:06.599] INFO  (parsl.dataflow.dflow) :: Task 80 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.600] INFO  (parsl.dataflow.dflow) :: Task 74 completed (launched -> exec_done)
+[2024-05-28 00:02:06.600] INFO  (parsl.dataflow.dflow) :: Task 76 completed (launched -> exec_done)
+[2024-05-28 00:02:06.600] INFO  (parsl.dataflow.dflow) :: Task 3 completed (launched -> exec_done)
+[2024-05-28 00:02:06.600] INFO  (parsl.dataflow.dflow) :: Task 29 completed (launched -> exec_done)
+[2024-05-28 00:02:06.600] INFO  (parsl.dataflow.dflow) :: Task 20 completed (launched -> exec_done)
+[2024-05-28 00:02:06.601] INFO  (parsl.dataflow.dflow) :: Parsl task 80 try 0 launched on executor htex-local with executor id 81
+[2024-05-28 00:02:06.601] INFO  (parsl.dataflow.dflow) :: Task 81 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.601] INFO  (parsl.dataflow.dflow) :: Parsl task 81 try 0 launched on executor htex-local with executor id 82
+[2024-05-28 00:02:06.601] INFO  (parsl.dataflow.dflow) :: Task 82 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.602] INFO  (parsl.dataflow.dflow) :: Parsl task 82 try 0 launched on executor htex-local with executor id 83
+[2024-05-28 00:02:06.602] INFO  (parsl.dataflow.dflow) :: Task 83 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.602] INFO  (parsl.dataflow.dflow) :: Parsl task 83 try 0 launched on executor htex-local with executor id 84
+[2024-05-28 00:02:06.602] INFO  (parsl.dataflow.dflow) :: Task 84 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.603] INFO  (parsl.dataflow.dflow) :: Parsl task 84 try 0 launched on executor htex-local with executor id 85
+[2024-05-28 00:02:06.603] INFO  (parsl.dataflow.dflow) :: Task 85 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.603] INFO  (parsl.dataflow.dflow) :: Parsl task 85 try 0 launched on executor htex-local with executor id 86
+[2024-05-28 00:02:06.603] INFO  (parsl.dataflow.dflow) :: Task 86 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.604] INFO  (parsl.dataflow.dflow) :: Parsl task 86 try 0 launched on executor htex-local with executor id 87
+[2024-05-28 00:02:06.604] INFO  (parsl.dataflow.dflow) :: Task 87 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.604] INFO  (parsl.dataflow.dflow) :: Parsl task 87 try 0 launched on executor htex-local with executor id 88
+[2024-05-28 00:02:06.604] INFO  (parsl.dataflow.dflow) :: Task 88 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.604] INFO  (parsl.dataflow.dflow) :: Parsl task 88 try 0 launched on executor htex-local with executor id 89
+[2024-05-28 00:02:06.610] INFO  (parsl.dataflow.dflow) :: Task 22 completed (launched -> exec_done)
+[2024-05-28 00:02:06.610] INFO  (parsl.dataflow.dflow) :: Task 78 completed (launched -> exec_done)
+[2024-05-28 00:02:06.611] INFO  (parsl.dataflow.dflow) :: Task 79 completed (launched -> exec_done)
+[2024-05-28 00:02:06.611] INFO  (parsl.dataflow.dflow) :: Task 17 completed (launched -> exec_done)
+[2024-05-28 00:02:06.611] INFO  (parsl.dataflow.dflow) :: Task 89 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.611] INFO  (parsl.dataflow.dflow) :: Task 77 completed (launched -> exec_done)
+[2024-05-28 00:02:06.611] INFO  (parsl.dataflow.dflow) :: Task 18 completed (launched -> exec_done)
+[2024-05-28 00:02:06.611] INFO  (parsl.dataflow.dflow) :: Task 80 completed (launched -> exec_done)
+[2024-05-28 00:02:06.612] INFO  (parsl.dataflow.dflow) :: Parsl task 89 try 0 launched on executor htex-local with executor id 90
+[2024-05-28 00:02:06.612] INFO  (parsl.dataflow.dflow) :: Task 90 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.612] INFO  (parsl.dataflow.dflow) :: Parsl task 90 try 0 launched on executor htex-local with executor id 91
+[2024-05-28 00:02:06.612] INFO  (parsl.dataflow.dflow) :: Task 91 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.613] INFO  (parsl.dataflow.dflow) :: Parsl task 91 try 0 launched on executor htex-local with executor id 92
+[2024-05-28 00:02:06.613] INFO  (parsl.dataflow.dflow) :: Task 92 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.613] INFO  (parsl.dataflow.dflow) :: Parsl task 92 try 0 launched on executor htex-local with executor id 93
+[2024-05-28 00:02:06.613] INFO  (parsl.dataflow.dflow) :: Task 93 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.614] INFO  (parsl.dataflow.dflow) :: Parsl task 93 try 0 launched on executor htex-local with executor id 94
+[2024-05-28 00:02:06.614] INFO  (parsl.dataflow.dflow) :: Task 94 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.614] INFO  (parsl.dataflow.dflow) :: Parsl task 94 try 0 launched on executor htex-local with executor id 95
+[2024-05-28 00:02:06.614] INFO  (parsl.dataflow.dflow) :: Task 95 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.615] INFO  (parsl.dataflow.dflow) :: Parsl task 95 try 0 launched on executor htex-local with executor id 96
+[2024-05-28 00:02:06.622] INFO  (parsl.dataflow.dflow) :: Task 81 completed (launched -> exec_done)
+[2024-05-28 00:02:06.622] INFO  (parsl.dataflow.dflow) :: Task 82 completed (launched -> exec_done)
+[2024-05-28 00:02:06.622] INFO  (parsl.dataflow.dflow) :: Task 83 completed (launched -> exec_done)
+[2024-05-28 00:02:06.622] INFO  (parsl.dataflow.dflow) :: Task 85 completed (launched -> exec_done)
+[2024-05-28 00:02:06.623] INFO  (parsl.dataflow.dflow) :: Task 96 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.623] INFO  (parsl.dataflow.dflow) :: Task 84 completed (launched -> exec_done)
+[2024-05-28 00:02:06.623] INFO  (parsl.dataflow.dflow) :: Task 86 completed (launched -> exec_done)
+[2024-05-28 00:02:06.623] INFO  (parsl.dataflow.dflow) :: Task 88 completed (launched -> exec_done)
+[2024-05-28 00:02:06.623] INFO  (parsl.dataflow.dflow) :: Task 87 completed (launched -> exec_done)
+[2024-05-28 00:02:06.624] INFO  (parsl.dataflow.dflow) :: Task 4 completed (launched -> exec_done)
+[2024-05-28 00:02:06.624] INFO  (parsl.dataflow.dflow) :: Task 6 completed (launched -> exec_done)
+[2024-05-28 00:02:06.624] INFO  (parsl.dataflow.dflow) :: Parsl task 96 try 0 launched on executor htex-local with executor id 97
+[2024-05-28 00:02:06.624] WORK  (webs.wf.synthetic.workflow) :: Completed 64/320 tasks (rate: 78.44 tasks/s, running tasks: 32)
+[2024-05-28 00:02:06.624] INFO  (parsl.dataflow.dflow) :: Task 97 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.625] INFO  (parsl.dataflow.dflow) :: Parsl task 97 try 0 launched on executor htex-local with executor id 98
+[2024-05-28 00:02:06.625] INFO  (parsl.dataflow.dflow) :: Task 98 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.625] INFO  (parsl.dataflow.dflow) :: Parsl task 98 try 0 launched on executor htex-local with executor id 99
+[2024-05-28 00:02:06.625] INFO  (parsl.dataflow.dflow) :: Task 99 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.625] INFO  (parsl.dataflow.dflow) :: Parsl task 99 try 0 launched on executor htex-local with executor id 100
+[2024-05-28 00:02:06.626] INFO  (parsl.dataflow.dflow) :: Task 100 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.626] INFO  (parsl.dataflow.dflow) :: Parsl task 100 try 0 launched on executor htex-local with executor id 101
+[2024-05-28 00:02:06.626] INFO  (parsl.dataflow.dflow) :: Task 101 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.626] INFO  (parsl.dataflow.dflow) :: Parsl task 101 try 0 launched on executor htex-local with executor id 102
+[2024-05-28 00:02:06.627] INFO  (parsl.dataflow.dflow) :: Task 102 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.627] INFO  (parsl.dataflow.dflow) :: Parsl task 102 try 0 launched on executor htex-local with executor id 103
+[2024-05-28 00:02:06.627] INFO  (parsl.dataflow.dflow) :: Task 103 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.627] INFO  (parsl.dataflow.dflow) :: Parsl task 103 try 0 launched on executor htex-local with executor id 104
+[2024-05-28 00:02:06.627] INFO  (parsl.dataflow.dflow) :: Task 104 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.628] INFO  (parsl.dataflow.dflow) :: Parsl task 104 try 0 launched on executor htex-local with executor id 105
+[2024-05-28 00:02:06.628] INFO  (parsl.dataflow.dflow) :: Task 105 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.628] INFO  (parsl.dataflow.dflow) :: Parsl task 105 try 0 launched on executor htex-local with executor id 106
+[2024-05-28 00:02:06.634] INFO  (parsl.dataflow.dflow) :: Task 90 completed (launched -> exec_done)
+[2024-05-28 00:02:06.635] INFO  (parsl.dataflow.dflow) :: Task 91 completed (launched -> exec_done)
+[2024-05-28 00:02:06.635] INFO  (parsl.dataflow.dflow) :: Task 92 completed (launched -> exec_done)
+[2024-05-28 00:02:06.635] INFO  (parsl.dataflow.dflow) :: Task 93 completed (launched -> exec_done)
+[2024-05-28 00:02:06.635] INFO  (parsl.dataflow.dflow) :: Task 106 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.635] INFO  (parsl.dataflow.dflow) :: Task 95 completed (launched -> exec_done)
+[2024-05-28 00:02:06.635] INFO  (parsl.dataflow.dflow) :: Task 94 completed (launched -> exec_done)
+[2024-05-28 00:02:06.636] INFO  (parsl.dataflow.dflow) :: Task 89 completed (launched -> exec_done)
+[2024-05-28 00:02:06.636] INFO  (parsl.dataflow.dflow) :: Task 24 completed (launched -> exec_done)
+[2024-05-28 00:02:06.636] INFO  (parsl.dataflow.dflow) :: Task 5 completed (launched -> exec_done)
+[2024-05-28 00:02:06.636] INFO  (parsl.dataflow.dflow) :: Task 2 completed (launched -> exec_done)
+[2024-05-28 00:02:06.636] INFO  (parsl.dataflow.dflow) :: Parsl task 106 try 0 launched on executor htex-local with executor id 107
+[2024-05-28 00:02:06.636] INFO  (parsl.dataflow.dflow) :: Task 25 completed (launched -> exec_done)
+[2024-05-28 00:02:06.637] INFO  (parsl.dataflow.dflow) :: Task 19 completed (launched -> exec_done)
+[2024-05-28 00:02:06.637] INFO  (parsl.dataflow.dflow) :: Task 107 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.637] INFO  (parsl.dataflow.dflow) :: Task 9 completed (launched -> exec_done)
+[2024-05-28 00:02:06.637] INFO  (parsl.dataflow.dflow) :: Task 1 completed (launched -> exec_done)
+[2024-05-28 00:02:06.637] INFO  (parsl.dataflow.dflow) :: Task 16 completed (launched -> exec_done)
+[2024-05-28 00:02:06.638] INFO  (parsl.dataflow.dflow) :: Task 97 completed (launched -> exec_done)
+[2024-05-28 00:02:06.638] INFO  (parsl.dataflow.dflow) :: Parsl task 107 try 0 launched on executor htex-local with executor id 108
+[2024-05-28 00:02:06.638] INFO  (parsl.dataflow.dflow) :: Task 108 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.638] INFO  (parsl.dataflow.dflow) :: Parsl task 108 try 0 launched on executor htex-local with executor id 109
+[2024-05-28 00:02:06.639] INFO  (parsl.dataflow.dflow) :: Task 109 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.639] INFO  (parsl.dataflow.dflow) :: Parsl task 109 try 0 launched on executor htex-local with executor id 110
+[2024-05-28 00:02:06.639] INFO  (parsl.dataflow.dflow) :: Task 110 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.639] INFO  (parsl.dataflow.dflow) :: Parsl task 110 try 0 launched on executor htex-local with executor id 111
+[2024-05-28 00:02:06.640] INFO  (parsl.dataflow.dflow) :: Task 111 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.640] INFO  (parsl.dataflow.dflow) :: Parsl task 111 try 0 launched on executor htex-local with executor id 112
+[2024-05-28 00:02:06.640] INFO  (parsl.dataflow.dflow) :: Task 112 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.640] INFO  (parsl.dataflow.dflow) :: Parsl task 112 try 0 launched on executor htex-local with executor id 113
+[2024-05-28 00:02:06.641] INFO  (parsl.dataflow.dflow) :: Task 113 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.641] INFO  (parsl.dataflow.dflow) :: Parsl task 113 try 0 launched on executor htex-local with executor id 114
+[2024-05-28 00:02:06.641] INFO  (parsl.dataflow.dflow) :: Task 114 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.641] INFO  (parsl.dataflow.dflow) :: Parsl task 114 try 0 launched on executor htex-local with executor id 115
+[2024-05-28 00:02:06.641] INFO  (parsl.dataflow.dflow) :: Task 115 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.642] INFO  (parsl.dataflow.dflow) :: Parsl task 115 try 0 launched on executor htex-local with executor id 116
+[2024-05-28 00:02:06.642] INFO  (parsl.dataflow.dflow) :: Task 116 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.642] INFO  (parsl.dataflow.dflow) :: Parsl task 116 try 0 launched on executor htex-local with executor id 117
+[2024-05-28 00:02:06.642] INFO  (parsl.dataflow.dflow) :: Task 117 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.643] INFO  (parsl.dataflow.dflow) :: Parsl task 117 try 0 launched on executor htex-local with executor id 118
+[2024-05-28 00:02:06.643] INFO  (parsl.dataflow.dflow) :: Task 118 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.643] INFO  (parsl.dataflow.dflow) :: Parsl task 118 try 0 launched on executor htex-local with executor id 119
+[2024-05-28 00:02:06.643] INFO  (parsl.dataflow.dflow) :: Task 119 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.644] INFO  (parsl.dataflow.dflow) :: Parsl task 119 try 0 launched on executor htex-local with executor id 120
+[2024-05-28 00:02:06.644] INFO  (parsl.dataflow.dflow) :: Task 120 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.644] INFO  (parsl.dataflow.dflow) :: Parsl task 120 try 0 launched on executor htex-local with executor id 121
+[2024-05-28 00:02:06.644] INFO  (parsl.dataflow.dflow) :: Task 121 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.645] INFO  (parsl.dataflow.dflow) :: Parsl task 121 try 0 launched on executor htex-local with executor id 122
+[2024-05-28 00:02:06.646] INFO  (parsl.dataflow.dflow) :: Task 98 completed (launched -> exec_done)
+[2024-05-28 00:02:06.646] INFO  (parsl.dataflow.dflow) :: Task 100 completed (launched -> exec_done)
+[2024-05-28 00:02:06.647] INFO  (parsl.dataflow.dflow) :: Task 99 completed (launched -> exec_done)
+[2024-05-28 00:02:06.647] INFO  (parsl.dataflow.dflow) :: Task 102 completed (launched -> exec_done)
+[2024-05-28 00:02:06.647] INFO  (parsl.dataflow.dflow) :: Task 122 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.647] INFO  (parsl.dataflow.dflow) :: Task 96 completed (launched -> exec_done)
+[2024-05-28 00:02:06.647] INFO  (parsl.dataflow.dflow) :: Task 103 completed (launched -> exec_done)
+[2024-05-28 00:02:06.648] INFO  (parsl.dataflow.dflow) :: Task 101 completed (launched -> exec_done)
+[2024-05-28 00:02:06.648] INFO  (parsl.dataflow.dflow) :: Task 104 completed (launched -> exec_done)
+[2024-05-28 00:02:06.648] INFO  (parsl.dataflow.dflow) :: Task 10 completed (launched -> exec_done)
+[2024-05-28 00:02:06.648] INFO  (parsl.dataflow.dflow) :: Parsl task 122 try 0 launched on executor htex-local with executor id 123
+[2024-05-28 00:02:06.648] INFO  (parsl.dataflow.dflow) :: Task 105 completed (launched -> exec_done)
+[2024-05-28 00:02:06.649] INFO  (parsl.dataflow.dflow) :: Task 28 completed (launched -> exec_done)
+[2024-05-28 00:02:06.649] INFO  (parsl.dataflow.dflow) :: Task 11 completed (launched -> exec_done)
+[2024-05-28 00:02:06.649] INFO  (parsl.dataflow.dflow) :: Task 123 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.649] INFO  (parsl.dataflow.dflow) :: Task 12 completed (launched -> exec_done)
+[2024-05-28 00:02:06.649] INFO  (parsl.dataflow.dflow) :: Task 27 completed (launched -> exec_done)
+[2024-05-28 00:02:06.649] INFO  (parsl.dataflow.dflow) :: Task 23 completed (launched -> exec_done)
+[2024-05-28 00:02:06.650] INFO  (parsl.dataflow.dflow) :: Task 13 completed (launched -> exec_done)
+[2024-05-28 00:02:06.650] INFO  (parsl.dataflow.dflow) :: Parsl task 123 try 0 launched on executor htex-local with executor id 124
+[2024-05-28 00:02:06.650] INFO  (parsl.dataflow.dflow) :: Task 124 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.650] INFO  (parsl.dataflow.dflow) :: Parsl task 124 try 0 launched on executor htex-local with executor id 125
+[2024-05-28 00:02:06.650] INFO  (parsl.dataflow.dflow) :: Task 125 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.651] INFO  (parsl.dataflow.dflow) :: Parsl task 125 try 0 launched on executor htex-local with executor id 126
+[2024-05-28 00:02:06.651] INFO  (parsl.dataflow.dflow) :: Task 126 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.651] INFO  (parsl.dataflow.dflow) :: Parsl task 126 try 0 launched on executor htex-local with executor id 127
+[2024-05-28 00:02:06.651] INFO  (parsl.dataflow.dflow) :: Task 127 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.652] INFO  (parsl.dataflow.dflow) :: Parsl task 127 try 0 launched on executor htex-local with executor id 128
+[2024-05-28 00:02:06.652] INFO  (parsl.dataflow.dflow) :: Task 128 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.652] INFO  (parsl.dataflow.dflow) :: Parsl task 128 try 0 launched on executor htex-local with executor id 129
+[2024-05-28 00:02:06.652] INFO  (parsl.dataflow.dflow) :: Task 129 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.653] INFO  (parsl.dataflow.dflow) :: Parsl task 129 try 0 launched on executor htex-local with executor id 130
+[2024-05-28 00:02:06.653] INFO  (parsl.dataflow.dflow) :: Task 130 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.653] INFO  (parsl.dataflow.dflow) :: Parsl task 130 try 0 launched on executor htex-local with executor id 131
+[2024-05-28 00:02:06.653] INFO  (parsl.dataflow.dflow) :: Task 131 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.654] INFO  (parsl.dataflow.dflow) :: Parsl task 131 try 0 launched on executor htex-local with executor id 132
+[2024-05-28 00:02:06.654] INFO  (parsl.dataflow.dflow) :: Task 132 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.654] INFO  (parsl.dataflow.dflow) :: Parsl task 132 try 0 launched on executor htex-local with executor id 133
+[2024-05-28 00:02:06.654] INFO  (parsl.dataflow.dflow) :: Task 133 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.655] INFO  (parsl.dataflow.dflow) :: Parsl task 133 try 0 launched on executor htex-local with executor id 134
+[2024-05-28 00:02:06.655] INFO  (parsl.dataflow.dflow) :: Task 134 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.655] INFO  (parsl.dataflow.dflow) :: Parsl task 134 try 0 launched on executor htex-local with executor id 135
+[2024-05-28 00:02:06.655] INFO  (parsl.dataflow.dflow) :: Task 135 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.656] INFO  (parsl.dataflow.dflow) :: Parsl task 135 try 0 launched on executor htex-local with executor id 136
+[2024-05-28 00:02:06.656] INFO  (parsl.dataflow.dflow) :: Task 136 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.656] INFO  (parsl.dataflow.dflow) :: Parsl task 136 try 0 launched on executor htex-local with executor id 137
+[2024-05-28 00:02:06.656] INFO  (parsl.dataflow.dflow) :: Task 137 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.657] INFO  (parsl.dataflow.dflow) :: Parsl task 137 try 0 launched on executor htex-local with executor id 138
+[2024-05-28 00:02:06.659] INFO  (parsl.dataflow.dflow) :: Task 107 completed (launched -> exec_done)
+[2024-05-28 00:02:06.659] INFO  (parsl.dataflow.dflow) :: Task 108 completed (launched -> exec_done)
+[2024-05-28 00:02:06.660] INFO  (parsl.dataflow.dflow) :: Task 109 completed (launched -> exec_done)
+[2024-05-28 00:02:06.660] INFO  (parsl.dataflow.dflow) :: Task 110 completed (launched -> exec_done)
+[2024-05-28 00:02:06.660] INFO  (parsl.dataflow.dflow) :: Task 138 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.660] INFO  (parsl.dataflow.dflow) :: Task 111 completed (launched -> exec_done)
+[2024-05-28 00:02:06.661] INFO  (parsl.dataflow.dflow) :: Task 106 completed (launched -> exec_done)
+[2024-05-28 00:02:06.661] INFO  (parsl.dataflow.dflow) :: Task 113 completed (launched -> exec_done)
+[2024-05-28 00:02:06.661] INFO  (parsl.dataflow.dflow) :: Task 114 completed (launched -> exec_done)
+[2024-05-28 00:02:06.661] INFO  (parsl.dataflow.dflow) :: Task 116 completed (launched -> exec_done)
+[2024-05-28 00:02:06.661] INFO  (parsl.dataflow.dflow) :: Task 112 completed (launched -> exec_done)
+[2024-05-28 00:02:06.662] INFO  (parsl.dataflow.dflow) :: Parsl task 138 try 0 launched on executor htex-local with executor id 139
+[2024-05-28 00:02:06.662] INFO  (parsl.dataflow.dflow) :: Task 120 completed (launched -> exec_done)
+[2024-05-28 00:02:06.662] INFO  (parsl.dataflow.dflow) :: Task 118 completed (launched -> exec_done)
+[2024-05-28 00:02:06.662] INFO  (parsl.dataflow.dflow) :: Task 119 completed (launched -> exec_done)
+[2024-05-28 00:02:06.662] INFO  (parsl.dataflow.dflow) :: Task 139 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.662] INFO  (parsl.dataflow.dflow) :: Task 115 completed (launched -> exec_done)
+[2024-05-28 00:02:06.663] INFO  (parsl.dataflow.dflow) :: Task 121 completed (launched -> exec_done)
+[2024-05-28 00:02:06.663] INFO  (parsl.dataflow.dflow) :: Task 117 completed (launched -> exec_done)
+[2024-05-28 00:02:06.663] INFO  (parsl.dataflow.dflow) :: Task 124 completed (launched -> exec_done)
+[2024-05-28 00:02:06.663] INFO  (parsl.dataflow.dflow) :: Parsl task 139 try 0 launched on executor htex-local with executor id 140
+[2024-05-28 00:02:06.663] INFO  (parsl.dataflow.dflow) :: Task 140 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.664] INFO  (parsl.dataflow.dflow) :: Parsl task 140 try 0 launched on executor htex-local with executor id 141
+[2024-05-28 00:02:06.664] INFO  (parsl.dataflow.dflow) :: Task 141 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.664] INFO  (parsl.dataflow.dflow) :: Parsl task 141 try 0 launched on executor htex-local with executor id 142
+[2024-05-28 00:02:06.664] INFO  (parsl.dataflow.dflow) :: Task 142 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.665] INFO  (parsl.dataflow.dflow) :: Parsl task 142 try 0 launched on executor htex-local with executor id 143
+[2024-05-28 00:02:06.665] INFO  (parsl.dataflow.dflow) :: Task 143 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.665] INFO  (parsl.dataflow.dflow) :: Parsl task 143 try 0 launched on executor htex-local with executor id 144
+[2024-05-28 00:02:06.665] INFO  (parsl.dataflow.dflow) :: Task 144 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.666] INFO  (parsl.dataflow.dflow) :: Parsl task 144 try 0 launched on executor htex-local with executor id 145
+[2024-05-28 00:02:06.666] INFO  (parsl.dataflow.dflow) :: Task 145 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.666] INFO  (parsl.dataflow.dflow) :: Parsl task 145 try 0 launched on executor htex-local with executor id 146
+[2024-05-28 00:02:06.666] INFO  (parsl.dataflow.dflow) :: Task 146 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.667] INFO  (parsl.dataflow.dflow) :: Parsl task 146 try 0 launched on executor htex-local with executor id 147
+[2024-05-28 00:02:06.667] INFO  (parsl.dataflow.dflow) :: Task 147 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.667] INFO  (parsl.dataflow.dflow) :: Parsl task 147 try 0 launched on executor htex-local with executor id 148
+[2024-05-28 00:02:06.667] INFO  (parsl.dataflow.dflow) :: Task 148 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.668] INFO  (parsl.dataflow.dflow) :: Parsl task 148 try 0 launched on executor htex-local with executor id 149
+[2024-05-28 00:02:06.668] INFO  (parsl.dataflow.dflow) :: Task 149 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.668] INFO  (parsl.dataflow.dflow) :: Parsl task 149 try 0 launched on executor htex-local with executor id 150
+[2024-05-28 00:02:06.668] INFO  (parsl.dataflow.dflow) :: Task 150 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.668] INFO  (parsl.dataflow.dflow) :: Parsl task 150 try 0 launched on executor htex-local with executor id 151
+[2024-05-28 00:02:06.669] INFO  (parsl.dataflow.dflow) :: Task 151 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.669] INFO  (parsl.dataflow.dflow) :: Parsl task 151 try 0 launched on executor htex-local with executor id 152
+[2024-05-28 00:02:06.669] INFO  (parsl.dataflow.dflow) :: Task 152 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.669] INFO  (parsl.dataflow.dflow) :: Parsl task 152 try 0 launched on executor htex-local with executor id 153
+[2024-05-28 00:02:06.670] INFO  (parsl.dataflow.dflow) :: Task 153 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.670] INFO  (parsl.dataflow.dflow) :: Parsl task 153 try 0 launched on executor htex-local with executor id 154
+[2024-05-28 00:02:06.670] INFO  (parsl.dataflow.dflow) :: Task 154 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.670] INFO  (parsl.dataflow.dflow) :: Parsl task 154 try 0 launched on executor htex-local with executor id 155
+[2024-05-28 00:02:06.671] INFO  (parsl.dataflow.dflow) :: Task 123 completed (launched -> exec_done)
+[2024-05-28 00:02:06.672] INFO  (parsl.dataflow.dflow) :: Task 128 completed (launched -> exec_done)
+[2024-05-28 00:02:06.672] INFO  (parsl.dataflow.dflow) :: Task 125 completed (launched -> exec_done)
+[2024-05-28 00:02:06.672] INFO  (parsl.dataflow.dflow) :: Task 130 completed (launched -> exec_done)
+[2024-05-28 00:02:06.672] INFO  (parsl.dataflow.dflow) :: Task 155 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.672] INFO  (parsl.dataflow.dflow) :: Task 126 completed (launched -> exec_done)
+[2024-05-28 00:02:06.672] INFO  (parsl.dataflow.dflow) :: Task 127 completed (launched -> exec_done)
+[2024-05-28 00:02:06.673] INFO  (parsl.dataflow.dflow) :: Task 122 completed (launched -> exec_done)
+[2024-05-28 00:02:06.673] INFO  (parsl.dataflow.dflow) :: Task 134 completed (launched -> exec_done)
+[2024-05-28 00:02:06.673] INFO  (parsl.dataflow.dflow) :: Task 133 completed (launched -> exec_done)
+[2024-05-28 00:02:06.673] INFO  (parsl.dataflow.dflow) :: Parsl task 155 try 0 launched on executor htex-local with executor id 156
+[2024-05-28 00:02:06.673] INFO  (parsl.dataflow.dflow) :: Task 135 completed (launched -> exec_done)
+[2024-05-28 00:02:06.674] INFO  (parsl.dataflow.dflow) :: Task 131 completed (launched -> exec_done)
+[2024-05-28 00:02:06.674] INFO  (parsl.dataflow.dflow) :: Task 132 completed (launched -> exec_done)
+[2024-05-28 00:02:06.674] INFO  (parsl.dataflow.dflow) :: Task 156 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.674] INFO  (parsl.dataflow.dflow) :: Task 129 completed (launched -> exec_done)
+[2024-05-28 00:02:06.674] INFO  (parsl.dataflow.dflow) :: Task 136 completed (launched -> exec_done)
+[2024-05-28 00:02:06.674] INFO  (parsl.dataflow.dflow) :: Task 137 completed (launched -> exec_done)
+[2024-05-28 00:02:06.675] INFO  (parsl.dataflow.dflow) :: Task 139 completed (launched -> exec_done)
+[2024-05-28 00:02:06.675] INFO  (parsl.dataflow.dflow) :: Parsl task 156 try 0 launched on executor htex-local with executor id 157
+[2024-05-28 00:02:06.675] INFO  (parsl.dataflow.dflow) :: Task 157 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.675] INFO  (parsl.dataflow.dflow) :: Parsl task 157 try 0 launched on executor htex-local with executor id 158
+[2024-05-28 00:02:06.675] INFO  (parsl.dataflow.dflow) :: Task 158 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.676] INFO  (parsl.dataflow.dflow) :: Parsl task 158 try 0 launched on executor htex-local with executor id 159
+[2024-05-28 00:02:06.676] INFO  (parsl.dataflow.dflow) :: Task 159 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.676] INFO  (parsl.dataflow.dflow) :: Parsl task 159 try 0 launched on executor htex-local with executor id 160
+[2024-05-28 00:02:06.676] INFO  (parsl.dataflow.dflow) :: Task 160 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.677] INFO  (parsl.dataflow.dflow) :: Parsl task 160 try 0 launched on executor htex-local with executor id 161
+[2024-05-28 00:02:06.677] INFO  (parsl.dataflow.dflow) :: Task 161 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.677] INFO  (parsl.dataflow.dflow) :: Parsl task 161 try 0 launched on executor htex-local with executor id 162
+[2024-05-28 00:02:06.677] INFO  (parsl.dataflow.dflow) :: Task 162 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.678] INFO  (parsl.dataflow.dflow) :: Parsl task 162 try 0 launched on executor htex-local with executor id 163
+[2024-05-28 00:02:06.678] INFO  (parsl.dataflow.dflow) :: Task 163 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.678] INFO  (parsl.dataflow.dflow) :: Parsl task 163 try 0 launched on executor htex-local with executor id 164
+[2024-05-28 00:02:06.678] INFO  (parsl.dataflow.dflow) :: Task 164 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.679] INFO  (parsl.dataflow.dflow) :: Parsl task 164 try 0 launched on executor htex-local with executor id 165
+[2024-05-28 00:02:06.679] INFO  (parsl.dataflow.dflow) :: Task 165 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.679] INFO  (parsl.dataflow.dflow) :: Parsl task 165 try 0 launched on executor htex-local with executor id 166
+[2024-05-28 00:02:06.679] INFO  (parsl.dataflow.dflow) :: Task 166 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.680] INFO  (parsl.dataflow.dflow) :: Parsl task 166 try 0 launched on executor htex-local with executor id 167
+[2024-05-28 00:02:06.680] INFO  (parsl.dataflow.dflow) :: Task 167 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.680] INFO  (parsl.dataflow.dflow) :: Parsl task 167 try 0 launched on executor htex-local with executor id 168
+[2024-05-28 00:02:06.680] INFO  (parsl.dataflow.dflow) :: Task 168 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.681] INFO  (parsl.dataflow.dflow) :: Parsl task 168 try 0 launched on executor htex-local with executor id 169
+[2024-05-28 00:02:06.681] INFO  (parsl.dataflow.dflow) :: Task 169 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.681] INFO  (parsl.dataflow.dflow) :: Parsl task 169 try 0 launched on executor htex-local with executor id 170
+[2024-05-28 00:02:06.681] INFO  (parsl.dataflow.dflow) :: Task 170 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.681] INFO  (parsl.dataflow.dflow) :: Parsl task 170 try 0 launched on executor htex-local with executor id 171
+[2024-05-28 00:02:06.684] INFO  (parsl.dataflow.dflow) :: Task 138 completed (launched -> exec_done)
+[2024-05-28 00:02:06.684] INFO  (parsl.dataflow.dflow) :: Task 141 completed (launched -> exec_done)
+[2024-05-28 00:02:06.684] INFO  (parsl.dataflow.dflow) :: Task 140 completed (launched -> exec_done)
+[2024-05-28 00:02:06.684] INFO  (parsl.dataflow.dflow) :: Task 171 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.685] INFO  (parsl.dataflow.dflow) :: Task 144 completed (launched -> exec_done)
+[2024-05-28 00:02:06.685] INFO  (parsl.dataflow.dflow) :: Task 146 completed (launched -> exec_done)
+[2024-05-28 00:02:06.685] INFO  (parsl.dataflow.dflow) :: Task 145 completed (launched -> exec_done)
+[2024-05-28 00:02:06.685] INFO  (parsl.dataflow.dflow) :: Task 149 completed (launched -> exec_done)
+[2024-05-28 00:02:06.685] INFO  (parsl.dataflow.dflow) :: Task 148 completed (launched -> exec_done)
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Task 143 completed (launched -> exec_done)
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Parsl task 171 try 0 launched on executor htex-local with executor id 172
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Task 150 completed (launched -> exec_done)
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Task 142 completed (launched -> exec_done)
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Task 147 completed (launched -> exec_done)
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Task 172 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.686] INFO  (parsl.dataflow.dflow) :: Task 152 completed (launched -> exec_done)
+[2024-05-28 00:02:06.687] INFO  (parsl.dataflow.dflow) :: Task 154 completed (launched -> exec_done)
+[2024-05-28 00:02:06.687] INFO  (parsl.dataflow.dflow) :: Task 153 completed (launched -> exec_done)
+[2024-05-28 00:02:06.687] INFO  (parsl.dataflow.dflow) :: Task 151 completed (launched -> exec_done)
+[2024-05-28 00:02:06.687] INFO  (parsl.dataflow.dflow) :: Task 157 completed (launched -> exec_done)
+[2024-05-28 00:02:06.687] INFO  (parsl.dataflow.dflow) :: Parsl task 172 try 0 launched on executor htex-local with executor id 173
+[2024-05-28 00:02:06.688] INFO  (parsl.dataflow.dflow) :: Task 173 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.688] INFO  (parsl.dataflow.dflow) :: Parsl task 173 try 0 launched on executor htex-local with executor id 174
+[2024-05-28 00:02:06.688] INFO  (parsl.dataflow.dflow) :: Task 174 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.688] INFO  (parsl.dataflow.dflow) :: Parsl task 174 try 0 launched on executor htex-local with executor id 175
+[2024-05-28 00:02:06.689] INFO  (parsl.dataflow.dflow) :: Task 175 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.689] INFO  (parsl.dataflow.dflow) :: Parsl task 175 try 0 launched on executor htex-local with executor id 176
+[2024-05-28 00:02:06.689] INFO  (parsl.dataflow.dflow) :: Task 176 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.689] INFO  (parsl.dataflow.dflow) :: Parsl task 176 try 0 launched on executor htex-local with executor id 177
+[2024-05-28 00:02:06.690] INFO  (parsl.dataflow.dflow) :: Task 177 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.690] INFO  (parsl.dataflow.dflow) :: Parsl task 177 try 0 launched on executor htex-local with executor id 178
+[2024-05-28 00:02:06.690] INFO  (parsl.dataflow.dflow) :: Task 178 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.690] INFO  (parsl.dataflow.dflow) :: Parsl task 178 try 0 launched on executor htex-local with executor id 179
+[2024-05-28 00:02:06.690] INFO  (parsl.dataflow.dflow) :: Task 179 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.691] INFO  (parsl.dataflow.dflow) :: Parsl task 179 try 0 launched on executor htex-local with executor id 180
+[2024-05-28 00:02:06.691] INFO  (parsl.dataflow.dflow) :: Task 180 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.691] INFO  (parsl.dataflow.dflow) :: Parsl task 180 try 0 launched on executor htex-local with executor id 181
+[2024-05-28 00:02:06.691] INFO  (parsl.dataflow.dflow) :: Task 181 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.692] INFO  (parsl.dataflow.dflow) :: Parsl task 181 try 0 launched on executor htex-local with executor id 182
+[2024-05-28 00:02:06.693] INFO  (parsl.dataflow.dflow) :: Task 182 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.693] INFO  (parsl.dataflow.dflow) :: Parsl task 182 try 0 launched on executor htex-local with executor id 183
+[2024-05-28 00:02:06.693] INFO  (parsl.dataflow.dflow) :: Task 183 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.693] INFO  (parsl.dataflow.dflow) :: Parsl task 183 try 0 launched on executor htex-local with executor id 184
+[2024-05-28 00:02:06.693] INFO  (parsl.dataflow.dflow) :: Task 184 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.694] INFO  (parsl.dataflow.dflow) :: Parsl task 184 try 0 launched on executor htex-local with executor id 185
+[2024-05-28 00:02:06.694] INFO  (parsl.dataflow.dflow) :: Task 185 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.694] INFO  (parsl.dataflow.dflow) :: Parsl task 185 try 0 launched on executor htex-local with executor id 186
+[2024-05-28 00:02:06.694] INFO  (parsl.dataflow.dflow) :: Task 186 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.695] INFO  (parsl.dataflow.dflow) :: Parsl task 186 try 0 launched on executor htex-local with executor id 187
+[2024-05-28 00:02:06.695] INFO  (parsl.dataflow.dflow) :: Task 187 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.695] INFO  (parsl.dataflow.dflow) :: Parsl task 187 try 0 launched on executor htex-local with executor id 188
+[2024-05-28 00:02:06.696] INFO  (parsl.dataflow.dflow) :: Task 155 completed (launched -> exec_done)
+[2024-05-28 00:02:06.696] INFO  (parsl.dataflow.dflow) :: Task 160 completed (launched -> exec_done)
+[2024-05-28 00:02:06.697] INFO  (parsl.dataflow.dflow) :: Task 156 completed (launched -> exec_done)
+[2024-05-28 00:02:06.697] INFO  (parsl.dataflow.dflow) :: Task 188 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.697] INFO  (parsl.dataflow.dflow) :: Task 158 completed (launched -> exec_done)
+[2024-05-28 00:02:06.697] INFO  (parsl.dataflow.dflow) :: Task 165 completed (launched -> exec_done)
+[2024-05-28 00:02:06.697] INFO  (parsl.dataflow.dflow) :: Task 159 completed (launched -> exec_done)
+[2024-05-28 00:02:06.697] INFO  (parsl.dataflow.dflow) :: Task 162 completed (launched -> exec_done)
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Task 161 completed (launched -> exec_done)
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Parsl task 188 try 0 launched on executor htex-local with executor id 189
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Task 164 completed (launched -> exec_done)
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Task 163 completed (launched -> exec_done)
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Task 189 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Task 166 completed (launched -> exec_done)
+[2024-05-28 00:02:06.698] INFO  (parsl.dataflow.dflow) :: Task 167 completed (launched -> exec_done)
+[2024-05-28 00:02:06.699] INFO  (parsl.dataflow.dflow) :: Task 169 completed (launched -> exec_done)
+[2024-05-28 00:02:06.699] INFO  (parsl.dataflow.dflow) :: Task 168 completed (launched -> exec_done)
+[2024-05-28 00:02:06.699] INFO  (parsl.dataflow.dflow) :: Task 170 completed (launched -> exec_done)
+[2024-05-28 00:02:06.699] INFO  (parsl.dataflow.dflow) :: Task 171 completed (launched -> exec_done)
+[2024-05-28 00:02:06.699] INFO  (parsl.dataflow.dflow) :: Parsl task 189 try 0 launched on executor htex-local with executor id 190
+[2024-05-28 00:02:06.700] INFO  (parsl.dataflow.dflow) :: Task 190 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.700] INFO  (parsl.dataflow.dflow) :: Parsl task 190 try 0 launched on executor htex-local with executor id 191
+[2024-05-28 00:02:06.700] INFO  (parsl.dataflow.dflow) :: Task 191 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.700] INFO  (parsl.dataflow.dflow) :: Parsl task 191 try 0 launched on executor htex-local with executor id 192
+[2024-05-28 00:02:06.701] INFO  (parsl.dataflow.dflow) :: Task 192 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.701] INFO  (parsl.dataflow.dflow) :: Parsl task 192 try 0 launched on executor htex-local with executor id 193
+[2024-05-28 00:02:06.701] INFO  (parsl.dataflow.dflow) :: Task 193 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.701] INFO  (parsl.dataflow.dflow) :: Parsl task 193 try 0 launched on executor htex-local with executor id 194
+[2024-05-28 00:02:06.701] INFO  (parsl.dataflow.dflow) :: Task 194 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.702] INFO  (parsl.dataflow.dflow) :: Parsl task 194 try 0 launched on executor htex-local with executor id 195
+[2024-05-28 00:02:06.702] INFO  (parsl.dataflow.dflow) :: Task 195 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.702] INFO  (parsl.dataflow.dflow) :: Parsl task 195 try 0 launched on executor htex-local with executor id 196
+[2024-05-28 00:02:06.702] INFO  (parsl.dataflow.dflow) :: Task 196 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.703] INFO  (parsl.dataflow.dflow) :: Parsl task 196 try 0 launched on executor htex-local with executor id 197
+[2024-05-28 00:02:06.703] INFO  (parsl.dataflow.dflow) :: Task 197 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.703] INFO  (parsl.dataflow.dflow) :: Parsl task 197 try 0 launched on executor htex-local with executor id 198
+[2024-05-28 00:02:06.703] INFO  (parsl.dataflow.dflow) :: Task 198 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.704] INFO  (parsl.dataflow.dflow) :: Parsl task 198 try 0 launched on executor htex-local with executor id 199
+[2024-05-28 00:02:06.704] INFO  (parsl.dataflow.dflow) :: Task 199 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.704] INFO  (parsl.dataflow.dflow) :: Parsl task 199 try 0 launched on executor htex-local with executor id 200
+[2024-05-28 00:02:06.704] INFO  (parsl.dataflow.dflow) :: Task 200 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.705] INFO  (parsl.dataflow.dflow) :: Parsl task 200 try 0 launched on executor htex-local with executor id 201
+[2024-05-28 00:02:06.705] INFO  (parsl.dataflow.dflow) :: Task 201 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.705] INFO  (parsl.dataflow.dflow) :: Parsl task 201 try 0 launched on executor htex-local with executor id 202
+[2024-05-28 00:02:06.705] INFO  (parsl.dataflow.dflow) :: Task 202 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.705] INFO  (parsl.dataflow.dflow) :: Parsl task 202 try 0 launched on executor htex-local with executor id 203
+[2024-05-28 00:02:06.706] INFO  (parsl.dataflow.dflow) :: Task 203 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.706] INFO  (parsl.dataflow.dflow) :: Parsl task 203 try 0 launched on executor htex-local with executor id 204
+[2024-05-28 00:02:06.709] INFO  (parsl.dataflow.dflow) :: Task 172 completed (launched -> exec_done)
+[2024-05-28 00:02:06.709] INFO  (parsl.dataflow.dflow) :: Task 174 completed (launched -> exec_done)
+[2024-05-28 00:02:06.709] INFO  (parsl.dataflow.dflow) :: Task 173 completed (launched -> exec_done)
+[2024-05-28 00:02:06.709] INFO  (parsl.dataflow.dflow) :: Task 175 completed (launched -> exec_done)
+[2024-05-28 00:02:06.709] INFO  (parsl.dataflow.dflow) :: Task 204 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.710] INFO  (parsl.dataflow.dflow) :: Task 176 completed (launched -> exec_done)
+[2024-05-28 00:02:06.710] INFO  (parsl.dataflow.dflow) :: Task 177 completed (launched -> exec_done)
+[2024-05-28 00:02:06.710] INFO  (parsl.dataflow.dflow) :: Task 178 completed (launched -> exec_done)
+[2024-05-28 00:02:06.710] INFO  (parsl.dataflow.dflow) :: Task 179 completed (launched -> exec_done)
+[2024-05-28 00:02:06.710] INFO  (parsl.dataflow.dflow) :: Task 180 completed (launched -> exec_done)
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Task 183 completed (launched -> exec_done)
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Parsl task 204 try 0 launched on executor htex-local with executor id 205
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Task 182 completed (launched -> exec_done)
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Task 181 completed (launched -> exec_done)
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Task 205 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Task 185 completed (launched -> exec_done)
+[2024-05-28 00:02:06.711] INFO  (parsl.dataflow.dflow) :: Task 187 completed (launched -> exec_done)
+[2024-05-28 00:02:06.712] INFO  (parsl.dataflow.dflow) :: Task 186 completed (launched -> exec_done)
+[2024-05-28 00:02:06.712] INFO  (parsl.dataflow.dflow) :: Task 184 completed (launched -> exec_done)
+[2024-05-28 00:02:06.712] INFO  (parsl.dataflow.dflow) :: Task 189 completed (launched -> exec_done)
+[2024-05-28 00:02:06.712] INFO  (parsl.dataflow.dflow) :: Parsl task 205 try 0 launched on executor htex-local with executor id 206
+[2024-05-28 00:02:06.712] INFO  (parsl.dataflow.dflow) :: Task 206 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.713] INFO  (parsl.dataflow.dflow) :: Parsl task 206 try 0 launched on executor htex-local with executor id 207
+[2024-05-28 00:02:06.713] INFO  (parsl.dataflow.dflow) :: Task 207 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.713] INFO  (parsl.dataflow.dflow) :: Parsl task 207 try 0 launched on executor htex-local with executor id 208
+[2024-05-28 00:02:06.713] INFO  (parsl.dataflow.dflow) :: Task 208 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.714] INFO  (parsl.dataflow.dflow) :: Parsl task 208 try 0 launched on executor htex-local with executor id 209
+[2024-05-28 00:02:06.714] INFO  (parsl.dataflow.dflow) :: Task 209 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.714] INFO  (parsl.dataflow.dflow) :: Parsl task 209 try 0 launched on executor htex-local with executor id 210
+[2024-05-28 00:02:06.714] INFO  (parsl.dataflow.dflow) :: Task 210 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.715] INFO  (parsl.dataflow.dflow) :: Parsl task 210 try 0 launched on executor htex-local with executor id 211
+[2024-05-28 00:02:06.715] INFO  (parsl.dataflow.dflow) :: Task 211 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.715] INFO  (parsl.dataflow.dflow) :: Parsl task 211 try 0 launched on executor htex-local with executor id 212
+[2024-05-28 00:02:06.715] INFO  (parsl.dataflow.dflow) :: Task 212 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.715] INFO  (parsl.dataflow.dflow) :: Parsl task 212 try 0 launched on executor htex-local with executor id 213
+[2024-05-28 00:02:06.716] INFO  (parsl.dataflow.dflow) :: Task 213 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.716] INFO  (parsl.dataflow.dflow) :: Parsl task 213 try 0 launched on executor htex-local with executor id 214
+[2024-05-28 00:02:06.716] INFO  (parsl.dataflow.dflow) :: Task 214 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.717] INFO  (parsl.dataflow.dflow) :: Parsl task 214 try 0 launched on executor htex-local with executor id 215
+[2024-05-28 00:02:06.717] INFO  (parsl.dataflow.dflow) :: Task 215 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.717] INFO  (parsl.dataflow.dflow) :: Parsl task 215 try 0 launched on executor htex-local with executor id 216
+[2024-05-28 00:02:06.717] INFO  (parsl.dataflow.dflow) :: Task 216 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.717] INFO  (parsl.dataflow.dflow) :: Parsl task 216 try 0 launched on executor htex-local with executor id 217
+[2024-05-28 00:02:06.718] INFO  (parsl.dataflow.dflow) :: Task 217 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.718] INFO  (parsl.dataflow.dflow) :: Parsl task 217 try 0 launched on executor htex-local with executor id 218
+[2024-05-28 00:02:06.718] INFO  (parsl.dataflow.dflow) :: Task 218 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.718] INFO  (parsl.dataflow.dflow) :: Parsl task 218 try 0 launched on executor htex-local with executor id 219
+[2024-05-28 00:02:06.718] INFO  (parsl.dataflow.dflow) :: Task 219 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.719] INFO  (parsl.dataflow.dflow) :: Parsl task 219 try 0 launched on executor htex-local with executor id 220
+[2024-05-28 00:02:06.719] INFO  (parsl.dataflow.dflow) :: Task 220 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.719] INFO  (parsl.dataflow.dflow) :: Parsl task 220 try 0 launched on executor htex-local with executor id 221
+[2024-05-28 00:02:06.721] INFO  (parsl.dataflow.dflow) :: Task 190 completed (launched -> exec_done)
+[2024-05-28 00:02:06.721] INFO  (parsl.dataflow.dflow) :: Task 192 completed (launched -> exec_done)
+[2024-05-28 00:02:06.722] INFO  (parsl.dataflow.dflow) :: Task 188 completed (launched -> exec_done)
+[2024-05-28 00:02:06.722] INFO  (parsl.dataflow.dflow) :: Task 193 completed (launched -> exec_done)
+[2024-05-28 00:02:06.722] INFO  (parsl.dataflow.dflow) :: Task 221 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.722] INFO  (parsl.dataflow.dflow) :: Task 194 completed (launched -> exec_done)
+[2024-05-28 00:02:06.722] INFO  (parsl.dataflow.dflow) :: Task 195 completed (launched -> exec_done)
+[2024-05-28 00:02:06.722] INFO  (parsl.dataflow.dflow) :: Task 201 completed (launched -> exec_done)
+[2024-05-28 00:02:06.723] INFO  (parsl.dataflow.dflow) :: Task 197 completed (launched -> exec_done)
+[2024-05-28 00:02:06.723] INFO  (parsl.dataflow.dflow) :: Parsl task 221 try 0 launched on executor htex-local with executor id 222
+[2024-05-28 00:02:06.723] INFO  (parsl.dataflow.dflow) :: Task 191 completed (launched -> exec_done)
+[2024-05-28 00:02:06.723] INFO  (parsl.dataflow.dflow) :: Task 196 completed (launched -> exec_done)
+[2024-05-28 00:02:06.723] INFO  (parsl.dataflow.dflow) :: Task 198 completed (launched -> exec_done)
+[2024-05-28 00:02:06.723] INFO  (parsl.dataflow.dflow) :: Task 222 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.724] INFO  (parsl.dataflow.dflow) :: Task 199 completed (launched -> exec_done)
+[2024-05-28 00:02:06.724] INFO  (parsl.dataflow.dflow) :: Task 200 completed (launched -> exec_done)
+[2024-05-28 00:02:06.724] INFO  (parsl.dataflow.dflow) :: Task 202 completed (launched -> exec_done)
+[2024-05-28 00:02:06.724] INFO  (parsl.dataflow.dflow) :: Task 203 completed (launched -> exec_done)
+[2024-05-28 00:02:06.724] INFO  (parsl.dataflow.dflow) :: Parsl task 222 try 0 launched on executor htex-local with executor id 223
+[2024-05-28 00:02:06.725] INFO  (parsl.dataflow.dflow) :: Task 223 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.725] INFO  (parsl.dataflow.dflow) :: Parsl task 223 try 0 launched on executor htex-local with executor id 224
+[2024-05-28 00:02:06.725] INFO  (parsl.dataflow.dflow) :: Task 224 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.725] INFO  (parsl.dataflow.dflow) :: Parsl task 224 try 0 launched on executor htex-local with executor id 225
+[2024-05-28 00:02:06.725] INFO  (parsl.dataflow.dflow) :: Task 225 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.726] INFO  (parsl.dataflow.dflow) :: Parsl task 225 try 0 launched on executor htex-local with executor id 226
+[2024-05-28 00:02:06.726] INFO  (parsl.dataflow.dflow) :: Task 226 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.726] INFO  (parsl.dataflow.dflow) :: Parsl task 226 try 0 launched on executor htex-local with executor id 227
+[2024-05-28 00:02:06.726] INFO  (parsl.dataflow.dflow) :: Task 227 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.727] INFO  (parsl.dataflow.dflow) :: Parsl task 227 try 0 launched on executor htex-local with executor id 228
+[2024-05-28 00:02:06.727] INFO  (parsl.dataflow.dflow) :: Task 228 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.727] INFO  (parsl.dataflow.dflow) :: Parsl task 228 try 0 launched on executor htex-local with executor id 229
+[2024-05-28 00:02:06.727] INFO  (parsl.dataflow.dflow) :: Task 229 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.728] INFO  (parsl.dataflow.dflow) :: Parsl task 229 try 0 launched on executor htex-local with executor id 230
+[2024-05-28 00:02:06.728] INFO  (parsl.dataflow.dflow) :: Task 230 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.728] INFO  (parsl.dataflow.dflow) :: Parsl task 230 try 0 launched on executor htex-local with executor id 231
+[2024-05-28 00:02:06.728] INFO  (parsl.dataflow.dflow) :: Task 231 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.729] INFO  (parsl.dataflow.dflow) :: Parsl task 231 try 0 launched on executor htex-local with executor id 232
+[2024-05-28 00:02:06.729] INFO  (parsl.dataflow.dflow) :: Task 232 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.729] INFO  (parsl.dataflow.dflow) :: Parsl task 232 try 0 launched on executor htex-local with executor id 233
+[2024-05-28 00:02:06.729] INFO  (parsl.dataflow.dflow) :: Task 233 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.729] INFO  (parsl.dataflow.dflow) :: Parsl task 233 try 0 launched on executor htex-local with executor id 234
+[2024-05-28 00:02:06.730] INFO  (parsl.dataflow.dflow) :: Task 234 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.730] INFO  (parsl.dataflow.dflow) :: Parsl task 234 try 0 launched on executor htex-local with executor id 235
+[2024-05-28 00:02:06.730] INFO  (parsl.dataflow.dflow) :: Task 235 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.730] INFO  (parsl.dataflow.dflow) :: Parsl task 235 try 0 launched on executor htex-local with executor id 236
+[2024-05-28 00:02:06.734] INFO  (parsl.dataflow.dflow) :: Task 204 completed (launched -> exec_done)
+[2024-05-28 00:02:06.734] INFO  (parsl.dataflow.dflow) :: Task 206 completed (launched -> exec_done)
+[2024-05-28 00:02:06.734] INFO  (parsl.dataflow.dflow) :: Task 207 completed (launched -> exec_done)
+[2024-05-28 00:02:06.734] INFO  (parsl.dataflow.dflow) :: Task 208 completed (launched -> exec_done)
+[2024-05-28 00:02:06.734] INFO  (parsl.dataflow.dflow) :: Task 236 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.735] INFO  (parsl.dataflow.dflow) :: Task 205 completed (launched -> exec_done)
+[2024-05-28 00:02:06.735] INFO  (parsl.dataflow.dflow) :: Task 209 completed (launched -> exec_done)
+[2024-05-28 00:02:06.735] INFO  (parsl.dataflow.dflow) :: Task 211 completed (launched -> exec_done)
+[2024-05-28 00:02:06.735] INFO  (parsl.dataflow.dflow) :: Task 210 completed (launched -> exec_done)
+[2024-05-28 00:02:06.735] INFO  (parsl.dataflow.dflow) :: Task 212 completed (launched -> exec_done)
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Task 213 completed (launched -> exec_done)
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Parsl task 236 try 0 launched on executor htex-local with executor id 237
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Task 214 completed (launched -> exec_done)
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Task 215 completed (launched -> exec_done)
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Task 216 completed (launched -> exec_done)
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Task 237 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.736] INFO  (parsl.dataflow.dflow) :: Task 217 completed (launched -> exec_done)
+[2024-05-28 00:02:06.737] INFO  (parsl.dataflow.dflow) :: Task 218 completed (launched -> exec_done)
+[2024-05-28 00:02:06.737] INFO  (parsl.dataflow.dflow) :: Task 219 completed (launched -> exec_done)
+[2024-05-28 00:02:06.737] INFO  (parsl.dataflow.dflow) :: Task 220 completed (launched -> exec_done)
+[2024-05-28 00:02:06.737] INFO  (parsl.dataflow.dflow) :: Task 222 completed (launched -> exec_done)
+[2024-05-28 00:02:06.737] INFO  (parsl.dataflow.dflow) :: Parsl task 237 try 0 launched on executor htex-local with executor id 238
+[2024-05-28 00:02:06.738] INFO  (parsl.dataflow.dflow) :: Task 238 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.738] INFO  (parsl.dataflow.dflow) :: Parsl task 238 try 0 launched on executor htex-local with executor id 239
+[2024-05-28 00:02:06.738] INFO  (parsl.dataflow.dflow) :: Task 239 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.738] INFO  (parsl.dataflow.dflow) :: Parsl task 239 try 0 launched on executor htex-local with executor id 240
+[2024-05-28 00:02:06.739] INFO  (parsl.dataflow.dflow) :: Task 240 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.739] INFO  (parsl.dataflow.dflow) :: Parsl task 240 try 0 launched on executor htex-local with executor id 241
+[2024-05-28 00:02:06.739] INFO  (parsl.dataflow.dflow) :: Task 241 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.739] INFO  (parsl.dataflow.dflow) :: Parsl task 241 try 0 launched on executor htex-local with executor id 242
+[2024-05-28 00:02:06.739] INFO  (parsl.dataflow.dflow) :: Task 242 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.740] INFO  (parsl.dataflow.dflow) :: Parsl task 242 try 0 launched on executor htex-local with executor id 243
+[2024-05-28 00:02:06.740] INFO  (parsl.dataflow.dflow) :: Task 243 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.740] INFO  (parsl.dataflow.dflow) :: Parsl task 243 try 0 launched on executor htex-local with executor id 244
+[2024-05-28 00:02:06.740] INFO  (parsl.dataflow.dflow) :: Task 244 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.741] INFO  (parsl.dataflow.dflow) :: Parsl task 244 try 0 launched on executor htex-local with executor id 245
+[2024-05-28 00:02:06.741] INFO  (parsl.dataflow.dflow) :: Task 245 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.741] INFO  (parsl.dataflow.dflow) :: Parsl task 245 try 0 launched on executor htex-local with executor id 246
+[2024-05-28 00:02:06.741] INFO  (parsl.dataflow.dflow) :: Task 246 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.742] INFO  (parsl.dataflow.dflow) :: Parsl task 246 try 0 launched on executor htex-local with executor id 247
+[2024-05-28 00:02:06.742] INFO  (parsl.dataflow.dflow) :: Task 247 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.742] INFO  (parsl.dataflow.dflow) :: Parsl task 247 try 0 launched on executor htex-local with executor id 248
+[2024-05-28 00:02:06.742] INFO  (parsl.dataflow.dflow) :: Task 248 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.743] INFO  (parsl.dataflow.dflow) :: Parsl task 248 try 0 launched on executor htex-local with executor id 249
+[2024-05-28 00:02:06.743] INFO  (parsl.dataflow.dflow) :: Task 249 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.743] INFO  (parsl.dataflow.dflow) :: Parsl task 249 try 0 launched on executor htex-local with executor id 250
+[2024-05-28 00:02:06.743] INFO  (parsl.dataflow.dflow) :: Task 250 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.743] INFO  (parsl.dataflow.dflow) :: Parsl task 250 try 0 launched on executor htex-local with executor id 251
+[2024-05-28 00:02:06.744] INFO  (parsl.dataflow.dflow) :: Task 251 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.744] INFO  (parsl.dataflow.dflow) :: Parsl task 251 try 0 launched on executor htex-local with executor id 252
+[2024-05-28 00:02:06.744] INFO  (parsl.dataflow.dflow) :: Task 252 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.744] INFO  (parsl.dataflow.dflow) :: Parsl task 252 try 0 launched on executor htex-local with executor id 253
+[2024-05-28 00:02:06.744] INFO  (parsl.dataflow.dflow) :: Task 253 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.745] INFO  (parsl.dataflow.dflow) :: Parsl task 253 try 0 launched on executor htex-local with executor id 254
+[2024-05-28 00:02:06.746] INFO  (parsl.dataflow.dflow) :: Task 221 completed (launched -> exec_done)
+[2024-05-28 00:02:06.746] INFO  (parsl.dataflow.dflow) :: Task 224 completed (launched -> exec_done)
+[2024-05-28 00:02:06.746] INFO  (parsl.dataflow.dflow) :: Task 225 completed (launched -> exec_done)
+[2024-05-28 00:02:06.747] INFO  (parsl.dataflow.dflow) :: Task 254 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.747] INFO  (parsl.dataflow.dflow) :: Task 223 completed (launched -> exec_done)
+[2024-05-28 00:02:06.747] INFO  (parsl.dataflow.dflow) :: Task 226 completed (launched -> exec_done)
+[2024-05-28 00:02:06.747] INFO  (parsl.dataflow.dflow) :: Task 228 completed (launched -> exec_done)
+[2024-05-28 00:02:06.747] INFO  (parsl.dataflow.dflow) :: Task 229 completed (launched -> exec_done)
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Task 230 completed (launched -> exec_done)
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Task 231 completed (launched -> exec_done)
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Parsl task 254 try 0 launched on executor htex-local with executor id 255
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Task 234 completed (launched -> exec_done)
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Task 233 completed (launched -> exec_done)
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Task 232 completed (launched -> exec_done)
+[2024-05-28 00:02:06.748] INFO  (parsl.dataflow.dflow) :: Task 255 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.749] INFO  (parsl.dataflow.dflow) :: Task 227 completed (launched -> exec_done)
+[2024-05-28 00:02:06.749] INFO  (parsl.dataflow.dflow) :: Task 235 completed (launched -> exec_done)
+[2024-05-28 00:02:06.749] INFO  (parsl.dataflow.dflow) :: Parsl task 255 try 0 launched on executor htex-local with executor id 256
+[2024-05-28 00:02:06.749] INFO  (parsl.dataflow.dflow) :: Task 256 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.750] INFO  (parsl.dataflow.dflow) :: Parsl task 256 try 0 launched on executor htex-local with executor id 257
+[2024-05-28 00:02:06.750] INFO  (parsl.dataflow.dflow) :: Task 257 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.750] INFO  (parsl.dataflow.dflow) :: Parsl task 257 try 0 launched on executor htex-local with executor id 258
+[2024-05-28 00:02:06.750] INFO  (parsl.dataflow.dflow) :: Task 258 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.751] INFO  (parsl.dataflow.dflow) :: Parsl task 258 try 0 launched on executor htex-local with executor id 259
+[2024-05-28 00:02:06.751] INFO  (parsl.dataflow.dflow) :: Task 259 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.751] INFO  (parsl.dataflow.dflow) :: Parsl task 259 try 0 launched on executor htex-local with executor id 260
+[2024-05-28 00:02:06.751] INFO  (parsl.dataflow.dflow) :: Task 260 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.751] INFO  (parsl.dataflow.dflow) :: Parsl task 260 try 0 launched on executor htex-local with executor id 261
+[2024-05-28 00:02:06.752] INFO  (parsl.dataflow.dflow) :: Task 261 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.752] INFO  (parsl.dataflow.dflow) :: Parsl task 261 try 0 launched on executor htex-local with executor id 262
+[2024-05-28 00:02:06.752] INFO  (parsl.dataflow.dflow) :: Task 262 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.752] INFO  (parsl.dataflow.dflow) :: Parsl task 262 try 0 launched on executor htex-local with executor id 263
+[2024-05-28 00:02:06.753] INFO  (parsl.dataflow.dflow) :: Task 263 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.753] INFO  (parsl.dataflow.dflow) :: Parsl task 263 try 0 launched on executor htex-local with executor id 264
+[2024-05-28 00:02:06.753] INFO  (parsl.dataflow.dflow) :: Task 264 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.753] INFO  (parsl.dataflow.dflow) :: Parsl task 264 try 0 launched on executor htex-local with executor id 265
+[2024-05-28 00:02:06.753] INFO  (parsl.dataflow.dflow) :: Task 265 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.754] INFO  (parsl.dataflow.dflow) :: Parsl task 265 try 0 launched on executor htex-local with executor id 266
+[2024-05-28 00:02:06.754] INFO  (parsl.dataflow.dflow) :: Task 266 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.754] INFO  (parsl.dataflow.dflow) :: Parsl task 266 try 0 launched on executor htex-local with executor id 267
+[2024-05-28 00:02:06.754] INFO  (parsl.dataflow.dflow) :: Task 267 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.755] INFO  (parsl.dataflow.dflow) :: Parsl task 267 try 0 launched on executor htex-local with executor id 268
+[2024-05-28 00:02:06.759] INFO  (parsl.dataflow.dflow) :: Task 238 completed (launched -> exec_done)
+[2024-05-28 00:02:06.760] INFO  (parsl.dataflow.dflow) :: Task 237 completed (launched -> exec_done)
+[2024-05-28 00:02:06.760] INFO  (parsl.dataflow.dflow) :: Task 236 completed (launched -> exec_done)
+[2024-05-28 00:02:06.760] INFO  (parsl.dataflow.dflow) :: Task 268 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.761] INFO  (parsl.dataflow.dflow) :: Task 239 completed (launched -> exec_done)
+[2024-05-28 00:02:06.761] INFO  (parsl.dataflow.dflow) :: Task 241 completed (launched -> exec_done)
+[2024-05-28 00:02:06.761] INFO  (parsl.dataflow.dflow) :: Task 242 completed (launched -> exec_done)
+[2024-05-28 00:02:06.761] INFO  (parsl.dataflow.dflow) :: Task 243 completed (launched -> exec_done)
+[2024-05-28 00:02:06.761] INFO  (parsl.dataflow.dflow) :: Task 240 completed (launched -> exec_done)
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Task 244 completed (launched -> exec_done)
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Parsl task 268 try 0 launched on executor htex-local with executor id 269
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Task 245 completed (launched -> exec_done)
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Task 246 completed (launched -> exec_done)
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Task 269 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Task 247 completed (launched -> exec_done)
+[2024-05-28 00:02:06.762] INFO  (parsl.dataflow.dflow) :: Task 248 completed (launched -> exec_done)
+[2024-05-28 00:02:06.763] INFO  (parsl.dataflow.dflow) :: Task 249 completed (launched -> exec_done)
+[2024-05-28 00:02:06.763] INFO  (parsl.dataflow.dflow) :: Task 250 completed (launched -> exec_done)
+[2024-05-28 00:02:06.763] INFO  (parsl.dataflow.dflow) :: Task 252 completed (launched -> exec_done)
+[2024-05-28 00:02:06.763] INFO  (parsl.dataflow.dflow) :: Task 253 completed (launched -> exec_done)
+[2024-05-28 00:02:06.763] INFO  (parsl.dataflow.dflow) :: Parsl task 269 try 0 launched on executor htex-local with executor id 270
+[2024-05-28 00:02:06.763] INFO  (parsl.dataflow.dflow) :: Task 251 completed (launched -> exec_done)
+[2024-05-28 00:02:06.764] INFO  (parsl.dataflow.dflow) :: Task 255 completed (launched -> exec_done)
+[2024-05-28 00:02:06.764] INFO  (parsl.dataflow.dflow) :: Task 270 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.764] INFO  (parsl.dataflow.dflow) :: Parsl task 270 try 0 launched on executor htex-local with executor id 271
+[2024-05-28 00:02:06.764] INFO  (parsl.dataflow.dflow) :: Task 271 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.765] INFO  (parsl.dataflow.dflow) :: Parsl task 271 try 0 launched on executor htex-local with executor id 272
+[2024-05-28 00:02:06.765] INFO  (parsl.dataflow.dflow) :: Task 272 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.765] INFO  (parsl.dataflow.dflow) :: Parsl task 272 try 0 launched on executor htex-local with executor id 273
+[2024-05-28 00:02:06.765] INFO  (parsl.dataflow.dflow) :: Task 273 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.766] INFO  (parsl.dataflow.dflow) :: Parsl task 273 try 0 launched on executor htex-local with executor id 274
+[2024-05-28 00:02:06.766] INFO  (parsl.dataflow.dflow) :: Task 274 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.766] INFO  (parsl.dataflow.dflow) :: Parsl task 274 try 0 launched on executor htex-local with executor id 275
+[2024-05-28 00:02:06.766] INFO  (parsl.dataflow.dflow) :: Task 275 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.766] INFO  (parsl.dataflow.dflow) :: Parsl task 275 try 0 launched on executor htex-local with executor id 276
+[2024-05-28 00:02:06.767] INFO  (parsl.dataflow.dflow) :: Task 276 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.767] INFO  (parsl.dataflow.dflow) :: Parsl task 276 try 0 launched on executor htex-local with executor id 277
+[2024-05-28 00:02:06.767] INFO  (parsl.dataflow.dflow) :: Task 277 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.767] INFO  (parsl.dataflow.dflow) :: Parsl task 277 try 0 launched on executor htex-local with executor id 278
+[2024-05-28 00:02:06.768] INFO  (parsl.dataflow.dflow) :: Task 278 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.768] INFO  (parsl.dataflow.dflow) :: Parsl task 278 try 0 launched on executor htex-local with executor id 279
+[2024-05-28 00:02:06.768] INFO  (parsl.dataflow.dflow) :: Task 279 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.768] INFO  (parsl.dataflow.dflow) :: Parsl task 279 try 0 launched on executor htex-local with executor id 280
+[2024-05-28 00:02:06.768] INFO  (parsl.dataflow.dflow) :: Task 280 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.769] INFO  (parsl.dataflow.dflow) :: Parsl task 280 try 0 launched on executor htex-local with executor id 281
+[2024-05-28 00:02:06.769] INFO  (parsl.dataflow.dflow) :: Task 281 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.769] INFO  (parsl.dataflow.dflow) :: Parsl task 281 try 0 launched on executor htex-local with executor id 282
+[2024-05-28 00:02:06.769] INFO  (parsl.dataflow.dflow) :: Task 282 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.770] INFO  (parsl.dataflow.dflow) :: Parsl task 282 try 0 launched on executor htex-local with executor id 283
+[2024-05-28 00:02:06.770] INFO  (parsl.dataflow.dflow) :: Task 283 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.770] INFO  (parsl.dataflow.dflow) :: Parsl task 283 try 0 launched on executor htex-local with executor id 284
+[2024-05-28 00:02:06.770] INFO  (parsl.dataflow.dflow) :: Task 284 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.770] INFO  (parsl.dataflow.dflow) :: Parsl task 284 try 0 launched on executor htex-local with executor id 285
+[2024-05-28 00:02:06.771] INFO  (parsl.dataflow.dflow) :: Task 285 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.771] INFO  (parsl.dataflow.dflow) :: Parsl task 285 try 0 launched on executor htex-local with executor id 286
+[2024-05-28 00:02:06.771] INFO  (parsl.dataflow.dflow) :: Task 286 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.771] INFO  (parsl.dataflow.dflow) :: Task 256 completed (launched -> exec_done)
+[2024-05-28 00:02:06.772] INFO  (parsl.dataflow.dflow) :: Task 254 completed (launched -> exec_done)
+[2024-05-28 00:02:06.772] INFO  (parsl.dataflow.dflow) :: Task 257 completed (launched -> exec_done)
+[2024-05-28 00:02:06.772] INFO  (parsl.dataflow.dflow) :: Task 259 completed (launched -> exec_done)
+[2024-05-28 00:02:06.772] INFO  (parsl.dataflow.dflow) :: Parsl task 286 try 0 launched on executor htex-local with executor id 287
+[2024-05-28 00:02:06.772] INFO  (parsl.dataflow.dflow) :: Task 258 completed (launched -> exec_done)
+[2024-05-28 00:02:06.773] INFO  (parsl.dataflow.dflow) :: Task 260 completed (launched -> exec_done)
+[2024-05-28 00:02:06.773] INFO  (parsl.dataflow.dflow) :: Task 261 completed (launched -> exec_done)
+[2024-05-28 00:02:06.773] INFO  (parsl.dataflow.dflow) :: Task 287 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.773] INFO  (parsl.dataflow.dflow) :: Task 262 completed (launched -> exec_done)
+[2024-05-28 00:02:06.773] INFO  (parsl.dataflow.dflow) :: Task 264 completed (launched -> exec_done)
+[2024-05-28 00:02:06.773] INFO  (parsl.dataflow.dflow) :: Task 266 completed (launched -> exec_done)
+[2024-05-28 00:02:06.774] INFO  (parsl.dataflow.dflow) :: Task 265 completed (launched -> exec_done)
+[2024-05-28 00:02:06.774] INFO  (parsl.dataflow.dflow) :: Task 267 completed (launched -> exec_done)
+[2024-05-28 00:02:06.774] INFO  (parsl.dataflow.dflow) :: Parsl task 287 try 0 launched on executor htex-local with executor id 288
+[2024-05-28 00:02:06.774] INFO  (parsl.dataflow.dflow) :: Task 263 completed (launched -> exec_done)
+[2024-05-28 00:02:06.774] INFO  (parsl.dataflow.dflow) :: Task 288 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.775] INFO  (parsl.dataflow.dflow) :: Parsl task 288 try 0 launched on executor htex-local with executor id 289
+[2024-05-28 00:02:06.775] INFO  (parsl.dataflow.dflow) :: Task 289 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.775] INFO  (parsl.dataflow.dflow) :: Parsl task 289 try 0 launched on executor htex-local with executor id 290
+[2024-05-28 00:02:06.775] INFO  (parsl.dataflow.dflow) :: Task 290 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.776] INFO  (parsl.dataflow.dflow) :: Parsl task 290 try 0 launched on executor htex-local with executor id 291
+[2024-05-28 00:02:06.776] INFO  (parsl.dataflow.dflow) :: Task 291 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.776] INFO  (parsl.dataflow.dflow) :: Parsl task 291 try 0 launched on executor htex-local with executor id 292
+[2024-05-28 00:02:06.776] INFO  (parsl.dataflow.dflow) :: Task 292 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.777] INFO  (parsl.dataflow.dflow) :: Parsl task 292 try 0 launched on executor htex-local with executor id 293
+[2024-05-28 00:02:06.777] INFO  (parsl.dataflow.dflow) :: Task 293 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.777] INFO  (parsl.dataflow.dflow) :: Parsl task 293 try 0 launched on executor htex-local with executor id 294
+[2024-05-28 00:02:06.777] INFO  (parsl.dataflow.dflow) :: Task 294 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.777] INFO  (parsl.dataflow.dflow) :: Parsl task 294 try 0 launched on executor htex-local with executor id 295
+[2024-05-28 00:02:06.778] INFO  (parsl.dataflow.dflow) :: Task 295 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.778] INFO  (parsl.dataflow.dflow) :: Parsl task 295 try 0 launched on executor htex-local with executor id 296
+[2024-05-28 00:02:06.778] INFO  (parsl.dataflow.dflow) :: Task 296 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.778] INFO  (parsl.dataflow.dflow) :: Parsl task 296 try 0 launched on executor htex-local with executor id 297
+[2024-05-28 00:02:06.778] INFO  (parsl.dataflow.dflow) :: Task 297 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.779] INFO  (parsl.dataflow.dflow) :: Parsl task 297 try 0 launched on executor htex-local with executor id 298
+[2024-05-28 00:02:06.779] INFO  (parsl.dataflow.dflow) :: Task 298 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.779] INFO  (parsl.dataflow.dflow) :: Parsl task 298 try 0 launched on executor htex-local with executor id 299
+[2024-05-28 00:02:06.779] INFO  (parsl.dataflow.dflow) :: Task 299 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.780] INFO  (parsl.dataflow.dflow) :: Parsl task 299 try 0 launched on executor htex-local with executor id 300
+[2024-05-28 00:02:06.784] INFO  (parsl.dataflow.dflow) :: Task 270 completed (launched -> exec_done)
+[2024-05-28 00:02:06.784] INFO  (parsl.dataflow.dflow) :: Task 271 completed (launched -> exec_done)
+[2024-05-28 00:02:06.785] INFO  (parsl.dataflow.dflow) :: Task 269 completed (launched -> exec_done)
+[2024-05-28 00:02:06.785] INFO  (parsl.dataflow.dflow) :: Task 268 completed (launched -> exec_done)
+[2024-05-28 00:02:06.785] INFO  (parsl.dataflow.dflow) :: Task 300 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.785] INFO  (parsl.dataflow.dflow) :: Task 273 completed (launched -> exec_done)
+[2024-05-28 00:02:06.785] INFO  (parsl.dataflow.dflow) :: Task 272 completed (launched -> exec_done)
+[2024-05-28 00:02:06.786] INFO  (parsl.dataflow.dflow) :: Task 274 completed (launched -> exec_done)
+[2024-05-28 00:02:06.786] INFO  (parsl.dataflow.dflow) :: Task 277 completed (launched -> exec_done)
+[2024-05-28 00:02:06.786] INFO  (parsl.dataflow.dflow) :: Task 276 completed (launched -> exec_done)
+[2024-05-28 00:02:06.786] INFO  (parsl.dataflow.dflow) :: Task 275 completed (launched -> exec_done)
+[2024-05-28 00:02:06.786] INFO  (parsl.dataflow.dflow) :: Parsl task 300 try 0 launched on executor htex-local with executor id 301
+[2024-05-28 00:02:06.786] INFO  (parsl.dataflow.dflow) :: Task 280 completed (launched -> exec_done)
+[2024-05-28 00:02:06.787] INFO  (parsl.dataflow.dflow) :: Task 278 completed (launched -> exec_done)
+[2024-05-28 00:02:06.787] INFO  (parsl.dataflow.dflow) :: Task 279 completed (launched -> exec_done)
+[2024-05-28 00:02:06.787] INFO  (parsl.dataflow.dflow) :: Task 301 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.787] INFO  (parsl.dataflow.dflow) :: Task 284 completed (launched -> exec_done)
+[2024-05-28 00:02:06.787] INFO  (parsl.dataflow.dflow) :: Task 282 completed (launched -> exec_done)
+[2024-05-28 00:02:06.788] INFO  (parsl.dataflow.dflow) :: Task 283 completed (launched -> exec_done)
+[2024-05-28 00:02:06.788] INFO  (parsl.dataflow.dflow) :: Task 281 completed (launched -> exec_done)
+[2024-05-28 00:02:06.788] INFO  (parsl.dataflow.dflow) :: Task 286 completed (launched -> exec_done)
+[2024-05-28 00:02:06.788] INFO  (parsl.dataflow.dflow) :: Parsl task 301 try 0 launched on executor htex-local with executor id 302
+[2024-05-28 00:02:06.788] INFO  (parsl.dataflow.dflow) :: Task 302 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.789] INFO  (parsl.dataflow.dflow) :: Parsl task 302 try 0 launched on executor htex-local with executor id 303
+[2024-05-28 00:02:06.789] INFO  (parsl.dataflow.dflow) :: Task 303 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.789] INFO  (parsl.dataflow.dflow) :: Parsl task 303 try 0 launched on executor htex-local with executor id 304
+[2024-05-28 00:02:06.789] INFO  (parsl.dataflow.dflow) :: Task 304 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.790] INFO  (parsl.dataflow.dflow) :: Parsl task 304 try 0 launched on executor htex-local with executor id 305
+[2024-05-28 00:02:06.790] INFO  (parsl.dataflow.dflow) :: Task 305 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.790] INFO  (parsl.dataflow.dflow) :: Parsl task 305 try 0 launched on executor htex-local with executor id 306
+[2024-05-28 00:02:06.790] INFO  (parsl.dataflow.dflow) :: Task 306 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.790] INFO  (parsl.dataflow.dflow) :: Parsl task 306 try 0 launched on executor htex-local with executor id 307
+[2024-05-28 00:02:06.791] INFO  (parsl.dataflow.dflow) :: Task 307 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.791] INFO  (parsl.dataflow.dflow) :: Parsl task 307 try 0 launched on executor htex-local with executor id 308
+[2024-05-28 00:02:06.791] INFO  (parsl.dataflow.dflow) :: Task 308 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.791] INFO  (parsl.dataflow.dflow) :: Parsl task 308 try 0 launched on executor htex-local with executor id 309
+[2024-05-28 00:02:06.792] INFO  (parsl.dataflow.dflow) :: Task 309 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.792] INFO  (parsl.dataflow.dflow) :: Parsl task 309 try 0 launched on executor htex-local with executor id 310
+[2024-05-28 00:02:06.792] INFO  (parsl.dataflow.dflow) :: Task 310 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.792] INFO  (parsl.dataflow.dflow) :: Parsl task 310 try 0 launched on executor htex-local with executor id 311
+[2024-05-28 00:02:06.793] INFO  (parsl.dataflow.dflow) :: Task 311 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.793] INFO  (parsl.dataflow.dflow) :: Parsl task 311 try 0 launched on executor htex-local with executor id 312
+[2024-05-28 00:02:06.793] INFO  (parsl.dataflow.dflow) :: Task 312 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.793] INFO  (parsl.dataflow.dflow) :: Parsl task 312 try 0 launched on executor htex-local with executor id 313
+[2024-05-28 00:02:06.793] INFO  (parsl.dataflow.dflow) :: Task 313 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.794] INFO  (parsl.dataflow.dflow) :: Parsl task 313 try 0 launched on executor htex-local with executor id 314
+[2024-05-28 00:02:06.794] INFO  (parsl.dataflow.dflow) :: Task 314 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.794] INFO  (parsl.dataflow.dflow) :: Parsl task 314 try 0 launched on executor htex-local with executor id 315
+[2024-05-28 00:02:06.794] INFO  (parsl.dataflow.dflow) :: Task 315 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.795] INFO  (parsl.dataflow.dflow) :: Parsl task 315 try 0 launched on executor htex-local with executor id 316
+[2024-05-28 00:02:06.795] INFO  (parsl.dataflow.dflow) :: Task 316 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.795] INFO  (parsl.dataflow.dflow) :: Parsl task 316 try 0 launched on executor htex-local with executor id 317
+[2024-05-28 00:02:06.795] INFO  (parsl.dataflow.dflow) :: Task 317 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.796] INFO  (parsl.dataflow.dflow) :: Parsl task 317 try 0 launched on executor htex-local with executor id 318
+[2024-05-28 00:02:06.796] INFO  (parsl.dataflow.dflow) :: Task 285 completed (launched -> exec_done)
+[2024-05-28 00:02:06.796] INFO  (parsl.dataflow.dflow) :: Task 287 completed (launched -> exec_done)
+[2024-05-28 00:02:06.796] INFO  (parsl.dataflow.dflow) :: Task 288 completed (launched -> exec_done)
+[2024-05-28 00:02:06.797] INFO  (parsl.dataflow.dflow) :: Task 289 completed (launched -> exec_done)
+[2024-05-28 00:02:06.797] INFO  (parsl.dataflow.dflow) :: Task 318 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.797] INFO  (parsl.dataflow.dflow) :: Task 291 completed (launched -> exec_done)
+[2024-05-28 00:02:06.797] INFO  (parsl.dataflow.dflow) :: Task 290 completed (launched -> exec_done)
+[2024-05-28 00:02:06.797] INFO  (parsl.dataflow.dflow) :: Task 293 completed (launched -> exec_done)
+[2024-05-28 00:02:06.797] INFO  (parsl.dataflow.dflow) :: Task 292 completed (launched -> exec_done)
+[2024-05-28 00:02:06.798] INFO  (parsl.dataflow.dflow) :: Task 294 completed (launched -> exec_done)
+[2024-05-28 00:02:06.798] INFO  (parsl.dataflow.dflow) :: Parsl task 318 try 0 launched on executor htex-local with executor id 319
+[2024-05-28 00:02:06.798] INFO  (parsl.dataflow.dflow) :: Task 296 completed (launched -> exec_done)
+[2024-05-28 00:02:06.798] INFO  (parsl.dataflow.dflow) :: Task 295 completed (launched -> exec_done)
+[2024-05-28 00:02:06.798] INFO  (parsl.dataflow.dflow) :: Task 299 completed (launched -> exec_done)
+[2024-05-28 00:02:06.798] INFO  (parsl.dataflow.dflow) :: Task 319 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.799] INFO  (parsl.dataflow.dflow) :: Task 298 completed (launched -> exec_done)
+[2024-05-28 00:02:06.799] INFO  (parsl.dataflow.dflow) :: Task 297 completed (launched -> exec_done)
+[2024-05-28 00:02:06.799] INFO  (parsl.dataflow.dflow) :: Parsl task 319 try 0 launched on executor htex-local with executor id 320
+[2024-05-28 00:02:06.799] INFO  (parsl.dataflow.dflow) :: Task 320 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.800] INFO  (parsl.dataflow.dflow) :: Parsl task 320 try 0 launched on executor htex-local with executor id 321
+[2024-05-28 00:02:06.800] INFO  (parsl.dataflow.dflow) :: Task 321 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.800] INFO  (parsl.dataflow.dflow) :: Parsl task 321 try 0 launched on executor htex-local with executor id 322
+[2024-05-28 00:02:06.800] INFO  (parsl.dataflow.dflow) :: Task 322 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.800] INFO  (parsl.dataflow.dflow) :: Parsl task 322 try 0 launched on executor htex-local with executor id 323
+[2024-05-28 00:02:06.801] INFO  (parsl.dataflow.dflow) :: Task 323 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.801] INFO  (parsl.dataflow.dflow) :: Parsl task 323 try 0 launched on executor htex-local with executor id 324
+[2024-05-28 00:02:06.801] INFO  (parsl.dataflow.dflow) :: Task 324 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.801] INFO  (parsl.dataflow.dflow) :: Parsl task 324 try 0 launched on executor htex-local with executor id 325
+[2024-05-28 00:02:06.802] INFO  (parsl.dataflow.dflow) :: Task 325 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.802] INFO  (parsl.dataflow.dflow) :: Parsl task 325 try 0 launched on executor htex-local with executor id 326
+[2024-05-28 00:02:06.802] INFO  (parsl.dataflow.dflow) :: Task 326 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:02:06.802] INFO  (parsl.dataflow.dflow) :: Parsl task 326 try 0 launched on executor htex-local with executor id 327
+[2024-05-28 00:02:06.809] INFO  (parsl.dataflow.dflow) :: Task 300 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 301 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 303 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 302 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 305 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 307 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 306 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 304 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 310 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 309 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 313 completed (launched -> exec_done)
+[2024-05-28 00:02:06.810] INFO  (parsl.dataflow.dflow) :: Task 311 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 317 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 315 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 314 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 316 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 308 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 312 completed (launched -> exec_done)
+[2024-05-28 00:02:06.811] INFO  (parsl.dataflow.dflow) :: Task 320 completed (launched -> exec_done)
+[2024-05-28 00:02:06.821] INFO  (parsl.dataflow.dflow) :: Task 318 completed (launched -> exec_done)
+[2024-05-28 00:02:06.821] INFO  (parsl.dataflow.dflow) :: Task 319 completed (launched -> exec_done)
+[2024-05-28 00:02:06.821] INFO  (parsl.dataflow.dflow) :: Task 321 completed (launched -> exec_done)
+[2024-05-28 00:02:06.821] INFO  (parsl.dataflow.dflow) :: Task 322 completed (launched -> exec_done)
+[2024-05-28 00:02:06.821] INFO  (parsl.dataflow.dflow) :: Task 323 completed (launched -> exec_done)
+[2024-05-28 00:02:06.821] INFO  (parsl.dataflow.dflow) :: Task 324 completed (launched -> exec_done)
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: Task 325 completed (launched -> exec_done)
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: Task 326 completed (launched -> exec_done)
+[2024-05-28 00:02:06.822] WORK  (webs.wf.synthetic.workflow) :: Completed 326/320 (rate: 321.46 tasks/s)
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: Waiting for all remaining tasks to complete
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: All remaining tasks completed
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: DFK cleanup initiated
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: Summary of tasks in DFK:
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: Tasks in state States.unsched: 0
+[2024-05-28 00:02:06.822] INFO  (parsl.dataflow.dflow) :: Tasks in state States.pending: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.exec_done: 327
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.failed: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.dep_fail: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.launched: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.fail_retryable: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.memo_done: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.joining: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running_ended: 0
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: End of summary
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Closing job status poller
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Terminated job status poller
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Scaling in and shutting down executors
+[2024-05-28 00:02:06.823] INFO  (parsl.dataflow.dflow) :: Scaling in executor htex-local
+[2024-05-28 00:02:06.919] INFO  (parsl.dataflow.dflow) :: Shutting down executor htex-local
+[2024-05-28 00:02:06.919] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-05-28 00:02:06.965] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+[2024-05-28 00:02:06.965] INFO  (parsl.dataflow.dflow) :: Shut down executor htex-local
+[2024-05-28 00:02:06.965] INFO  (parsl.dataflow.dflow) :: Shutting down executor _parsl_internal
+[2024-05-28 00:02:06.965] INFO  (parsl.dataflow.dflow) :: Shut down executor _parsl_internal
+[2024-05-28 00:02:06.965] INFO  (parsl.dataflow.dflow) :: Terminated executors
+[2024-05-28 00:02:06.965] INFO  (parsl.dataflow.dflow) :: DFK cleanup complete
+[2024-05-28 00:02:06.965] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=2.96s, tasks=327)
+[2024-05-28 00:02:06.966] INFO  (parsl.dataflow.dflow) :: python process is exiting, but DFK has already been cleaned up

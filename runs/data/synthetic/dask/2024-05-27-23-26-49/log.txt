@@ -1,0 +1,12 @@
+[2024-05-27 23:26:49.046] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-27 23:26:49.046] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 27, 23, 26, 49, 45624) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=32) transformer=ProxyFileTransformerConfig(ps_type='file', ps_file_dir='/tmp/file-cache', ps_redis_addr='localhost:59465', ps_extract_target=True) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/dask/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=10000000, task_sleep=0.0, bag_max_running=32)
+[2024-05-27 23:26:49.046] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/dask/2024-05-27-23-26-49
+[2024-05-27 23:26:49.803] INFO  (proxystore.store) :: Registered a store named "transformer"
+[2024-05-27 23:26:49.803] INFO  (proxystore.store.base) :: Initialized Store(name=transformer, connector=FileConnector(directory=/tmp/file-cache), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, register=True)
+[2024-05-27 23:26:49.803] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-27 23:26:50.454] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-27 23:26:50.454] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-27 23:26:51.690] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-27 23:26:53.097] WORK  (webs.wf.synthetic.workflow) :: Completed 32/320 tasks (rate: 12.11 tasks/s, running tasks: 32)
+[2024-05-27 23:27:04.091] WORK  (webs.wf.synthetic.workflow) :: Completed 324/320 (rate: 23.76 tasks/s)
+[2024-05-27 23:27:04.602] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=15.56s, tasks=325)

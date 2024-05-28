@@ -1,0 +1,28 @@
+{
+    "name": "synthetic",
+    "executor": {
+        "dask_scheduler_address": null,
+        "dask_use_threads": false,
+        "dask_workers": 32
+    },
+    "transformer": {},
+    "filter": {
+        "filter_type": "object-size",
+        "filter_min_size": 5000,
+        "filter_max_size": null
+    },
+    "run": {
+        "log_file_level": "INFO",
+        "log_file_name": "log.txt",
+        "log_level": "WORK",
+        "task_record_file_name": "tasks.json",
+        "run_dir_format": "/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/dask/{timestamp}"
+    },
+    "workflow": {
+        "structure": "bag",
+        "task_count": 320,
+        "task_data_bytes": 10000,
+        "task_sleep": 0.0,
+        "bag_max_running": 32
+    }
+}

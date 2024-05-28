@@ -1,0 +1,11 @@
+[2024-05-28 00:00:04.191] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-28 00:00:04.191] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 28, 0, 0, 4, 191148) executor=ProcessPoolConfig(max_processes=32) transformer=ProxyFileTransformerConfig(ps_type='redis', ps_file_dir='/tmp/file-cache', ps_redis_addr='localhost:59465', ps_extract_target=True) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/process-pool/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=10000000, task_sleep=0.0, bag_max_running=32)
+[2024-05-28 00:00:04.191] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/process-pool/2024-05-28-00-00-04
+[2024-05-28 00:00:04.192] INFO  (proxystore.store) :: Registered a store named "transformer"
+[2024-05-28 00:00:04.192] INFO  (proxystore.store.base) :: Initialized Store(name=transformer, connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, register=True)
+[2024-05-28 00:00:04.193] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-28 00:00:04.248] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-28 00:00:04.249] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-28 00:00:05.401] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-28 00:00:13.637] WORK  (webs.wf.synthetic.workflow) :: Completed 325/320 (rate: 34.62 tasks/s)
+[2024-05-28 00:00:13.670] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=9.48s, tasks=326)

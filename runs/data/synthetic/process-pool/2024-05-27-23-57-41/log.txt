@@ -1,0 +1,18 @@
+[2024-05-27 23:57:41.105] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-27 23:57:41.105] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 27, 23, 57, 41, 104799) executor=ProcessPoolConfig(max_processes=32) transformer=NullTransformerConfig() filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/process-pool/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=10000, task_sleep=0.0, bag_max_running=32)
+[2024-05-27 23:57:41.105] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/process-pool/2024-05-27-23-57-41
+[2024-05-27 23:57:41.106] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-27 23:57:41.151] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-27 23:57:41.151] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-27 23:57:41.154] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-27 23:57:41.172] WORK  (webs.wf.synthetic.workflow) :: Completed 32/320 tasks (rate: 1547.26 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.185] WORK  (webs.wf.synthetic.workflow) :: Completed 64/320 tasks (rate: 1882.94 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.198] WORK  (webs.wf.synthetic.workflow) :: Completed 96/320 tasks (rate: 2043.09 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.212] WORK  (webs.wf.synthetic.workflow) :: Completed 128/320 tasks (rate: 2108.27 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.225] WORK  (webs.wf.synthetic.workflow) :: Completed 160/320 tasks (rate: 2165.21 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.239] WORK  (webs.wf.synthetic.workflow) :: Completed 192/320 tasks (rate: 2182.84 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.251] WORK  (webs.wf.synthetic.workflow) :: Completed 224/320 tasks (rate: 2237.49 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.266] WORK  (webs.wf.synthetic.workflow) :: Completed 256/320 tasks (rate: 2233.80 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.280] WORK  (webs.wf.synthetic.workflow) :: Completed 288/320 tasks (rate: 2233.24 tasks/s, running tasks: 32)
+[2024-05-27 23:57:41.286] WORK  (webs.wf.synthetic.workflow) :: Completed 320/320 (rate: 2369.07 tasks/s)
+[2024-05-27 23:57:41.305] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=0.20s, tasks=321)

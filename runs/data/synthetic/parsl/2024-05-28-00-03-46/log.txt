@@ -1,0 +1,1432 @@
+[2024-05-28 00:03:46.512] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-28 00:03:46.512] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 28, 0, 3, 46, 512352) executor=ParslConfig(parsl_use_threads=False, parsl_workers=32, parsl_run_dir='parsl-runinfo') transformer=NullTransformerConfig() filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/parsl/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=10000000, task_sleep=0.0, bag_max_running=32)
+[2024-05-28 00:03:46.513] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/parsl/2024-05-28-00-03-46
+[2024-05-28 00:03:46.520] INFO  (parsl.dataflow.dflow) :: Starting DataFlowKernel with config
+Config(
+    app_cache=True, 
+    checkpoint_files=None, 
+    checkpoint_mode=None, 
+    checkpoint_period=None, 
+    executors=(HighThroughputExecutor(
+        address='10.52.3.104', 
+        address_probe_timeout=None, 
+        available_accelerators=[], 
+        block_error_handler=<function simple_error_handler at 0x7f31a3352700>, 
+        cores_per_worker=1, 
+        cpu_affinity='none', 
+        drain_period=None, 
+        enable_mpi_mode=False, 
+        encrypted=False, 
+        heartbeat_period=30, 
+        heartbeat_threshold=120, 
+        interchange_port_range=(55000, 56000), 
+        label='htex-local', 
+        launch_cmd='process_worker_pool.py {debug} {max_workers_per_node} -a {addresses} -p {prefetch_capacity} -c {cores_per_worker} -m {mem_per_worker} --poll {poll_period} --task_port={task_port} --result_port={result_port} --cert_dir {cert_dir} --logdir={logdir} --block_id={{block_id}} --hb_period={heartbeat_period} {address_probe_timeout_string} --hb_threshold={heartbeat_threshold} --drain_period={drain_period} --cpu-affinity {cpu_affinity} {enable_mpi_mode} --mpi-launcher={mpi_launcher} --available-accelerators {accelerators}', 
+        max_workers=32, 
+        max_workers_per_node=32, 
+        mem_per_worker=None, 
+        mpi_launcher='mpiexec', 
+        poll_period=10, 
+        prefetch_capacity=0, 
+        provider=LocalProvider(
+            channel=LocalChannel(
+                envs={}, 
+                script_dir=None, 
+                userhome='/home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/parsl/2024-05-28-00-03-46'
+            ), 
+            cmd_timeout=30, 
+            init_blocks=1, 
+            launcher=SingleNodeLauncher(debug=True, fail_on_any=False), 
+            max_blocks=1, 
+            min_blocks=0, 
+            move_files=None, 
+            nodes_per_block=1, 
+            parallelism=1, 
+            worker_init=''
+        ), 
+        storage_access=None, 
+        worker_debug=False, 
+        worker_logdir_root=None, 
+        worker_port_range=(54000, 55000), 
+        worker_ports=None, 
+        working_dir=None
+    ),), 
+    garbage_collect=True, 
+    initialize_logging=True, 
+    internal_tasks_max_threads=10, 
+    max_idletime=120.0, 
+    monitoring=None, 
+    retries=0, 
+    retry_handler=None, 
+    run_dir='parsl-runinfo', 
+    strategy='simple', 
+    strategy_period=5, 
+    usage_tracking=False
+)
+[2024-05-28 00:03:46.520] INFO  (parsl.dataflow.dflow) :: Parsl version: 2024.03.18
+[2024-05-28 00:03:46.521] INFO  (parsl.dataflow.dflow) :: Run id is: 3175b254-deb5-477d-b845-7b52c51afd48
+[2024-05-28 00:03:46.573] INFO  (parsl.dataflow.memoization) :: App caching initialized
+[2024-05-28 00:03:46.593] INFO  (parsl.executors.status_handling) :: Scaling out by 1 blocks
+[2024-05-28 00:03:46.593] INFO  (parsl.executors.status_handling) :: Allocated block ID 0
+[2024-05-28 00:03:46.602] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-28 00:03:46.609] INFO  (parsl.dataflow.dflow) :: Task 0 submitted for App id, not waiting on any dependency
+[2024-05-28 00:03:46.612] INFO  (parsl.dataflow.dflow) :: Parsl task 0 try 0 launched on executor htex-local with executor id 1
+[2024-05-28 00:03:48.298] INFO  (parsl.dataflow.dflow) :: Task 0 completed (launched -> exec_done)
+[2024-05-28 00:03:48.298] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-28 00:03:48.298] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-28 00:03:48.329] INFO  (parsl.dataflow.dflow) :: Task 1 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:48.419] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:48.429] INFO  (parsl.dataflow.dflow) :: Parsl task 1 try 0 launched on executor htex-local with executor id 2
+[2024-05-28 00:03:48.449] INFO  (parsl.dataflow.dflow) :: Task 2 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:48.534] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:48.542] INFO  (parsl.dataflow.dflow) :: Parsl task 2 try 0 launched on executor htex-local with executor id 3
+[2024-05-28 00:03:48.562] INFO  (parsl.dataflow.dflow) :: Task 3 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:48.643] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:48.651] INFO  (parsl.dataflow.dflow) :: Parsl task 3 try 0 launched on executor htex-local with executor id 4
+[2024-05-28 00:03:48.677] INFO  (parsl.dataflow.dflow) :: Task 4 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:48.768] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:48.777] INFO  (parsl.dataflow.dflow) :: Parsl task 4 try 0 launched on executor htex-local with executor id 5
+[2024-05-28 00:03:48.806] INFO  (parsl.dataflow.dflow) :: Task 5 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:48.898] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:48.911] INFO  (parsl.dataflow.dflow) :: Parsl task 5 try 0 launched on executor htex-local with executor id 6
+[2024-05-28 00:03:48.937] INFO  (parsl.dataflow.dflow) :: Task 6 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.028] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.040] INFO  (parsl.dataflow.dflow) :: Parsl task 6 try 0 launched on executor htex-local with executor id 7
+[2024-05-28 00:03:49.065] INFO  (parsl.dataflow.dflow) :: Task 7 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.158] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.178] INFO  (parsl.dataflow.dflow) :: Task 1 completed (launched -> exec_done)
+[2024-05-28 00:03:49.184] INFO  (parsl.dataflow.dflow) :: Parsl task 7 try 0 launched on executor htex-local with executor id 8
+[2024-05-28 00:03:49.210] INFO  (parsl.dataflow.dflow) :: Task 8 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.309] INFO  (parsl.dataflow.dflow) :: Task 2 completed (launched -> exec_done)
+[2024-05-28 00:03:49.311] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.323] INFO  (parsl.dataflow.dflow) :: Parsl task 8 try 0 launched on executor htex-local with executor id 9
+[2024-05-28 00:03:49.356] INFO  (parsl.dataflow.dflow) :: Task 3 completed (launched -> exec_done)
+[2024-05-28 00:03:49.356] INFO  (parsl.dataflow.dflow) :: Task 9 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.453] INFO  (parsl.dataflow.dflow) :: Task 4 completed (launched -> exec_done)
+[2024-05-28 00:03:49.455] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.467] INFO  (parsl.dataflow.dflow) :: Parsl task 9 try 0 launched on executor htex-local with executor id 10
+[2024-05-28 00:03:49.491] INFO  (parsl.dataflow.dflow) :: Task 10 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.586] INFO  (parsl.dataflow.dflow) :: Task 5 completed (launched -> exec_done)
+[2024-05-28 00:03:49.590] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.600] INFO  (parsl.dataflow.dflow) :: Parsl task 10 try 0 launched on executor htex-local with executor id 11
+[2024-05-28 00:03:49.627] INFO  (parsl.dataflow.dflow) :: Task 11 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.719] INFO  (parsl.dataflow.dflow) :: Task 6 completed (launched -> exec_done)
+[2024-05-28 00:03:49.725] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.735] INFO  (parsl.dataflow.dflow) :: Parsl task 11 try 0 launched on executor htex-local with executor id 12
+[2024-05-28 00:03:49.764] INFO  (parsl.dataflow.dflow) :: Task 12 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.856] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.869] INFO  (parsl.dataflow.dflow) :: Parsl task 12 try 0 launched on executor htex-local with executor id 13
+[2024-05-28 00:03:49.893] INFO  (parsl.dataflow.dflow) :: Task 13 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:49.991] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:49.994] INFO  (parsl.dataflow.dflow) :: Task 7 completed (launched -> exec_done)
+[2024-05-28 00:03:50.010] INFO  (parsl.dataflow.dflow) :: Task 8 completed (launched -> exec_done)
+[2024-05-28 00:03:50.012] INFO  (parsl.dataflow.dflow) :: Parsl task 13 try 0 launched on executor htex-local with executor id 14
+[2024-05-28 00:03:50.037] INFO  (parsl.dataflow.dflow) :: Task 14 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.129] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.141] INFO  (parsl.dataflow.dflow) :: Parsl task 14 try 0 launched on executor htex-local with executor id 15
+[2024-05-28 00:03:50.170] INFO  (parsl.dataflow.dflow) :: Task 9 completed (launched -> exec_done)
+[2024-05-28 00:03:50.171] INFO  (parsl.dataflow.dflow) :: Task 15 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.258] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.273] INFO  (parsl.dataflow.dflow) :: Task 10 completed (launched -> exec_done)
+[2024-05-28 00:03:50.277] INFO  (parsl.dataflow.dflow) :: Parsl task 15 try 0 launched on executor htex-local with executor id 16
+[2024-05-28 00:03:50.304] INFO  (parsl.dataflow.dflow) :: Task 16 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.396] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.405] INFO  (parsl.dataflow.dflow) :: Parsl task 16 try 0 launched on executor htex-local with executor id 17
+[2024-05-28 00:03:50.435] INFO  (parsl.dataflow.dflow) :: Task 17 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.532] INFO  (parsl.dataflow.dflow) :: Task 11 completed (launched -> exec_done)
+[2024-05-28 00:03:50.536] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.552] INFO  (parsl.dataflow.dflow) :: Task 12 completed (launched -> exec_done)
+[2024-05-28 00:03:50.556] INFO  (parsl.dataflow.dflow) :: Parsl task 17 try 0 launched on executor htex-local with executor id 18
+[2024-05-28 00:03:50.581] INFO  (parsl.dataflow.dflow) :: Task 18 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.676] INFO  (parsl.dataflow.dflow) :: Task 13 completed (launched -> exec_done)
+[2024-05-28 00:03:50.680] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.690] INFO  (parsl.dataflow.dflow) :: Parsl task 18 try 0 launched on executor htex-local with executor id 19
+[2024-05-28 00:03:50.715] INFO  (parsl.dataflow.dflow) :: Task 19 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.815] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.818] INFO  (parsl.dataflow.dflow) :: Task 14 completed (launched -> exec_done)
+[2024-05-28 00:03:50.828] INFO  (parsl.dataflow.dflow) :: Parsl task 19 try 0 launched on executor htex-local with executor id 20
+[2024-05-28 00:03:50.855] INFO  (parsl.dataflow.dflow) :: Task 20 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:50.952] INFO  (parsl.dataflow.dflow) :: Task 15 completed (launched -> exec_done)
+[2024-05-28 00:03:50.954] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:50.966] INFO  (parsl.dataflow.dflow) :: Parsl task 20 try 0 launched on executor htex-local with executor id 21
+[2024-05-28 00:03:50.990] INFO  (parsl.dataflow.dflow) :: Task 21 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.082] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.100] INFO  (parsl.dataflow.dflow) :: Task 16 completed (launched -> exec_done)
+[2024-05-28 00:03:51.102] INFO  (parsl.dataflow.dflow) :: Parsl task 21 try 0 launched on executor htex-local with executor id 22
+[2024-05-28 00:03:51.127] INFO  (parsl.dataflow.dflow) :: Task 22 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.222] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.239] INFO  (parsl.dataflow.dflow) :: Task 17 completed (launched -> exec_done)
+[2024-05-28 00:03:51.240] INFO  (parsl.dataflow.dflow) :: Parsl task 22 try 0 launched on executor htex-local with executor id 23
+[2024-05-28 00:03:51.268] INFO  (parsl.dataflow.dflow) :: Task 23 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.365] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.367] INFO  (parsl.dataflow.dflow) :: Task 18 completed (launched -> exec_done)
+[2024-05-28 00:03:51.380] INFO  (parsl.dataflow.dflow) :: Parsl task 23 try 0 launched on executor htex-local with executor id 24
+[2024-05-28 00:03:51.405] INFO  (parsl.dataflow.dflow) :: Task 24 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.497] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.507] INFO  (parsl.dataflow.dflow) :: Parsl task 24 try 0 launched on executor htex-local with executor id 25
+[2024-05-28 00:03:51.541] INFO  (parsl.dataflow.dflow) :: Task 19 completed (launched -> exec_done)
+[2024-05-28 00:03:51.542] INFO  (parsl.dataflow.dflow) :: Task 25 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.634] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.658] INFO  (parsl.dataflow.dflow) :: Parsl task 25 try 0 launched on executor htex-local with executor id 26
+[2024-05-28 00:03:51.697] INFO  (parsl.dataflow.dflow) :: Task 20 completed (launched -> exec_done)
+[2024-05-28 00:03:51.698] INFO  (parsl.dataflow.dflow) :: Task 26 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.791] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.798] INFO  (parsl.dataflow.dflow) :: Task 21 completed (launched -> exec_done)
+[2024-05-28 00:03:51.811] INFO  (parsl.dataflow.dflow) :: Parsl task 26 try 0 launched on executor htex-local with executor id 27
+[2024-05-28 00:03:51.835] INFO  (parsl.dataflow.dflow) :: Task 27 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:51.929] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:51.936] INFO  (parsl.dataflow.dflow) :: Task 22 completed (launched -> exec_done)
+[2024-05-28 00:03:51.946] INFO  (parsl.dataflow.dflow) :: Parsl task 27 try 0 launched on executor htex-local with executor id 28
+[2024-05-28 00:03:51.971] INFO  (parsl.dataflow.dflow) :: Task 28 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.067] INFO  (parsl.dataflow.dflow) :: Task 23 completed (launched -> exec_done)
+[2024-05-28 00:03:52.073] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.083] INFO  (parsl.dataflow.dflow) :: Parsl task 28 try 0 launched on executor htex-local with executor id 29
+[2024-05-28 00:03:52.111] INFO  (parsl.dataflow.dflow) :: Task 29 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.209] INFO  (parsl.dataflow.dflow) :: Task 24 completed (launched -> exec_done)
+[2024-05-28 00:03:52.210] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.223] INFO  (parsl.dataflow.dflow) :: Parsl task 29 try 0 launched on executor htex-local with executor id 30
+[2024-05-28 00:03:52.247] INFO  (parsl.dataflow.dflow) :: Task 30 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.343] INFO  (parsl.dataflow.dflow) :: Task 25 completed (launched -> exec_done)
+[2024-05-28 00:03:52.347] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.357] INFO  (parsl.dataflow.dflow) :: Parsl task 30 try 0 launched on executor htex-local with executor id 31
+[2024-05-28 00:03:52.381] INFO  (parsl.dataflow.dflow) :: Task 31 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.475] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.486] INFO  (parsl.dataflow.dflow) :: Parsl task 31 try 0 launched on executor htex-local with executor id 32
+[2024-05-28 00:03:52.521] INFO  (parsl.dataflow.dflow) :: Task 26 completed (launched -> exec_done)
+[2024-05-28 00:03:52.522] INFO  (parsl.dataflow.dflow) :: Task 32 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.619] INFO  (parsl.dataflow.dflow) :: Task 27 completed (launched -> exec_done)
+[2024-05-28 00:03:52.621] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.634] INFO  (parsl.dataflow.dflow) :: Parsl task 32 try 0 launched on executor htex-local with executor id 33
+[2024-05-28 00:03:52.634] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-28 00:03:52.658] INFO  (parsl.dataflow.dflow) :: Task 33 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.755] INFO  (parsl.dataflow.dflow) :: Task 28 completed (launched -> exec_done)
+[2024-05-28 00:03:52.759] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.775] INFO  (parsl.dataflow.dflow) :: Task 32 completed (launched -> exec_done)
+[2024-05-28 00:03:52.779] INFO  (parsl.dataflow.dflow) :: Parsl task 33 try 0 launched on executor htex-local with executor id 34
+[2024-05-28 00:03:52.806] INFO  (parsl.dataflow.dflow) :: Task 34 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:52.919] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:52.920] INFO  (parsl.dataflow.dflow) :: Task 33 completed (launched -> exec_done)
+[2024-05-28 00:03:52.943] INFO  (parsl.dataflow.dflow) :: Parsl task 34 try 0 launched on executor htex-local with executor id 35
+[2024-05-28 00:03:52.947] INFO  (parsl.dataflow.dflow) :: Task 29 completed (launched -> exec_done)
+[2024-05-28 00:03:52.978] INFO  (parsl.dataflow.dflow) :: Task 35 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.076] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.083] INFO  (parsl.dataflow.dflow) :: Task 30 completed (launched -> exec_done)
+[2024-05-28 00:03:53.105] INFO  (parsl.dataflow.dflow) :: Task 34 completed (launched -> exec_done)
+[2024-05-28 00:03:53.108] INFO  (parsl.dataflow.dflow) :: Parsl task 35 try 0 launched on executor htex-local with executor id 36
+[2024-05-28 00:03:53.131] INFO  (parsl.dataflow.dflow) :: Task 36 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.223] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.226] INFO  (parsl.dataflow.dflow) :: Task 31 completed (launched -> exec_done)
+[2024-05-28 00:03:53.239] INFO  (parsl.dataflow.dflow) :: Parsl task 36 try 0 launched on executor htex-local with executor id 37
+[2024-05-28 00:03:53.272] INFO  (parsl.dataflow.dflow) :: Task 35 completed (launched -> exec_done)
+[2024-05-28 00:03:53.273] INFO  (parsl.dataflow.dflow) :: Task 37 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.359] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.380] INFO  (parsl.dataflow.dflow) :: Task 36 completed (launched -> exec_done)
+[2024-05-28 00:03:53.385] INFO  (parsl.dataflow.dflow) :: Parsl task 37 try 0 launched on executor htex-local with executor id 38
+[2024-05-28 00:03:53.410] INFO  (parsl.dataflow.dflow) :: Task 38 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.496] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.521] INFO  (parsl.dataflow.dflow) :: Task 37 completed (launched -> exec_done)
+[2024-05-28 00:03:53.523] INFO  (parsl.dataflow.dflow) :: Parsl task 38 try 0 launched on executor htex-local with executor id 39
+[2024-05-28 00:03:53.549] INFO  (parsl.dataflow.dflow) :: Task 39 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.634] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.653] INFO  (parsl.dataflow.dflow) :: Task 38 completed (launched -> exec_done)
+[2024-05-28 00:03:53.658] INFO  (parsl.dataflow.dflow) :: Parsl task 39 try 0 launched on executor htex-local with executor id 40
+[2024-05-28 00:03:53.681] INFO  (parsl.dataflow.dflow) :: Task 40 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.767] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.775] INFO  (parsl.dataflow.dflow) :: Parsl task 40 try 0 launched on executor htex-local with executor id 41
+[2024-05-28 00:03:53.800] INFO  (parsl.dataflow.dflow) :: Task 41 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:53.897] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:53.902] INFO  (parsl.dataflow.dflow) :: Task 39 completed (launched -> exec_done)
+[2024-05-28 00:03:53.927] INFO  (parsl.dataflow.dflow) :: Task 40 completed (launched -> exec_done)
+[2024-05-28 00:03:53.930] INFO  (parsl.dataflow.dflow) :: Parsl task 41 try 0 launched on executor htex-local with executor id 42
+[2024-05-28 00:03:53.959] INFO  (parsl.dataflow.dflow) :: Task 42 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.043] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.068] INFO  (parsl.dataflow.dflow) :: Task 41 completed (launched -> exec_done)
+[2024-05-28 00:03:54.072] INFO  (parsl.dataflow.dflow) :: Parsl task 42 try 0 launched on executor htex-local with executor id 43
+[2024-05-28 00:03:54.094] INFO  (parsl.dataflow.dflow) :: Task 43 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.180] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.197] INFO  (parsl.dataflow.dflow) :: Task 42 completed (launched -> exec_done)
+[2024-05-28 00:03:54.201] INFO  (parsl.dataflow.dflow) :: Parsl task 43 try 0 launched on executor htex-local with executor id 44
+[2024-05-28 00:03:54.225] INFO  (parsl.dataflow.dflow) :: Task 44 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.311] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.341] INFO  (parsl.dataflow.dflow) :: Task 43 completed (launched -> exec_done)
+[2024-05-28 00:03:54.342] INFO  (parsl.dataflow.dflow) :: Parsl task 44 try 0 launched on executor htex-local with executor id 45
+[2024-05-28 00:03:54.367] INFO  (parsl.dataflow.dflow) :: Task 45 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.452] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.471] INFO  (parsl.dataflow.dflow) :: Task 44 completed (launched -> exec_done)
+[2024-05-28 00:03:54.475] INFO  (parsl.dataflow.dflow) :: Parsl task 45 try 0 launched on executor htex-local with executor id 46
+[2024-05-28 00:03:54.498] INFO  (parsl.dataflow.dflow) :: Task 46 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.583] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.598] INFO  (parsl.dataflow.dflow) :: Parsl task 46 try 0 launched on executor htex-local with executor id 47
+[2024-05-28 00:03:54.601] INFO  (parsl.dataflow.dflow) :: Task 45 completed (launched -> exec_done)
+[2024-05-28 00:03:54.625] INFO  (parsl.dataflow.dflow) :: Task 47 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.714] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.733] INFO  (parsl.dataflow.dflow) :: Parsl task 47 try 0 launched on executor htex-local with executor id 48
+[2024-05-28 00:03:54.768] INFO  (parsl.dataflow.dflow) :: Task 46 completed (launched -> exec_done)
+[2024-05-28 00:03:54.769] INFO  (parsl.dataflow.dflow) :: Task 48 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.863] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:54.870] INFO  (parsl.dataflow.dflow) :: Task 47 completed (launched -> exec_done)
+[2024-05-28 00:03:54.884] INFO  (parsl.dataflow.dflow) :: Parsl task 48 try 0 launched on executor htex-local with executor id 49
+[2024-05-28 00:03:54.906] INFO  (parsl.dataflow.dflow) :: Task 49 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:54.992] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.000] INFO  (parsl.dataflow.dflow) :: Parsl task 49 try 0 launched on executor htex-local with executor id 50
+[2024-05-28 00:03:55.035] INFO  (parsl.dataflow.dflow) :: Task 48 completed (launched -> exec_done)
+[2024-05-28 00:03:55.035] INFO  (parsl.dataflow.dflow) :: Task 50 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.129] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.132] INFO  (parsl.dataflow.dflow) :: Task 49 completed (launched -> exec_done)
+[2024-05-28 00:03:55.143] INFO  (parsl.dataflow.dflow) :: Parsl task 50 try 0 launched on executor htex-local with executor id 51
+[2024-05-28 00:03:55.168] INFO  (parsl.dataflow.dflow) :: Task 51 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.254] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.265] INFO  (parsl.dataflow.dflow) :: Parsl task 51 try 0 launched on executor htex-local with executor id 52
+[2024-05-28 00:03:55.302] INFO  (parsl.dataflow.dflow) :: Task 50 completed (launched -> exec_done)
+[2024-05-28 00:03:55.302] INFO  (parsl.dataflow.dflow) :: Task 52 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.388] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.407] INFO  (parsl.dataflow.dflow) :: Parsl task 52 try 0 launched on executor htex-local with executor id 53
+[2024-05-28 00:03:55.411] INFO  (parsl.dataflow.dflow) :: Task 51 completed (launched -> exec_done)
+[2024-05-28 00:03:55.435] INFO  (parsl.dataflow.dflow) :: Task 53 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.523] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.544] INFO  (parsl.dataflow.dflow) :: Task 52 completed (launched -> exec_done)
+[2024-05-28 00:03:55.548] INFO  (parsl.dataflow.dflow) :: Parsl task 53 try 0 launched on executor htex-local with executor id 54
+[2024-05-28 00:03:55.577] INFO  (parsl.dataflow.dflow) :: Task 54 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.668] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.673] INFO  (parsl.dataflow.dflow) :: Task 53 completed (launched -> exec_done)
+[2024-05-28 00:03:55.689] INFO  (parsl.dataflow.dflow) :: Parsl task 54 try 0 launched on executor htex-local with executor id 55
+[2024-05-28 00:03:55.712] INFO  (parsl.dataflow.dflow) :: Task 55 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.797] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.809] INFO  (parsl.dataflow.dflow) :: Parsl task 55 try 0 launched on executor htex-local with executor id 56
+[2024-05-28 00:03:55.843] INFO  (parsl.dataflow.dflow) :: Task 54 completed (launched -> exec_done)
+[2024-05-28 00:03:55.844] INFO  (parsl.dataflow.dflow) :: Task 56 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:55.931] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:55.951] INFO  (parsl.dataflow.dflow) :: Task 55 completed (launched -> exec_done)
+[2024-05-28 00:03:55.953] INFO  (parsl.dataflow.dflow) :: Parsl task 56 try 0 launched on executor htex-local with executor id 57
+[2024-05-28 00:03:55.978] INFO  (parsl.dataflow.dflow) :: Task 57 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.063] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.083] INFO  (parsl.dataflow.dflow) :: Task 56 completed (launched -> exec_done)
+[2024-05-28 00:03:56.087] INFO  (parsl.dataflow.dflow) :: Parsl task 57 try 0 launched on executor htex-local with executor id 58
+[2024-05-28 00:03:56.109] INFO  (parsl.dataflow.dflow) :: Task 58 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.196] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.211] INFO  (parsl.dataflow.dflow) :: Task 57 completed (launched -> exec_done)
+[2024-05-28 00:03:56.215] INFO  (parsl.dataflow.dflow) :: Parsl task 58 try 0 launched on executor htex-local with executor id 59
+[2024-05-28 00:03:56.237] INFO  (parsl.dataflow.dflow) :: Task 59 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.324] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.334] INFO  (parsl.dataflow.dflow) :: Parsl task 59 try 0 launched on executor htex-local with executor id 60
+[2024-05-28 00:03:56.371] INFO  (parsl.dataflow.dflow) :: Task 58 completed (launched -> exec_done)
+[2024-05-28 00:03:56.372] INFO  (parsl.dataflow.dflow) :: Task 60 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.457] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.475] INFO  (parsl.dataflow.dflow) :: Task 59 completed (launched -> exec_done)
+[2024-05-28 00:03:56.478] INFO  (parsl.dataflow.dflow) :: Parsl task 60 try 0 launched on executor htex-local with executor id 61
+[2024-05-28 00:03:56.501] INFO  (parsl.dataflow.dflow) :: Task 61 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.587] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.596] INFO  (parsl.dataflow.dflow) :: Parsl task 61 try 0 launched on executor htex-local with executor id 62
+[2024-05-28 00:03:56.633] INFO  (parsl.dataflow.dflow) :: Task 60 completed (launched -> exec_done)
+[2024-05-28 00:03:56.633] INFO  (parsl.dataflow.dflow) :: Task 62 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.719] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.745] INFO  (parsl.dataflow.dflow) :: Parsl task 62 try 0 launched on executor htex-local with executor id 63
+[2024-05-28 00:03:56.748] INFO  (parsl.dataflow.dflow) :: Task 61 completed (launched -> exec_done)
+[2024-05-28 00:03:56.778] INFO  (parsl.dataflow.dflow) :: Task 63 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:56.865] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:56.927] INFO  (parsl.dataflow.dflow) :: Task 62 completed (launched -> exec_done)
+[2024-05-28 00:03:56.930] INFO  (parsl.dataflow.dflow) :: Parsl task 63 try 0 launched on executor htex-local with executor id 64
+[2024-05-28 00:03:56.956] INFO  (parsl.dataflow.dflow) :: Task 64 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.043] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.069] INFO  (parsl.dataflow.dflow) :: Task 63 completed (launched -> exec_done)
+[2024-05-28 00:03:57.071] INFO  (parsl.dataflow.dflow) :: Parsl task 64 try 0 launched on executor htex-local with executor id 65
+[2024-05-28 00:03:57.095] INFO  (parsl.dataflow.dflow) :: Task 65 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.189] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.193] INFO  (parsl.dataflow.dflow) :: Task 64 completed (launched -> exec_done)
+[2024-05-28 00:03:57.207] INFO  (parsl.dataflow.dflow) :: Parsl task 65 try 0 launched on executor htex-local with executor id 66
+[2024-05-28 00:03:57.230] INFO  (parsl.dataflow.dflow) :: Task 66 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.316] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.328] INFO  (parsl.dataflow.dflow) :: Parsl task 66 try 0 launched on executor htex-local with executor id 67
+[2024-05-28 00:03:57.357] INFO  (parsl.dataflow.dflow) :: Task 67 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.444] INFO  (parsl.dataflow.dflow) :: Task 65 completed (launched -> exec_done)
+[2024-05-28 00:03:57.449] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.467] INFO  (parsl.dataflow.dflow) :: Task 66 completed (launched -> exec_done)
+[2024-05-28 00:03:57.470] INFO  (parsl.dataflow.dflow) :: Parsl task 67 try 0 launched on executor htex-local with executor id 68
+[2024-05-28 00:03:57.493] INFO  (parsl.dataflow.dflow) :: Task 68 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.580] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.589] INFO  (parsl.dataflow.dflow) :: Parsl task 68 try 0 launched on executor htex-local with executor id 69
+[2024-05-28 00:03:57.623] INFO  (parsl.dataflow.dflow) :: Task 67 completed (launched -> exec_done)
+[2024-05-28 00:03:57.623] INFO  (parsl.dataflow.dflow) :: Task 69 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.718] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.721] INFO  (parsl.dataflow.dflow) :: Task 68 completed (launched -> exec_done)
+[2024-05-28 00:03:57.734] INFO  (parsl.dataflow.dflow) :: Parsl task 69 try 0 launched on executor htex-local with executor id 70
+[2024-05-28 00:03:57.757] INFO  (parsl.dataflow.dflow) :: Task 70 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.842] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.860] INFO  (parsl.dataflow.dflow) :: Parsl task 70 try 0 launched on executor htex-local with executor id 71
+[2024-05-28 00:03:57.864] INFO  (parsl.dataflow.dflow) :: Task 69 completed (launched -> exec_done)
+[2024-05-28 00:03:57.889] INFO  (parsl.dataflow.dflow) :: Task 71 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:57.981] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:57.984] INFO  (parsl.dataflow.dflow) :: Task 70 completed (launched -> exec_done)
+[2024-05-28 00:03:58.002] INFO  (parsl.dataflow.dflow) :: Parsl task 71 try 0 launched on executor htex-local with executor id 72
+[2024-05-28 00:03:58.025] INFO  (parsl.dataflow.dflow) :: Task 72 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.110] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.119] INFO  (parsl.dataflow.dflow) :: Parsl task 72 try 0 launched on executor htex-local with executor id 73
+[2024-05-28 00:03:58.154] INFO  (parsl.dataflow.dflow) :: Task 71 completed (launched -> exec_done)
+[2024-05-28 00:03:58.155] INFO  (parsl.dataflow.dflow) :: Task 73 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.247] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.250] INFO  (parsl.dataflow.dflow) :: Task 72 completed (launched -> exec_done)
+[2024-05-28 00:03:58.260] INFO  (parsl.dataflow.dflow) :: Parsl task 73 try 0 launched on executor htex-local with executor id 74
+[2024-05-28 00:03:58.285] INFO  (parsl.dataflow.dflow) :: Task 74 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.370] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.381] INFO  (parsl.dataflow.dflow) :: Parsl task 74 try 0 launched on executor htex-local with executor id 75
+[2024-05-28 00:03:58.413] INFO  (parsl.dataflow.dflow) :: Task 73 completed (launched -> exec_done)
+[2024-05-28 00:03:58.413] INFO  (parsl.dataflow.dflow) :: Task 75 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.501] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.517] INFO  (parsl.dataflow.dflow) :: Task 74 completed (launched -> exec_done)
+[2024-05-28 00:03:58.521] INFO  (parsl.dataflow.dflow) :: Parsl task 75 try 0 launched on executor htex-local with executor id 76
+[2024-05-28 00:03:58.544] INFO  (parsl.dataflow.dflow) :: Task 76 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.631] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.641] INFO  (parsl.dataflow.dflow) :: Parsl task 76 try 0 launched on executor htex-local with executor id 77
+[2024-05-28 00:03:58.677] INFO  (parsl.dataflow.dflow) :: Task 75 completed (launched -> exec_done)
+[2024-05-28 00:03:58.677] INFO  (parsl.dataflow.dflow) :: Task 77 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.763] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.786] INFO  (parsl.dataflow.dflow) :: Task 76 completed (launched -> exec_done)
+[2024-05-28 00:03:58.790] INFO  (parsl.dataflow.dflow) :: Parsl task 77 try 0 launched on executor htex-local with executor id 78
+[2024-05-28 00:03:58.813] INFO  (parsl.dataflow.dflow) :: Task 78 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:58.898] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:58.917] INFO  (parsl.dataflow.dflow) :: Task 77 completed (launched -> exec_done)
+[2024-05-28 00:03:58.920] INFO  (parsl.dataflow.dflow) :: Parsl task 78 try 0 launched on executor htex-local with executor id 79
+[2024-05-28 00:03:58.943] INFO  (parsl.dataflow.dflow) :: Task 79 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.029] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.047] INFO  (parsl.dataflow.dflow) :: Task 78 completed (launched -> exec_done)
+[2024-05-28 00:03:59.052] INFO  (parsl.dataflow.dflow) :: Parsl task 79 try 0 launched on executor htex-local with executor id 80
+[2024-05-28 00:03:59.074] INFO  (parsl.dataflow.dflow) :: Task 80 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.163] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.185] INFO  (parsl.dataflow.dflow) :: Task 79 completed (launched -> exec_done)
+[2024-05-28 00:03:59.188] INFO  (parsl.dataflow.dflow) :: Parsl task 80 try 0 launched on executor htex-local with executor id 81
+[2024-05-28 00:03:59.212] INFO  (parsl.dataflow.dflow) :: Task 81 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.299] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.318] INFO  (parsl.dataflow.dflow) :: Task 80 completed (launched -> exec_done)
+[2024-05-28 00:03:59.322] INFO  (parsl.dataflow.dflow) :: Parsl task 81 try 0 launched on executor htex-local with executor id 82
+[2024-05-28 00:03:59.350] INFO  (parsl.dataflow.dflow) :: Task 82 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.441] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.451] INFO  (parsl.dataflow.dflow) :: Task 81 completed (launched -> exec_done)
+[2024-05-28 00:03:59.458] INFO  (parsl.dataflow.dflow) :: Parsl task 82 try 0 launched on executor htex-local with executor id 83
+[2024-05-28 00:03:59.481] INFO  (parsl.dataflow.dflow) :: Task 83 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.566] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.575] INFO  (parsl.dataflow.dflow) :: Parsl task 83 try 0 launched on executor htex-local with executor id 84
+[2024-05-28 00:03:59.606] INFO  (parsl.dataflow.dflow) :: Task 82 completed (launched -> exec_done)
+[2024-05-28 00:03:59.607] INFO  (parsl.dataflow.dflow) :: Task 84 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.695] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.715] INFO  (parsl.dataflow.dflow) :: Task 83 completed (launched -> exec_done)
+[2024-05-28 00:03:59.719] INFO  (parsl.dataflow.dflow) :: Parsl task 84 try 0 launched on executor htex-local with executor id 85
+[2024-05-28 00:03:59.747] INFO  (parsl.dataflow.dflow) :: Task 85 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.832] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.844] INFO  (parsl.dataflow.dflow) :: Parsl task 85 try 0 launched on executor htex-local with executor id 86
+[2024-05-28 00:03:59.867] INFO  (parsl.dataflow.dflow) :: Task 86 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:03:59.960] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:03:59.969] INFO  (parsl.dataflow.dflow) :: Task 84 completed (launched -> exec_done)
+[2024-05-28 00:03:59.973] INFO  (parsl.dataflow.dflow) :: Parsl task 86 try 0 launched on executor htex-local with executor id 87
+[2024-05-28 00:04:00.002] INFO  (parsl.dataflow.dflow) :: Task 85 completed (launched -> exec_done)
+[2024-05-28 00:04:00.003] INFO  (parsl.dataflow.dflow) :: Task 87 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.092] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.107] INFO  (parsl.dataflow.dflow) :: Task 86 completed (launched -> exec_done)
+[2024-05-28 00:04:00.112] INFO  (parsl.dataflow.dflow) :: Parsl task 87 try 0 launched on executor htex-local with executor id 88
+[2024-05-28 00:04:00.137] INFO  (parsl.dataflow.dflow) :: Task 88 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.223] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.242] INFO  (parsl.dataflow.dflow) :: Task 87 completed (launched -> exec_done)
+[2024-05-28 00:04:00.244] INFO  (parsl.dataflow.dflow) :: Parsl task 88 try 0 launched on executor htex-local with executor id 89
+[2024-05-28 00:04:00.267] INFO  (parsl.dataflow.dflow) :: Task 89 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.353] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.371] INFO  (parsl.dataflow.dflow) :: Task 88 completed (launched -> exec_done)
+[2024-05-28 00:04:00.375] INFO  (parsl.dataflow.dflow) :: Parsl task 89 try 0 launched on executor htex-local with executor id 90
+[2024-05-28 00:04:00.398] INFO  (parsl.dataflow.dflow) :: Task 90 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.484] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.505] INFO  (parsl.dataflow.dflow) :: Task 89 completed (launched -> exec_done)
+[2024-05-28 00:04:00.507] INFO  (parsl.dataflow.dflow) :: Parsl task 90 try 0 launched on executor htex-local with executor id 91
+[2024-05-28 00:04:00.531] INFO  (parsl.dataflow.dflow) :: Task 91 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.616] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.635] INFO  (parsl.dataflow.dflow) :: Task 90 completed (launched -> exec_done)
+[2024-05-28 00:04:00.637] INFO  (parsl.dataflow.dflow) :: Parsl task 91 try 0 launched on executor htex-local with executor id 92
+[2024-05-28 00:04:00.660] INFO  (parsl.dataflow.dflow) :: Task 92 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.745] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.762] INFO  (parsl.dataflow.dflow) :: Task 91 completed (launched -> exec_done)
+[2024-05-28 00:04:00.765] INFO  (parsl.dataflow.dflow) :: Parsl task 92 try 0 launched on executor htex-local with executor id 93
+[2024-05-28 00:04:00.788] INFO  (parsl.dataflow.dflow) :: Task 93 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:00.875] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:00.894] INFO  (parsl.dataflow.dflow) :: Task 92 completed (launched -> exec_done)
+[2024-05-28 00:04:00.898] INFO  (parsl.dataflow.dflow) :: Parsl task 93 try 0 launched on executor htex-local with executor id 94
+[2024-05-28 00:04:00.920] INFO  (parsl.dataflow.dflow) :: Task 94 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.007] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.016] INFO  (parsl.dataflow.dflow) :: Parsl task 94 try 0 launched on executor htex-local with executor id 95
+[2024-05-28 00:04:01.046] INFO  (parsl.dataflow.dflow) :: Task 95 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.131] INFO  (parsl.dataflow.dflow) :: Task 93 completed (launched -> exec_done)
+[2024-05-28 00:04:01.138] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.148] INFO  (parsl.dataflow.dflow) :: Parsl task 95 try 0 launched on executor htex-local with executor id 96
+[2024-05-28 00:04:01.183] INFO  (parsl.dataflow.dflow) :: Task 94 completed (launched -> exec_done)
+[2024-05-28 00:04:01.184] INFO  (parsl.dataflow.dflow) :: Task 96 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.278] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.281] INFO  (parsl.dataflow.dflow) :: Task 95 completed (launched -> exec_done)
+[2024-05-28 00:04:01.295] INFO  (parsl.dataflow.dflow) :: Parsl task 96 try 0 launched on executor htex-local with executor id 97
+[2024-05-28 00:04:01.318] INFO  (parsl.dataflow.dflow) :: Task 97 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.404] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.416] INFO  (parsl.dataflow.dflow) :: Parsl task 97 try 0 launched on executor htex-local with executor id 98
+[2024-05-28 00:04:01.450] INFO  (parsl.dataflow.dflow) :: Task 96 completed (launched -> exec_done)
+[2024-05-28 00:04:01.450] INFO  (parsl.dataflow.dflow) :: Task 98 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.536] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.552] INFO  (parsl.dataflow.dflow) :: Task 97 completed (launched -> exec_done)
+[2024-05-28 00:04:01.557] INFO  (parsl.dataflow.dflow) :: Parsl task 98 try 0 launched on executor htex-local with executor id 99
+[2024-05-28 00:04:01.582] INFO  (parsl.dataflow.dflow) :: Task 99 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.673] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.689] INFO  (parsl.dataflow.dflow) :: Parsl task 99 try 0 launched on executor htex-local with executor id 100
+[2024-05-28 00:04:01.724] INFO  (parsl.dataflow.dflow) :: Task 98 completed (launched -> exec_done)
+[2024-05-28 00:04:01.724] INFO  (parsl.dataflow.dflow) :: Task 100 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.810] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.822] INFO  (parsl.dataflow.dflow) :: Parsl task 100 try 0 launched on executor htex-local with executor id 101
+[2024-05-28 00:04:01.853] INFO  (parsl.dataflow.dflow) :: Task 99 completed (launched -> exec_done)
+[2024-05-28 00:04:01.854] INFO  (parsl.dataflow.dflow) :: Task 101 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:01.941] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:01.956] INFO  (parsl.dataflow.dflow) :: Task 100 completed (launched -> exec_done)
+[2024-05-28 00:04:01.960] INFO  (parsl.dataflow.dflow) :: Parsl task 101 try 0 launched on executor htex-local with executor id 102
+[2024-05-28 00:04:01.982] INFO  (parsl.dataflow.dflow) :: Task 102 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.069] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.087] INFO  (parsl.dataflow.dflow) :: Task 101 completed (launched -> exec_done)
+[2024-05-28 00:04:02.089] INFO  (parsl.dataflow.dflow) :: Parsl task 102 try 0 launched on executor htex-local with executor id 103
+[2024-05-28 00:04:02.117] INFO  (parsl.dataflow.dflow) :: Task 103 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.202] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.219] INFO  (parsl.dataflow.dflow) :: Task 102 completed (launched -> exec_done)
+[2024-05-28 00:04:02.221] INFO  (parsl.dataflow.dflow) :: Parsl task 103 try 0 launched on executor htex-local with executor id 104
+[2024-05-28 00:04:02.247] INFO  (parsl.dataflow.dflow) :: Task 104 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.331] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.363] INFO  (parsl.dataflow.dflow) :: Parsl task 104 try 0 launched on executor htex-local with executor id 105
+[2024-05-28 00:04:02.409] INFO  (parsl.dataflow.dflow) :: Task 103 completed (launched -> exec_done)
+[2024-05-28 00:04:02.409] INFO  (parsl.dataflow.dflow) :: Task 105 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.506] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.510] INFO  (parsl.dataflow.dflow) :: Task 104 completed (launched -> exec_done)
+[2024-05-28 00:04:02.523] INFO  (parsl.dataflow.dflow) :: Parsl task 105 try 0 launched on executor htex-local with executor id 106
+[2024-05-28 00:04:02.546] INFO  (parsl.dataflow.dflow) :: Task 106 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.632] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.642] INFO  (parsl.dataflow.dflow) :: Parsl task 106 try 0 launched on executor htex-local with executor id 107
+[2024-05-28 00:04:02.675] INFO  (parsl.dataflow.dflow) :: Task 105 completed (launched -> exec_done)
+[2024-05-28 00:04:02.675] INFO  (parsl.dataflow.dflow) :: Task 107 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.767] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.770] INFO  (parsl.dataflow.dflow) :: Task 106 completed (launched -> exec_done)
+[2024-05-28 00:04:02.781] INFO  (parsl.dataflow.dflow) :: Parsl task 107 try 0 launched on executor htex-local with executor id 108
+[2024-05-28 00:04:02.806] INFO  (parsl.dataflow.dflow) :: Task 108 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:02.894] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:02.913] INFO  (parsl.dataflow.dflow) :: Parsl task 108 try 0 launched on executor htex-local with executor id 109
+[2024-05-28 00:04:02.938] INFO  (parsl.dataflow.dflow) :: Task 107 completed (launched -> exec_done)
+[2024-05-28 00:04:02.939] INFO  (parsl.dataflow.dflow) :: Task 109 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.024] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.042] INFO  (parsl.dataflow.dflow) :: Task 108 completed (launched -> exec_done)
+[2024-05-28 00:04:03.046] INFO  (parsl.dataflow.dflow) :: Parsl task 109 try 0 launched on executor htex-local with executor id 110
+[2024-05-28 00:04:03.069] INFO  (parsl.dataflow.dflow) :: Task 110 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.155] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.164] INFO  (parsl.dataflow.dflow) :: Parsl task 110 try 0 launched on executor htex-local with executor id 111
+[2024-05-28 00:04:03.197] INFO  (parsl.dataflow.dflow) :: Task 109 completed (launched -> exec_done)
+[2024-05-28 00:04:03.199] INFO  (parsl.dataflow.dflow) :: Task 111 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.290] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.293] INFO  (parsl.dataflow.dflow) :: Task 110 completed (launched -> exec_done)
+[2024-05-28 00:04:03.309] INFO  (parsl.dataflow.dflow) :: Parsl task 111 try 0 launched on executor htex-local with executor id 112
+[2024-05-28 00:04:03.334] INFO  (parsl.dataflow.dflow) :: Task 112 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.419] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.436] INFO  (parsl.dataflow.dflow) :: Task 111 completed (launched -> exec_done)
+[2024-05-28 00:04:03.439] INFO  (parsl.dataflow.dflow) :: Parsl task 112 try 0 launched on executor htex-local with executor id 113
+[2024-05-28 00:04:03.462] INFO  (parsl.dataflow.dflow) :: Task 113 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.554] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.566] INFO  (parsl.dataflow.dflow) :: Task 112 completed (launched -> exec_done)
+[2024-05-28 00:04:03.570] INFO  (parsl.dataflow.dflow) :: Parsl task 113 try 0 launched on executor htex-local with executor id 114
+[2024-05-28 00:04:03.593] INFO  (parsl.dataflow.dflow) :: Task 114 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.678] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.697] INFO  (parsl.dataflow.dflow) :: Task 113 completed (launched -> exec_done)
+[2024-05-28 00:04:03.701] INFO  (parsl.dataflow.dflow) :: Parsl task 114 try 0 launched on executor htex-local with executor id 115
+[2024-05-28 00:04:03.723] INFO  (parsl.dataflow.dflow) :: Task 115 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.809] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.820] INFO  (parsl.dataflow.dflow) :: Parsl task 115 try 0 launched on executor htex-local with executor id 116
+[2024-05-28 00:04:03.853] INFO  (parsl.dataflow.dflow) :: Task 114 completed (launched -> exec_done)
+[2024-05-28 00:04:03.854] INFO  (parsl.dataflow.dflow) :: Task 116 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:03.946] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:03.949] INFO  (parsl.dataflow.dflow) :: Task 115 completed (launched -> exec_done)
+[2024-05-28 00:04:03.962] INFO  (parsl.dataflow.dflow) :: Parsl task 116 try 0 launched on executor htex-local with executor id 117
+[2024-05-28 00:04:03.985] INFO  (parsl.dataflow.dflow) :: Task 117 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.072] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.081] INFO  (parsl.dataflow.dflow) :: Parsl task 117 try 0 launched on executor htex-local with executor id 118
+[2024-05-28 00:04:04.113] INFO  (parsl.dataflow.dflow) :: Task 116 completed (launched -> exec_done)
+[2024-05-28 00:04:04.113] INFO  (parsl.dataflow.dflow) :: Task 118 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.208] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.212] INFO  (parsl.dataflow.dflow) :: Task 117 completed (launched -> exec_done)
+[2024-05-28 00:04:04.222] INFO  (parsl.dataflow.dflow) :: Parsl task 118 try 0 launched on executor htex-local with executor id 119
+[2024-05-28 00:04:04.248] INFO  (parsl.dataflow.dflow) :: Task 119 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.334] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.353] INFO  (parsl.dataflow.dflow) :: Task 118 completed (launched -> exec_done)
+[2024-05-28 00:04:04.355] INFO  (parsl.dataflow.dflow) :: Parsl task 119 try 0 launched on executor htex-local with executor id 120
+[2024-05-28 00:04:04.378] INFO  (parsl.dataflow.dflow) :: Task 120 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.464] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.483] INFO  (parsl.dataflow.dflow) :: Task 119 completed (launched -> exec_done)
+[2024-05-28 00:04:04.486] INFO  (parsl.dataflow.dflow) :: Parsl task 120 try 0 launched on executor htex-local with executor id 121
+[2024-05-28 00:04:04.511] INFO  (parsl.dataflow.dflow) :: Task 121 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.596] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.614] INFO  (parsl.dataflow.dflow) :: Task 120 completed (launched -> exec_done)
+[2024-05-28 00:04:04.618] INFO  (parsl.dataflow.dflow) :: Parsl task 121 try 0 launched on executor htex-local with executor id 122
+[2024-05-28 00:04:04.641] INFO  (parsl.dataflow.dflow) :: Task 122 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.727] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.741] INFO  (parsl.dataflow.dflow) :: Task 121 completed (launched -> exec_done)
+[2024-05-28 00:04:04.744] INFO  (parsl.dataflow.dflow) :: Parsl task 122 try 0 launched on executor htex-local with executor id 123
+[2024-05-28 00:04:04.767] INFO  (parsl.dataflow.dflow) :: Task 123 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.855] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:04.872] INFO  (parsl.dataflow.dflow) :: Task 122 completed (launched -> exec_done)
+[2024-05-28 00:04:04.874] INFO  (parsl.dataflow.dflow) :: Parsl task 123 try 0 launched on executor htex-local with executor id 124
+[2024-05-28 00:04:04.900] INFO  (parsl.dataflow.dflow) :: Task 124 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:04.985] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.003] INFO  (parsl.dataflow.dflow) :: Task 123 completed (launched -> exec_done)
+[2024-05-28 00:04:05.005] INFO  (parsl.dataflow.dflow) :: Parsl task 124 try 0 launched on executor htex-local with executor id 125
+[2024-05-28 00:04:05.029] INFO  (parsl.dataflow.dflow) :: Task 125 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.115] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.133] INFO  (parsl.dataflow.dflow) :: Task 124 completed (launched -> exec_done)
+[2024-05-28 00:04:05.137] INFO  (parsl.dataflow.dflow) :: Parsl task 125 try 0 launched on executor htex-local with executor id 126
+[2024-05-28 00:04:05.159] INFO  (parsl.dataflow.dflow) :: Task 126 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.246] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.255] INFO  (parsl.dataflow.dflow) :: Parsl task 126 try 0 launched on executor htex-local with executor id 127
+[2024-05-28 00:04:05.280] INFO  (parsl.dataflow.dflow) :: Task 127 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.369] INFO  (parsl.dataflow.dflow) :: Task 125 completed (launched -> exec_done)
+[2024-05-28 00:04:05.376] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.394] INFO  (parsl.dataflow.dflow) :: Task 126 completed (launched -> exec_done)
+[2024-05-28 00:04:05.397] INFO  (parsl.dataflow.dflow) :: Parsl task 127 try 0 launched on executor htex-local with executor id 128
+[2024-05-28 00:04:05.426] INFO  (parsl.dataflow.dflow) :: Task 128 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.511] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.522] INFO  (parsl.dataflow.dflow) :: Parsl task 128 try 0 launched on executor htex-local with executor id 129
+[2024-05-28 00:04:05.551] INFO  (parsl.dataflow.dflow) :: Task 127 completed (launched -> exec_done)
+[2024-05-28 00:04:05.552] INFO  (parsl.dataflow.dflow) :: Task 129 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.639] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.648] INFO  (parsl.dataflow.dflow) :: Parsl task 129 try 0 launched on executor htex-local with executor id 130
+[2024-05-28 00:04:05.679] INFO  (parsl.dataflow.dflow) :: Task 128 completed (launched -> exec_done)
+[2024-05-28 00:04:05.679] INFO  (parsl.dataflow.dflow) :: Task 130 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.765] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.778] INFO  (parsl.dataflow.dflow) :: Task 129 completed (launched -> exec_done)
+[2024-05-28 00:04:05.782] INFO  (parsl.dataflow.dflow) :: Parsl task 130 try 0 launched on executor htex-local with executor id 131
+[2024-05-28 00:04:05.811] INFO  (parsl.dataflow.dflow) :: Task 131 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:05.896] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:05.908] INFO  (parsl.dataflow.dflow) :: Parsl task 131 try 0 launched on executor htex-local with executor id 132
+[2024-05-28 00:04:05.938] INFO  (parsl.dataflow.dflow) :: Task 130 completed (launched -> exec_done)
+[2024-05-28 00:04:05.938] INFO  (parsl.dataflow.dflow) :: Task 132 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.025] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.034] INFO  (parsl.dataflow.dflow) :: Parsl task 132 try 0 launched on executor htex-local with executor id 133
+[2024-05-28 00:04:06.065] INFO  (parsl.dataflow.dflow) :: Task 131 completed (launched -> exec_done)
+[2024-05-28 00:04:06.065] INFO  (parsl.dataflow.dflow) :: Task 133 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.162] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.165] INFO  (parsl.dataflow.dflow) :: Task 132 completed (launched -> exec_done)
+[2024-05-28 00:04:06.179] INFO  (parsl.dataflow.dflow) :: Parsl task 133 try 0 launched on executor htex-local with executor id 134
+[2024-05-28 00:04:06.201] INFO  (parsl.dataflow.dflow) :: Task 134 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.287] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.298] INFO  (parsl.dataflow.dflow) :: Parsl task 134 try 0 launched on executor htex-local with executor id 135
+[2024-05-28 00:04:06.326] INFO  (parsl.dataflow.dflow) :: Task 133 completed (launched -> exec_done)
+[2024-05-28 00:04:06.327] INFO  (parsl.dataflow.dflow) :: Task 135 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.413] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.423] INFO  (parsl.dataflow.dflow) :: Parsl task 135 try 0 launched on executor htex-local with executor id 136
+[2024-05-28 00:04:06.452] INFO  (parsl.dataflow.dflow) :: Task 134 completed (launched -> exec_done)
+[2024-05-28 00:04:06.453] INFO  (parsl.dataflow.dflow) :: Task 136 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.539] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.554] INFO  (parsl.dataflow.dflow) :: Task 135 completed (launched -> exec_done)
+[2024-05-28 00:04:06.555] INFO  (parsl.dataflow.dflow) :: Parsl task 136 try 0 launched on executor htex-local with executor id 137
+[2024-05-28 00:04:06.586] INFO  (parsl.dataflow.dflow) :: Task 137 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.671] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.687] INFO  (parsl.dataflow.dflow) :: Task 136 completed (launched -> exec_done)
+[2024-05-28 00:04:06.689] INFO  (parsl.dataflow.dflow) :: Parsl task 137 try 0 launched on executor htex-local with executor id 138
+[2024-05-28 00:04:06.712] INFO  (parsl.dataflow.dflow) :: Task 138 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.797] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.807] INFO  (parsl.dataflow.dflow) :: Parsl task 138 try 0 launched on executor htex-local with executor id 139
+[2024-05-28 00:04:06.836] INFO  (parsl.dataflow.dflow) :: Task 137 completed (launched -> exec_done)
+[2024-05-28 00:04:06.836] INFO  (parsl.dataflow.dflow) :: Task 139 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:06.923] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:06.932] INFO  (parsl.dataflow.dflow) :: Parsl task 139 try 0 launched on executor htex-local with executor id 140
+[2024-05-28 00:04:06.963] INFO  (parsl.dataflow.dflow) :: Task 138 completed (launched -> exec_done)
+[2024-05-28 00:04:06.964] INFO  (parsl.dataflow.dflow) :: Task 140 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.050] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.065] INFO  (parsl.dataflow.dflow) :: Task 139 completed (launched -> exec_done)
+[2024-05-28 00:04:07.069] INFO  (parsl.dataflow.dflow) :: Parsl task 140 try 0 launched on executor htex-local with executor id 141
+[2024-05-28 00:04:07.097] INFO  (parsl.dataflow.dflow) :: Task 141 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.182] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.198] INFO  (parsl.dataflow.dflow) :: Task 140 completed (launched -> exec_done)
+[2024-05-28 00:04:07.202] INFO  (parsl.dataflow.dflow) :: Parsl task 141 try 0 launched on executor htex-local with executor id 142
+[2024-05-28 00:04:07.225] INFO  (parsl.dataflow.dflow) :: Task 142 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.310] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.318] INFO  (parsl.dataflow.dflow) :: Parsl task 142 try 0 launched on executor htex-local with executor id 143
+[2024-05-28 00:04:07.343] INFO  (parsl.dataflow.dflow) :: Task 143 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.428] INFO  (parsl.dataflow.dflow) :: Task 141 completed (launched -> exec_done)
+[2024-05-28 00:04:07.435] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.440] INFO  (parsl.dataflow.dflow) :: Task 142 completed (launched -> exec_done)
+[2024-05-28 00:04:07.452] INFO  (parsl.dataflow.dflow) :: Parsl task 143 try 0 launched on executor htex-local with executor id 144
+[2024-05-28 00:04:07.477] INFO  (parsl.dataflow.dflow) :: Task 144 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.562] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.576] INFO  (parsl.dataflow.dflow) :: Parsl task 144 try 0 launched on executor htex-local with executor id 145
+[2024-05-28 00:04:07.605] INFO  (parsl.dataflow.dflow) :: Task 143 completed (launched -> exec_done)
+[2024-05-28 00:04:07.606] INFO  (parsl.dataflow.dflow) :: Task 145 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.692] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.752] INFO  (parsl.dataflow.dflow) :: Task 144 completed (launched -> exec_done)
+[2024-05-28 00:04:07.754] INFO  (parsl.dataflow.dflow) :: Parsl task 145 try 0 launched on executor htex-local with executor id 146
+[2024-05-28 00:04:07.778] INFO  (parsl.dataflow.dflow) :: Task 146 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.871] INFO  (parsl.dataflow.dflow) :: Task 145 completed (launched -> exec_done)
+[2024-05-28 00:04:07.871] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:07.885] INFO  (parsl.dataflow.dflow) :: Parsl task 146 try 0 launched on executor htex-local with executor id 147
+[2024-05-28 00:04:07.911] INFO  (parsl.dataflow.dflow) :: Task 147 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:07.998] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.009] INFO  (parsl.dataflow.dflow) :: Parsl task 147 try 0 launched on executor htex-local with executor id 148
+[2024-05-28 00:04:08.032] INFO  (parsl.dataflow.dflow) :: Task 148 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.120] INFO  (parsl.dataflow.dflow) :: Task 146 completed (launched -> exec_done)
+[2024-05-28 00:04:08.125] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.138] INFO  (parsl.dataflow.dflow) :: Task 147 completed (launched -> exec_done)
+[2024-05-28 00:04:08.143] INFO  (parsl.dataflow.dflow) :: Parsl task 148 try 0 launched on executor htex-local with executor id 149
+[2024-05-28 00:04:08.168] INFO  (parsl.dataflow.dflow) :: Task 149 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.254] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.264] INFO  (parsl.dataflow.dflow) :: Parsl task 149 try 0 launched on executor htex-local with executor id 150
+[2024-05-28 00:04:08.294] INFO  (parsl.dataflow.dflow) :: Task 148 completed (launched -> exec_done)
+[2024-05-28 00:04:08.295] INFO  (parsl.dataflow.dflow) :: Task 150 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.381] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.396] INFO  (parsl.dataflow.dflow) :: Parsl task 150 try 0 launched on executor htex-local with executor id 151
+[2024-05-28 00:04:08.426] INFO  (parsl.dataflow.dflow) :: Task 149 completed (launched -> exec_done)
+[2024-05-28 00:04:08.426] INFO  (parsl.dataflow.dflow) :: Task 151 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.513] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.522] INFO  (parsl.dataflow.dflow) :: Parsl task 151 try 0 launched on executor htex-local with executor id 152
+[2024-05-28 00:04:08.556] INFO  (parsl.dataflow.dflow) :: Task 150 completed (launched -> exec_done)
+[2024-05-28 00:04:08.557] INFO  (parsl.dataflow.dflow) :: Task 152 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.642] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.657] INFO  (parsl.dataflow.dflow) :: Task 151 completed (launched -> exec_done)
+[2024-05-28 00:04:08.662] INFO  (parsl.dataflow.dflow) :: Parsl task 152 try 0 launched on executor htex-local with executor id 153
+[2024-05-28 00:04:08.687] INFO  (parsl.dataflow.dflow) :: Task 153 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.773] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.783] INFO  (parsl.dataflow.dflow) :: Parsl task 153 try 0 launched on executor htex-local with executor id 154
+[2024-05-28 00:04:08.805] INFO  (parsl.dataflow.dflow) :: Task 154 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:08.898] INFO  (parsl.dataflow.dflow) :: Task 152 completed (launched -> exec_done)
+[2024-05-28 00:04:08.902] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:08.912] INFO  (parsl.dataflow.dflow) :: Parsl task 154 try 0 launched on executor htex-local with executor id 155
+[2024-05-28 00:04:08.945] INFO  (parsl.dataflow.dflow) :: Task 153 completed (launched -> exec_done)
+[2024-05-28 00:04:08.946] INFO  (parsl.dataflow.dflow) :: Task 155 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.038] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.046] INFO  (parsl.dataflow.dflow) :: Task 154 completed (launched -> exec_done)
+[2024-05-28 00:04:09.052] INFO  (parsl.dataflow.dflow) :: Parsl task 155 try 0 launched on executor htex-local with executor id 156
+[2024-05-28 00:04:09.076] INFO  (parsl.dataflow.dflow) :: Task 156 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.161] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.172] INFO  (parsl.dataflow.dflow) :: Parsl task 156 try 0 launched on executor htex-local with executor id 157
+[2024-05-28 00:04:09.199] INFO  (parsl.dataflow.dflow) :: Task 157 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.285] INFO  (parsl.dataflow.dflow) :: Task 155 completed (launched -> exec_done)
+[2024-05-28 00:04:09.289] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.298] INFO  (parsl.dataflow.dflow) :: Parsl task 157 try 0 launched on executor htex-local with executor id 158
+[2024-05-28 00:04:09.332] INFO  (parsl.dataflow.dflow) :: Task 156 completed (launched -> exec_done)
+[2024-05-28 00:04:09.333] INFO  (parsl.dataflow.dflow) :: Task 158 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.421] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.440] INFO  (parsl.dataflow.dflow) :: Task 157 completed (launched -> exec_done)
+[2024-05-28 00:04:09.442] INFO  (parsl.dataflow.dflow) :: Parsl task 158 try 0 launched on executor htex-local with executor id 159
+[2024-05-28 00:04:09.462] INFO  (parsl.dataflow.dflow) :: Task 159 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.545] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.559] INFO  (parsl.dataflow.dflow) :: Parsl task 159 try 0 launched on executor htex-local with executor id 160
+[2024-05-28 00:04:09.582] INFO  (parsl.dataflow.dflow) :: Task 160 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.675] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.679] INFO  (parsl.dataflow.dflow) :: Task 158 completed (launched -> exec_done)
+[2024-05-28 00:04:09.689] INFO  (parsl.dataflow.dflow) :: Parsl task 160 try 0 launched on executor htex-local with executor id 161
+[2024-05-28 00:04:09.713] INFO  (parsl.dataflow.dflow) :: Task 161 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.812] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.815] INFO  (parsl.dataflow.dflow) :: Task 159 completed (launched -> exec_done)
+[2024-05-28 00:04:09.825] INFO  (parsl.dataflow.dflow) :: Parsl task 161 try 0 launched on executor htex-local with executor id 162
+[2024-05-28 00:04:09.859] INFO  (parsl.dataflow.dflow) :: Task 160 completed (launched -> exec_done)
+[2024-05-28 00:04:09.859] INFO  (parsl.dataflow.dflow) :: Task 162 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:09.947] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:09.964] INFO  (parsl.dataflow.dflow) :: Task 161 completed (launched -> exec_done)
+[2024-05-28 00:04:09.967] INFO  (parsl.dataflow.dflow) :: Parsl task 162 try 0 launched on executor htex-local with executor id 163
+[2024-05-28 00:04:09.991] INFO  (parsl.dataflow.dflow) :: Task 163 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.077] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.088] INFO  (parsl.dataflow.dflow) :: Parsl task 163 try 0 launched on executor htex-local with executor id 164
+[2024-05-28 00:04:10.119] INFO  (parsl.dataflow.dflow) :: Task 162 completed (launched -> exec_done)
+[2024-05-28 00:04:10.119] INFO  (parsl.dataflow.dflow) :: Task 164 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.206] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.215] INFO  (parsl.dataflow.dflow) :: Parsl task 164 try 0 launched on executor htex-local with executor id 165
+[2024-05-28 00:04:10.249] INFO  (parsl.dataflow.dflow) :: Task 163 completed (launched -> exec_done)
+[2024-05-28 00:04:10.249] INFO  (parsl.dataflow.dflow) :: Task 165 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.338] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.356] INFO  (parsl.dataflow.dflow) :: Task 164 completed (launched -> exec_done)
+[2024-05-28 00:04:10.358] INFO  (parsl.dataflow.dflow) :: Parsl task 165 try 0 launched on executor htex-local with executor id 166
+[2024-05-28 00:04:10.383] INFO  (parsl.dataflow.dflow) :: Task 166 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.469] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.480] INFO  (parsl.dataflow.dflow) :: Parsl task 166 try 0 launched on executor htex-local with executor id 167
+[2024-05-28 00:04:10.511] INFO  (parsl.dataflow.dflow) :: Task 165 completed (launched -> exec_done)
+[2024-05-28 00:04:10.511] INFO  (parsl.dataflow.dflow) :: Task 167 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.598] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.607] INFO  (parsl.dataflow.dflow) :: Parsl task 167 try 0 launched on executor htex-local with executor id 168
+[2024-05-28 00:04:10.640] INFO  (parsl.dataflow.dflow) :: Task 166 completed (launched -> exec_done)
+[2024-05-28 00:04:10.642] INFO  (parsl.dataflow.dflow) :: Task 168 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.735] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.738] INFO  (parsl.dataflow.dflow) :: Task 167 completed (launched -> exec_done)
+[2024-05-28 00:04:10.748] INFO  (parsl.dataflow.dflow) :: Parsl task 168 try 0 launched on executor htex-local with executor id 169
+[2024-05-28 00:04:10.773] INFO  (parsl.dataflow.dflow) :: Task 169 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:10.865] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:10.877] INFO  (parsl.dataflow.dflow) :: Parsl task 169 try 0 launched on executor htex-local with executor id 170
+[2024-05-28 00:04:10.917] INFO  (parsl.dataflow.dflow) :: Task 168 completed (launched -> exec_done)
+[2024-05-28 00:04:10.917] INFO  (parsl.dataflow.dflow) :: Task 170 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.007] INFO  (parsl.dataflow.dflow) :: Task 169 completed (launched -> exec_done)
+[2024-05-28 00:04:11.009] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.013] INFO  (parsl.dataflow.dflow) :: Parsl task 170 try 0 launched on executor htex-local with executor id 171
+[2024-05-28 00:04:11.033] INFO  (parsl.dataflow.dflow) :: Task 171 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.112] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.118] INFO  (parsl.dataflow.dflow) :: Parsl task 171 try 0 launched on executor htex-local with executor id 172
+[2024-05-28 00:04:11.138] INFO  (parsl.dataflow.dflow) :: Task 172 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.222] INFO  (parsl.dataflow.dflow) :: Task 170 completed (launched -> exec_done)
+[2024-05-28 00:04:11.223] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.229] INFO  (parsl.dataflow.dflow) :: Parsl task 172 try 0 launched on executor htex-local with executor id 173
+[2024-05-28 00:04:11.257] INFO  (parsl.dataflow.dflow) :: Task 171 completed (launched -> exec_done)
+[2024-05-28 00:04:11.258] INFO  (parsl.dataflow.dflow) :: Task 173 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.336] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.345] INFO  (parsl.dataflow.dflow) :: Parsl task 173 try 0 launched on executor htex-local with executor id 174
+[2024-05-28 00:04:11.375] INFO  (parsl.dataflow.dflow) :: Task 172 completed (launched -> exec_done)
+[2024-05-28 00:04:11.375] INFO  (parsl.dataflow.dflow) :: Task 174 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.454] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.460] INFO  (parsl.dataflow.dflow) :: Parsl task 174 try 0 launched on executor htex-local with executor id 175
+[2024-05-28 00:04:11.501] INFO  (parsl.dataflow.dflow) :: Task 173 completed (launched -> exec_done)
+[2024-05-28 00:04:11.501] INFO  (parsl.dataflow.dflow) :: Task 175 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.581] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.587] INFO  (parsl.dataflow.dflow) :: Parsl task 175 try 0 launched on executor htex-local with executor id 176
+[2024-05-28 00:04:11.626] INFO  (parsl.dataflow.dflow) :: Task 174 completed (launched -> exec_done)
+[2024-05-28 00:04:11.627] INFO  (parsl.dataflow.dflow) :: Task 176 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.706] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.712] INFO  (parsl.dataflow.dflow) :: Parsl task 176 try 0 launched on executor htex-local with executor id 177
+[2024-05-28 00:04:11.751] INFO  (parsl.dataflow.dflow) :: Task 175 completed (launched -> exec_done)
+[2024-05-28 00:04:11.752] INFO  (parsl.dataflow.dflow) :: Task 177 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.833] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.836] INFO  (parsl.dataflow.dflow) :: Parsl task 177 try 0 launched on executor htex-local with executor id 178
+[2024-05-28 00:04:11.865] INFO  (parsl.dataflow.dflow) :: Task 176 completed (launched -> exec_done)
+[2024-05-28 00:04:11.866] INFO  (parsl.dataflow.dflow) :: Task 178 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:11.946] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:11.955] INFO  (parsl.dataflow.dflow) :: Parsl task 178 try 0 launched on executor htex-local with executor id 179
+[2024-05-28 00:04:11.975] INFO  (parsl.dataflow.dflow) :: Task 179 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.063] INFO  (parsl.dataflow.dflow) :: Task 177 completed (launched -> exec_done)
+[2024-05-28 00:04:12.064] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.071] INFO  (parsl.dataflow.dflow) :: Parsl task 179 try 0 launched on executor htex-local with executor id 180
+[2024-05-28 00:04:12.091] INFO  (parsl.dataflow.dflow) :: Task 180 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.178] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.181] INFO  (parsl.dataflow.dflow) :: Task 178 completed (launched -> exec_done)
+[2024-05-28 00:04:12.185] INFO  (parsl.dataflow.dflow) :: Parsl task 180 try 0 launched on executor htex-local with executor id 181
+[2024-05-28 00:04:12.205] INFO  (parsl.dataflow.dflow) :: Task 181 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.304] INFO  (parsl.dataflow.dflow) :: Task 179 completed (launched -> exec_done)
+[2024-05-28 00:04:12.306] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.315] INFO  (parsl.dataflow.dflow) :: Parsl task 181 try 0 launched on executor htex-local with executor id 182
+[2024-05-28 00:04:12.353] INFO  (parsl.dataflow.dflow) :: Task 182 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.370] INFO  (parsl.dataflow.dflow) :: Task 180 completed (launched -> exec_done)
+[2024-05-28 00:04:12.452] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.456] INFO  (parsl.dataflow.dflow) :: Task 181 completed (launched -> exec_done)
+[2024-05-28 00:04:12.463] INFO  (parsl.dataflow.dflow) :: Parsl task 182 try 0 launched on executor htex-local with executor id 183
+[2024-05-28 00:04:12.483] INFO  (parsl.dataflow.dflow) :: Task 183 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.562] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.565] INFO  (parsl.dataflow.dflow) :: Parsl task 183 try 0 launched on executor htex-local with executor id 184
+[2024-05-28 00:04:12.586] INFO  (parsl.dataflow.dflow) :: Task 184 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.672] INFO  (parsl.dataflow.dflow) :: Task 182 completed (launched -> exec_done)
+[2024-05-28 00:04:12.674] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.684] INFO  (parsl.dataflow.dflow) :: Parsl task 184 try 0 launched on executor htex-local with executor id 185
+[2024-05-28 00:04:12.710] INFO  (parsl.dataflow.dflow) :: Task 185 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.711] INFO  (parsl.dataflow.dflow) :: Task 183 completed (launched -> exec_done)
+[2024-05-28 00:04:12.790] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.796] INFO  (parsl.dataflow.dflow) :: Parsl task 185 try 0 launched on executor htex-local with executor id 186
+[2024-05-28 00:04:12.824] INFO  (parsl.dataflow.dflow) :: Task 184 completed (launched -> exec_done)
+[2024-05-28 00:04:12.824] INFO  (parsl.dataflow.dflow) :: Task 186 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:12.904] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:12.907] INFO  (parsl.dataflow.dflow) :: Parsl task 186 try 0 launched on executor htex-local with executor id 187
+[2024-05-28 00:04:12.927] INFO  (parsl.dataflow.dflow) :: Task 187 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.013] INFO  (parsl.dataflow.dflow) :: Task 185 completed (launched -> exec_done)
+[2024-05-28 00:04:13.053] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.087] INFO  (parsl.dataflow.dflow) :: Task 186 completed (launched -> exec_done)
+[2024-05-28 00:04:13.089] INFO  (parsl.dataflow.dflow) :: Parsl task 187 try 0 launched on executor htex-local with executor id 188
+[2024-05-28 00:04:13.113] INFO  (parsl.dataflow.dflow) :: Task 188 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.192] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.199] INFO  (parsl.dataflow.dflow) :: Parsl task 188 try 0 launched on executor htex-local with executor id 189
+[2024-05-28 00:04:13.226] INFO  (parsl.dataflow.dflow) :: Task 187 completed (launched -> exec_done)
+[2024-05-28 00:04:13.227] INFO  (parsl.dataflow.dflow) :: Task 189 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.307] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.311] INFO  (parsl.dataflow.dflow) :: Parsl task 189 try 0 launched on executor htex-local with executor id 190
+[2024-05-28 00:04:13.331] INFO  (parsl.dataflow.dflow) :: Task 190 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.416] INFO  (parsl.dataflow.dflow) :: Task 188 completed (launched -> exec_done)
+[2024-05-28 00:04:13.418] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.433] INFO  (parsl.dataflow.dflow) :: Task 189 completed (launched -> exec_done)
+[2024-05-28 00:04:13.434] INFO  (parsl.dataflow.dflow) :: Parsl task 190 try 0 launched on executor htex-local with executor id 191
+[2024-05-28 00:04:13.454] INFO  (parsl.dataflow.dflow) :: Task 191 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.534] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.541] INFO  (parsl.dataflow.dflow) :: Parsl task 191 try 0 launched on executor htex-local with executor id 192
+[2024-05-28 00:04:13.570] INFO  (parsl.dataflow.dflow) :: Task 190 completed (launched -> exec_done)
+[2024-05-28 00:04:13.570] INFO  (parsl.dataflow.dflow) :: Task 192 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.651] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.654] INFO  (parsl.dataflow.dflow) :: Parsl task 192 try 0 launched on executor htex-local with executor id 193
+[2024-05-28 00:04:13.674] INFO  (parsl.dataflow.dflow) :: Task 193 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.759] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.773] INFO  (parsl.dataflow.dflow) :: Task 191 completed (launched -> exec_done)
+[2024-05-28 00:04:13.775] INFO  (parsl.dataflow.dflow) :: Parsl task 193 try 0 launched on executor htex-local with executor id 194
+[2024-05-28 00:04:13.799] INFO  (parsl.dataflow.dflow) :: Task 192 completed (launched -> exec_done)
+[2024-05-28 00:04:13.799] INFO  (parsl.dataflow.dflow) :: Task 194 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.878] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.885] INFO  (parsl.dataflow.dflow) :: Parsl task 194 try 0 launched on executor htex-local with executor id 195
+[2024-05-28 00:04:13.906] INFO  (parsl.dataflow.dflow) :: Task 195 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:13.990] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:13.997] INFO  (parsl.dataflow.dflow) :: Task 193 completed (launched -> exec_done)
+[2024-05-28 00:04:13.998] INFO  (parsl.dataflow.dflow) :: Parsl task 195 try 0 launched on executor htex-local with executor id 196
+[2024-05-28 00:04:14.025] INFO  (parsl.dataflow.dflow) :: Task 196 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.105] INFO  (parsl.dataflow.dflow) :: Task 194 completed (launched -> exec_done)
+[2024-05-28 00:04:14.107] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.116] INFO  (parsl.dataflow.dflow) :: Parsl task 196 try 0 launched on executor htex-local with executor id 197
+[2024-05-28 00:04:14.143] INFO  (parsl.dataflow.dflow) :: Task 197 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.223] INFO  (parsl.dataflow.dflow) :: Task 195 completed (launched -> exec_done)
+[2024-05-28 00:04:14.225] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.232] INFO  (parsl.dataflow.dflow) :: Parsl task 197 try 0 launched on executor htex-local with executor id 198
+[2024-05-28 00:04:14.272] INFO  (parsl.dataflow.dflow) :: Task 196 completed (launched -> exec_done)
+[2024-05-28 00:04:14.273] INFO  (parsl.dataflow.dflow) :: Task 198 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.356] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.360] INFO  (parsl.dataflow.dflow) :: Task 197 completed (launched -> exec_done)
+[2024-05-28 00:04:14.367] INFO  (parsl.dataflow.dflow) :: Parsl task 198 try 0 launched on executor htex-local with executor id 199
+[2024-05-28 00:04:14.388] INFO  (parsl.dataflow.dflow) :: Task 199 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.466] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.470] INFO  (parsl.dataflow.dflow) :: Parsl task 199 try 0 launched on executor htex-local with executor id 200
+[2024-05-28 00:04:14.490] INFO  (parsl.dataflow.dflow) :: Task 200 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.590] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.601] INFO  (parsl.dataflow.dflow) :: Task 198 completed (launched -> exec_done)
+[2024-05-28 00:04:14.622] INFO  (parsl.dataflow.dflow) :: Parsl task 200 try 0 launched on executor htex-local with executor id 201
+[2024-05-28 00:04:14.625] INFO  (parsl.dataflow.dflow) :: Task 199 completed (launched -> exec_done)
+[2024-05-28 00:04:14.646] INFO  (parsl.dataflow.dflow) :: Task 201 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.724] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.730] INFO  (parsl.dataflow.dflow) :: Parsl task 201 try 0 launched on executor htex-local with executor id 202
+[2024-05-28 00:04:14.770] INFO  (parsl.dataflow.dflow) :: Task 200 completed (launched -> exec_done)
+[2024-05-28 00:04:14.770] INFO  (parsl.dataflow.dflow) :: Task 202 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.849] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.852] INFO  (parsl.dataflow.dflow) :: Parsl task 202 try 0 launched on executor htex-local with executor id 203
+[2024-05-28 00:04:14.892] INFO  (parsl.dataflow.dflow) :: Task 201 completed (launched -> exec_done)
+[2024-05-28 00:04:14.893] INFO  (parsl.dataflow.dflow) :: Task 203 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:14.972] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:14.981] INFO  (parsl.dataflow.dflow) :: Parsl task 203 try 0 launched on executor htex-local with executor id 204
+[2024-05-28 00:04:15.022] INFO  (parsl.dataflow.dflow) :: Task 202 completed (launched -> exec_done)
+[2024-05-28 00:04:15.023] INFO  (parsl.dataflow.dflow) :: Task 204 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.102] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.131] INFO  (parsl.dataflow.dflow) :: Task 203 completed (launched -> exec_done)
+[2024-05-28 00:04:15.131] INFO  (parsl.dataflow.dflow) :: Parsl task 204 try 0 launched on executor htex-local with executor id 205
+[2024-05-28 00:04:15.153] INFO  (parsl.dataflow.dflow) :: Task 205 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.231] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.235] INFO  (parsl.dataflow.dflow) :: Parsl task 205 try 0 launched on executor htex-local with executor id 206
+[2024-05-28 00:04:15.255] INFO  (parsl.dataflow.dflow) :: Task 206 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.351] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.354] INFO  (parsl.dataflow.dflow) :: Task 204 completed (launched -> exec_done)
+[2024-05-28 00:04:15.363] INFO  (parsl.dataflow.dflow) :: Parsl task 206 try 0 launched on executor htex-local with executor id 207
+[2024-05-28 00:04:15.404] INFO  (parsl.dataflow.dflow) :: Task 205 completed (launched -> exec_done)
+[2024-05-28 00:04:15.405] INFO  (parsl.dataflow.dflow) :: Task 207 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.484] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.490] INFO  (parsl.dataflow.dflow) :: Parsl task 207 try 0 launched on executor htex-local with executor id 208
+[2024-05-28 00:04:15.530] INFO  (parsl.dataflow.dflow) :: Task 206 completed (launched -> exec_done)
+[2024-05-28 00:04:15.531] INFO  (parsl.dataflow.dflow) :: Task 208 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.611] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.619] INFO  (parsl.dataflow.dflow) :: Task 207 completed (launched -> exec_done)
+[2024-05-28 00:04:15.621] INFO  (parsl.dataflow.dflow) :: Parsl task 208 try 0 launched on executor htex-local with executor id 209
+[2024-05-28 00:04:15.641] INFO  (parsl.dataflow.dflow) :: Task 209 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.720] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.729] INFO  (parsl.dataflow.dflow) :: Parsl task 209 try 0 launched on executor htex-local with executor id 210
+[2024-05-28 00:04:15.756] INFO  (parsl.dataflow.dflow) :: Task 208 completed (launched -> exec_done)
+[2024-05-28 00:04:15.757] INFO  (parsl.dataflow.dflow) :: Task 210 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.836] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.842] INFO  (parsl.dataflow.dflow) :: Parsl task 210 try 0 launched on executor htex-local with executor id 211
+[2024-05-28 00:04:15.869] INFO  (parsl.dataflow.dflow) :: Task 209 completed (launched -> exec_done)
+[2024-05-28 00:04:15.869] INFO  (parsl.dataflow.dflow) :: Task 211 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:15.949] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:15.952] INFO  (parsl.dataflow.dflow) :: Parsl task 211 try 0 launched on executor htex-local with executor id 212
+[2024-05-28 00:04:15.973] INFO  (parsl.dataflow.dflow) :: Task 212 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.058] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.061] INFO  (parsl.dataflow.dflow) :: Task 210 completed (launched -> exec_done)
+[2024-05-28 00:04:16.070] INFO  (parsl.dataflow.dflow) :: Parsl task 212 try 0 launched on executor htex-local with executor id 213
+[2024-05-28 00:04:16.097] INFO  (parsl.dataflow.dflow) :: Task 211 completed (launched -> exec_done)
+[2024-05-28 00:04:16.098] INFO  (parsl.dataflow.dflow) :: Task 213 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.177] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.184] INFO  (parsl.dataflow.dflow) :: Parsl task 213 try 0 launched on executor htex-local with executor id 214
+[2024-05-28 00:04:16.204] INFO  (parsl.dataflow.dflow) :: Task 214 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.288] INFO  (parsl.dataflow.dflow) :: Task 212 completed (launched -> exec_done)
+[2024-05-28 00:04:16.290] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.294] INFO  (parsl.dataflow.dflow) :: Parsl task 214 try 0 launched on executor htex-local with executor id 215
+[2024-05-28 00:04:16.314] INFO  (parsl.dataflow.dflow) :: Task 215 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.399] INFO  (parsl.dataflow.dflow) :: Task 213 completed (launched -> exec_done)
+[2024-05-28 00:04:16.401] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.412] INFO  (parsl.dataflow.dflow) :: Parsl task 215 try 0 launched on executor htex-local with executor id 216
+[2024-05-28 00:04:16.432] INFO  (parsl.dataflow.dflow) :: Task 216 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.516] INFO  (parsl.dataflow.dflow) :: Task 214 completed (launched -> exec_done)
+[2024-05-28 00:04:16.518] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.525] INFO  (parsl.dataflow.dflow) :: Parsl task 216 try 0 launched on executor htex-local with executor id 217
+[2024-05-28 00:04:16.546] INFO  (parsl.dataflow.dflow) :: Task 217 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.630] INFO  (parsl.dataflow.dflow) :: Task 215 completed (launched -> exec_done)
+[2024-05-28 00:04:16.632] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.636] INFO  (parsl.dataflow.dflow) :: Parsl task 217 try 0 launched on executor htex-local with executor id 218
+[2024-05-28 00:04:16.656] INFO  (parsl.dataflow.dflow) :: Task 218 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.740] INFO  (parsl.dataflow.dflow) :: Task 216 completed (launched -> exec_done)
+[2024-05-28 00:04:16.742] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.752] INFO  (parsl.dataflow.dflow) :: Parsl task 218 try 0 launched on executor htex-local with executor id 219
+[2024-05-28 00:04:16.779] INFO  (parsl.dataflow.dflow) :: Task 217 completed (launched -> exec_done)
+[2024-05-28 00:04:16.780] INFO  (parsl.dataflow.dflow) :: Task 219 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.858] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.865] INFO  (parsl.dataflow.dflow) :: Parsl task 219 try 0 launched on executor htex-local with executor id 220
+[2024-05-28 00:04:16.885] INFO  (parsl.dataflow.dflow) :: Task 220 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:16.969] INFO  (parsl.dataflow.dflow) :: Task 218 completed (launched -> exec_done)
+[2024-05-28 00:04:16.971] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:16.975] INFO  (parsl.dataflow.dflow) :: Parsl task 220 try 0 launched on executor htex-local with executor id 221
+[2024-05-28 00:04:16.995] INFO  (parsl.dataflow.dflow) :: Task 221 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.079] INFO  (parsl.dataflow.dflow) :: Task 219 completed (launched -> exec_done)
+[2024-05-28 00:04:17.081] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.091] INFO  (parsl.dataflow.dflow) :: Parsl task 221 try 0 launched on executor htex-local with executor id 222
+[2024-05-28 00:04:17.118] INFO  (parsl.dataflow.dflow) :: Task 220 completed (launched -> exec_done)
+[2024-05-28 00:04:17.119] INFO  (parsl.dataflow.dflow) :: Task 222 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.197] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.204] INFO  (parsl.dataflow.dflow) :: Parsl task 222 try 0 launched on executor htex-local with executor id 223
+[2024-05-28 00:04:17.231] INFO  (parsl.dataflow.dflow) :: Task 221 completed (launched -> exec_done)
+[2024-05-28 00:04:17.231] INFO  (parsl.dataflow.dflow) :: Task 223 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.311] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.314] INFO  (parsl.dataflow.dflow) :: Parsl task 223 try 0 launched on executor htex-local with executor id 224
+[2024-05-28 00:04:17.334] INFO  (parsl.dataflow.dflow) :: Task 224 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.418] INFO  (parsl.dataflow.dflow) :: Task 222 completed (launched -> exec_done)
+[2024-05-28 00:04:17.420] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.430] INFO  (parsl.dataflow.dflow) :: Parsl task 224 try 0 launched on executor htex-local with executor id 225
+[2024-05-28 00:04:17.450] INFO  (parsl.dataflow.dflow) :: Task 225 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.534] INFO  (parsl.dataflow.dflow) :: Task 223 completed (launched -> exec_done)
+[2024-05-28 00:04:17.536] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.544] INFO  (parsl.dataflow.dflow) :: Parsl task 225 try 0 launched on executor htex-local with executor id 226
+[2024-05-28 00:04:17.565] INFO  (parsl.dataflow.dflow) :: Task 226 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.649] INFO  (parsl.dataflow.dflow) :: Task 224 completed (launched -> exec_done)
+[2024-05-28 00:04:17.650] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.654] INFO  (parsl.dataflow.dflow) :: Parsl task 226 try 0 launched on executor htex-local with executor id 227
+[2024-05-28 00:04:17.674] INFO  (parsl.dataflow.dflow) :: Task 227 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.759] INFO  (parsl.dataflow.dflow) :: Task 225 completed (launched -> exec_done)
+[2024-05-28 00:04:17.761] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.771] INFO  (parsl.dataflow.dflow) :: Parsl task 227 try 0 launched on executor htex-local with executor id 228
+[2024-05-28 00:04:17.798] INFO  (parsl.dataflow.dflow) :: Task 226 completed (launched -> exec_done)
+[2024-05-28 00:04:17.798] INFO  (parsl.dataflow.dflow) :: Task 228 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.877] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.884] INFO  (parsl.dataflow.dflow) :: Parsl task 228 try 0 launched on executor htex-local with executor id 229
+[2024-05-28 00:04:17.904] INFO  (parsl.dataflow.dflow) :: Task 229 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:17.988] INFO  (parsl.dataflow.dflow) :: Task 227 completed (launched -> exec_done)
+[2024-05-28 00:04:17.990] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:17.994] INFO  (parsl.dataflow.dflow) :: Parsl task 229 try 0 launched on executor htex-local with executor id 230
+[2024-05-28 00:04:18.014] INFO  (parsl.dataflow.dflow) :: Task 230 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.099] INFO  (parsl.dataflow.dflow) :: Task 228 completed (launched -> exec_done)
+[2024-05-28 00:04:18.101] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.110] INFO  (parsl.dataflow.dflow) :: Parsl task 230 try 0 launched on executor htex-local with executor id 231
+[2024-05-28 00:04:18.130] INFO  (parsl.dataflow.dflow) :: Task 231 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.214] INFO  (parsl.dataflow.dflow) :: Task 229 completed (launched -> exec_done)
+[2024-05-28 00:04:18.216] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.223] INFO  (parsl.dataflow.dflow) :: Parsl task 231 try 0 launched on executor htex-local with executor id 232
+[2024-05-28 00:04:18.243] INFO  (parsl.dataflow.dflow) :: Task 232 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.250] INFO  (parsl.dataflow.dflow) :: Task 230 completed (launched -> exec_done)
+[2024-05-28 00:04:18.331] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.363] INFO  (parsl.dataflow.dflow) :: Parsl task 232 try 0 launched on executor htex-local with executor id 233
+[2024-05-28 00:04:18.405] INFO  (parsl.dataflow.dflow) :: Task 231 completed (launched -> exec_done)
+[2024-05-28 00:04:18.405] INFO  (parsl.dataflow.dflow) :: Task 233 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.489] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.499] INFO  (parsl.dataflow.dflow) :: Parsl task 233 try 0 launched on executor htex-local with executor id 234
+[2024-05-28 00:04:18.526] INFO  (parsl.dataflow.dflow) :: Task 232 completed (launched -> exec_done)
+[2024-05-28 00:04:18.528] INFO  (parsl.dataflow.dflow) :: Task 234 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.607] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.615] INFO  (parsl.dataflow.dflow) :: Parsl task 234 try 0 launched on executor htex-local with executor id 235
+[2024-05-28 00:04:18.635] INFO  (parsl.dataflow.dflow) :: Task 235 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.719] INFO  (parsl.dataflow.dflow) :: Task 233 completed (launched -> exec_done)
+[2024-05-28 00:04:18.721] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.725] INFO  (parsl.dataflow.dflow) :: Parsl task 235 try 0 launched on executor htex-local with executor id 236
+[2024-05-28 00:04:18.745] INFO  (parsl.dataflow.dflow) :: Task 236 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.830] INFO  (parsl.dataflow.dflow) :: Task 234 completed (launched -> exec_done)
+[2024-05-28 00:04:18.832] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.843] INFO  (parsl.dataflow.dflow) :: Parsl task 236 try 0 launched on executor htex-local with executor id 237
+[2024-05-28 00:04:18.863] INFO  (parsl.dataflow.dflow) :: Task 237 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:18.948] INFO  (parsl.dataflow.dflow) :: Task 235 completed (launched -> exec_done)
+[2024-05-28 00:04:18.950] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:18.957] INFO  (parsl.dataflow.dflow) :: Parsl task 237 try 0 launched on executor htex-local with executor id 238
+[2024-05-28 00:04:18.977] INFO  (parsl.dataflow.dflow) :: Task 238 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.061] INFO  (parsl.dataflow.dflow) :: Task 236 completed (launched -> exec_done)
+[2024-05-28 00:04:19.063] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.067] INFO  (parsl.dataflow.dflow) :: Parsl task 238 try 0 launched on executor htex-local with executor id 239
+[2024-05-28 00:04:19.087] INFO  (parsl.dataflow.dflow) :: Task 239 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.171] INFO  (parsl.dataflow.dflow) :: Task 237 completed (launched -> exec_done)
+[2024-05-28 00:04:19.173] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.183] INFO  (parsl.dataflow.dflow) :: Parsl task 239 try 0 launched on executor htex-local with executor id 240
+[2024-05-28 00:04:19.209] INFO  (parsl.dataflow.dflow) :: Task 238 completed (launched -> exec_done)
+[2024-05-28 00:04:19.210] INFO  (parsl.dataflow.dflow) :: Task 240 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.290] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.296] INFO  (parsl.dataflow.dflow) :: Parsl task 240 try 0 launched on executor htex-local with executor id 241
+[2024-05-28 00:04:19.316] INFO  (parsl.dataflow.dflow) :: Task 241 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.400] INFO  (parsl.dataflow.dflow) :: Task 239 completed (launched -> exec_done)
+[2024-05-28 00:04:19.402] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.406] INFO  (parsl.dataflow.dflow) :: Parsl task 241 try 0 launched on executor htex-local with executor id 242
+[2024-05-28 00:04:19.426] INFO  (parsl.dataflow.dflow) :: Task 242 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.510] INFO  (parsl.dataflow.dflow) :: Task 240 completed (launched -> exec_done)
+[2024-05-28 00:04:19.512] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.522] INFO  (parsl.dataflow.dflow) :: Parsl task 242 try 0 launched on executor htex-local with executor id 243
+[2024-05-28 00:04:19.549] INFO  (parsl.dataflow.dflow) :: Task 241 completed (launched -> exec_done)
+[2024-05-28 00:04:19.550] INFO  (parsl.dataflow.dflow) :: Task 243 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.628] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.635] INFO  (parsl.dataflow.dflow) :: Parsl task 243 try 0 launched on executor htex-local with executor id 244
+[2024-05-28 00:04:19.655] INFO  (parsl.dataflow.dflow) :: Task 244 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.741] INFO  (parsl.dataflow.dflow) :: Task 242 completed (launched -> exec_done)
+[2024-05-28 00:04:19.743] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.747] INFO  (parsl.dataflow.dflow) :: Parsl task 244 try 0 launched on executor htex-local with executor id 245
+[2024-05-28 00:04:19.767] INFO  (parsl.dataflow.dflow) :: Task 245 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.852] INFO  (parsl.dataflow.dflow) :: Task 243 completed (launched -> exec_done)
+[2024-05-28 00:04:19.854] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.864] INFO  (parsl.dataflow.dflow) :: Parsl task 245 try 0 launched on executor htex-local with executor id 246
+[2024-05-28 00:04:19.884] INFO  (parsl.dataflow.dflow) :: Task 246 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:19.969] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:19.977] INFO  (parsl.dataflow.dflow) :: Task 244 completed (launched -> exec_done)
+[2024-05-28 00:04:19.979] INFO  (parsl.dataflow.dflow) :: Parsl task 246 try 0 launched on executor htex-local with executor id 247
+[2024-05-28 00:04:19.999] INFO  (parsl.dataflow.dflow) :: Task 247 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.084] INFO  (parsl.dataflow.dflow) :: Task 245 completed (launched -> exec_done)
+[2024-05-28 00:04:20.086] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.090] INFO  (parsl.dataflow.dflow) :: Parsl task 247 try 0 launched on executor htex-local with executor id 248
+[2024-05-28 00:04:20.110] INFO  (parsl.dataflow.dflow) :: Task 248 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.194] INFO  (parsl.dataflow.dflow) :: Task 246 completed (launched -> exec_done)
+[2024-05-28 00:04:20.196] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.206] INFO  (parsl.dataflow.dflow) :: Parsl task 248 try 0 launched on executor htex-local with executor id 249
+[2024-05-28 00:04:20.233] INFO  (parsl.dataflow.dflow) :: Task 247 completed (launched -> exec_done)
+[2024-05-28 00:04:20.233] INFO  (parsl.dataflow.dflow) :: Task 249 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.313] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.319] INFO  (parsl.dataflow.dflow) :: Parsl task 249 try 0 launched on executor htex-local with executor id 250
+[2024-05-28 00:04:20.339] INFO  (parsl.dataflow.dflow) :: Task 250 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.424] INFO  (parsl.dataflow.dflow) :: Task 248 completed (launched -> exec_done)
+[2024-05-28 00:04:20.426] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.430] INFO  (parsl.dataflow.dflow) :: Parsl task 250 try 0 launched on executor htex-local with executor id 251
+[2024-05-28 00:04:20.450] INFO  (parsl.dataflow.dflow) :: Task 251 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.534] INFO  (parsl.dataflow.dflow) :: Task 249 completed (launched -> exec_done)
+[2024-05-28 00:04:20.537] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.546] INFO  (parsl.dataflow.dflow) :: Parsl task 251 try 0 launched on executor htex-local with executor id 252
+[2024-05-28 00:04:20.566] INFO  (parsl.dataflow.dflow) :: Task 252 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.651] INFO  (parsl.dataflow.dflow) :: Task 250 completed (launched -> exec_done)
+[2024-05-28 00:04:20.653] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.660] INFO  (parsl.dataflow.dflow) :: Parsl task 252 try 0 launched on executor htex-local with executor id 253
+[2024-05-28 00:04:20.680] INFO  (parsl.dataflow.dflow) :: Task 253 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.764] INFO  (parsl.dataflow.dflow) :: Task 251 completed (launched -> exec_done)
+[2024-05-28 00:04:20.767] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.771] INFO  (parsl.dataflow.dflow) :: Parsl task 253 try 0 launched on executor htex-local with executor id 254
+[2024-05-28 00:04:20.791] INFO  (parsl.dataflow.dflow) :: Task 254 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.875] INFO  (parsl.dataflow.dflow) :: Task 252 completed (launched -> exec_done)
+[2024-05-28 00:04:20.877] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:20.887] INFO  (parsl.dataflow.dflow) :: Parsl task 254 try 0 launched on executor htex-local with executor id 255
+[2024-05-28 00:04:20.907] INFO  (parsl.dataflow.dflow) :: Task 255 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:20.991] INFO  (parsl.dataflow.dflow) :: Task 253 completed (launched -> exec_done)
+[2024-05-28 00:04:20.993] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.000] INFO  (parsl.dataflow.dflow) :: Parsl task 255 try 0 launched on executor htex-local with executor id 256
+[2024-05-28 00:04:21.020] INFO  (parsl.dataflow.dflow) :: Task 256 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.104] INFO  (parsl.dataflow.dflow) :: Task 254 completed (launched -> exec_done)
+[2024-05-28 00:04:21.106] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.111] INFO  (parsl.dataflow.dflow) :: Parsl task 256 try 0 launched on executor htex-local with executor id 257
+[2024-05-28 00:04:21.132] INFO  (parsl.dataflow.dflow) :: Task 257 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.215] INFO  (parsl.dataflow.dflow) :: Task 255 completed (launched -> exec_done)
+[2024-05-28 00:04:21.217] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.228] INFO  (parsl.dataflow.dflow) :: Parsl task 257 try 0 launched on executor htex-local with executor id 258
+[2024-05-28 00:04:21.255] INFO  (parsl.dataflow.dflow) :: Task 256 completed (launched -> exec_done)
+[2024-05-28 00:04:21.256] INFO  (parsl.dataflow.dflow) :: Task 258 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.335] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.341] INFO  (parsl.dataflow.dflow) :: Parsl task 258 try 0 launched on executor htex-local with executor id 259
+[2024-05-28 00:04:21.368] INFO  (parsl.dataflow.dflow) :: Task 257 completed (launched -> exec_done)
+[2024-05-28 00:04:21.368] INFO  (parsl.dataflow.dflow) :: Task 259 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.448] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.451] INFO  (parsl.dataflow.dflow) :: Parsl task 259 try 0 launched on executor htex-local with executor id 260
+[2024-05-28 00:04:21.478] INFO  (parsl.dataflow.dflow) :: Task 258 completed (launched -> exec_done)
+[2024-05-28 00:04:21.479] INFO  (parsl.dataflow.dflow) :: Task 260 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.558] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.567] INFO  (parsl.dataflow.dflow) :: Parsl task 260 try 0 launched on executor htex-local with executor id 261
+[2024-05-28 00:04:21.594] INFO  (parsl.dataflow.dflow) :: Task 259 completed (launched -> exec_done)
+[2024-05-28 00:04:21.595] INFO  (parsl.dataflow.dflow) :: Task 261 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.674] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.681] INFO  (parsl.dataflow.dflow) :: Parsl task 261 try 0 launched on executor htex-local with executor id 262
+[2024-05-28 00:04:21.702] INFO  (parsl.dataflow.dflow) :: Task 262 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.786] INFO  (parsl.dataflow.dflow) :: Task 260 completed (launched -> exec_done)
+[2024-05-28 00:04:21.787] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.791] INFO  (parsl.dataflow.dflow) :: Parsl task 262 try 0 launched on executor htex-local with executor id 263
+[2024-05-28 00:04:21.811] INFO  (parsl.dataflow.dflow) :: Task 263 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:21.895] INFO  (parsl.dataflow.dflow) :: Task 261 completed (launched -> exec_done)
+[2024-05-28 00:04:21.897] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:21.907] INFO  (parsl.dataflow.dflow) :: Parsl task 263 try 0 launched on executor htex-local with executor id 264
+[2024-05-28 00:04:21.936] INFO  (parsl.dataflow.dflow) :: Task 262 completed (launched -> exec_done)
+[2024-05-28 00:04:21.937] INFO  (parsl.dataflow.dflow) :: Task 264 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.016] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.023] INFO  (parsl.dataflow.dflow) :: Parsl task 264 try 0 launched on executor htex-local with executor id 265
+[2024-05-28 00:04:22.053] INFO  (parsl.dataflow.dflow) :: Task 263 completed (launched -> exec_done)
+[2024-05-28 00:04:22.053] INFO  (parsl.dataflow.dflow) :: Task 265 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.132] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.135] INFO  (parsl.dataflow.dflow) :: Parsl task 265 try 0 launched on executor htex-local with executor id 266
+[2024-05-28 00:04:22.165] INFO  (parsl.dataflow.dflow) :: Task 264 completed (launched -> exec_done)
+[2024-05-28 00:04:22.165] INFO  (parsl.dataflow.dflow) :: Task 266 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.245] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.254] INFO  (parsl.dataflow.dflow) :: Parsl task 266 try 0 launched on executor htex-local with executor id 267
+[2024-05-28 00:04:22.284] INFO  (parsl.dataflow.dflow) :: Task 265 completed (launched -> exec_done)
+[2024-05-28 00:04:22.284] INFO  (parsl.dataflow.dflow) :: Task 267 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.363] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.382] INFO  (parsl.dataflow.dflow) :: Parsl task 267 try 0 launched on executor htex-local with executor id 268
+[2024-05-28 00:04:22.397] INFO  (parsl.dataflow.dflow) :: Task 266 completed (launched -> exec_done)
+[2024-05-28 00:04:22.403] INFO  (parsl.dataflow.dflow) :: Task 268 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.489] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.498] INFO  (parsl.dataflow.dflow) :: Task 267 completed (launched -> exec_done)
+[2024-05-28 00:04:22.500] INFO  (parsl.dataflow.dflow) :: Parsl task 268 try 0 launched on executor htex-local with executor id 269
+[2024-05-28 00:04:22.521] INFO  (parsl.dataflow.dflow) :: Task 269 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.600] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.603] INFO  (parsl.dataflow.dflow) :: Parsl task 269 try 0 launched on executor htex-local with executor id 270
+[2024-05-28 00:04:22.623] INFO  (parsl.dataflow.dflow) :: Task 270 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.708] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.711] INFO  (parsl.dataflow.dflow) :: Task 268 completed (launched -> exec_done)
+[2024-05-28 00:04:22.721] INFO  (parsl.dataflow.dflow) :: Parsl task 270 try 0 launched on executor htex-local with executor id 271
+[2024-05-28 00:04:22.750] INFO  (parsl.dataflow.dflow) :: Task 269 completed (launched -> exec_done)
+[2024-05-28 00:04:22.751] INFO  (parsl.dataflow.dflow) :: Task 271 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.830] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.837] INFO  (parsl.dataflow.dflow) :: Parsl task 271 try 0 launched on executor htex-local with executor id 272
+[2024-05-28 00:04:22.857] INFO  (parsl.dataflow.dflow) :: Task 272 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:22.944] INFO  (parsl.dataflow.dflow) :: Task 270 completed (launched -> exec_done)
+[2024-05-28 00:04:22.946] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:22.949] INFO  (parsl.dataflow.dflow) :: Parsl task 272 try 0 launched on executor htex-local with executor id 273
+[2024-05-28 00:04:22.979] INFO  (parsl.dataflow.dflow) :: Task 271 completed (launched -> exec_done)
+[2024-05-28 00:04:22.979] INFO  (parsl.dataflow.dflow) :: Task 273 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.065] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.068] INFO  (parsl.dataflow.dflow) :: Task 272 completed (launched -> exec_done)
+[2024-05-28 00:04:23.078] INFO  (parsl.dataflow.dflow) :: Parsl task 273 try 0 launched on executor htex-local with executor id 274
+[2024-05-28 00:04:23.099] INFO  (parsl.dataflow.dflow) :: Task 274 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.177] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.184] INFO  (parsl.dataflow.dflow) :: Parsl task 274 try 0 launched on executor htex-local with executor id 275
+[2024-05-28 00:04:23.204] INFO  (parsl.dataflow.dflow) :: Task 275 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.290] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.295] INFO  (parsl.dataflow.dflow) :: Task 273 completed (launched -> exec_done)
+[2024-05-28 00:04:23.296] INFO  (parsl.dataflow.dflow) :: Parsl task 275 try 0 launched on executor htex-local with executor id 276
+[2024-05-28 00:04:23.323] INFO  (parsl.dataflow.dflow) :: Task 274 completed (launched -> exec_done)
+[2024-05-28 00:04:23.324] INFO  (parsl.dataflow.dflow) :: Task 276 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.403] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.431] INFO  (parsl.dataflow.dflow) :: Parsl task 276 try 0 launched on executor htex-local with executor id 277
+[2024-05-28 00:04:23.434] INFO  (parsl.dataflow.dflow) :: Task 275 completed (launched -> exec_done)
+[2024-05-28 00:04:23.455] INFO  (parsl.dataflow.dflow) :: Task 277 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.534] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.559] INFO  (parsl.dataflow.dflow) :: Parsl task 277 try 0 launched on executor htex-local with executor id 278
+[2024-05-28 00:04:23.562] INFO  (parsl.dataflow.dflow) :: Task 276 completed (launched -> exec_done)
+[2024-05-28 00:04:23.583] INFO  (parsl.dataflow.dflow) :: Task 278 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.678] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.687] INFO  (parsl.dataflow.dflow) :: Task 277 completed (launched -> exec_done)
+[2024-05-28 00:04:23.719] INFO  (parsl.dataflow.dflow) :: Parsl task 278 try 0 launched on executor htex-local with executor id 279
+[2024-05-28 00:04:23.748] INFO  (parsl.dataflow.dflow) :: Task 279 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.851] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.862] INFO  (parsl.dataflow.dflow) :: Task 278 completed (launched -> exec_done)
+[2024-05-28 00:04:23.873] INFO  (parsl.dataflow.dflow) :: Parsl task 279 try 0 launched on executor htex-local with executor id 280
+[2024-05-28 00:04:23.894] INFO  (parsl.dataflow.dflow) :: Task 280 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:23.973] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:23.976] INFO  (parsl.dataflow.dflow) :: Parsl task 280 try 0 launched on executor htex-local with executor id 281
+[2024-05-28 00:04:24.017] INFO  (parsl.dataflow.dflow) :: Task 279 completed (launched -> exec_done)
+[2024-05-28 00:04:24.017] INFO  (parsl.dataflow.dflow) :: Task 281 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.097] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.129] INFO  (parsl.dataflow.dflow) :: Task 280 completed (launched -> exec_done)
+[2024-05-28 00:04:24.129] INFO  (parsl.dataflow.dflow) :: Parsl task 281 try 0 launched on executor htex-local with executor id 282
+[2024-05-28 00:04:24.151] INFO  (parsl.dataflow.dflow) :: Task 282 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.229] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.236] INFO  (parsl.dataflow.dflow) :: Parsl task 282 try 0 launched on executor htex-local with executor id 283
+[2024-05-28 00:04:24.275] INFO  (parsl.dataflow.dflow) :: Task 281 completed (launched -> exec_done)
+[2024-05-28 00:04:24.275] INFO  (parsl.dataflow.dflow) :: Task 283 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.371] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.374] INFO  (parsl.dataflow.dflow) :: Task 282 completed (launched -> exec_done)
+[2024-05-28 00:04:24.377] INFO  (parsl.dataflow.dflow) :: Parsl task 283 try 0 launched on executor htex-local with executor id 284
+[2024-05-28 00:04:24.397] INFO  (parsl.dataflow.dflow) :: Task 284 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.476] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.483] INFO  (parsl.dataflow.dflow) :: Parsl task 284 try 0 launched on executor htex-local with executor id 285
+[2024-05-28 00:04:24.503] INFO  (parsl.dataflow.dflow) :: Task 285 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.606] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.609] INFO  (parsl.dataflow.dflow) :: Task 283 completed (launched -> exec_done)
+[2024-05-28 00:04:24.634] INFO  (parsl.dataflow.dflow) :: Parsl task 285 try 0 launched on executor htex-local with executor id 286
+[2024-05-28 00:04:24.658] INFO  (parsl.dataflow.dflow) :: Task 284 completed (launched -> exec_done)
+[2024-05-28 00:04:24.658] INFO  (parsl.dataflow.dflow) :: Task 286 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.738] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.769] INFO  (parsl.dataflow.dflow) :: Task 285 completed (launched -> exec_done)
+[2024-05-28 00:04:24.773] INFO  (parsl.dataflow.dflow) :: Parsl task 286 try 0 launched on executor htex-local with executor id 287
+[2024-05-28 00:04:24.796] INFO  (parsl.dataflow.dflow) :: Task 287 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:24.879] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:24.891] INFO  (parsl.dataflow.dflow) :: Parsl task 287 try 0 launched on executor htex-local with executor id 288
+[2024-05-28 00:04:24.921] INFO  (parsl.dataflow.dflow) :: Task 286 completed (launched -> exec_done)
+[2024-05-28 00:04:24.921] INFO  (parsl.dataflow.dflow) :: Task 288 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.001] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.011] INFO  (parsl.dataflow.dflow) :: Parsl task 288 try 0 launched on executor htex-local with executor id 289
+[2024-05-28 00:04:25.041] INFO  (parsl.dataflow.dflow) :: Task 287 completed (launched -> exec_done)
+[2024-05-28 00:04:25.042] INFO  (parsl.dataflow.dflow) :: Task 289 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.131] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.145] INFO  (parsl.dataflow.dflow) :: Task 288 completed (launched -> exec_done)
+[2024-05-28 00:04:25.150] INFO  (parsl.dataflow.dflow) :: Parsl task 289 try 0 launched on executor htex-local with executor id 290
+[2024-05-28 00:04:25.172] INFO  (parsl.dataflow.dflow) :: Task 290 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.259] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.274] INFO  (parsl.dataflow.dflow) :: Parsl task 290 try 0 launched on executor htex-local with executor id 291
+[2024-05-28 00:04:25.293] INFO  (parsl.dataflow.dflow) :: Task 289 completed (launched -> exec_done)
+[2024-05-28 00:04:25.300] INFO  (parsl.dataflow.dflow) :: Task 291 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.387] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.399] INFO  (parsl.dataflow.dflow) :: Parsl task 291 try 0 launched on executor htex-local with executor id 292
+[2024-05-28 00:04:25.433] INFO  (parsl.dataflow.dflow) :: Task 290 completed (launched -> exec_done)
+[2024-05-28 00:04:25.433] INFO  (parsl.dataflow.dflow) :: Task 292 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.518] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.531] INFO  (parsl.dataflow.dflow) :: Parsl task 292 try 0 launched on executor htex-local with executor id 293
+[2024-05-28 00:04:25.562] INFO  (parsl.dataflow.dflow) :: Task 291 completed (launched -> exec_done)
+[2024-05-28 00:04:25.562] INFO  (parsl.dataflow.dflow) :: Task 293 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.651] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.671] INFO  (parsl.dataflow.dflow) :: Task 292 completed (launched -> exec_done)
+[2024-05-28 00:04:25.676] INFO  (parsl.dataflow.dflow) :: Parsl task 293 try 0 launched on executor htex-local with executor id 294
+[2024-05-28 00:04:25.701] INFO  (parsl.dataflow.dflow) :: Task 294 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.785] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.799] INFO  (parsl.dataflow.dflow) :: Task 293 completed (launched -> exec_done)
+[2024-05-28 00:04:25.805] INFO  (parsl.dataflow.dflow) :: Parsl task 294 try 0 launched on executor htex-local with executor id 295
+[2024-05-28 00:04:25.829] INFO  (parsl.dataflow.dflow) :: Task 295 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:25.914] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:25.930] INFO  (parsl.dataflow.dflow) :: Parsl task 295 try 0 launched on executor htex-local with executor id 296
+[2024-05-28 00:04:25.955] INFO  (parsl.dataflow.dflow) :: Task 294 completed (launched -> exec_done)
+[2024-05-28 00:04:25.956] INFO  (parsl.dataflow.dflow) :: Task 296 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.047] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.057] INFO  (parsl.dataflow.dflow) :: Task 295 completed (launched -> exec_done)
+[2024-05-28 00:04:26.061] INFO  (parsl.dataflow.dflow) :: Parsl task 296 try 0 launched on executor htex-local with executor id 297
+[2024-05-28 00:04:26.083] INFO  (parsl.dataflow.dflow) :: Task 297 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.168] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.182] INFO  (parsl.dataflow.dflow) :: Task 296 completed (launched -> exec_done)
+[2024-05-28 00:04:26.186] INFO  (parsl.dataflow.dflow) :: Parsl task 297 try 0 launched on executor htex-local with executor id 298
+[2024-05-28 00:04:26.211] INFO  (parsl.dataflow.dflow) :: Task 298 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.295] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.309] INFO  (parsl.dataflow.dflow) :: Task 297 completed (launched -> exec_done)
+[2024-05-28 00:04:26.313] INFO  (parsl.dataflow.dflow) :: Parsl task 298 try 0 launched on executor htex-local with executor id 299
+[2024-05-28 00:04:26.338] INFO  (parsl.dataflow.dflow) :: Task 299 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.423] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.443] INFO  (parsl.dataflow.dflow) :: Task 298 completed (launched -> exec_done)
+[2024-05-28 00:04:26.445] INFO  (parsl.dataflow.dflow) :: Parsl task 299 try 0 launched on executor htex-local with executor id 300
+[2024-05-28 00:04:26.468] INFO  (parsl.dataflow.dflow) :: Task 300 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.552] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.569] INFO  (parsl.dataflow.dflow) :: Task 299 completed (launched -> exec_done)
+[2024-05-28 00:04:26.573] INFO  (parsl.dataflow.dflow) :: Parsl task 300 try 0 launched on executor htex-local with executor id 301
+[2024-05-28 00:04:26.595] INFO  (parsl.dataflow.dflow) :: Task 301 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.680] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.694] INFO  (parsl.dataflow.dflow) :: Parsl task 301 try 0 launched on executor htex-local with executor id 302
+[2024-05-28 00:04:26.714] INFO  (parsl.dataflow.dflow) :: Task 300 completed (launched -> exec_done)
+[2024-05-28 00:04:26.722] INFO  (parsl.dataflow.dflow) :: Task 302 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.807] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.816] INFO  (parsl.dataflow.dflow) :: Task 301 completed (launched -> exec_done)
+[2024-05-28 00:04:26.827] INFO  (parsl.dataflow.dflow) :: Parsl task 302 try 0 launched on executor htex-local with executor id 303
+[2024-05-28 00:04:26.852] INFO  (parsl.dataflow.dflow) :: Task 303 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:26.939] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:26.958] INFO  (parsl.dataflow.dflow) :: Task 302 completed (launched -> exec_done)
+[2024-05-28 00:04:26.963] INFO  (parsl.dataflow.dflow) :: Parsl task 303 try 0 launched on executor htex-local with executor id 304
+[2024-05-28 00:04:26.986] INFO  (parsl.dataflow.dflow) :: Task 304 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.071] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.079] INFO  (parsl.dataflow.dflow) :: Parsl task 304 try 0 launched on executor htex-local with executor id 305
+[2024-05-28 00:04:27.113] INFO  (parsl.dataflow.dflow) :: Task 303 completed (launched -> exec_done)
+[2024-05-28 00:04:27.114] INFO  (parsl.dataflow.dflow) :: Task 305 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.204] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.207] INFO  (parsl.dataflow.dflow) :: Task 304 completed (launched -> exec_done)
+[2024-05-28 00:04:27.218] INFO  (parsl.dataflow.dflow) :: Parsl task 305 try 0 launched on executor htex-local with executor id 306
+[2024-05-28 00:04:27.242] INFO  (parsl.dataflow.dflow) :: Task 306 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.326] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.337] INFO  (parsl.dataflow.dflow) :: Parsl task 306 try 0 launched on executor htex-local with executor id 307
+[2024-05-28 00:04:27.368] INFO  (parsl.dataflow.dflow) :: Task 305 completed (launched -> exec_done)
+[2024-05-28 00:04:27.369] INFO  (parsl.dataflow.dflow) :: Task 307 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.453] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.469] INFO  (parsl.dataflow.dflow) :: Task 306 completed (launched -> exec_done)
+[2024-05-28 00:04:27.473] INFO  (parsl.dataflow.dflow) :: Parsl task 307 try 0 launched on executor htex-local with executor id 308
+[2024-05-28 00:04:27.497] INFO  (parsl.dataflow.dflow) :: Task 308 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.581] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.599] INFO  (parsl.dataflow.dflow) :: Parsl task 308 try 0 launched on executor htex-local with executor id 309
+[2024-05-28 00:04:27.628] INFO  (parsl.dataflow.dflow) :: Task 307 completed (launched -> exec_done)
+[2024-05-28 00:04:27.629] INFO  (parsl.dataflow.dflow) :: Task 309 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.720] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.729] INFO  (parsl.dataflow.dflow) :: Task 308 completed (launched -> exec_done)
+[2024-05-28 00:04:27.735] INFO  (parsl.dataflow.dflow) :: Parsl task 309 try 0 launched on executor htex-local with executor id 310
+[2024-05-28 00:04:27.757] INFO  (parsl.dataflow.dflow) :: Task 310 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.842] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.856] INFO  (parsl.dataflow.dflow) :: Task 309 completed (launched -> exec_done)
+[2024-05-28 00:04:27.858] INFO  (parsl.dataflow.dflow) :: Parsl task 310 try 0 launched on executor htex-local with executor id 311
+[2024-05-28 00:04:27.881] INFO  (parsl.dataflow.dflow) :: Task 311 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:27.975] INFO  (parsl.dataflow.dflow) :: Task 310 completed (launched -> exec_done)
+[2024-05-28 00:04:27.981] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:27.991] INFO  (parsl.dataflow.dflow) :: Parsl task 311 try 0 launched on executor htex-local with executor id 312
+[2024-05-28 00:04:28.015] INFO  (parsl.dataflow.dflow) :: Task 312 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.099] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.115] INFO  (parsl.dataflow.dflow) :: Task 311 completed (launched -> exec_done)
+[2024-05-28 00:04:28.119] INFO  (parsl.dataflow.dflow) :: Parsl task 312 try 0 launched on executor htex-local with executor id 313
+[2024-05-28 00:04:28.142] INFO  (parsl.dataflow.dflow) :: Task 313 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.226] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.241] INFO  (parsl.dataflow.dflow) :: Task 312 completed (launched -> exec_done)
+[2024-05-28 00:04:28.243] INFO  (parsl.dataflow.dflow) :: Parsl task 313 try 0 launched on executor htex-local with executor id 314
+[2024-05-28 00:04:28.266] INFO  (parsl.dataflow.dflow) :: Task 314 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.357] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.360] INFO  (parsl.dataflow.dflow) :: Task 313 completed (launched -> exec_done)
+[2024-05-28 00:04:28.370] INFO  (parsl.dataflow.dflow) :: Parsl task 314 try 0 launched on executor htex-local with executor id 315
+[2024-05-28 00:04:28.395] INFO  (parsl.dataflow.dflow) :: Task 315 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.479] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.495] INFO  (parsl.dataflow.dflow) :: Task 314 completed (launched -> exec_done)
+[2024-05-28 00:04:28.499] INFO  (parsl.dataflow.dflow) :: Parsl task 315 try 0 launched on executor htex-local with executor id 316
+[2024-05-28 00:04:28.522] INFO  (parsl.dataflow.dflow) :: Task 316 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.605] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.620] INFO  (parsl.dataflow.dflow) :: Task 315 completed (launched -> exec_done)
+[2024-05-28 00:04:28.622] INFO  (parsl.dataflow.dflow) :: Parsl task 316 try 0 launched on executor htex-local with executor id 317
+[2024-05-28 00:04:28.646] INFO  (parsl.dataflow.dflow) :: Task 317 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.731] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.748] INFO  (parsl.dataflow.dflow) :: Task 316 completed (launched -> exec_done)
+[2024-05-28 00:04:28.751] INFO  (parsl.dataflow.dflow) :: Parsl task 317 try 0 launched on executor htex-local with executor id 318
+[2024-05-28 00:04:28.775] INFO  (parsl.dataflow.dflow) :: Task 318 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.859] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:28.876] INFO  (parsl.dataflow.dflow) :: Parsl task 318 try 0 launched on executor htex-local with executor id 319
+[2024-05-28 00:04:28.901] INFO  (parsl.dataflow.dflow) :: Task 317 completed (launched -> exec_done)
+[2024-05-28 00:04:28.902] INFO  (parsl.dataflow.dflow) :: Task 319 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:28.987] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.002] INFO  (parsl.dataflow.dflow) :: Task 318 completed (launched -> exec_done)
+[2024-05-28 00:04:29.009] INFO  (parsl.dataflow.dflow) :: Parsl task 319 try 0 launched on executor htex-local with executor id 320
+[2024-05-28 00:04:29.032] INFO  (parsl.dataflow.dflow) :: Task 320 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.169] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.192] INFO  (parsl.dataflow.dflow) :: Task 319 completed (launched -> exec_done)
+[2024-05-28 00:04:29.196] INFO  (parsl.dataflow.dflow) :: Parsl task 320 try 0 launched on executor htex-local with executor id 321
+[2024-05-28 00:04:29.220] INFO  (parsl.dataflow.dflow) :: Task 321 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.307] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.324] INFO  (parsl.dataflow.dflow) :: Parsl task 321 try 0 launched on executor htex-local with executor id 322
+[2024-05-28 00:04:29.353] INFO  (parsl.dataflow.dflow) :: Task 320 completed (launched -> exec_done)
+[2024-05-28 00:04:29.354] INFO  (parsl.dataflow.dflow) :: Task 322 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.440] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.456] INFO  (parsl.dataflow.dflow) :: Task 321 completed (launched -> exec_done)
+[2024-05-28 00:04:29.460] INFO  (parsl.dataflow.dflow) :: Parsl task 322 try 0 launched on executor htex-local with executor id 323
+[2024-05-28 00:04:29.482] INFO  (parsl.dataflow.dflow) :: Task 323 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.569] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.583] INFO  (parsl.dataflow.dflow) :: Task 322 completed (launched -> exec_done)
+[2024-05-28 00:04:29.587] INFO  (parsl.dataflow.dflow) :: Parsl task 323 try 0 launched on executor htex-local with executor id 324
+[2024-05-28 00:04:29.610] INFO  (parsl.dataflow.dflow) :: Task 324 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.695] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.712] INFO  (parsl.dataflow.dflow) :: Task 323 completed (launched -> exec_done)
+[2024-05-28 00:04:29.714] INFO  (parsl.dataflow.dflow) :: Parsl task 324 try 0 launched on executor htex-local with executor id 325
+[2024-05-28 00:04:29.740] INFO  (parsl.dataflow.dflow) :: Task 325 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.836] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.839] INFO  (parsl.dataflow.dflow) :: Task 324 completed (launched -> exec_done)
+[2024-05-28 00:04:29.854] INFO  (parsl.dataflow.dflow) :: Parsl task 325 try 0 launched on executor htex-local with executor id 326
+[2024-05-28 00:04:29.877] INFO  (parsl.dataflow.dflow) :: Task 326 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:29.963] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:29.982] INFO  (parsl.dataflow.dflow) :: Task 325 completed (launched -> exec_done)
+[2024-05-28 00:04:29.984] INFO  (parsl.dataflow.dflow) :: Parsl task 326 try 0 launched on executor htex-local with executor id 327
+[2024-05-28 00:04:30.007] INFO  (parsl.dataflow.dflow) :: Task 327 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:30.099] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:30.102] INFO  (parsl.dataflow.dflow) :: Task 326 completed (launched -> exec_done)
+[2024-05-28 00:04:30.111] INFO  (parsl.dataflow.dflow) :: Parsl task 327 try 0 launched on executor htex-local with executor id 328
+[2024-05-28 00:04:30.135] INFO  (parsl.dataflow.dflow) :: Task 328 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:30.220] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:30.236] INFO  (parsl.dataflow.dflow) :: Task 327 completed (launched -> exec_done)
+[2024-05-28 00:04:30.239] INFO  (parsl.dataflow.dflow) :: Parsl task 328 try 0 launched on executor htex-local with executor id 329
+[2024-05-28 00:04:30.261] INFO  (parsl.dataflow.dflow) :: Task 329 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:30.353] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:30.356] INFO  (parsl.dataflow.dflow) :: Task 328 completed (launched -> exec_done)
+[2024-05-28 00:04:30.367] INFO  (parsl.dataflow.dflow) :: Parsl task 329 try 0 launched on executor htex-local with executor id 330
+[2024-05-28 00:04:30.389] INFO  (parsl.dataflow.dflow) :: Task 330 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:30.474] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:30.488] INFO  (parsl.dataflow.dflow) :: Task 329 completed (launched -> exec_done)
+[2024-05-28 00:04:30.491] INFO  (parsl.dataflow.dflow) :: Parsl task 330 try 0 launched on executor htex-local with executor id 331
+[2024-05-28 00:04:30.515] INFO  (parsl.dataflow.dflow) :: Task 331 submitted for App noop_task, not waiting on any dependency
+[2024-05-28 00:04:30.601] WARNING (parsl.serialize.facade) :: Serialized object exceeds buffer threshold of 1048576 bytes, this could cause overflows
+[2024-05-28 00:04:30.618] INFO  (parsl.dataflow.dflow) :: Task 330 completed (launched -> exec_done)
+[2024-05-28 00:04:30.621] INFO  (parsl.dataflow.dflow) :: Parsl task 331 try 0 launched on executor htex-local with executor id 332
+[2024-05-28 00:04:30.731] INFO  (parsl.dataflow.dflow) :: Task 331 completed (launched -> exec_done)
+[2024-05-28 00:04:30.732] WORK  (webs.wf.synthetic.workflow) :: Completed 331/320 (rate: 7.80 tasks/s)
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Waiting for all remaining tasks to complete
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: All remaining tasks completed
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: DFK cleanup initiated
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Summary of tasks in DFK:
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.unsched: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.pending: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.exec_done: 332
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.failed: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.dep_fail: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.launched: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.fail_retryable: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.memo_done: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.joining: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Tasks in state States.running_ended: 0
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: End of summary
+[2024-05-28 00:04:30.733] INFO  (parsl.dataflow.dflow) :: Closing job status poller
+[2024-05-28 00:04:30.734] INFO  (parsl.dataflow.dflow) :: Terminated job status poller
+[2024-05-28 00:04:30.734] INFO  (parsl.dataflow.dflow) :: Scaling in and shutting down executors
+[2024-05-28 00:04:30.734] INFO  (parsl.dataflow.dflow) :: Scaling in executor htex-local
+[2024-05-28 00:04:30.881] INFO  (parsl.dataflow.dflow) :: Shutting down executor htex-local
+[2024-05-28 00:04:30.882] INFO  (parsl.executors.high_throughput.executor) :: Attempting HighThroughputExecutor shutdown
+[2024-05-28 00:04:30.936] INFO  (parsl.executors.high_throughput.executor) :: Finished HighThroughputExecutor shutdown attempt
+[2024-05-28 00:04:30.937] INFO  (parsl.dataflow.dflow) :: Shut down executor htex-local
+[2024-05-28 00:04:30.937] INFO  (parsl.dataflow.dflow) :: Shutting down executor _parsl_internal
+[2024-05-28 00:04:30.937] INFO  (parsl.dataflow.dflow) :: Shut down executor _parsl_internal
+[2024-05-28 00:04:30.937] INFO  (parsl.dataflow.dflow) :: Terminated executors
+[2024-05-28 00:04:30.937] INFO  (parsl.dataflow.dflow) :: DFK cleanup complete
+[2024-05-28 00:04:30.937] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=44.42s, tasks=332)
+[2024-05-28 00:04:30.938] INFO  (parsl.dataflow.dflow) :: python process is exiting, but DFK has already been cleaned up

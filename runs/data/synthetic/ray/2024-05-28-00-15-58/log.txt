@@ -1,0 +1,14 @@
+[2024-05-28 00:15:58.317] RUN   (webs.run) :: Starting workflow (name=synthetic)
+[2024-05-28 00:15:58.317] RUN   (webs.run) :: name='synthetic' timestamp=datetime.datetime(2024, 5, 28, 0, 15, 58, 316692) executor=RayConfig(ray_address='local', ray_num_cpus=32) transformer=ProxyFileTransformerConfig(ps_type='redis', ps_file_dir='/tmp/file-cache', ps_redis_addr='localhost:59465', ps_extract_target=True) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/data-32-nodes/{name}/ray/{timestamp}') workflow=SyntheticWorkflowConfig(structure=<WorkflowStructure.BAG: 'bag'>, task_count=320, task_data_bytes=1000000, task_sleep=0.0, bag_max_running=32)
+[2024-05-28 00:15:58.317] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data-32-nodes/synthetic/ray/2024-05-28-00-15-58
+[2024-05-28 00:16:00.574] INFO  (proxystore.store) :: Registered a store named "transformer"
+[2024-05-28 00:16:00.574] INFO  (proxystore.store.base) :: Initialized Store(name=transformer, connector=RedisConnector(hostname=localhost, port=59465), serializer=default, deserializer=default, cache_size=16, metrics=False, populate_target=True, register=True)
+[2024-05-28 00:16:00.574] WORK  (webs.wf.synthetic.workflow) :: Submitting warmup task
+[2024-05-28 00:16:01.298] WORK  (webs.wf.synthetic.workflow) :: Warmup task completed
+[2024-05-28 00:16:01.309] WORK  (webs.wf.synthetic.workflow) :: Starting bag workflow
+[2024-05-28 00:16:01.423] WORK  (webs.wf.synthetic.workflow) :: Submitted 32 initial tasks
+[2024-05-28 00:16:01.549] WORK  (webs.wf.synthetic.workflow) :: Completed 32/320 tasks (rate: 132.92 tasks/s, running tasks: 32)
+[2024-05-28 00:16:01.874] WORK  (webs.wf.synthetic.workflow) :: Completed 64/320 tasks (rate: 113.21 tasks/s, running tasks: 32)
+[2024-05-28 00:16:02.171] WORK  (webs.wf.synthetic.workflow) :: Completed 96/320 tasks (rate: 111.33 tasks/s, running tasks: 32)
+[2024-05-28 00:16:02.976] WORK  (webs.wf.synthetic.workflow) :: Completed 326/320 (rate: 195.52 tasks/s)
+[2024-05-28 00:16:04.583] RUN   (webs.run) :: Finished workflow (name=synthetic, runtime=6.27s, tasks=327)
