@@ -1,0 +1,9 @@
+[2024-08-07 22:40:07.258] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-07 22:40:07.259] RUN   (taps.run) :: name='synthetic' timestamp=datetime.datetime(2024, 8, 7, 22, 40, 7, 258477) executor_name='taskvine' app=SyntheticConfig(structure='bag', task_count=32, task_data_bytes=10000000, task_sleep=0.0, bag_max_running=32, warmup_task=True) executor=TaskVineConfig(taskvine_workers=32, taskvine_port=[9123, 9129]) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='/home/cc/escience24-taps-analysis/runs/data/{name}/taskvine/{timestamp}') transformer=PickleFileTransformerConfig(file_dir='/tmp/file-cache')
+[2024-08-07 22:40:07.259] RUN   (taps.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data/synthetic/taskvine/2024-08-07-22-40-07
+[2024-08-07 22:40:08.261] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-07 22:40:09.251] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-07 22:40:09.252] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-07 22:40:10.232] APP   (taps.apps.synthetic) :: Submitted 32 initial tasks
+[2024-08-07 22:40:10.636] APP   (taps.apps.synthetic) :: Completed 32/32 (rate: 23.12 tasks/s)
+[2024-08-07 22:40:10.825] RUN   (taps.run) :: Finished app (name=synthetic, runtime=3.57s, tasks=64)

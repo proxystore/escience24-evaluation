@@ -1,0 +1,32 @@
+{
+    "name": "synthetic",
+    "executor_name": "taskvine",
+    "app": {
+        "structure": "bag",
+        "task_count": 32,
+        "task_data_bytes": 10000000,
+        "task_sleep": 0.0,
+        "bag_max_running": 32,
+        "warmup_task": true
+    },
+    "executor": {
+        "taskvine_workers": 32,
+        "taskvine_port": [
+            9123,
+            9129
+        ]
+    },
+    "filter": {
+        "filter_type": "object-size",
+        "filter_min_size": 5000,
+        "filter_max_size": null
+    },
+    "run": {
+        "log_file_level": "INFO",
+        "log_file_name": "log.txt",
+        "log_level": "INFO",
+        "task_record_file_name": "tasks.jsonl",
+        "run_dir_format": "/home/cc/escience24-taps-analysis/runs/data/{name}/taskvine/{timestamp}"
+    },
+    "transformer": {}
+}

@@ -1,0 +1,18 @@
+[2024-08-07 22:31:43.429] RUN   (taps.run) :: Starting app (name=synthetic)
+[2024-08-07 22:31:43.429] RUN   (taps.run) :: name='synthetic' timestamp=datetime.datetime(2024, 8, 7, 22, 31, 43, 428701) executor_name='taskvine' app=SyntheticConfig(structure='bag', task_count=320, task_data_bytes=1000000, task_sleep=0.0, bag_max_running=32, warmup_task=True) executor=TaskVineConfig(taskvine_workers=32, taskvine_port=[9123, 9129]) filter=FilterConfig(filter_type='object-size', filter_min_size=5000, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='/home/cc/escience24-taps-analysis/runs/data/{name}/taskvine/{timestamp}') transformer=NullTransformerConfig()
+[2024-08-07 22:31:43.429] RUN   (taps.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/data/synthetic/taskvine/2024-08-07-22-31-43
+[2024-08-07 22:31:44.431] APP   (taps.apps.synthetic) :: Submitting warmup task
+[2024-08-07 22:31:45.425] APP   (taps.apps.synthetic) :: Warmup task completed
+[2024-08-07 22:31:45.426] APP   (taps.apps.synthetic) :: Starting bag workflow
+[2024-08-07 22:31:45.542] APP   (taps.apps.synthetic) :: Submitted 32 initial tasks
+[2024-08-07 22:31:45.853] APP   (taps.apps.synthetic) :: Completed 32/320 tasks (rate: 74.91 tasks/s, running tasks: 32)
+[2024-08-07 22:31:46.103] APP   (taps.apps.synthetic) :: Completed 64/320 tasks (rate: 94.43 tasks/s, running tasks: 32)
+[2024-08-07 22:31:46.380] APP   (taps.apps.synthetic) :: Completed 96/320 tasks (rate: 100.57 tasks/s, running tasks: 32)
+[2024-08-07 22:31:46.615] APP   (taps.apps.synthetic) :: Completed 128/320 tasks (rate: 107.62 tasks/s, running tasks: 32)
+[2024-08-07 22:31:46.792] APP   (taps.apps.synthetic) :: Completed 160/320 tasks (rate: 117.13 tasks/s, running tasks: 32)
+[2024-08-07 22:31:47.059] APP   (taps.apps.synthetic) :: Completed 192/320 tasks (rate: 117.56 tasks/s, running tasks: 32)
+[2024-08-07 22:31:47.424] APP   (taps.apps.synthetic) :: Completed 224/320 tasks (rate: 112.10 tasks/s, running tasks: 32)
+[2024-08-07 22:31:47.674] APP   (taps.apps.synthetic) :: Completed 256/320 tasks (rate: 113.84 tasks/s, running tasks: 32)
+[2024-08-07 22:31:47.890] APP   (taps.apps.synthetic) :: Completed 288/320 tasks (rate: 116.88 tasks/s, running tasks: 32)
+[2024-08-07 22:31:48.020] APP   (taps.apps.synthetic) :: Completed 320/320 (rate: 123.36 tasks/s)
+[2024-08-07 22:31:48.020] RUN   (taps.run) :: Finished app (name=synthetic, runtime=4.59s, tasks=352)
