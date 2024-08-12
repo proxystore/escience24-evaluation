@@ -1,0 +1,140 @@
+[2024-08-11 18:20:37.448] RUN   (taps.run) :: Starting app (name=moldesign)
+[2024-08-11 18:20:37.448] RUN   (taps.run) :: name='moldesign' timestamp=datetime.datetime(2024, 8, 11, 18, 20, 37, 447736) executor_name='taskvine' app=MoldesignConfig(dataset='/home/cc/taps/data/moldesign/QM9-search.tsv', initial_count=16, search_count=64, batch_size=16, seed=0) executor=TaskVineConfig(taskvine_workers=1, taskvine_cores=32, taskvine_port=[9123, 9129], taskvine_manager=True, taskvine_serverless=False) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='runs/{name}-{executor}-{timestamp}') transformer=NullTransformerConfig()
+[2024-08-11 18:20:37.448] RUN   (taps.run) :: Runtime directory: /home/cc/taps/runs/moldesign-taskvine-2024-08-11-18-20-37
+[2024-08-11 18:20:38.374] APP   (taps.apps.moldesign.app) :: Loaded search space (size=130,258)
+[2024-08-11 18:20:38.379] APP   (taps.apps.moldesign.app) :: Submitted initial computations
+[2024-08-11 18:20:38.379] INFO  (taps.apps.moldesign.app) :: Initial set: ['NC(=O)C12CN1C(=O)C2', 'CC12CCC(C1)C(=O)C2', 'CNC1=NC=NOC1=O', 'C1OC11CCCC1', 'COC12CCC1(O)C2O', 'OC1C=CC=CC=C1', 'CCC(C)C1COCO1', 'COC1=CC(C)=C(N)N1', 'CNC1=C(NC=N1)C=O', 'OCC1CC1OCC#C', 'OC1C=C2CN3C1C23', 'OC1CCC23CC12CO3', 'CCC1=COC=C1OC', 'CC1CCCCC(=O)C1', 'CC12OC3C4C(C14)C23', 'CC1OC2C3C1CC23O']
+[2024-08-11 18:20:41.099] ERROR (taps.apps.moldesign.app) :: Task failed, submitting new task
+Traceback (most recent call last):
+  File "/home/cc/taps/taps/apps/moldesign/app.py", line 100, in run
+    'ie': future.result(),
+          ^^^^^^^^^^^^^^^
+  File "/home/cc/taps/taps/engine/engine.py", line 205, in result
+    task_result = self._future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+ndcctools.taskvine.task.PythonTaskNoResult
+[2024-08-11 18:20:43.383] ERROR (taps.apps.moldesign.app) :: Task failed, submitting new task
+Traceback (most recent call last):
+  File "/home/cc/taps/taps/apps/moldesign/app.py", line 100, in run
+    'ie': future.result(),
+          ^^^^^^^^^^^^^^^
+  File "/home/cc/taps/taps/engine/engine.py", line 205, in result
+    task_result = self._future.result(timeout=timeout)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 142, in as_completed
+    result = f.result(timeout=5)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/home/cc/miniconda3/envs/taps-moldesign/lib/python3.11/site-packages/ndcctools/taskvine/futures.py", line 309, in result
+    raise result
+ndcctools.taskvine.task.PythonTaskNoResult
+[2024-08-11 18:20:45.647] APP   (taps.apps.moldesign.app) :: Done computing initial set
+[2024-08-11 18:20:45.648] APP   (taps.apps.moldesign.app) :: Created initial training set (size=16)
+[2024-08-11 18:20:45.650] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-11 18:20:58.124] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-11 18:20:58.157] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=16)
+[2024-08-11 18:21:00.990] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-11 18:21:13.640] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-11 18:21:13.658] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=16)
+[2024-08-11 18:21:16.138] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-11 18:21:28.521] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-11 18:21:28.538] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=16)
+[2024-08-11 18:21:30.910] APP   (taps.apps.moldesign.app) :: Submitting inference tasks
+[2024-08-11 18:21:43.595] APP   (taps.apps.moldesign.app) :: Inference results received (size=130258)
+[2024-08-11 18:21:43.612] APP   (taps.apps.moldesign.app) :: Submitted new computations (size=16)
+[2024-08-11 18:21:45.605] APP   (taps.apps.moldesign.app) :: Saved figure to /home/cc/taps/runs/moldesign-taskvine-2024-08-11-18-20-37/results.png
+[2024-08-11 18:21:45.607] APP   (taps.apps.moldesign.app) :: Saved results to /home/cc/taps/runs/moldesign-taskvine-2024-08-11-18-20-37/results.csv
+[2024-08-11 18:21:45.607] RUN   (taps.run) :: Finished app (name=moldesign, runtime=68.16s, tasks=346)

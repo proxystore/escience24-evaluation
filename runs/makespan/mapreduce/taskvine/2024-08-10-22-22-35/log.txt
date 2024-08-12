@@ -1,0 +1,20 @@
+[2024-08-10 22:22:35.608] RUN   (taps.run) :: Starting app (name=mapreduce)
+[2024-08-10 22:22:35.608] RUN   (taps.run) :: name='mapreduce' timestamp=datetime.datetime(2024, 8, 10, 22, 22, 35, 608318) executor_name='taskvine' app=MapreduceConfig(data_dir='/home/cc/taps/data/maildir', map_tasks=32, generate=False, generated_files=10, generated_words=10000) executor=TaskVineConfig(taskvine_workers=1, taskvine_cores=32, taskvine_port=[9123, 9129]) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/mapreduce/taskvine/{timestamp}') transformer=NullTransformerConfig()
+[2024-08-10 22:22:35.609] RUN   (taps.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/mapreduce/taskvine/2024-08-10-22-22-35
+[2024-08-10 22:22:40.236] APP   (taps.apps.mapreduce) :: Found 517401 in /home/cc/taps/data/maildir
+[2024-08-10 22:22:42.266] APP   (taps.apps.mapreduce) :: Submitted 32 map tasks over 517,401 input files
+[2024-08-10 22:22:42.266] APP   (taps.apps.mapreduce) :: Submitted reduce task
+[2024-08-10 22:22:54.762] APP   (taps.apps.mapreduce) :: Reduce task finished
+[2024-08-10 22:22:54.895] APP   (taps.apps.mapreduce) :: 10 most frequent words:
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: the (4,939,402)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: to (3,433,605)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: and (2,449,074)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: of (2,310,646)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: a (1,728,995)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: in (1,547,994)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: for (1,362,666)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: > (1,319,833)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: on (1,173,942)
+[2024-08-10 22:22:54.896] APP   (taps.apps.mapreduce) :: is (1,162,620)
+[2024-08-10 22:22:54.909] APP   (taps.apps.mapreduce) :: Total number of words: 170,509,738
+[2024-08-10 22:22:54.909] RUN   (taps.run) :: Finished app (name=mapreduce, runtime=19.30s, tasks=33)

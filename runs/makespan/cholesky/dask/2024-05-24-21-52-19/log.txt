@@ -1,7 +1,0 @@
-[2024-05-24 21:52:19.834] RUN   (webs.run) :: Starting workflow (name=cholesky)
-[2024-05-24 21:52:19.834] RUN   (webs.run) :: name='cholesky' timestamp=datetime.datetime(2024, 5, 24, 21, 52, 19, 833942) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=64) transformer=NullTransformerConfig() filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='WORK', task_record_file_name='tasks.json', run_dir_format='/home/cc/escience24-taps-analysis/runs/makespan/{name}/dask/{timestamp}') workflow=CholeskyWorkflowConfig(n=10000, block_size=1000)
-[2024-05-24 21:52:19.834] RUN   (webs.run) :: Runtime directory: /home/cc/escience24-taps-analysis/runs/makespan/cholesky/dask/2024-05-24-21-52-19
-[2024-05-24 21:52:48.905] WORK  (webs.wf.cholesky.workflow) :: Input matrix: (10000, 10000)
-[2024-05-24 21:52:48.907] WORK  (webs.wf.cholesky.workflow) :: Block size: 1000
-[2024-05-24 21:53:09.974] WORK  (webs.wf.cholesky.workflow) :: Output matrix: (10000, 10000)
-[2024-05-24 21:53:10.385] RUN   (webs.run) :: Finished workflow (name=cholesky, runtime=50.55s, tasks=385)

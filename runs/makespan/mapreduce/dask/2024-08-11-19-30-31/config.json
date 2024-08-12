@@ -1,0 +1,30 @@
+{
+    "name": "mapreduce",
+    "executor_name": "dask",
+    "app": {
+        "data_dir": "/home/cc/taps/data/maildir",
+        "map_tasks": 32,
+        "generate": false,
+        "generated_files": 10,
+        "generated_words": 10000
+    },
+    "executor": {
+        "dask_scheduler_address": null,
+        "dask_use_threads": false,
+        "dask_workers": 32,
+        "dask_daemon_workers": true
+    },
+    "filter": {
+        "filter_type": null,
+        "filter_min_size": 0,
+        "filter_max_size": null
+    },
+    "run": {
+        "log_file_level": "INFO",
+        "log_file_name": "log.txt",
+        "log_level": "INFO",
+        "task_record_file_name": "tasks.jsonl",
+        "run_dir_format": "/home/cc/escience24-taps-analysis/runs/makespan/mapreduce/dask/{timestamp}"
+    },
+    "transformer": {}
+}

@@ -1,0 +1,7 @@
+[2024-08-11 19:25:18.059] RUN   (taps.run) :: Starting app (name=cholesky)
+[2024-08-11 19:25:18.060] RUN   (taps.run) :: name='cholesky' timestamp=datetime.datetime(2024, 8, 11, 19, 25, 18, 59488) executor_name='dask' app=CholeskyConfig(matrix_size=10000, block_size=1000) executor=DaskDistributedConfig(dask_scheduler_address=None, dask_use_threads=False, dask_workers=64, dask_daemon_workers=True) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='runs/{name}-{executor}-{timestamp}') transformer=NullTransformerConfig()
+[2024-08-11 19:25:18.060] RUN   (taps.run) :: Runtime directory: /home/cc/taps/runs/cholesky-dask-2024-08-11-19-25-18
+[2024-08-11 19:25:41.531] APP   (taps.apps.cholesky) :: Generated input matrix: (10000, 10000)
+[2024-08-11 19:25:41.532] APP   (taps.apps.cholesky) :: Block size: 1000
+[2024-08-11 19:25:59.944] APP   (taps.apps.cholesky) :: Output matrix: (10000, 10000)
+[2024-08-11 19:26:03.065] RUN   (taps.run) :: Finished app (name=cholesky, runtime=45.01s, tasks=385)

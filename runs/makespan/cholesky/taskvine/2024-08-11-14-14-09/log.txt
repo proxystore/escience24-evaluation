@@ -1,0 +1,7 @@
+[2024-08-11 14:14:09.146] RUN   (taps.run) :: Starting app (name=cholesky)
+[2024-08-11 14:14:09.146] RUN   (taps.run) :: name='cholesky' timestamp=datetime.datetime(2024, 8, 11, 14, 14, 9, 146499) executor_name='taskvine' app=CholeskyConfig(matrix_size=10000, block_size=1000) executor=TaskVineConfig(taskvine_workers=1, taskvine_cores=64, taskvine_port=[9123, 9129], taskvine_manager=True) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='runs/{name}-{executor}-{timestamp}') transformer=NullTransformerConfig()
+[2024-08-11 14:14:09.147] RUN   (taps.run) :: Runtime directory: /home/cc/taps/runs/cholesky-taskvine-2024-08-11-14-14-09
+[2024-08-11 14:14:31.032] APP   (taps.apps.cholesky) :: Generated input matrix: (10000, 10000)
+[2024-08-11 14:14:31.033] APP   (taps.apps.cholesky) :: Block size: 1000
+[2024-08-11 14:14:44.355] APP   (taps.apps.cholesky) :: Output matrix: (10000, 10000)
+[2024-08-11 14:14:44.358] RUN   (taps.run) :: Finished app (name=cholesky, runtime=35.21s, tasks=385)

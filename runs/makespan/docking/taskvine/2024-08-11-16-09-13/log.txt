@@ -1,0 +1,79 @@
+[2024-08-11 16:09:13.526] RUN   (taps.run) :: Starting app (name=docking)
+[2024-08-11 16:09:13.526] RUN   (taps.run) :: name='docking' timestamp=datetime.datetime(2024, 8, 11, 16, 9, 13, 525876) executor_name='taskvine' app=DockingConfig(smi_file_name_ligand='/home/cc/taps/data/docking/dataset_orz_original_1k.csv', receptor='/home/cc/taps/data/docking/1iep_receptor.pdbqt', tcl_path='/home/cc/taps/data/docking/set_element.tcl', initial_simulations=8, num_iterations=3, batch_size=8, seed=None) executor=TaskVineConfig(taskvine_workers=1, taskvine_cores=32, taskvine_port=[9123, 9129], taskvine_manager=True, taskvine_serverless=False) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='runs/{name}-{executor}-{timestamp}') transformer=NullTransformerConfig()
+[2024-08-11 16:09:13.526] RUN   (taps.run) :: Runtime directory: /home/cc/taps/runs/docking-taskvine-2024-08-11-16-09-13
+[2024-08-11 16:09:13.898] APP   (taps.apps.docking.app) :: Submitting 8 initial simulations
+[2024-08-11 16:09:13.900] APP   (taps.apps.docking.app) :: Submitted computations for CC[C@@H](CO)[NH2+]CCN[C@@H](CC)CO
+[2024-08-11 16:09:13.901] APP   (taps.apps.docking.app) :: Submitted computations for C[NH2+]C[C@@H](c1cccc(c1)O)O
+[2024-08-11 16:09:13.902] APP   (taps.apps.docking.app) :: Submitted computations for C[N@H+]1CCC[C@H]1c2cccnc2
+[2024-08-11 16:09:13.903] APP   (taps.apps.docking.app) :: Submitted computations for Cc1c(c2c(c(c1O)C)CC[C@](O2)(C)COc3ccc(cc3)C[C@H]4C(=O)[N-]C(=O)S4)C
+[2024-08-11 16:09:13.904] APP   (taps.apps.docking.app) :: Submitted computations for CCC(=O)O[C@](Cc1ccccc1)(c2ccccc2)[C@H](C)C[NH+](C)C
+[2024-08-11 16:09:13.905] APP   (taps.apps.docking.app) :: Submitted computations for CCC[NH2+][C@H](C)C(=O)Nc1ccccc1C
+[2024-08-11 16:09:13.906] APP   (taps.apps.docking.app) :: Submitted computations for C[C@@]1([C@@H]2CC[C@@H](C2)C1(C)C)[NH2+]C
+[2024-08-11 16:09:13.906] APP   (taps.apps.docking.app) :: Submitted computations for c1ccc(cc1)c2c(nc3c(n2)c(nc(n3)N)N)N
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for C[N@H+]1CCC[C@H]1c2cccnc2 succeeded with score = -4.6
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for C[NH2+]C[C@@H](c1cccc(c1)O)O succeeded with score = -5.0
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for Cc1c(c2c(c(c1O)C)CC[C@](O2)(C)COc3ccc(cc3)C[C@H]4C(=O)[N-]C(=O)S4)C succeeded with score = -7.2
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for c1ccc(cc1)c2c(nc3c(n2)c(nc(n3)N)N)N succeeded with score = -5.7
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for CCC(=O)O[C@](Cc1ccccc1)(c2ccccc2)[C@H](C)C[NH+](C)C succeeded with score = -6.7
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for C[C@@]1([C@@H]2CC[C@@H](C2)C1(C)C)[NH2+]C succeeded with score = -4.4
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for CCC[NH2+][C@H](C)C(=O)Nc1ccccc1C succeeded with score = -5.6
+[2024-08-11 16:13:52.675] APP   (taps.apps.docking.app) :: Computation for CC[C@@H](CO)[NH2+]CCN[C@@H](CC)CO succeeded with score = -4.9
+[2024-08-11 16:13:52.677] APP   (taps.apps.docking.app) :: Starting iteration 1/3
+[2024-08-11 16:13:52.879] APP   (taps.apps.docking.app) :: Model training finished
+[2024-08-11 16:13:53.120] APP   (taps.apps.docking.app) :: Model inference finished
+[2024-08-11 16:13:53.122] APP   (taps.apps.docking.app) :: Submitted computations for Cc1c(c2c(c(c1O)C)CC[C@](O2)(C)COc3ccc(cc3)C[C@@H]4C(=O)[N-]C(=O)S4)C
+[2024-08-11 16:13:53.124] APP   (taps.apps.docking.app) :: Submitted computations for Cc1c(c2c(c(c1O)C)CC[C@@](O2)(C)COc3ccc(cc3)C[C@H]4C(=O)[N-]C(=O)S4)C
+[2024-08-11 16:13:53.126] APP   (taps.apps.docking.app) :: Submitted computations for Cc1c(c2c(c(c1O)C)CC[C@@](O2)(C)COc3ccc(cc3)C[C@@H]4C(=O)[N-]C(=O)S4)C
+[2024-08-11 16:13:53.128] APP   (taps.apps.docking.app) :: Submitted computations for Cc1cnc(c(c1OC)C)C[S@](=O)c2[nH]c3ccc(cc3n2)OC
+[2024-08-11 16:13:53.130] APP   (taps.apps.docking.app) :: Submitted computations for Cc1c2c(c(c(c1OC)C/C=C(\C)/CCC(=O)OCC[NH+]3CCOCC3)[O-])C(=O)OC2
+[2024-08-11 16:13:53.132] APP   (taps.apps.docking.app) :: Submitted computations for C=CC1=C(N2[C@@H]([C@@H](C2=O)NC(=O)/C(=N\O)/c3csc(n3)N)SC1)C(=O)[O-]
+[2024-08-11 16:13:53.133] APP   (taps.apps.docking.app) :: Submitted computations for c1ccc(cc1)CSCC2=Nc3cc(c(cc3S(=O)(=O)N2)S(=O)(=O)N)Cl
+[2024-08-11 16:13:53.135] APP   (taps.apps.docking.app) :: Submitted computations for CCOC(=O)[C@H](CCc1ccccc1)[NH2+][C@@H](C)C(=O)N2CCC[C@H]2C(=O)[O-]
+[2024-08-11 16:20:38.733] APP   (taps.apps.docking.app) :: Computation for Cc1c2c(c(c(c1OC)C/C=C(\C)/CCC(=O)OCC[NH+]3CCOCC3)[O-])C(=O)OC2 succeeded with score = -6.6
+[2024-08-11 16:20:38.733] APP   (taps.apps.docking.app) :: Computation for Cc1c(c2c(c(c1O)C)CC[C@@](O2)(C)COc3ccc(cc3)C[C@@H]4C(=O)[N-]C(=O)S4)C succeeded with score = -6.7
+[2024-08-11 16:20:38.733] APP   (taps.apps.docking.app) :: Computation for Cc1c(c2c(c(c1O)C)CC[C@](O2)(C)COc3ccc(cc3)C[C@@H]4C(=O)[N-]C(=O)S4)C succeeded with score = -6.9
+[2024-08-11 16:20:38.733] APP   (taps.apps.docking.app) :: Computation for CCOC(=O)[C@H](CCc1ccccc1)[NH2+][C@@H](C)C(=O)N2CCC[C@H]2C(=O)[O-] succeeded with score = -6.2
+[2024-08-11 16:20:38.733] APP   (taps.apps.docking.app) :: Computation for Cc1cnc(c(c1OC)C)C[S@](=O)c2[nH]c3ccc(cc3n2)OC succeeded with score = -6.7
+[2024-08-11 16:20:38.733] APP   (taps.apps.docking.app) :: Computation for C=CC1=C(N2[C@@H]([C@@H](C2=O)NC(=O)/C(=N\O)/c3csc(n3)N)SC1)C(=O)[O-] succeeded with score = -5.8
+[2024-08-11 16:20:38.734] APP   (taps.apps.docking.app) :: Computation for c1ccc(cc1)CSCC2=Nc3cc(c(cc3S(=O)(=O)N2)S(=O)(=O)N)Cl succeeded with score = -6.3
+[2024-08-11 16:20:38.734] APP   (taps.apps.docking.app) :: Computation for Cc1c(c2c(c(c1O)C)CC[C@@](O2)(C)COc3ccc(cc3)C[C@H]4C(=O)[N-]C(=O)S4)C succeeded with score = -6.8
+[2024-08-11 16:20:38.737] APP   (taps.apps.docking.app) :: Starting iteration 2/3
+[2024-08-11 16:20:38.748] APP   (taps.apps.docking.app) :: Model training finished
+[2024-08-11 16:20:39.016] APP   (taps.apps.docking.app) :: Model inference finished
+[2024-08-11 16:20:39.018] APP   (taps.apps.docking.app) :: Submitted computations for C[N@H+]1CC[C@@]23C=C[C@@H](C[C@@H]2Oc4c3c(ccc4OC)C1)O
+[2024-08-11 16:20:39.020] APP   (taps.apps.docking.app) :: Submitted computations for C[NH+](C)C[C@H]1CCCC[C@@]1(c2cccc(c2)OC)O
+[2024-08-11 16:20:39.022] APP   (taps.apps.docking.app) :: Submitted computations for c1ccc2c(c1)c(c[nH]2)C(=O)OC3C[C@H]4CC5C[C@@H](C3)[NH+]4CC5=O
+[2024-08-11 16:20:39.023] APP   (taps.apps.docking.app) :: Submitted computations for C[N@@H+]1CC[C@@]23C=C[C@@H](C[C@@H]2Oc4c3c(ccc4OC)C1)O
+[2024-08-11 16:20:39.025] APP   (taps.apps.docking.app) :: Submitted computations for C1[C@@H]([C@@H]2[C@H](O1)[C@@H](CO2)O[N+](=O)[O-])O
+[2024-08-11 16:20:39.026] APP   (taps.apps.docking.app) :: Submitted computations for c1ccc2c(c1)c(no2)CS(=O)(=O)N
+[2024-08-11 16:20:39.028] APP   (taps.apps.docking.app) :: Submitted computations for C[C@@H]1[C@@H]2[C@H](C(=O)N2C(=C1S[C@H]3C[C@H]([NH2+]C3)C(=O)Nc4cccc(c4)C(=O)[O-])C(=O)[O-])[C@@H](C)O
+[2024-08-11 16:20:39.030] APP   (taps.apps.docking.app) :: Submitted computations for CC[C@@H](C)C1(C(=O)NC(=O)NC1=O)CC=C
+[2024-08-11 16:26:21.481] APP   (taps.apps.docking.app) :: Computation for c1ccc2c(c1)c(c[nH]2)C(=O)OC3C[C@H]4CC5C[C@@H](C3)[NH+]4CC5=O succeeded with score = -8.1
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for C1[C@@H]([C@@H]2[C@H](O1)[C@@H](CO2)O[N+](=O)[O-])O succeeded with score = -4.5
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for CC[C@@H](C)C1(C(=O)NC(=O)NC1=O)CC=C succeeded with score = -5.1
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for C[NH+](C)C[C@H]1CCCC[C@@]1(c2cccc(c2)OC)O succeeded with score = -5.2
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for C[C@@H]1[C@@H]2[C@H](C(=O)N2C(=C1S[C@H]3C[C@H]([NH2+]C3)C(=O)Nc4cccc(c4)C(=O)[O-])C(=O)[O-])[C@@H](C)O succeeded with score = -6.7
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for C[N@@H+]1CC[C@@]23C=C[C@@H](C[C@@H]2Oc4c3c(ccc4OC)C1)O succeeded with score = -5.2
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for c1ccc2c(c1)c(no2)CS(=O)(=O)N succeeded with score = -5.5
+[2024-08-11 16:26:21.482] APP   (taps.apps.docking.app) :: Computation for C[N@H+]1CC[C@@]23C=C[C@@H](C[C@@H]2Oc4c3c(ccc4OC)C1)O succeeded with score = -4.8
+[2024-08-11 16:26:21.484] APP   (taps.apps.docking.app) :: Starting iteration 3/3
+[2024-08-11 16:26:21.499] APP   (taps.apps.docking.app) :: Model training finished
+[2024-08-11 16:26:21.764] APP   (taps.apps.docking.app) :: Model inference finished
+[2024-08-11 16:26:21.766] APP   (taps.apps.docking.app) :: Submitted computations for CCC(=O)O[C@@]1([C@@H](C[C@@H]2[C@@]1(C[C@@H]([C@]3([C@H]2C[C@@H](C4=CC(=O)C=C[C@@]43C)F)F)O)C)C)C(=O)SCF
+[2024-08-11 16:26:21.768] APP   (taps.apps.docking.app) :: Submitted computations for Cc1cn(c(=O)[nH]c1=O)[C@H]2C=C[C@H](O2)CO
+[2024-08-11 16:26:21.769] APP   (taps.apps.docking.app) :: Submitted computations for CC[NH+](CC)[C@H](C)CN1c2ccccc2Sc3c1cccc3
+[2024-08-11 16:26:21.771] APP   (taps.apps.docking.app) :: Submitted computations for CC[NH+](CC)[C@@H](C)CN1c2ccccc2Sc3c1cccc3
+[2024-08-11 16:26:21.773] APP   (taps.apps.docking.app) :: Submitted computations for CNS(=O)(=O)CCc1ccc2c(c1)c(c[nH]2)C3CC[NH+](CC3)C
+[2024-08-11 16:26:21.775] APP   (taps.apps.docking.app) :: Submitted computations for C[C@]12CC[C@H]3[C@H]([C@@H]1CCC(=O)O2)CCC4=CC(=O)C=C[C@]34C
+[2024-08-11 16:26:21.777] APP   (taps.apps.docking.app) :: Submitted computations for Cc1c(nc[nH]1)CSCCN/C(=N\C#N)/NC
+[2024-08-11 16:26:21.778] APP   (taps.apps.docking.app) :: Submitted computations for CN1CCC[NH+]=C1COC(=O)[C@@](c2ccccc2)(C3CCCCC3)O
+[2024-08-11 16:30:41.921] APP   (taps.apps.docking.app) :: Computation for CC[NH+](CC)[C@@H](C)CN1c2ccccc2Sc3c1cccc3 succeeded with score = -4.9
+[2024-08-11 16:30:41.921] APP   (taps.apps.docking.app) :: Computation for CC[NH+](CC)[C@H](C)CN1c2ccccc2Sc3c1cccc3 succeeded with score = -5.0
+[2024-08-11 16:30:41.921] APP   (taps.apps.docking.app) :: Computation for Cc1c(nc[nH]1)CSCCN/C(=N\C#N)/NC succeeded with score = -5.6
+[2024-08-11 16:30:41.921] APP   (taps.apps.docking.app) :: Computation for CNS(=O)(=O)CCc1ccc2c(c1)c(c[nH]2)C3CC[NH+](CC3)C succeeded with score = -6.3
+[2024-08-11 16:30:41.921] APP   (taps.apps.docking.app) :: Computation for CCC(=O)O[C@@]1([C@@H](C[C@@H]2[C@@]1(C[C@@H]([C@]3([C@H]2C[C@@H](C4=CC(=O)C=C[C@@]43C)F)F)O)C)C)C(=O)SCF succeeded with score = -0.1
+[2024-08-11 16:30:41.921] APP   (taps.apps.docking.app) :: Computation for Cc1cn(c(=O)[nH]c1=O)[C@H]2C=C[C@H](O2)CO succeeded with score = -5.2
+[2024-08-11 16:30:41.922] APP   (taps.apps.docking.app) :: Computation for CN1CCC[NH+]=C1COC(=O)[C@@](c2ccccc2)(C3CCCCC3)O succeeded with score = -6.3
+[2024-08-11 16:30:41.922] APP   (taps.apps.docking.app) :: Computation for C[C@]12CC[C@H]3[C@H]([C@@H]1CCC(=O)O2)CCC4=CC(=O)C=C[C@]34C succeeded with score = -5.8
+[2024-08-11 16:30:41.926] APP   (taps.apps.docking.app) :: Training data saved to /home/cc/taps/runs/docking-taskvine-2024-08-11-16-09-13/training-results.json
+[2024-08-11 16:30:41.934] RUN   (taps.run) :: Finished app (name=docking, runtime=1288.41s, tasks=160)

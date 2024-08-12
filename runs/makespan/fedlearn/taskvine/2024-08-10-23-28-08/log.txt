@@ -1,0 +1,14 @@
+[2024-08-10 23:28:08.227] RUN   (taps.run) :: Starting app (name=fedlearn)
+[2024-08-10 23:28:08.227] RUN   (taps.run) :: name='fedlearn' timestamp=datetime.datetime(2024, 8, 10, 23, 28, 8, 227316) executor_name='taskvine' app=FedlearnConfig(alpha=100000.0, dataset='mnist', data_dir='/home/cc/taps/data/fedlearn', device='cpu', clients=16, rounds=3, participation=1.0, epochs=1, lr=0.001, batch_size=32, train=True, test=False, seed=0) executor=TaskVineConfig(taskvine_workers=1, taskvine_cores=32, taskvine_port=[9123, 9129], taskvine_manager=True) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='runs/{name}-{executor}-{timestamp}') transformer=NullTransformerConfig()
+[2024-08-10 23:28:08.227] RUN   (taps.run) :: Runtime directory: /home/cc/taps/runs/fedlearn-taskvine-2024-08-10-23-28-08
+[2024-08-10 23:28:16.196] APP   (taps.apps.fedlearn.app) :: Created 16 clients
+[2024-08-10 23:28:16.197] APP   (taps.apps.fedlearn.app) :: (1/3) Starting local training for this round
+[2024-08-10 23:29:38.545] APP   (taps.apps.fedlearn.app) :: (1/3) Finished local training
+[2024-08-10 23:29:38.761] APP   (taps.apps.fedlearn.app) :: (1/3) Averaged the returned locally trained models
+[2024-08-10 23:29:38.763] APP   (taps.apps.fedlearn.app) :: (2/3) Starting local training for this round
+[2024-08-10 23:30:54.603] APP   (taps.apps.fedlearn.app) :: (2/3) Finished local training
+[2024-08-10 23:30:54.800] APP   (taps.apps.fedlearn.app) :: (2/3) Averaged the returned locally trained models
+[2024-08-10 23:30:54.804] APP   (taps.apps.fedlearn.app) :: (3/3) Starting local training for this round
+[2024-08-10 23:32:09.910] APP   (taps.apps.fedlearn.app) :: (3/3) Finished local training
+[2024-08-10 23:32:10.115] APP   (taps.apps.fedlearn.app) :: (3/3) Averaged the returned locally trained models
+[2024-08-10 23:32:10.118] RUN   (taps.run) :: Finished app (name=fedlearn, runtime=241.89s, tasks=48)
