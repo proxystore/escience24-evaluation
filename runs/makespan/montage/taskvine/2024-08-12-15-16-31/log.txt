@@ -1,0 +1,12 @@
+[2024-08-12 15:16:31.687] RUN   (taps.run) :: Starting app (name=montage)
+[2024-08-12 15:16:31.687] RUN   (taps.run) :: name='montage' timestamp=datetime.datetime(2024, 8, 12, 15, 16, 31, 686662) executor_name='taskvine' app=MontageConfig(img_folder='/home/cc/taps/data/montage/Kimages', img_tbl='Kimages.tbl', img_hdr='Kimages.hdr', output_dir='data') executor=TaskVineConfig(taskvine_workers=1, taskvine_cores=32, taskvine_port=[9123, 9129], taskvine_manager=False, taskvine_serverless=True) filter=FilterConfig(filter_type=None, filter_min_size=0, filter_max_size=inf) run=RunConfig(log_file_level='INFO', log_file_name='log.txt', log_level='INFO', task_record_file_name='tasks.jsonl', run_dir_format='runs/{name}-{executor}-{timestamp}') transformer=NullTransformerConfig()
+[2024-08-12 15:16:31.687] RUN   (taps.run) :: Runtime directory: /home/cc/taps/runs/montage-taskvine-2024-08-12-15-16-31
+[2024-08-12 15:16:33.039] APP   (taps.apps.montage) :: Configured output directory (/home/cc/taps/runs/montage-taskvine-2024-08-12-15-16-31/data)
+[2024-08-12 15:16:33.039] APP   (taps.apps.montage) :: Starting projections
+[2024-08-12 15:17:13.652] APP   (taps.apps.montage) :: Projections completed
+[2024-08-12 15:17:14.119] APP   (taps.apps.montage) :: Starting difference computations
+[2024-08-12 15:17:15.913] APP   (taps.apps.montage) :: Differences completed
+[2024-08-12 15:17:20.653] APP   (taps.apps.montage) :: Starting background computations
+[2024-08-12 15:17:21.416] APP   (taps.apps.montage) :: Backgrounds completed
+[2024-08-12 15:17:23.484] APP   (taps.apps.montage) :: Created output FITS file at /home/cc/taps/runs/montage-taskvine-2024-08-12-15-16-31/data/m17.fits
+[2024-08-12 15:17:23.484] RUN   (taps.run) :: Finished app (name=montage, runtime=51.80s, tasks=419)

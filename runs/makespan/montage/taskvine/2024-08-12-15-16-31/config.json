@@ -1,0 +1,33 @@
+{
+    "name": "montage",
+    "executor_name": "taskvine",
+    "app": {
+        "img_folder": "/home/cc/taps/data/montage/Kimages",
+        "img_tbl": "Kimages.tbl",
+        "img_hdr": "Kimages.hdr",
+        "output_dir": "data"
+    },
+    "executor": {
+        "taskvine_workers": 1,
+        "taskvine_cores": 32,
+        "taskvine_port": [
+            9123,
+            9129
+        ],
+        "taskvine_manager": false,
+        "taskvine_serverless": true
+    },
+    "filter": {
+        "filter_type": null,
+        "filter_min_size": 0,
+        "filter_max_size": null
+    },
+    "run": {
+        "log_file_level": "INFO",
+        "log_file_name": "log.txt",
+        "log_level": "INFO",
+        "task_record_file_name": "tasks.jsonl",
+        "run_dir_format": "runs/{name}-{executor}-{timestamp}"
+    },
+    "transformer": {}
+}
